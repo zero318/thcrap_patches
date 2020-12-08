@@ -1,0 +1,1 @@
+This patch attempts to run the game without even reading the th.dat file. Currently only IN is supported.
