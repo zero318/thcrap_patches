@@ -1,0 +1,1306 @@
+
+sub Sub0()
+{
+    anm_set_main(0);
+    enemy_set_hitbox(28.0f, 28.0f, 32.0f);
+    anm_death_effects(769);
+    move_velocity(1.5707964f, 2.0f);
+!L    shoot_disable();
+    bullet_fan_aimed(0, 6, 1, 1, 3.0f, 0.0f, 0.0f, 0.0f, 4);
+    shoot_enable();
+    shoot_interval_delayed(120);
++40: //40
+!*    move_angular_velocity(-0.024543693f);
++80: //120
+    move_angular_velocity(0.019634955f);
++100: //220
+    move_angular_velocity(0.0f);
++9780: //10000
+    enemy_delete(0);
+}
+
+sub Sub1()
+{
+    anm_set_main(0);
+    enemy_set_hitbox(28.0f, 28.0f, 32.0f);
+    anm_death_effects(769);
+    move_velocity(1.5707964f, 2.0f);
+!L    shoot_disable();
+    bullet_fan_aimed(0, 6, 1, 1, 3.0f, 0.0f, 0.0f, 0.0f, 4);
+    shoot_enable();
+    shoot_interval_delayed(120);
++100: //100
+!*    move_angular_velocity(0.019634955f);
++100: //200
+    move_angular_velocity(0.0f);
++9800: //10000
+    enemy_delete(0);
+}
+
+sub Sub2()
+{
+    anm_set_main(3);
+    enemy_set_hitbox(28.0f, 28.0f, 32.0f);
+    shoot_offset(12.0f, -12.0f, 0.0f);
+    anm_death_effects(768);
+    move_velocity(1.5707964f, 2.0f);
++60: //60
+    anm_set_main(5);
+    move_speed(0.0f);
++10: //70
+!E    bullet_fan_aimed(1, 2, 3, 1, 1.4f, 0.0f, 0.0f, 0.7853982f, 3);
+!N    bullet_fan_aimed(1, 2, 7, 1, 1.4f, 0.0f, 0.0f, 0.62831855f, 3);
+!H    bullet_fan_aimed(1, 2, 9, 2, 1.4f, 0.5f, 0.0f, 0.3926991f, 3);
+!L    bullet_fan_aimed(1, 2, 11, 2, 1.4f, 0.5f, 0.0f, 0.15707964f, 3);
++60: //130
+!*    move_acceleration(0.05f);
+    move_angular_velocity(0.05235988f);
++60: //190
+    move_angular_velocity(0.0f);
++9810: //10000
+    enemy_delete(0);
+}
+
+sub Sub3()
+{
+    anm_set_main(3);
+    enemy_set_hitbox(28.0f, 28.0f, 32.0f);
+    shoot_offset(12.0f, -12.0f, 0.0f);
+    anm_death_effects(768);
+    move_velocity(1.5707964f, 2.0f);
++60: //60
+    anm_set_main(5);
+    move_speed(0.0f);
++10: //70
+!L    bullet_fan_aimed(1, 2, 5, 1, 1.4f, 0.0f, 0.0f, 0.2617994f, 3);
++60: //130
+!*    move_acceleration(0.05f);
+    move_angular_velocity(0.05235988f);
++60: //190
+    move_angular_velocity(0.0f);
++9810: //10000
+    enemy_delete(0);
+}
+
+sub Sub4()
+{
+    set_float_value($F3, 0.02f);
+    bullet_effects(-1, -1, -1, -1, 0.02f, -999.0f, -1.0f, -1.0f);
+!E    bullet_circle(0, $I0, 8, 1, 0.0f, 0.0f, %F0, 0.0f, 21);
+!N    bullet_circle(0, $I0, 14, 1, 0.0f, 0.0f, %F0, 0.0f, 21);
+!H    bullet_circle(0, $I0, 20, 1, 0.0f, 0.0f, %F0, 0.0f, 21);
+!L    bullet_circle(0, $I0, 28, 1, 0.0f, 0.0f, %F0, 0.0f, 21);
+!*    effect_sound(9);
+    ret();
+}
+
+sub Sub5()
+{
+    set_float_rand_range_1($F1, 3.0f);
+    math_add_float($F1, %F1, 0.5f);
+    set_float_rand_range_1($F0, 6.2831855f);
+    math_sub_float($F0, %F0, 3.1415927f);
+!E    bullet_circle(0, $I0, 4, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!N    bullet_circle(0, $I0, 8, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!H    bullet_circle(0, $I0, 12, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!L    bullet_circle(0, $I0, 24, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!*    set_float_rand_range_1($F1, 3.0f);
+    math_add_float($F1, %F1, 0.5f);
+    set_float_rand_range_1($F0, 6.2831855f);
+    math_sub_float($F0, %F0, 3.1415927f);
+!E    bullet_circle(2, $I0, 4, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!N    bullet_circle(2, $I0, 8, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!H    bullet_circle(2, $I0, 12, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!L    bullet_circle(2, $I0, 24, 1, %F1, 0.7f, %F0, 0.0f, 5);
+!*    effect_sound(9);
+    ret();
+}
+
+sub Sub6()
+{
+    move_speed(0.0f);
+    spellcard_end();
+    effect_sound(18);
+    shoot_interval(0);
+    drop_items(5);
+    move_bounds_clear();
+    enemy_flag_collision(0);
+    enemy_flag_can_take_damage(0);
+    anm_set_main(128);
++40: //40
+    move_position_time_accelerate(120, 192.0f, -64.0f, 0.0f);
++120: //160
+    enemy_delete(0);
+}
+
+sub Sub7()
+{
+    move_speed(0.0f);
+    spellcard_end();
+    shoot_interval(0);
+    move_bounds_clear();
+    anm_set_main(128);
+    move_position_time_accelerate(60, 192.0f, -64.0f, 0.0f);
++60: //60
+    enemy_delete(0);
+}
+
+sub Sub8()
+{
+    enemy_flag_can_take_damage(0);
+    enemy_flag_death(1);
+    enemy_flag_collision(0);
+    death_callback("Sub6");
+    boss_set(0);
+    anm_set_poses(128, 131, 132, 129, 130);
+    anm_death_effects(258);
+!HL    life_callback_threshold(500);
+    life_callback("Sub9");
+!*    timer_callback_threshold(1440);
+    timer_callback("Sub7");
+    boss_set_life_count(0);
+    shoot_offset(0.0f, -12.0f, 0.0f);
+    move_position(192.0f, -32.0f, 0.0f);
+    enemy_set_hitbox(48.0f, 56.0f, 32.0f);
+    move_position_time_decelerate(60, 320.0f, 128.0f, 0.0f);
++60: //60
+    spellcard_effect(0, -0.3f, -0.7f, -0.3f, 48.0f);
+    enemy_flag_can_take_damage(1);
+    enemy_flag_collision(1);
++20: //80
+    spellcard_effect(1, -1.0f, -0.7f, -0.3f, 48.0f);
++20: //100
+    spellcard_effect(2, -0.3f, -0.7f, -0.3f, 48.0f);
++30: //130
+    effect_sound(6);
++30: //160
+!E    bullet_circle_aimed(1, 6, 16, 1, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!N    bullet_circle_aimed(1, 6, 16, 3, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!H    bullet_circle_aimed(1, 6, 16, 5, 2.0f, 1.2f, 0.0f, 0.0f, 9);
+!L    bullet_circle_aimed(1, 6, 16, 7, 2.0f, 1.0f, 0.0f, 0.0f, 9);
+!*    anm_set_main(133);
++32: //192
+    effect_sound(8);
+    set_int_value($I0, 3);
+    set_float_value($F0, 2.0f);
+    set_int_value($I4, 2);
+Sub8_712:
++10: //202
+    move_position_time_decelerate(60, 192.0f, 64.0f, 0.0f);
+    set_float_value($F1, 1.7f);
++60: //262
+    call("Sub4", 6, 0.0f);
+    anm_set_main(133);
++8: //270
+    call("Sub4", 2, 0.06544985f);
++8: //278
+    call("Sub4", 10, 0.1308997f);
++8: //286
+    call("Sub4", 13, 0.19634955f);
++8: //294
+    call("Sub4", 14, 0.2617994f);
++30: //324
+    anm_set_main(134);
++60: //384
+    move_position_time_decelerate(60, 64.0f, 96.0f, 0.0f);
++10: //394
+    effect_sound(6);
++20: //414
+!E    bullet_circle_aimed(1, 10, 16, 1, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!N    bullet_circle_aimed(1, 10, 16, 3, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!H    bullet_circle_aimed(1, 10, 16, 5, 2.0f, 1.2f, 0.0f, 0.0f, 9);
+!L    bullet_circle_aimed(1, 10, 16, 7, 2.0f, 1.0f, 0.0f, 0.0f, 9);
++30: //444
+!E    bullet_circle_aimed(1, 13, 16, 1, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!N    bullet_circle_aimed(1, 13, 16, 3, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!H    bullet_circle_aimed(1, 13, 16, 5, 2.0f, 1.2f, 0.0f, 0.0f, 9);
+!L    bullet_circle_aimed(1, 13, 16, 7, 2.0f, 1.0f, 0.0f, 0.0f, 9);
+!*    effect_sound(8);
++32: //476
+    effect_sound(8);
++40: //516
+    nop();
++10: //526
+    move_position_time_decelerate(60, 192.0f, 80.0f, 0.0f);
+    set_int_value($F1, 1);
++60: //586
+    call("Sub5", 6, 0.0f);
+    anm_set_main(133);
++8: //594
+    call("Sub5", 2, -0.06544985f);
++8: //602
+    call("Sub5", 10, -0.1308997f);
++8: //610
+    call("Sub5", 13, -0.19634955f);
++8: //618
+    call("Sub5", 14, -0.2617994f);
+    math_add_float($F0, %F0, 0.5f);
++30: //648
+    anm_set_main(134);
++60: //708
+    move_position_time_decelerate(60, 320.0f, 96.0f, 0.0f);
++10: //718
+    effect_sound(6);
++20: //738
+!E    bullet_circle_aimed(1, 6, 16, 1, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!N    bullet_circle_aimed(1, 6, 16, 3, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!H    bullet_circle_aimed(1, 6, 16, 5, 2.0f, 1.2f, 0.0f, 0.0f, 9);
+!L    bullet_circle_aimed(1, 6, 16, 7, 2.0f, 1.0f, 0.0f, 0.0f, 9);
++30: //768
+!E    bullet_circle_aimed(1, 2, 16, 1, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!N    bullet_circle_aimed(1, 2, 16, 3, 2.0f, 1.5f, 0.0f, 0.0f, 9);
+!H    bullet_circle_aimed(1, 2, 16, 5, 2.0f, 1.2f, 0.0f, 0.0f, 9);
+!L    bullet_circle_aimed(1, 2, 16, 7, 2.0f, 1.0f, 0.0f, 0.0f, 9);
+!*    anm_set_main(133);
+    effect_sound(8);
++32: //800
+    effect_sound(8);
++40: //840
+    nop();
+    anm_set_main(134);
+    math_add_float($F0, %F0, 0.5f);
+    loop(192, Sub8_712, $I4);
++10: //850
+    move_position_time_decelerate(60, 192.0f, -64.0f, 0.0f);
++60: //910
+    enemy_delete(0);
+}
+
+sub Sub9()
+{
+    yeet(2, 0, "TestSpellcard", "zero318");
+    enemy_flag_can_take_damage(0);
+    move_bounds_set(32.0f, 48.0f, 352.0f, 144.0f);
+    timer_set(0);
+    timer_callback_threshold(1320);
+    timer_callback("Sub6");
+    move_position_time_decelerate(120, 192.0f, 96.0f, 0.0f);
++120: //120
+    enemy_flag_can_take_damage(1);
+    shoot_disable();
+!H    bullet_circle_aimed(0, 6, 42, 1, 2.5f, 0.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(0, 6, 48, 1, 2.8f, 0.0f, 0.0f, 0.0f, 4);
+!*    shoot_enable();
+!H    shoot_interval_delayed(40);
+!L    shoot_interval_delayed(25);
+Sub9_330:
+!*    laser_id(0);
+    laser_create(0, 6, 0.3926991f, 0, 0.0f, 500.0f, 500.0f, 32.0f, 30, 120, 16, 30, 14, 0);
+    laser_id(1);
+    laser_create(0, 6, 2.7488935f, 0, 0.0f, 500.0f, 500.0f, 32.0f, 30, 120, 16, 30, 14, 0);
++30: //150
+    effect_sound(16);
+    set_int_value($I4, 120);
+Sub9_526:
++1: //151
+    laser_rotate(0, 0.008267349f);
+    laser_rotate(1, -0.008267349f);
+    loop(150, Sub9_526, $I4);
++60: //211
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(2.0f);
+    move_time_decelerate(120);
++120: //331
+    jump(120, Sub9_330);
+}
+
+sub Sub10()
+{
+    enemy_flag_can_take_damage(0);
+    enemy_flag_collision(0);
+    enemy_flag_death(2);
+    death_callback("Sub16");
+    boss_set(0);
+    anm_set_poses(128, 131, 132, 129, 130);
+    anm_death_effects(258);
+    shoot_offset(0.0f, -12.0f, 0.0f);
+    enemy_set_hitbox(48.0f, 56.0f, 32.0f);
+    boss_set_life_count(1);
+    move_position(320.0f, -32.0f, 0.0f);
+    move_position_time_decelerate(60, 192.0f, 96.0f, 0.0f);
+    enemy_interrupt_set("Sub11", 0);
++60: //60
+    anm_set_main(133);
+    move_bounds_set(32.0f, 48.0f, 352.0f, 144.0f);
+Sub10_300:
++1000: //1060
+    jump(60, Sub10_300);
++60: //1120
+    enemy_delete(0);
+}
+
+sub Sub11()
+{
+    enemy_flag_can_take_damage(1);
+    enemy_flag_death(2);
+    enemy_flag_collision(1);
+    death_callback("Sub16");
+    anm_death_effects(258);
+    anm_set_main(134);
+    life_set(7000);
+    timer_set(0);
+!NHL    life_callback_threshold(900);
+    life_callback("Sub22");
+!*    timer_callback_threshold(2100);
+    timer_callback("Sub22");
+    move_bounds_set(32.0f, 48.0f, 352.0f, 144.0f);
+    spellcard_effect(0, -0.3f, -0.7f, -0.3f, 48.0f);
++20: //20
+    spellcard_effect(1, -1.0f, -0.7f, -0.3f, 48.0f);
++20: //40
+    spellcard_effect(2, -0.3f, -0.7f, -0.3f, 48.0f);
++60: //100
+    call("Sub12", 0, 0.0f);
++3000: //3100
+    enemy_delete(0);
+}
+
+sub Sub12()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++12: //12
+!E    bullet_fan_aimed(3, 2, 1, 10, 3.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 2, 1, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 2, 1, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //20
+!E    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 1, 1, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 1, 2, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //28
+!E    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 2, 1, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 2, 2, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //36
+!E    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 1, 1, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 1, 3, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //44
+!E    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 2, 2, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 2, 3, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //52
+!E    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 1, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 1, 3, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 1, 4, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //60
+!E    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(3, 2, 1, 10, 4.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(3, 2, 4, 10, 5.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(3, 2, 5, 10, 6.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++120: //180
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub13", 0, 0.0f, $I0, 0);
+    call_equ("Sub14", 0, 0.0f, $I0, 1);
+    call("Sub15", 0, 0.0f);
+}
+
+sub Sub13()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++60: //60
+!E    bullet_circle_aimed(1, 6, 6, 1, 4.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(1, 6, 12, 1, 4.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(1, 6, 24, 1, 4.0f, 1.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(1, 6, 24, 2, 4.0f, 1.0f, 0.0f, 0.1308997f, 4);
+!*    effect_sound(8);
++8: //68
+!E    bullet_circle_aimed(0, 5, 8, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!N    bullet_circle_aimed(0, 5, 16, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!H    bullet_circle_aimed(0, 5, 32, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!L    bullet_circle_aimed(0, 5, 24, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!*    effect_sound(8);
++8: //76
+!E    bullet_circle_aimed(1, 6, 6, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(1, 6, 12, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(1, 6, 24, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(1, 6, 24, 2, 2.0f, 1.0f, 0.0f, -0.1308997f, 4);
+!*    effect_sound(8);
++8: //84
+!E    bullet_circle_aimed(0, 5, 8, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!N    bullet_circle_aimed(0, 5, 16, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!H    bullet_circle_aimed(0, 5, 32, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!L    bullet_circle_aimed(0, 5, 24, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!*    effect_sound(8);
++8: //92
+!E    bullet_circle_aimed(1, 6, 6, 1, 4.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(1, 6, 12, 1, 4.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(1, 6, 24, 2, 4.0f, 1.0f, 0.0f, 0.1308997f, 4);
+!L    bullet_circle_aimed(1, 6, 32, 2, 4.0f, 1.0f, 0.0f, 0.1308997f, 4);
+!*    effect_sound(8);
++8: //100
+!E    bullet_circle_aimed(0, 5, 8, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!N    bullet_circle_aimed(0, 5, 16, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!H    bullet_circle_aimed(0, 5, 32, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!L    bullet_circle_aimed(0, 5, 24, 1, 3.0f, 1.0f, 0.0f, 0.0f, 2);
+!*    effect_sound(8);
++8: //108
+!E    bullet_circle_aimed(1, 6, 6, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(1, 6, 12, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(1, 6, 24, 2, 2.0f, 1.0f, 0.0f, -0.1308997f, 4);
+!L    bullet_circle_aimed(1, 6, 32, 2, 2.0f, 1.0f, 0.0f, -0.1308997f, 4);
+!*    effect_sound(8);
++120: //228
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub12", 0, 0.0f, $I0, 0);
+    call_equ("Sub14", 0, 0.0f, $I0, 1);
+    call("Sub15", 0, 0.0f);
+}
+
+sub Sub14()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++80: //80
+!E    bullet_fan_aimed(2, 2, 2, 16, 5.0f, 1.0f, 0.0f, 0.06544985f, 8);
+!N    bullet_fan_aimed(2, 2, 3, 16, 5.0f, 1.0f, 0.0f, 0.06544985f, 8);
+!H    bullet_fan_aimed(2, 2, 5, 16, 5.0f, 1.0f, 0.0f, 0.06544985f, 8);
+!L    bullet_fan_aimed(2, 2, 5, 16, 5.0f, 1.0f, 0.0f, 0.06544985f, 8);
+!*    effect_sound(7);
++30: //110
+!N    bullet_circle_aimed(1, 6, 16, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(1, 6, 24, 2, 2.5f, 1.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(1, 6, 48, 3, 4.0f, 1.0f, 0.0f, 0.06544985f, 4);
++90: //200
+!*    set_int_rand_range_1($I0, 3);
+    call_equ("Sub13", 0, 0.0f, $I0, 0);
+    call_equ("Sub12", 0, 0.0f, $I0, 1);
+    call("Sub15", 0, 0.0f);
+}
+
+sub Sub15()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_int_rand_range_1($I0, 2);
+    cmp_int($I0, 0);
+    jump_equ(2, Sub15_456);
+    set_float_value($F1, -0.2617994f);
+Sub15_172:
++2: //2
+!E    bullet_fan_aimed(1, 10, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!N    bullet_fan_aimed(1, 10, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 10, 2, 2, %F0, 1.0f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 10, 3, 3, %F0, 1.0f, %F1, 0.06544985f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.25f);
+    math_add_float($F1, %F1, 0.06544985f);
+    loop(0, Sub15_172, $I4);
+    jump(4, Sub15_740);
+Sub15_456:
+    set_float_value($F1, 0.2617994f);
+Sub15_476:
++2: //4
+!E    bullet_fan_aimed(1, 10, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!N    bullet_fan_aimed(1, 10, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 10, 2, 2, %F0, 1.0f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 10, 3, 3, %F0, 1.0f, %F1, 0.06544985f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.25f);
+    math_add_float($F1, %F1, -0.06544985f);
+    loop(2, Sub15_476, $I4);
+Sub15_740:
++120: //124
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub13", 0, 0.0f, $I0, 0);
+    call_equ("Sub14", 0, 0.0f, $I0, 1);
+    call("Sub12", 0, 0.0f);
+}
+
+sub Sub16()
+{
+    enemy_flag_can_take_damage(0);
+    spellcard_end();
+    enemy_flag_death(3);
+    enemy_flag_collision(1);
+    death_callback("Sub17");
+    anm_death_effects(258);
+    anm_set_main(134);
+    life_set(7500);
+    timer_set(0);
+    life_callback_threshold(800);
+    life_callback("Sub23");
+    timer_callback_threshold(1800);
+    timer_callback("Sub23");
+    enemy_flag_interactable(1);
+    drop_items(5);
+    boss_set_life_count(0);
++200: //200
+    enemy_flag_can_take_damage(1);
+    call("Sub18", 0, 0.0f);
++3000: //3200
+    enemy_delete(0);
+}
+
+sub Sub17()
+{
+    move_speed(0.0f);
+    enemy_flag_collision(0);
+    enemy_flag_can_take_damage(0);
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(0.6f);
+    move_time_decelerate(60);
+    timer_callback_threshold(-1);
+    life_callback_threshold(-1);
+    set_int_value($I4, 6);
+Sub17_152:
++2: //2
+    effect_particle(3, 2, -1, -1);
++2: //4
+    effect_particle(3, 2, -32640, -1);
++2: //6
+    effect_particle(3, 2, -128, -128);
++2: //8
+    effect_particle(3, 2, -32513, -128);
++2: //10
+    effect_particle(3, 2, -128, -1);
+    effect_sound(7);
+    loop(0, Sub17_152, $I4);
+    effect_sound(18);
+    spellcard_end();
+    life_set(0);
++3000: //3010
+    enemy_delete(0);
+}
+
+sub Sub18()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++12: //12
+!E    bullet_fan_aimed(1, 10, 1, 8, 3.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!N    bullet_fan_aimed(1, 10, 2, 8, 3.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!H    bullet_fan_aimed(1, 10, 5, 8, 3.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!L    bullet_fan_aimed(1, 10, 7, 8, 3.0f, 1.0f, 0.0f, 0.09817477f, 4);
+!*    effect_sound(8);
++8: //20
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++8: //28
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++8: //36
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++8: //44
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++8: //52
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++8: //60
+    laser_create_aimed(0, 6, 0.0f, 0.0f, 0, 500.0f, 500.0f, 16.0f, 120, 60, 16, 120, 14, 0);
+    effect_sound(8);
++64: //124
+    effect_sound(16);
++8: //132
+    effect_sound(16);
++8: //140
+    effect_sound(16);
++8: //148
+    effect_sound(16);
++8: //156
+    effect_sound(16);
++8: //164
+    effect_sound(16);
++60: //224
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub19", 0, 0.0f, $I0, 0);
+    call_equ("Sub20", 0, 0.0f, $I0, 1);
+    call("Sub21", 0, 0.0f);
+}
+
+sub Sub19()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++60: //60
+    anm_set_main(136);
+!E    bullet_circle_aimed(2, 10, 24, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(2, 10, 36, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(2, 10, 48, 2, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(2, 10, 48, 2, 3.0f, 1.5f, 0.0f, 0.0f, 4);
+!*    effect_sound(8);
++30: //90
+!E    bullet_circle_aimed(0, 10, 28, 1, 2.6f, 1.0f, 0.0f, 0.0f, 2);
+!N    bullet_circle_aimed(0, 10, 28, 1, 2.6f, 1.0f, 0.0f, 0.0f, 2);
+!H    bullet_circle_aimed(0, 10, 28, 1, 2.6f, 1.0f, 0.0f, 0.0f, 2);
+!L    bullet_circle_aimed(0, 10, 32, 2, 3.6f, 1.5f, 0.0f, 0.0f, 2);
+!*    effect_sound(8);
++30: //120
+!E    bullet_circle_aimed(2, 10, 24, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!N    bullet_circle_aimed(2, 10, 36, 1, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!H    bullet_circle_aimed(2, 10, 48, 2, 2.0f, 1.0f, 0.0f, 0.0f, 4);
+!L    bullet_circle_aimed(2, 10, 48, 2, 3.0f, 1.5f, 0.0f, 0.0f, 4);
+!*    effect_sound(8);
++120: //240
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub18", 0, 0.0f, $I0, 0);
+    call_equ("Sub20", 0, 0.0f, $I0, 1);
+    call("Sub21", 0, 0.0f);
+}
+
+sub Sub20()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
++60: //60
+!E    bullet_fan_aimed(2, 13, 4, 2, 3.0f, 1.0f, 0.0f, 0.5235988f, 8);
+!N    bullet_fan_aimed(2, 13, 8, 2, 3.0f, 1.0f, 0.0f, 0.2617994f, 8);
+!H    bullet_fan_aimed(2, 13, 12, 2, 3.0f, 1.0f, 0.0f, 0.19634955f, 8);
+!L    bullet_fan_aimed(2, 13, 16, 2, 3.0f, 1.0f, 0.0f, 0.1308997f, 8);
+!*    anm_set_main(136);
+    effect_sound(7);
++20: //80
+!E    bullet_fan_aimed(2, 13, 5, 2, 3.0f, 1.0f, 0.0f, 0.5235988f, 8);
+!N    bullet_fan_aimed(2, 13, 9, 2, 3.0f, 1.0f, 0.0f, 0.2617994f, 8);
+!H    bullet_fan_aimed(2, 13, 15, 2, 3.0f, 1.0f, 0.0f, 0.19634955f, 8);
+!L    bullet_fan_aimed(2, 13, 23, 2, 3.0f, 1.0f, 0.0f, 0.1308997f, 8);
+!*    effect_sound(7);
++20: //100
+!E    bullet_fan_aimed(2, 13, 7, 2, 3.0f, 1.0f, 0.0f, 0.5235988f, 8);
+!N    bullet_fan_aimed(2, 13, 10, 2, 3.0f, 1.0f, 0.0f, 0.2617994f, 8);
+!H    bullet_fan_aimed(2, 13, 14, 2, 3.0f, 1.0f, 0.0f, 0.19634955f, 8);
+!L    bullet_fan_aimed(2, 13, 20, 2, 3.0f, 1.0f, 0.0f, 0.1308997f, 8);
+!*    effect_sound(7);
++120: //220
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub19", 0, 0.0f, $I0, 0);
+    call_equ("Sub18", 0, 0.0f, $I0, 1);
+    call("Sub21", 0, 0.0f);
+}
+
+sub Sub21()
+{
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(3.0f);
+    move_time_decelerate(60);
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_int_rand_range_1($I0, 2);
+    cmp_int($I0, 0);
+    jump_equ(2, Sub21_456);
+    set_float_value($F1, -0.7139983f);
+Sub21_172:
++2: //2
+!E    bullet_fan_aimed(1, 10, 2, 1, %F0, 0.0f, %F1, 0.14279966f, 4);
+!N    bullet_fan_aimed(1, 10, 2, 1, %F0, 0.0f, %F1, 0.14279966f, 4);
+!H    bullet_fan_aimed(1, 10, 3, 2, %F0, 1.0f, %F1, 0.14279966f, 4);
+!L    bullet_fan_aimed(1, 10, 4, 3, %F0, 1.0f, %F1, 0.14279966f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.25f);
+    math_add_float($F1, %F1, 0.14279966f);
+    loop(0, Sub21_172, $I4);
+    jump(4, Sub21_740);
+Sub21_456:
+    set_float_value($F1, 0.7139983f);
+Sub21_476:
++2: //4
+!E    bullet_fan_aimed(1, 10, 2, 1, %F0, 0.0f, %F1, 0.14279966f, 4);
+!N    bullet_fan_aimed(1, 10, 2, 1, %F0, 0.0f, %F1, 0.14279966f, 4);
+!H    bullet_fan_aimed(1, 10, 3, 2, %F0, 1.0f, %F1, 0.14279966f, 4);
+!L    bullet_fan_aimed(1, 10, 4, 3, %F0, 1.0f, %F1, 0.14279966f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.25f);
+    math_add_float($F1, %F1, -0.14279966f);
+    loop(2, Sub21_476, $I4);
+Sub21_740:
++120: //124
+    set_int_rand_range_1($I0, 3);
+    call_equ("Sub19", 0, 0.0f, $I0, 0);
+    call_equ("Sub20", 0, 0.0f, $I0, 1);
+    call("Sub18", 0, 0.0f);
+}
+
+sub Sub22()
+{
+    spellcard_start(2, 1, "夜符「ナイトバード」");
+    enemy_flag_can_take_damage(0);
+    timer_callback_threshold(1500);
+    timer_set(0);
+    move_position_time_decelerate(120, 192.0f, 96.0f, 0.0f);
++120: //120
+    enemy_flag_can_take_damage(1);
+Sub22_142:
+    set_int_value($I5, 2);
+Sub22_162:
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, -0.57119864f);
+Sub22_222:
++2: //122
+!EN    bullet_fan_aimed(1, 5, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 5, 1, 2, %F0, 0.8f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 5, 1, 3, %F0, 0.8f, %F1, 0.06544985f, 4);
+!*    math_add_float($F0, %F0, 0.2f);
+!E    math_add_float($F1, %F1, 0.19634955f);
+!N    math_add_float($F1, %F1, 0.14279966f);
+!H    math_add_float($F1, %F1, 0.14279966f);
+!L    math_add_float($F1, %F1, 0.14279966f);
+!*    loop(120, Sub22_222, $I4);
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, 0.57119864f);
+Sub22_558:
++2: //124
+!EN    bullet_fan_aimed(1, 7, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 7, 1, 2, %F0, 0.8f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 7, 1, 3, %F0, 0.8f, %F1, 0.06544985f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.2f);
+!E    math_add_float($F1, %F1, -0.19634955f);
+!N    math_add_float($F1, %F1, -0.14279966f);
+!H    math_add_float($F1, %F1, -0.14279966f);
+!L    math_add_float($F1, %F1, -0.14279966f);
+!*    loop(122, Sub22_558, $I4);
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, -0.7853982f);
+Sub22_910:
++2: //126
+!EN    bullet_fan_aimed(1, 6, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 6, 1, 2, %F0, 0.8f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 6, 1, 3, %F0, 0.8f, %F1, 0.06544985f, 4);
+!*    math_add_float($F0, %F0, 0.2f);
+!E    math_add_float($F1, %F1, 0.2617994f);
+!N    math_add_float($F1, %F1, 0.19634955f);
+!H    math_add_float($F1, %F1, 0.19634955f);
+!L    math_add_float($F1, %F1, 0.15707964f);
+!*    loop(124, Sub22_910, $I4);
+    set_int_value($I4, 16);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, 0.7853982f);
+Sub22_1246:
++2: //128
+!EN    bullet_fan_aimed(1, 8, 1, 1, %F0, 0.0f, %F1, 0.06544985f, 4);
+!H    bullet_fan_aimed(1, 8, 1, 2, %F0, 0.8f, %F1, 0.06544985f, 4);
+!L    bullet_fan_aimed(1, 8, 1, 3, %F0, 0.8f, %F1, 0.06544985f, 4);
+!*    effect_sound(8);
+    math_add_float($F0, %F0, 0.2f);
+!E    math_add_float($F1, %F1, -0.2617994f);
+!N    math_add_float($F1, %F1, -0.19634955f);
+!H    math_add_float($F1, %F1, -0.19634955f);
+!L    math_add_float($F1, %F1, -0.15707964f);
+!*    loop(126, Sub22_1246, $I4);
+    loop(120, Sub22_162, $I5);
++100: //228
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(2.0f);
+    move_time_decelerate(120);
+    jump(120, Sub22_142);
+}
+
+sub Sub23()
+{
+    spellcard_start(2, 2, "闇符「ディマーケイション」");
+    enemy_flag_can_take_damage(0);
+    timer_callback_threshold(1500);
+    timer_set(0);
+    move_position_time_decelerate(120, 192.0f, 96.0f, 0.0f);
+    bullet_rank_influence(-1.0f, 1.0f, -3, 6, 0, 0);
++120: //120
+    enemy_flag_can_take_damage(1);
+Sub23_178:
+    anm_set_main(136);
+    bullet_effects(40, 1, -1, -1, 1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 6, 12, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 6, 16, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 6, 28, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 6, 28, 2, 3.0f, 1.0f, 0.0f, 0.0f, 68);
+!*    bullet_effects(40, 1, -1, -1, -1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 6, 12, 1, 3.0f, 0.0f, 0.2617994f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 6, 16, 1, 3.0f, 0.0f, 0.19634955f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 6, 28, 1, 3.0f, 0.0f, 0.15707964f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 6, 28, 2, 3.0f, 1.0f, 0.11219974f, 0.0f, 68);
+!*    effect_sound(9);
++60: //180
+    bullet_effects(40, 1, -1, -1, -1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 10, 12, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 10, 16, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 10, 20, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 10, 28, 2, 3.0f, 1.0f, 0.0f, 0.0f, 68);
+!*    bullet_effects(40, 1, -1, -1, 1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 10, 12, 1, 3.0f, 0.0f, 0.2617994f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 10, 16, 1, 3.0f, 0.0f, 0.19634955f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 10, 20, 1, 3.0f, 0.0f, 0.15707964f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 10, 28, 2, 3.0f, 1.0f, 0.11219974f, 0.0f, 68);
+!*    effect_sound(9);
++60: //240
+    bullet_effects(40, 1, -1, -1, 1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 2, 12, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 2, 16, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 2, 28, 1, 3.0f, 0.0f, 0.0f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 2, 28, 2, 3.0f, 1.0f, 0.0f, 0.0f, 68);
+!*    bullet_effects(40, 1, -1, -1, -1.5707964f, 1.5f, -1.0f, -1.0f);
+!E    bullet_circle_aimed(2, 2, 12, 1, 3.0f, 0.0f, 0.2617994f, 0.0f, 68);
+!N    bullet_circle_aimed(2, 2, 16, 1, 3.0f, 0.0f, 0.19634955f, 0.0f, 68);
+!H    bullet_circle_aimed(2, 2, 28, 1, 3.0f, 0.0f, 0.15707964f, 0.0f, 68);
+!L    bullet_circle_aimed(2, 2, 28, 2, 3.0f, 1.0f, 0.11219974f, 0.0f, 68);
+!*    effect_sound(9);
+    bullet_effects(60, 1, -1, -1, 0.0f, -1.0f, -1.0f, -1.0f);
++60: //300
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(2.0f);
+    move_time_decelerate(120);
+!EN    bullet_effects(40, 1, -1, -1, 0.0f, 3.0f, -1.0f, -1.0f);
+!HL    bullet_effects(40, 1, -1, -1, 0.0f, 4.0f, -1.0f, -1.0f);
+!*    set_int_value($I5, 2);
+Sub23_1766:
+    set_int_value($I4, 12);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, -0.57119864f);
+Sub23_1826:
++2: //302
+    bullet_fan_aimed(1, 6, 1, 1, %F0, 0.0f, %F1, 0.09817477f, 132);
+    math_add_float($F0, %F0, 0.2f);
+    math_add_float($F1, %F1, 0.14279966f);
+    loop(300, Sub23_1826, $I4);
+    set_int_value($I4, 12);
+    set_float_value($F0, 1.0f);
+    set_float_value($F1, 0.57119864f);
+Sub23_2002:
++2: //304
+    bullet_fan_aimed(1, 6, 1, 1, %F0, 0.0f, %F1, 0.09817477f, 132);
+    effect_sound(8);
+    math_add_float($F0, %F0, 0.2f);
+    math_add_float($F1, %F1, -0.14279966f);
+    loop(302, Sub23_2002, $I4);
+    loop(300, Sub23_1766, $I5);
+    move_rand_in_bounds(-3.1415927f, 3.1415927f);
+    move_speed(2.0f);
+    move_time_decelerate(60);
++60: //364
+    jump(120, Sub23_178);
+}
+
+timeline Timeline0()
+{
++128: //128
+    enemy_create("Sub0", 60.0f, -32.0f, 0.0f, 8, -1, 300);
++16: //144
+    enemy_create("Sub0", 68.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //160
+    enemy_create("Sub0", 76.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //176
+    enemy_create("Sub0", 84.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //192
+    enemy_create("Sub0", 92.0f, -32.0f, 0.0f, 32, -1, 300);
++64: //256
+    enemy_create_mirror("Sub0", 324.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //272
+    enemy_create_mirror("Sub0", 316.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //288
+    enemy_create_mirror("Sub0", 308.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //304
+    enemy_create_mirror("Sub0", 300.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //320
+    enemy_create_mirror("Sub0", 292.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //336
+    enemy_create_mirror("Sub0", 284.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //352
+    enemy_create_mirror("Sub0", 276.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //368
+    enemy_create_mirror("Sub0", 268.0f, -32.0f, 0.0f, 32, -1, 300);
++64: //432
+    enemy_create("Sub1", 32.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 352.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //448
+    enemy_create("Sub1", 48.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 336.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //464
+    enemy_create("Sub1", 64.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 320.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //480
+    enemy_create("Sub1", 80.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 304.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //496
+    enemy_create("Sub1", 96.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 288.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //512
+    enemy_create("Sub1", 112.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 272.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //528
+    enemy_create("Sub1", 128.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 256.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //544
+    enemy_create("Sub1", 144.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 240.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //560
+    enemy_create("Sub1", 160.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 224.0f, -32.0f, 0.0f, 32, -1, 300);
++16: //576
+    enemy_create("Sub1", 176.0f, -32.0f, 0.0f, 32, -1, 300);
+    enemy_create_mirror("Sub1", 208.0f, -32.0f, 0.0f, 8, -1, 300);
++64: //640
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, 0, 700);
++60: //700
+    enemy_create_mirror("Sub3", 256.0f, -32.0f, 0.0f, 80, 0, 700);
++50: //750
+    enemy_create("Sub3", 128.0f, -32.0f, 0.0f, 80, 0, 700);
++50: //800
+    enemy_create_mirror("Sub2", 352.0f, -32.0f, 0.0f, 80, 0, 700);
++50: //850
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, 0, 700);
++40: //890
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, 0, 700);
++40: //930
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, 0, 700);
++30: //960
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, 0, 700);
++30: //990
+    enemy_create("Sub3", 32.0f, -32.0f, 0.0f, 80, 0, 700);
++30: //1020
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, 0, 700);
++20: //1040
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, 0, 700);
++20: //1060
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, 0, 700);
++20: //1080
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, 0, 700);
++10: //1090
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, 0, 700);
++10: //1100
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, 0, 700);
++10: //1110
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, 0, 700);
++110: //1220
+    enemy_create_mirror_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1230
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1240
+    enemy_create_mirror_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1250
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1260
+    enemy_create_mirror_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1270
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1280
+    enemy_create_mirror_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1290
+    enemy_create_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1300
+    enemy_create_mirror_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1310
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1320
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1330
+    enemy_create_mirror_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1340
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1350
+    enemy_create_mirror_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1360
+    enemy_create_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1370
+    enemy_create_mirror_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1380
+    enemy_create_random("Sub0", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1390
+    enemy_create_mirror_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++10: //1400
+    enemy_create_random("Sub1", -999.0f, -32.0f, 0.0f, 32, -1, 300);
++200: //1600
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 352.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1616
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 344.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1632
+    enemy_create_mirror("Sub0", 304.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 336.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1648
+    enemy_create_mirror("Sub0", 296.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 328.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1664
+    enemy_create_mirror("Sub0", 288.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1680
+    enemy_create_mirror("Sub0", 280.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1696
+    enemy_create("Sub0", 64.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 96.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1712
+    enemy_create("Sub0", 72.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 104.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1728
+    enemy_create("Sub0", 80.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 112.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1744
+    enemy_create("Sub0", 88.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 120.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1760
+    enemy_create("Sub0", 96.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 128.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1776
+    enemy_create("Sub0", 104.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 136.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1792
+    enemy_create("Sub0", 112.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 144.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //1808
+    enemy_create("Sub0", 120.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 152.0f, -32.0f, 0.0f, 3, -1, 300);
++200: //2008
+    enemy_create("Sub8", 0.0f, 0.0f, 0.0f, 6000, -2, 100000);
++400: //2408
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2438
+    enemy_create_mirror("Sub3", 256.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2468
+    enemy_create("Sub3", 128.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2498
+    enemy_create_mirror("Sub2", 352.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2528
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2558
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2588
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2618
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2648
+    enemy_create("Sub3", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2678
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2708
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2738
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2768
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2798
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2828
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2858
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2888
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2918
+    enemy_create_mirror("Sub3", 256.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2948
+    enemy_create("Sub3", 128.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //2978
+    enemy_create_mirror("Sub2", 352.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3008
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3038
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3068
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3098
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3128
+    enemy_create("Sub3", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3158
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3188
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3218
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3248
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3278
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3308
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3338
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3368
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3398
+    enemy_create_mirror("Sub3", 256.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3428
+    enemy_create("Sub3", 128.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3458
+    enemy_create_mirror("Sub2", 352.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3488
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3518
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3548
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3578
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3608
+    enemy_create("Sub3", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3638
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3668
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3698
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3728
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3758
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3788
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3818
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3848
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3878
+    enemy_create_mirror("Sub3", 256.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3908
+    enemy_create("Sub3", 128.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3938
+    enemy_create_mirror("Sub2", 352.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3968
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //3998
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4028
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4058
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4088
+    enemy_create("Sub3", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4118
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4148
+    enemy_create("Sub3", 24.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4178
+    enemy_create_mirror("Sub3", 304.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4208
+    enemy_create("Sub2", 144.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4238
+    enemy_create_mirror("Sub3", 344.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4268
+    enemy_create("Sub2", 32.0f, -32.0f, 0.0f, 80, -1, 700);
++30: //4298
+    enemy_create_mirror("Sub2", 240.0f, -32.0f, 0.0f, 80, -1, 700);
++200: //4498
+    enemy_create("Sub0", 32.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 64.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4514
+    enemy_create("Sub0", 40.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 72.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4530
+    enemy_create("Sub0", 48.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 80.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4546
+    enemy_create("Sub0", 56.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 88.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4562
+    enemy_create("Sub0", 64.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 96.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4578
+    enemy_create("Sub0", 72.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 104.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4594
+    enemy_create("Sub0", 80.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 112.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4610
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 352.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4626
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 344.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4642
+    enemy_create_mirror("Sub0", 304.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 336.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4658
+    enemy_create_mirror("Sub0", 296.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 328.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4674
+    enemy_create_mirror("Sub0", 288.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4690
+    enemy_create_mirror("Sub0", 280.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4706
+    enemy_create_mirror("Sub0", 272.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 304.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4722
+    enemy_create_mirror("Sub0", 264.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 296.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4738
+    enemy_create("Sub0", 32.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 64.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4754
+    enemy_create("Sub0", 40.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 72.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4770
+    enemy_create("Sub0", 48.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 80.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4786
+    enemy_create("Sub0", 56.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 88.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4802
+    enemy_create("Sub0", 64.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 96.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4818
+    enemy_create("Sub0", 72.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 104.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4834
+    enemy_create("Sub0", 80.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 112.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4850
+    enemy_create("Sub0", 88.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create("Sub0", 120.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4866
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 352.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4882
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 344.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4898
+    enemy_create_mirror("Sub0", 304.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 336.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4914
+    enemy_create_mirror("Sub0", 296.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 328.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4930
+    enemy_create_mirror("Sub0", 288.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 320.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4946
+    enemy_create_mirror("Sub0", 280.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 312.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4962
+    enemy_create_mirror("Sub0", 272.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 304.0f, -32.0f, 0.0f, 3, -1, 300);
++16: //4978
+    enemy_create_mirror("Sub0", 264.0f, -32.0f, 0.0f, 3, -1, 300);
+    enemy_create_mirror("Sub0", 296.0f, -32.0f, 0.0f, 3, -1, 300);
++300: //5278
+    read_msg(0);
++1: //5279
+    wait_msg(0);
+    enemy_create("Sub10", 0.0f, 0.0f, 0.0f, 1, -2, 200000);
++1: //5280
+    wait_msg(0);
++1: //5281
+    boss_interrupt(0, 0, 0);
++1: //5282
+    boss_wait(0);
+    read_msg(1);
++1: //5283
+    wait_msg(0);
+}

@@ -2,3 +2,4 @@ NoDat
 SpellcardLimit
 TH8_ExtendedTrial
 YoloSpeed
+RankConfig
