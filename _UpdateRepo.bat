@@ -1,6 +1,7 @@
 @echo off
 setlocal EnableDelayedExpansion
 for /f "tokens=*" %%g in (.\_FinalPatches.txt) do (
+	REM echo ".\testing\%%g" ".\patches\%%g"
 	xcopy ".\testing\%%g" ".\patches\%%g" /e /d /i /y /q>nul 2>&1
 )
 pushd .\patches

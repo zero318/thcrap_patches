@@ -1,0 +1,2368 @@
+{
+	"options": {
+		"atan2": {
+			"type": "u32",
+			"val": 0x45BE40
+		},
+		"cos": {
+			"type": "u32",
+			"val": 0x45BDA4
+		},
+		"sin": {
+			"type": "u32",
+			"val": 0x45BCF4
+		},
+		"fmod": {
+			"type": "u32",
+			"val": 0x45BE60
+		},
+		"const_pi_f": {
+			"type": "u32",
+			"val": 0x46A3EC
+		},
+		"const_pi/2_f": {
+			"type": "u32",
+			"val": 0x46A46C
+		},
+		"const_-pi_f": {
+			"type": "u32",
+			"val": 0x46A4D0
+		},
+		"const_-pi/2_f": {
+			"type": "u32",
+			"val": 0x46A4D4
+		},
+		"const_0.3f": {
+			"type": "u32",
+			"val": 0x46A4DC
+		},
+		"const_96.0f": {
+			"type": "u32",
+			"val": 0x46A4D8
+		},
+		"const_0.5f": {
+			"type": "u32",
+			"val": 0x46C2F0
+		}
+	},
+	"codecaves": {
+		"parse_int_as_arg":{
+			"access": "re",
+			"code": "\
+83EC 14 \
+B9 EFD8FFFF \
+29C1 \
+83F9 18 \
+0F87 BF000000 \
+FF248D <codecave:parse_int_as_arg_jump_table> \
+8B848A A4090000 \
+83C4 14 \
+C3 \
+B9 E1D8FFFF \
+29C1 \
+8B848A 6C0C0000 \
+83C4 14 \
+C3 \
+B9 DED8FFFF \
+29C1 \
+8B048D 68AA6C00 \
+83C4 14 \
+C3 \
+A1 B0BC6900 \
+83C4 14 \
+C3 \
+A1 10D76900 \
+83C4 14 \
+C3 \
+F30F1005 68AA6C00 \
+F30F5C82 6C0C0000 \
+0F57D2 \
+0F2EC2 \
+B8 DB0FC93F \
+73 5A \
+F30F100D 6CAA6C00 \
+F30F5C8A 700C0000 \
+0F2ECA \
+73 45 \
+F30F5AC0 \
+F30F5AC9 \
+F20F114424 08 \
+F20F110C24 \
+E8 [<option:atan2>] \
+D95C24 10 \
+660F6E4424 10 \
+660F7EC0 \
+83C4 14 \
+C3 \
+8B82 F80C0000 \
+83C4 14 \
+C3 \
+0FBE05 BDD46900 \
+0FBE0D BED46900 \
+8D0441 \
+83C4 14 \
+C3 \
+0F1005 68AA6C00 \
+0F5C82 6C0C0000 \
+0F5405 <codecave:float_constants> \
+0F59C0 \
+F30F16C8 \
+0F58C1 \
+0F12C8 \
+F30F58C1 \
+F30F51C0 \
+660F7EC0 \
+83C4 14 \
+C3 \
+8B82 E40C0000 \
+83C4 14 \
+C3 \
+"
+		},
+		"parse_int_as_arg_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x1A) \
+(<codecave:parse_int_as_arg> + 0x49) \
+(<codecave:parse_int_as_arg> + 0x52) \
+(<codecave:parse_int_as_arg> + 0x25) \
+(<codecave:parse_int_as_arg> + 0x25) \
+(<codecave:parse_int_as_arg> + 0x25) \
+(<codecave:parse_int_as_arg> + 0x37) \
+(<codecave:parse_int_as_arg> + 0x37) \
+(<codecave:parse_int_as_arg> + 0x37) \
+(<codecave:parse_int_as_arg> + 0x5B) \
+(<codecave:parse_int_as_arg> + 0xB7) \
+(<codecave:parse_int_as_arg> + 0xD6) \
+(<codecave:parse_int_as_arg> + 0x108) \
+(<codecave:parse_int_as_arg> + 0xC1) \
+"
+		},
+		"run_ecl": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+81EC 8C000000 \
+894C24 30 \
+8B9424 A0000000 \
+8D82 90090000 \
+894424 2C \
+8BBA 90090000 \
+83BA 680C0000 00 \
+89FD \
+0F89 67180000 \
+8B82 9C090000 \
+3B07 \
+0F85 1B190000 \
+8DB2 94090000 \
+8D82 E40C0000 \
+894424 10 \
+8D82 F80C0000 \
+894424 08 \
+EB 2A \
+83BA D4090000 00 \
+0F84 DE180000 \
+<nop:5> \
+8B45 0C \
+8982 9C090000 \
+8B4D 10 \
+8D3C29 \
+3B0429 \
+0F85 D5180000 \
+89FD \
+0FB647 09 \
+8B0D B0BC6900 \
+0FA3C8 \
+0F83 AC180000 \
+0FB75D 04 \
+0FBFC3 \
+8D48 FF \
+81F9 86000000 \
+0F87 96180000 \
+FF248D <codecave:run_ecl_jump_table> \
+8B4D 14 \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+73 60 \
+89D7 \
+8D8482 A4090000 \
+E9 85000000 \
+83BA D4090000 00 \
+78 90 \
+E9 64180000 \
+83BA D4090000 00 \
+7E 82 \
+E9 56180000 \
+83BA D4090000 00 \
+0F84 70FFFFFF \
+E9 44180000 \
+83BA D4090000 00 \
+0F8F 5EFFFFFF \
+E9 32180000 \
+83BA D4090000 00 \
+0F89 4CFFFFFF \
+E9 20180000 \
+89D7 \
+8D50 F2 \
+83FA 03 \
+73 10 \
+B8 E1D8FFFF \
+29C8 \
+8D8487 6C0C0000 \
+EB 19 \
+83F8 15 \
+74 0B \
+83F8 17 \
+75 0C \
+8B4424 10 \
+EB 09 \
+8B4424 08 \
+EB 03 \
+8D45 14 \
+8B08 \
+8D51 FF \
+8910 \
+83F9 01 \
+89FA \
+0F8F 02FFFFFF \
+E9 D6170000 \
+0FB745 0C \
+66 8982 000D0000 \
+83C3 BD \
+66 899A 480D0000 \
+8B0D 10D76900 \
+894C24 10 \
+0FB7BA DC0C0000 \
+0FB782 DE0C0000 \
+29F8 \
+0FAFC1 \
+8D58 1F \
+85C0 \
+0F49D8 \
+C1FB 05 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+01F8 \
+01D8 \
+83F8 01 \
+B9 01000000 \
+0F4EC1 \
+66 8986 440D0000 \
+0FB79E E00C0000 \
+0FB786 E20C0000 \
+29D8 \
+0FAF4424 10 \
+8D78 1F \
+85C0 \
+0F49F8 \
+C1FF 05 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+01D8 \
+01F8 \
+83F8 01 \
+B9 01000000 \
+0F4EC1 \
+66 8986 460D0000 \
+0F1086 6C0C0000 \
+0F108E A00C0000 \
+0F58C8 \
+0F118E 040D0000 \
+8B45 20 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F100D (<codecave:float_constants> + 0x30) \
+F30F59C8 \
+F30F580D (<codecave:float_constants> + 0x34) \
+660F3A0AC9 09 \
+F30F590D (<codecave:float_constants> + 0x38) \
+F30F58C8 \
+F30F118E 100D0000 \
+F30F1086 D40C0000 \
+F30F108E D80C0000 \
+F30F5CC8 \
+F30F2A5424 10 \
+F30F5915 (<codecave:float_constants> + 0x3C) \
+F30F59D1 \
+F30F58D0 \
+F30F115424 10 \
+8B45 18 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 10 \
+F30F58C8 \
+F30F5F0D (<codecave:float_constants> + 0x40) \
+0F57D2 \
+F30FC2D0 04 \
+0F28DA \
+0F55D8 \
+0F54D1 \
+0F56D3 \
+F30F1196 180D0000 \
+8B45 24 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 140D0000 \
+8B45 1C \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 10 \
+F30F590D (<codecave:float_constants> + 0x34) \
+F30F58C8 \
+F30F5F0D (<codecave:float_constants> + 0x40) \
+F30F118E 1C0D0000 \
+66 C786 4A0D0000 0000 \
+8B45 28 \
+8986 4C0D0000 \
+0FBF45 0E \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+66 8986 020D0000 \
+F686 500E0000 20 \
+0F85 06160000 \
+8D82 000D0000 \
+B9 F85F5A00 \
+50 \
+E8 [0x4145C0] \
+89F2 \
+E9 EE150000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F5C86 6C0C0000 \
+F30F1186 AC0C0000 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F5C86 700C0000 \
+F30F1186 B00C0000 \
+8B45 18 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F5C86 740C0000 \
+F30F1186 B40C0000 \
+C786 840C0000 00000000 \
+C786 880C0000 00000000 \
+C786 8C0C0000 00000000 \
+8B45 0C \
+C0E3 04 \
+8A8E 500E0000 \
+80E3 10 \
+80E1 E0 \
+08D9 \
+F30F7E86 6C0C0000 \
+660FD686 B80C0000 \
+8B96 740C0000 \
+8996 C00C0000 \
+89F2 \
+8986 D00C0000 \
+C786 C40C0000 19FCFFFF \
+C786 C80C0000 00000000 \
+8986 CC0C0000 \
+80C9 02 \
+888E 500E0000 \
+E9 16150000 \
+8D45 10 \
+8D4D 14 \
+EB 0F \
+83C3 F7 \
+8D82 900C0000 \
+8D8A 980C0000 \
+8B00 \
+F30F1001 \
+F30F114424 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+8B75 0C \
+0F57C9 \
+F30F2ACE \
+F30F105424 10 \
+F30F5915 (<codecave:float_constants> + 0x34) \
+F30F59D1 \
+F30F115424 10 \
+F30F5AC0 \
+F20F114424 08 \
+83EC 08 \
+F20F110424 \
+E8 [<option:cos>] \
+83C4 08 \
+D95C24 74 \
+F30F104424 74 \
+F30F594424 10 \
+F30F1187 AC0C0000 \
+83EC 08 \
+F20F104424 10 \
+F20F110424 \
+E8 [<option:sin>] \
+89FA \
+83C4 08 \
+D95C24 70 \
+F30F104424 10 \
+F30F594424 70 \
+F30F1187 B00C0000 \
+C787 B40C0000 00000000 \
+C0E3 04 \
+8A87 500E0000 \
+80E3 10 \
+24 E0 \
+08D8 \
+F30F7E87 6C0C0000 \
+660FD687 B80C0000 \
+8B8F 740C0000 \
+898F C00C0000 \
+89B7 D00C0000 \
+C787 C40C0000 19FCFFFF \
+C787 C80C0000 00000000 \
+89B7 CC0C0000 \
+34 12 \
+8887 500E0000 \
+E9 01140000 \
+8B8482 440C0000 \
+89D7 \
+8B55 0C \
+B9 EFD8FFFF \
+29D1 \
+83F9 0C \
+0F83 0D020000 \
+89848F A4090000 \
+89FA \
+E9 D7130000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+E9 D1010000 \
+8DB2 640D0000 \
+31C0 \
+66 83FB 56 \
+0F94C0 \
+66 8982 AC0D0000 \
+0F1082 6C0C0000 \
+0F108A A00C0000 \
+0F58C8 \
+0F118A 680D0000 \
+8B45 0C \
+8982 640D0000 \
+8B45 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+8987 740D0000 \
+8B45 14 \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+8987 7C0D0000 \
+8B45 18 \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+8987 840D0000 \
+8B45 1C \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+8987 880D0000 \
+8B45 20 \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+8987 8C0D0000 \
+0F1045 24 \
+0F1187 900D0000 \
+F30F7E45 34 \
+660FD687 A00D0000 \
+8B45 3C \
+8987 B00D0000 \
+B9 F85F5A00 \
+56 \
+E8 [0x414670] \
+89FA \
+8B8F 380E0000 \
+89848F B80D0000 \
+E9 01130000 \
+8A45 0C \
+24 01 \
+8A8A 510E0000 \
+80E1 FE \
+E9 740C0000 \
+B0 01 \
+E9 0D170000 \
+31F6 \
+EB 0E \
+8B45 14 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+89C6 \
+8B45 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+31D2 \
+85C0 \
+74 10 \
+89C3 \
+B9 F8D86900 \
+E8 [0x41E7F0] \
+31D2 \
+F7F3 \
+01F2 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+0F83 1A190000 \
+899487 A4090000 \
+89FA \
+E9 92120000 \
+660FEFC0 \
+660F7E4424 04 \
+89D6 \
+EB 14 \
+8B45 14 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+B9 F8D86900 \
+E8 [0x41E820] \
+D95C24 58 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F594424 58 \
+E9 4F010000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+01D8 \
+EB 38 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+0FAFC3 \
+EB 1D \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89C1 \
+89D8 \
+99 \
+F7F9 \
+8B55 0C \
+B9 EFD8FFFF \
+29D1 \
+83F9 0C \
+73 0E \
+89848E A4090000 \
+89F2 \
+E9 DA110000 \
+89F7 \
+8D71 F2 \
+83FE 03 \
+73 15 \
+B9 E1D8FFFF \
+29D1 \
+89FA \
+89848F 6C0C0000 \
+E9 BB110000 \
+83F9 15 \
+0F84 AD180000 \
+83F9 17 \
+89FA \
+0F85 A7110000 \
+8B4C24 10 \
+8901 \
+E9 9C110000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89C1 \
+89D8 \
+99 \
+F7F9 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+0F83 74180000 \
+899486 A4090000 \
+89F2 \
+E9 5E110000 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+0F83 76180000 \
+8D8482 A4090000 \
+FF00 \
+E9 3D110000 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+0F83 7A180000 \
+8D8482 A4090000 \
+FF08 \
+E9 1C110000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F584424 04 \
+E9 76010000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 04 \
+F30F5CC8 \
+0F28C1 \
+E9 42010000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F594424 04 \
+E9 15010000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 04 \
+F30F5EC8 \
+0F28C1 \
+E9 E1000000 \
+8B45 14 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 04 \
+F30F5AC9 \
+F30F5AC0 \
+83EC 10 \
+F20F114C24 08 \
+F20F110424 \
+E8 [<option:fmod>] \
+83C4 10 \
+D95C24 5C \
+F30F104424 5C \
+E9 8C000000 \
+8B45 1C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 04 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 04 \
+F30F5CC8 \
+F30F114C24 04 \
+8B45 18 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 4C \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F104C24 4C \
+F30F5CC8 \
+F30F104424 04 \
+F30F5AC0 \
+F30F5AC9 \
+83EC 10 \
+F20F114424 08 \
+F20F110C24 \
+E8 [<option:atan2>] \
+83C4 10 \
+D95C24 60 \
+F30F104424 60 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+73 10 \
+F30F118486 A4090000 \
+89F2 \
+E9 5A0F0000 \
+8D50 F2 \
+83FA 03 \
+73 17 \
+B8 E1D8FFFF \
+29C8 \
+89F2 \
+F30F118486 6C0C0000 \
+E9 3B0F0000 \
+83F8 15 \
+89F2 \
+0F84 1E160000 \
+83F8 17 \
+0F85 270F0000 \
+8B4424 10 \
+F30F1100 \
+E9 1A0F0000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+31C9 \
+31D2 \
+39C3 \
+0F9DC2 \
+8D4412 FF \
+89F2 \
+0F44C1 \
+8986 D4090000 \
+E9 E70E0000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+660F7E4424 10 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+660F6EC0 \
+31C0 \
+31C9 \
+F30F104C24 10 \
+0F2EC8 \
+0F97C1 \
+8D4C09 FF \
+0F44C8 \
+898E D4090000 \
+E9 A10E0000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+0F8E FC090000 \
+E9 870E0000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+0F84 E2090000 \
+E9 6D0E0000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+0F8F C8090000 \
+E9 530E0000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+0F85 AE090000 \
+E9 390E0000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+8986 900C0000 \
+8B45 10 \
+89F2 \
+E9 76010000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 940C0000 \
+E9 6C010000 \
+8B45 0C \
+E9 55010000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 9C0C0000 \
+8A86 500E0000 \
+24 FC \
+0C 01 \
+8886 500E0000 \
+F30F1045 0C \
+F30F114424 10 \
+B9 F8D86900 \
+89D6 \
+E8 [0x41E820] \
+89F2 \
+D95C24 64 \
+F30F1045 10 \
+F30F104C24 10 \
+F30F5CC1 \
+F30F594424 64 \
+F30F58C1 \
+F30F1186 900C0000 \
+E9 9B0D0000 \
+F30F1045 0C \
+F30F114424 10 \
+B9 F8D86900 \
+89D6 \
+E8 [0x41E820] \
+89F2 \
+D95C24 68 \
+F30F1045 10 \
+F30F104C24 10 \
+F30F5CC1 \
+F30F594424 68 \
+F30F58C1 \
+F30F1186 900C0000 \
+F30F108E 6C0C0000 \
+F30F1096 600E0000 \
+F30F5815 (<codecave:float_constants> + 0x44) \
+0F2ED1 \
+0F86 F2140000 \
+0F2E05 (<codecave:float_constants> + 0x48) \
+0F86 C5140000 \
+F30F1015 (<codecave:float_constants> + 0x4C) \
+E9 C9140000 \
+F30F100D 68AA6C00 \
+F30F5C8A 6C0C0000 \
+0F57DB \
+0F2ECB \
+F30F1005 (<codecave:float_constants> + 0x48) \
+73 47 \
+F30F1015 6CAA6C00 \
+F30F5C92 700C0000 \
+0F2ED3 \
+73 32 \
+0F57C0 \
+F30F5AC1 \
+0F57C9 \
+F30F5ACA \
+83EC 10 \
+F20F114424 08 \
+F20F110C24 \
+89D6 \
+E8 [<option:atan2>] \
+89F2 \
+83C4 10 \
+D95C24 6C \
+F30F104424 6C \
+F30F5845 0C \
+F30F1182 900C0000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 980C0000 \
+8A86 500E0000 \
+24 FC \
+0C 01 \
+8886 500E0000 \
+E9 870C0000 \
+F30F6F45 0C \
+F30F7F82 600E0000 \
+808A 520E0000 01 \
+E9 6E0C0000 \
+80A2 520E0000 FE \
+E9 620C0000 \
+80A2 500E0000 DF \
+E9 560C0000 \
+F30F1082 A00C0000 \
+F30F108A A40C0000 \
+F30F5882 6C0C0000 \
+8D82 000D0000 \
+F30F1182 040D0000 \
+F30F588A 700C0000 \
+F30F118A 080D0000 \
+F30F1082 A80C0000 \
+F30F5882 740C0000 \
+F30F1182 0C0D0000 \
+B9 F85F5A00 \
+50 \
+89D6 \
+E9 01F6FFFF \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+8986 A00C0000 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 A40C0000 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 A80C0000 \
+E9 C40B0000 \
+B9 F85F5A00 \
+89D6 \
+E8 [0x414340] \
+89F2 \
+E9 B10B0000 \
+8B45 0C \
+8BB482 B80D0000 \
+85F6 \
+0F84 9F0B0000 \
+8B45 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+89FA \
+660F6EC0 \
+F30F5886 2C020000 \
+F30F1186 2C020000 \
+E9 7A0B0000 \
+8B45 0C \
+8BB482 B80D0000 \
+85F6 \
+0F84 680B0000 \
+8B45 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+660F6EE0 \
+F30F100D 68AA6C00 \
+F30F5C8E 20020000 \
+0F57DB \
+0F2ECB \
+F30F1005 (<codecave:float_constants> + 0x48) \
+73 4F \
+F30F1015 6CAA6C00 \
+F30F5C96 24020000 \
+0F2ED3 \
+73 3A \
+0F57C0 \
+F30F5AC1 \
+0F57C9 \
+F30F5ACA \
+83EC 10 \
+F20F114424 08 \
+F20F110C24 \
+660F7E6424 20 \
+E8 [<option:atan2>] \
+660F6E6424 20 \
+83C4 10 \
+D95C24 78 \
+F30F104424 78 \
+F30F58C4 \
+F30F1186 2C020000 \
+89FA \
+E9 D80A0000 \
+8B45 0C \
+8BB482 B80D0000 \
+85F6 \
+0F84 C60A0000 \
+8B45 10 \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F5886 20020000 \
+F30F1186 20020000 \
+8B45 14 \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+660F6EC0 \
+F30F5886 24020000 \
+F30F1186 24020000 \
+8B45 18 \
+89FA \
+E8 [codecave:parse_int_as_arg] \
+89FA \
+660F6EC0 \
+F30F5886 28020000 \
+F30F1186 28020000 \
+E9 650A0000 \
+8B45 0C \
+8B8482 B80D0000 \
+85C0 \
+0F84 530A0000 \
+31C9 \
+83B8 58020000 00 \
+0F94C1 \
+898A D4090000 \
+E9 3C0A0000 \
+8B45 0C \
+8B8482 B80D0000 \
+85C0 \
+0F84 2A0A0000 \
+83B8 58020000 00 \
+0F84 1D0A0000 \
+66 83B8 6C020000 01 \
+0F87 0F0A0000 \
+66 C780 6C020000 0200 \
+C780 5C020000 19FCFFFF \
+C780 60020000 00000000 \
+C780 64020000 00000000 \
+E9 E3090000 \
+8D45 10 \
+0FBF55 0C \
+B9 30BC6900 \
+50 \
+52 \
+E8 [0x417BFD] \
+C705 8C5F5A00 01000000 \
+C705 905F5A00 01000000 \
+0FBF75 0E \
+8935 985F5A00 \
+8B3CB5 20614700 \
+893D 945F5A00 \
+B9 F85F5A00 \
+E8 [0x414340] \
+8B9424 A0000000 \
+C705 907B4800 01000000 \
+C705 947B4800 00000000 \
+660F6F05 (<codecave:float_constants> + 0x10) \
+F30F7F82 D40C0000 \
+833D BCBC6900 00 \
+0F85 63090000 \
+B8 A0BC6900 \
+C1E6 06 \
+8D5406 48 \
+31DB \
+31C9 \
+0FB6441D 10 \
+0FB6C9 \
+01C1 \
+88041A \
+43 \
+85C0 \
+75 EE \
+BB A0BC6900 \
+384C33 42 \
+0F85 18110000 \
+0FBF4C33 6C \
+897C33 3C \
+81F9 0E270000 \
+8B9424 A0000000 \
+0F8F 16090000 \
+E9 12110000 \
+8B35 905F5A00 \
+85F6 \
+0F84 A1000000 \
+89D7 \
+B9 30BC6900 \
+E8 [0x41732C] \
+83FE 01 \
+0F85 80000000 \
+B9 F85F5A00 \
+6A 01 \
+68 800C0000 \
+E8 [0x414360] \
+833D 8C5F5A00 00 \
+74 66 \
+8B0D 945F5A00 \
+8B35 985F5A00 \
+A1 48BC6900 \
+0FAFC1 \
+BA 67666666 \
+F7EA \
+89D3 \
+89D0 \
+C1E8 1F \
+C1FB 02 \
+01C3 \
+01CB \
+B9 30BC6900 \
+53 \
+E8 [0x417458] \
+011D A4BC6900 \
+833D BCBC6900 00 \
+75 1D \
+C1E6 06 \
+66 FF86 0EBD6900 \
+A0 BDD46900 \
+00C0 \
+0205 BED46900 \
+8886 E3BC6900 \
+FF05 C8BC6900 \
+C705 905F5A00 00000000 \
+89FA \
+C705 907B4800 00000000 \
+E9 53080000 \
+89D7 \
+31C0 \
+B9 A0BC6900 \
+EB 1F \
+<nop:15> \
+05 C80E0000 \
+3D 00C80E00 \
+0F84 83110000 \
+80BC01 48DAE1FF 00 \
+79 E6 \
+0FB69401 49DAE1FF \
+F6C2 08 \
+75 D9 \
+C78401 DCD8E1FF 00000000 \
+F6C2 01 \
+75 C9 \
+8B9401 3CD8E1FF \
+85D2 \
+78 BE \
+0FBFD2 \
+8B7424 30 \
+8B3496 \
+89B401 88D5E1FF \
+C78401 8CD5E1FF 19FCFFFF \
+C78401 90D5E1FF 00000000 \
+C78401 94D5E1FF 00000000 \
+66 899401 D0D5E1FF \
+C78401 3CD8E1FF FFFFFFFF \
+E9 74FFFFFF \
+8B45 0C \
+8D88 00010000 \
+66 898A B4000000 \
+8B0D 88456D00 \
+FFB481 34CD0100 \
+52 \
+89D6 \
+E8 [0x432430] \
+89F2 \
+E9 81070000 \
+6945 0C 10010000 \
+89D7 \
+8D9402 10010000 \
+8B75 10 \
+8D8E 00010000 \
+66 898C07 C4010000 \
+8B0D 88456D00 \
+FFB4B1 34CD0100 \
+52 \
+E8 [0x432430] \
+89FA \
+E9 46070000 \
+8A45 0E \
+8882 3E0E0000 \
+0FB745 0C \
+66 8982 3C0E0000 \
+E9 2D070000 \
+8B45 0C \
+8BB2 A00E0000 \
+8D4E 01 \
+898A A00E0000 \
+89D3 \
+8B15 38644700 \
+8DBB 6C0C0000 \
+B9 E07F4800 \
+FF3482 \
+6A 01 \
+57 \
+6A 0D \
+E8 [0x40EF50] \
+89DA \
+8984B3 700E0000 \
+F30F7E45 10 \
+660FD680 40010000 \
+8B4D 18 \
+8988 48010000 \
+8B45 1C \
+8983 A40E0000 \
+E9 CE060000 \
+8B45 14 \
+8982 800C0000 \
+F30F7E45 0C \
+660FD682 780C0000 \
+E9 B3060000 \
+8A45 0C \
+8A8A 510E0000 \
+00C0 \
+24 02 \
+80E1 FD \
+EB 27 \
+B9 503F6D00 \
+6A 00 \
+FF75 0C \
+89D6 \
+E8 [0x4311E0] \
+89F2 \
+E9 89060000 \
+8A45 0C \
+8A8A 510E0000 \
+C0E0 05 \
+80E1 1F \
+08C1 \
+888A 510E0000 \
+E9 6D060000 \
+8B45 0C \
+8982 440C0000 \
+E9 5F060000 \
+8B45 0C \
+8B4D 10 \
+89848A 480C0000 \
+E9 4D060000 \
+8B45 0C \
+8982 E80C0000 \
+8982 E40C0000 \
+E9 39060000 \
+8B45 0C \
+8982 A80E0000 \
+E9 2B060000 \
+8B45 0C \
+8982 B00E0000 \
+E9 2B0C0000 \
+8B45 0C \
+8982 B40E0000 \
+E9 0F060000 \
+8D82 6C0C0000 \
+B9 68E26900 \
+6A 00 \
+FF75 0C \
+50 \
+89D6 \
+E8 [0x41F290] \
+89F2 \
+E9 F0050000 \
+C605 B87D4800 01 \
+E9 E4050000 \
+8B45 0C \
+A3 44BC6900 \
+8105 0CD76900 C4020000 \
+E9 CD050000 \
+0FB745 0C \
+66 8982 B4000000 \
+E9 BD050000 \
+0FB745 10 \
+694D 0C 10010000 \
+66 89840A C4010000 \
+E9 A5050000 \
+F30F6F45 14 \
+660F6BC0 \
+660FD645 0C \
+F30F7F82 D40C0000 \
+E9 8A050000 \
+8A45 0C \
+8A8A 520E0000 \
+C0E0 03 \
+24 08 \
+80E1 F7 \
+E9 690B0000 \
+8A45 0C \
+8A8A 520E0000 \
+C0E0 04 \
+24 10 \
+80E1 EF \
+E9 530B0000 \
+8B45 10 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89C3 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+29C3 \
+8B4D 0C \
+B8 EFD8FFFF \
+29C8 \
+83F8 0C \
+0F83 A80C0000 \
+899C86 A4090000 \
+89F2 \
+E9 25050000 \
+F682 520E0000 04 \
+0F85 18050000 \
+8B82 3C0C0000 \
+6BC8 4C \
+8B7424 2C \
+0F1046 3C \
+0F11840A 180A0000 \
+0F1046 30 \
+0F11840A 0C0A0000 \
+0F1046 20 \
+0F11840A FC090000 \
+F30F6F06 \
+0F104E 10 \
+0F118C0A EC090000 \
+F30F7F840A DC090000 \
+85C0 \
+0F8E C6040000 \
+FF8A 3C0C0000 \
+E9 BB040000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+7C 1A \
+E9 A5040000 \
+8B45 18 \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+3B45 1C \
+0F8C 90040000 \
+0FBF45 06 \
+01C5 \
+F682 520E0000 04 \
+75 55 \
+8B82 3C0C0000 \
+6BC8 4C \
+8B7424 2C \
+0F1046 3C \
+0F11840A 180A0000 \
+0F1046 30 \
+0F11840A 0C0A0000 \
+0F1046 20 \
+0F11840A FC090000 \
+F30F6F06 \
+0F104E 10 \
+0F118C0A EC090000 \
+F30F7F840A DC090000 \
+83F8 06 \
+7F 06 \
+FF82 3C0C0000 \
+8B45 0C \
+98 \
+8B4C24 30 \
+8B0C81 \
+898A 90090000 \
+C782 94090000 19FCFFFF \
+C782 98090000 00000000 \
+C782 9C090000 00000000 \
+66 8982 D8090000 \
+8B45 10 \
+8982 A4090000 \
+8B45 14 \
+8982 B4090000 \
+E9 DF030000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+8986 6C0C0000 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 700C0000 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 740C0000 \
+F686 520E0000 01 \
+0F84 A0030000 \
+F30F108A 6C0C0000 \
+F30F1082 600E0000 \
+0F2EC8 \
+77 0D \
+F30F1082 680E0000 \
+0F2EC8 \
+73 08 \
+F30F1182 6C0C0000 \
+F30F1082 700C0000 \
+F30F108A 640E0000 \
+0F2EC1 \
+77 11 \
+F30F108A 6C0E0000 \
+0F2EC1 \
+0F83 50030000 \
+F30F118A 700C0000 \
+E9 43030000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+8986 840C0000 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 880C0000 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 8C0C0000 \
+80A6 500E0000 FC \
+E9 05030000 \
+8B4D 0C \
+89D7 \
+BA 67666666 \
+89C8 \
+F7EA \
+89D0 \
+C1E8 1F \
+D1FA \
+01C2 \
+A1 10D76900 \
+0FAFC2 \
+BE 0F000000 \
+29C6 \
+F7D8 \
+85C0 \
+0F48C6 \
+C1F8 04 \
+01CA \
+01C2 \
+8997 540D0000 \
+89FA \
+C787 580D0000 19FCFFFF \
+C787 5C0D0000 00000000 \
+C787 600D0000 00000000 \
+E9 A6020000 \
+8B4D 0C \
+89D6 \
+BA 67666666 \
+89C8 \
+F7EA \
+89D3 \
+89D0 \
+C1E8 1F \
+D1FB \
+01C3 \
+A1 10D76900 \
+0FAFC3 \
+BA 0F000000 \
+29C2 \
+F7D8 \
+85C0 \
+0F48C2 \
+C1F8 04 \
+01CB \
+01C3 \
+899E 540D0000 \
+0F85 05090000 \
+89F2 \
+E9 5D020000 \
+808A 500E0000 20 \
+E9 51020000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+8986 300D0000 \
+8B45 10 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 340D0000 \
+8B45 14 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 380D0000 \
+8B45 18 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 3C0D0000 \
+8B45 1C \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 400D0000 \
+8B45 20 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 440D0000 \
+8B45 24 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+8986 480D0000 \
+8B45 28 \
+89F2 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 4C0D0000 \
+E9 CA010000 \
+8B45 0C \
+89D6 \
+8A92 4C0D0000 \
+89C1 \
+C1E9 1E \
+80E1 02 \
+80E2 FD \
+08CA \
+80F2 02 \
+8896 4C0D0000 \
+89F2 \
+85C0 \
+0F88 9F010000 \
+8982 500D0000 \
+E9 94010000 \
+8B45 0C \
+89D6 \
+E8 [codecave:parse_int_as_arg] \
+89F2 \
+8986 380E0000 \
+E9 7D010000 \
+8B45 10 \
+89D3 \
+E8 [codecave:parse_int_as_arg] \
+894424 20 \
+8B45 14 \
+89DA \
+E8 [codecave:parse_int_as_arg] \
+894424 24 \
+8B45 18 \
+89DA \
+E8 [codecave:parse_int_as_arg] \
+894424 28 \
+0FBE45 1E \
+0FBF55 1C \
+0FB775 0C \
+8D7C24 20 \
+B9 C8794B00 \
+FF75 20 \
+50 \
+52 \
+57 \
+56 \
+E8 [0x411390] \
+89DA \
+E9 2B010000 \
+0FB745 14 \
+66 8982 5C0E0000 \
+F30F7E45 0C \
+660FD682 540E0000 \
+C682 530E0000 FF \
+E9 07010000 \
+BE A0BC6900 \
+8B4D 0C \
+89D7 \
+89CA \
+C1EA 1F \
+8A9F 510E0000 \
+88D7 \
+80F7 01 \
+88F8 \
+C0E0 03 \
+80E3 F7 \
+08C3 \
+889F 510E0000 \
+883D 50BC6900 \
+84D2 \
+0F84 9F070000 \
+8B87 400E0000 \
+C78486 C0A2F0FF 00000000 \
+89FA \
+E9 B7000000 \
+8B45 0C \
+8982 680C0000 \
+0FBF45 06 \
+01C5 \
+F682 520E0000 04 \
+75 55 \
+8B82 3C0C0000 \
+6BC8 4C \
+8B7424 2C \
+0F1046 3C \
+0F11840A 180A0000 \
+0F1046 30 \
+0F11840A 0C0A0000 \
+0F1046 20 \
+0F11840A FC090000 \
+F30F6F06 \
+0F104E 10 \
+0F118C0A EC090000 \
+F30F7F840A DC090000 \
+83F8 06 \
+7F 06 \
+FF82 3C0C0000 \
+8B82 680C0000 \
+8B8482 480C0000 \
+98 \
+8B4C24 30 \
+8B0C81 \
+898A 90090000 \
+C782 94090000 19FCFFFF \
+C782 98090000 00000000 \
+C782 9C090000 00000000 \
+66 8982 D8090000 \
+C782 680C0000 FFFFFFFF \
+0FBF7D 06 \
+01EF \
+8B82 9C090000 \
+3B07 \
+0F84 E5E6FFFF \
+0FB682 500E0000 \
+83E0 03 \
+0F84 1B020000 \
+83F8 01 \
+74 67 \
+8D8A C40C0000 \
+6A 01 \
+89D6 \
+E8 [0x4241E5] \
+89F1 \
+0F57C0 \
+F30F2A86 CC0C0000 \
+F30F5886 C80C0000 \
+0F57C9 \
+F30F2A8E D00C0000 \
+F30F5EC1 \
+F30F5D05 (<codecave:float_constants> + 0x50) \
+8B86 500E0000 \
+C1E8 02 \
+83E0 07 \
+FF2485 <codecave:interpolation_mode_jump_table> \
+F30F59C0 \
+F30F59C0 \
+F30F100D (<codecave:float_constants> + 0x50) \
+F30F5CC8 \
+E9 09010000 \
+F30F1015 C06E6C00 \
+F30F1082 940C0000 \
+F30F59C2 \
+F30F5882 900C0000 \
+F30F100D (<codecave:float_constants> + 0x30) \
+F30F59C8 \
+F30F580D (<codecave:float_constants> + 0x34) \
+660F3A0AC9 09 \
+F30F590D (<codecave:float_constants> + 0x38) \
+F30F58C8 \
+F30F118A 900C0000 \
+F30F5992 9C0C0000 \
+F30F5892 980C0000 \
+F30F115424 30 \
+F30F1192 980C0000 \
+F30F5AC9 \
+F20F114C24 10 \
+83EC 08 \
+F20F110C24 \
+89D6 \
+E8 [<option:cos>] \
+83C4 08 \
+D95C24 54 \
+F30F104424 54 \
+F30F594424 30 \
+F30F114424 08 \
+83EC 08 \
+F20F104424 18 \
+F20F110424 \
+E8 [<option:sin>] \
+89F2 \
+83C4 08 \
+D95C24 50 \
+F30F104424 30 \
+F30F594424 50 \
+F30F104C24 08 \
+F30F118E 840C0000 \
+F30F1186 880C0000 \
+C786 8C0C0000 00000000 \
+E9 C8000000 \
+F30F100D (<codecave:float_constants> + 0x50) \
+F30F5CC8 \
+EB 10 \
+F30F100D (<codecave:float_constants> + 0x50) \
+F30F5CC8 \
+F30F59C9 \
+F30F59C9 \
+0F1091 AC0C0000 \
+0F1081 B80C0000 \
+0FC6C9 00 \
+0F59CA \
+0F114424 30 \
+0F115424 10 \
+0F5CC2 \
+0F58C1 \
+0F1181 840C0000 \
+F30F16C8 \
+F30F5AC0 \
+F30F5AC9 \
+83EC 10 \
+660FD64424 08 \
+F20F110C24 \
+E8 [<option:atan2>] \
+89F2 \
+83C4 10 \
+D99E 900C0000 \
+83BE CC0C0000 00 \
+7F 47 \
+0F104424 30 \
+0F104C24 10 \
+0F58C1 \
+F30F1182 6C0C0000 \
+660F3A1782 700C0000 01 \
+660F3A1782 740C0000 02 \
+C782 840C0000 00000000 \
+C782 880C0000 00000000 \
+C782 8C0C0000 00000000 \
+83BA E40C0000 00 \
+0F8E 88010000 \
+8B82 540D0000 \
+85C0 \
+0F8E D4000000 \
+8B8A 600D0000 \
+898A 580D0000 \
+F30F1005 (<codecave:float_constants> + 0x54) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1082 5C0D0000 \
+F30F5805 C06E6C00 \
+F30F1182 5C0D0000 \
+0F2E05 (<codecave:float_constants> + 0x50) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0x58) \
+F30F1182 5C0D0000 \
+41 \
+898A 600D0000 \
+39C1 \
+7C 7B \
+F30F1082 A00C0000 \
+F30F108A A40C0000 \
+F30F5882 6C0C0000 \
+8D82 000D0000 \
+F30F1182 040D0000 \
+F30F588A 700C0000 \
+F30F118A 080D0000 \
+F30F1082 A80C0000 \
+F30F5882 740C0000 \
+F30F1182 0C0D0000 \
+B9 F85F5A00 \
+50 \
+89D6 \
+E8 [0x4145C0] \
+89F2 \
+C786 580D0000 19FCFFFF \
+C786 5C0D0000 00000000 \
+C786 600D0000 00000000 \
+0FB782 5A0E0000 \
+66 85C0 \
+0F88 80000000 \
+660FEFC0 \
+0F2E82 840C0000 \
+0F92C3 \
+0F94C1 \
+28CB \
+FEC3 \
+0FBE8A 530E0000 \
+38D9 \
+74 60 \
+84DB \
+74 0E \
+80FB 01 \
+74 2C \
+0FB782 5C0E0000 \
+EB 23 \
+83F9 01 \
+74 0E \
+83F9 FF \
+75 12 \
+0FB782 540E0000 \
+EB 10 \
+0FB782 560E0000 \
+EB 07 \
+0FB782 580E0000 \
+98 \
+8D88 00010000 \
+66 898A B4000000 \
+8B0D 88456D00 \
+FFB481 34CD0100 \
+52 \
+89D6 \
+E8 [0x432430] \
+89F2 \
+889A 530E0000 \
+8B82 A0090000 \
+85C0 \
+74 0C \
+6A 00 \
+52 \
+89D6 \
+FFD0 \
+89F2 \
+83C4 08 \
+81C2 90090000 \
+893A \
+8B07 \
+8942 04 \
+F30F1005 (<codecave:float_constants> + 0x54) \
+0F2E05 C46E6C00 \
+72 28 \
+F30F1042 08 \
+F30F5805 C06E6C00 \
+F30F1142 08 \
+0F2E05 (<codecave:float_constants> + 0x50) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0x58) \
+F30F1142 08 \
+<nop:7> \
+FF42 0C \
+31C0 \
+81C4 8C000000 \
+5E \
+5F \
+5B \
+5D \
+C2 0400 \
+8B45 0C \
+C782 F00C0000 19FCFFFF \
+C782 F40C0000 00000000 \
+8982 F80C0000 \
+E9 ABFBFFFF \
+8B45 0C \
+8982 AC0E0000 \
+E9 9DFBFFFF \
+8D82 6C0C0000 \
+B9 E07F4800 \
+FF75 14 \
+FF75 10 \
+50 \
+FF75 0C \
+89D6 \
+E8 [0x40EF50] \
+89F2 \
+E9 7AFBFFFF \
+8B75 0C \
+85F6 \
+0F84 6FFBFFFF \
+0FBF05 B0D46900 \
+8DBA 6C0C0000 \
+3D 80000000 \
+0F8D F8030000 \
+31DB \
+8B47 08 \
+894424 28 \
+F20F1007 \
+F20F114424 20 \
+B9 F8D86900 \
+E8 [0x41E820] \
+D99C24 80000000 \
+F30F108424 80000000 \
+F30F100D (<codecave:float_constants> + 0x5C) \
+F30F59C1 \
+F30F100D (<codecave:float_constants> + 0x60) \
+F30F58C1 \
+F30F584424 20 \
+F30F114424 20 \
+B9 F8D86900 \
+E8 [0x41E820] \
+D95C24 7C \
+F30F104424 7C \
+F30F5905 (<codecave:float_constants> + 0x5C) \
+F30F5805 (<codecave:float_constants> + 0x60) \
+F30F584424 24 \
+F30F114424 24 \
+31C0 \
+85DB \
+0F94C0 \
+01C0 \
+B9 68E26900 \
+6A 00 \
+50 \
+8D4424 28 \
+50 \
+E8 [0x41F290] \
+43 \
+39DE \
+0F85 5DFFFFFF \
+E9 ED030000 \
+8A45 0C \
+8A8A 520E0000 \
+00C0 \
+24 02 \
+80E1 FD \
+E9 8D000000 \
+8B45 0C \
+85C0 \
+0F88 8DFAFFFF \
+8D0C85 20624700 \
+83E8 11 \
+8D0485 <codecave:placeholder> \
+0F42C1 \
+8B00 \
+85C0 \
+0F84 6FFAFFFF \
+55 \
+52 \
+89D6 \
+FFD0 \
+89F2 \
+83C4 08 \
+E9 5FFAFFFF \
+8B45 0C \
+31C9 \
+85C0 \
+78 16 \
+8D0C85 20624700 \
+83E8 11 \
+8D0485 <codecave:placeholder> \
+0F42C1 \
+8B08 \
+898A A0090000 \
+E9 35FAFFFF \
+8B45 0C \
+89D7 \
+E8 [codecave:parse_int_as_arg] \
+89F1 \
+50 \
+E8 [0x424154] \
+89FA \
+E9 1CFAFFFF \
+8A45 0C \
+8A8A 520E0000 \
+C0E0 02 \
+24 04 \
+80E1 FB \
+08C1 \
+888A 520E0000 \
+E9 FEF9FFFF \
+8B82 440C0000 \
+8982 B40E0000 \
+C782 F00C0000 19FCFFFF \
+C782 F40C0000 00000000 \
+C782 F80C0000 00000000 \
+E9 CFF9FFFF \
+660FEFC0 \
+F30F7F82 280E0000 \
+F30F7F82 180E0000 \
+F30F7F82 080E0000 \
+F30F7F82 F80D0000 \
+F30F7F82 E80D0000 \
+F30F7F82 D80D0000 \
+F30F7F82 C80D0000 \
+F30F7F82 B80D0000 \
+E9 86F9FFFF \
+8D70 F2 \
+83FE 03 \
+0F82 90000000 \
+83F8 15 \
+0F84 1B030000 \
+83F8 17 \
+0F85 C2020000 \
+8B4424 10 \
+E9 0D030000 \
+B9 F8D86900 \
+E8 [0x41E7F0] \
+31D2 \
+F7F3 \
+C786 580D0000 19FCFFFF \
+C786 5C0D0000 00000000 \
+8996 600D0000 \
+89F2 \
+E9 30F9FFFF \
+898F 400E0000 \
+89BC8E C0A2F0FF \
+C705 54BC6900 0000803F \
+89FA \
+E9 12F9FFFF \
+8B4424 08 \
+F30F1100 \
+E9 05F9FFFF \
+8B4C24 08 \
+8901 \
+89FA \
+E9 F8F8FFFF \
+89F7 \
+8D70 F2 \
+83FE 03 \
+0F83 36020000 \
+B8 E1D8FFFF \
+29C8 \
+899487 6C0C0000 \
+89FA \
+E9 D5F8FFFF \
+89D6 \
+8D50 F2 \
+83FA 03 \
+0F83 28020000 \
+B8 E1D8FFFF \
+29C8 \
+89F2 \
+8D8486 6C0C0000 \
+FF00 \
+E9 B0F8FFFF \
+89D6 \
+8D50 F2 \
+83FA 03 \
+0F83 1A020000 \
+B8 E1D8FFFF \
+29C8 \
+89F2 \
+8D8486 6C0C0000 \
+FF08 \
+E9 8BF8FFFF \
+8D50 F2 \
+83FA 03 \
+0F83 0E020000 \
+B8 E1D8FFFF \
+29C8 \
+89F2 \
+899C86 6C0C0000 \
+E9 6AF8FFFF \
+0F2E05 (<codecave:float_constants> + 0x64) \
+73 17 \
+F30F1015 (<codecave:float_constants> + 0x68) \
+F30F5CD0 \
+F30F1192 900C0000 \
+0F28C2 \
+F30F1092 680E0000 \
+F30F5815 (<codecave:float_constants> + 0x44) \
+0F2ED1 \
+73 69 \
+0F2E05 (<codecave:float_constants> + 0x48) \
+73 38 \
+0F57C9 \
+0F2EC1 \
+72 30 \
+F30F100D (<codecave:float_constants> + 0x4C) \
+EB 3F \
+8D4433 42 \
+8808 \
+C74433 6C 00000000 \
+897C33 3C \
+31C9 \
+8B9424 A0000000 \
+41 \
+66 894C33 6C \
+E9 F4F7FFFF \
+0F2E05 (<codecave:float_constants> + 0x64) \
+76 1F \
+0F57C9 \
+0F2EC1 \
+77 17 \
+F30F100D (<codecave:float_constants> + 0x68) \
+F30F5CC8 \
+F30F118A 900C0000 \
+0F28C1 \
+F30F108A 700C0000 \
+F30F1092 640E0000 \
+F30F5815 (<codecave:float_constants> + 0x6C) \
+0F2ED1 \
+76 17 \
+0F57D2 \
+0F2EC2 \
+73 0F \
+0F5705 (<codecave:float_constants> + 0x20) \
+F30F1182 900C0000 \
+F30F1092 6C0E0000 \
+F30F5815 (<codecave:float_constants> + 0x70) \
+0F2ED1 \
+0F83 7FF7FFFF \
+0F57C9 \
+0F2EC1 \
+0F86 73F7FFFF \
+0F5705 (<codecave:float_constants> + 0x20) \
+F30F1182 900C0000 \
+E9 5FF7FFFF \
+8D5C24 20 \
+8B47 08 \
+894424 28 \
+F20F1007 \
+F20F114424 20 \
+B9 F8D86900 \
+E8 [0x41E820] \
+D99C24 88000000 \
+F30F108424 88000000 \
+F30F100D (<codecave:float_constants> + 0x5C) \
+F30F59C1 \
+F30F100D (<codecave:float_constants> + 0x60) \
+F30F58C1 \
+F30F584424 20 \
+F30F114424 20 \
+B9 F8D86900 \
+E8 [0x41E820] \
+D99C24 84000000 \
+F30F108424 84000000 \
+F30F5905 (<codecave:float_constants> + 0x5C) \
+F30F5805 (<codecave:float_constants> + 0x60) \
+F30F584424 24 \
+F30F114424 24 \
+B9 68E26900 \
+6A 00 \
+6A 01 \
+53 \
+E8 [0x41F290] \
+4E \
+0F85 65FFFFFF \
+8B9424 A0000000 \
+E9 B4F6FFFF \
+83F8 15 \
+74 59 \
+83F8 17 \
+0F84 3EFDFFFF \
+89FA \
+E9 9FF6FFFF \
+83F8 15 \
+89F2 \
+74 4F \
+83F8 17 \
+75 55 \
+8B4424 10 \
+FF00 \
+E9 88F6FFFF \
+83F8 15 \
+89F2 \
+74 4D \
+83F8 17 \
+75 53 \
+8B4424 10 \
+FF08 \
+E9 71F6FFFF \
+83F8 15 \
+89F2 \
+74 4B \
+83F8 17 \
+0F85 61F6FFFF \
+8B4424 10 \
+8918 \
+E9 56F6FFFF \
+8B4424 08 \
+8910 \
+89FA \
+E9 49F6FFFF \
+8B4424 08 \
+FF00 \
+E9 3EF6FFFF \
+8D45 0C \
+FF00 \
+E9 34F6FFFF \
+8B4424 08 \
+FF08 \
+E9 29F6FFFF \
+8D45 0C \
+FF08 \
+E9 1FF6FFFF \
+8B4424 08 \
+8918 \
+E9 14F6FFFF \
+"
+		},
+		"run_ecl_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:run_ecl> + 0x65B) \
+(<codecave:run_ecl> + 0x70) \
+(<codecave:run_ecl> + 0xBA) \
+(<codecave:run_ecl> + 0x572) \
+(<codecave:run_ecl> + 0x572) \
+(<codecave:run_ecl> + 0x662) \
+(<codecave:run_ecl> + 0x666) \
+(<codecave:run_ecl> + 0x6B7) \
+(<codecave:run_ecl> + 0x6C5) \
+(<codecave:run_ecl> + 0x548) \
+(<codecave:run_ecl> + 0x548) \
+(<codecave:run_ecl> + 0x548) \
+(<codecave:run_ecl> + 0x700) \
+(<codecave:run_ecl> + 0x13EB) \
+(<codecave:run_ecl> + 0x71A) \
+(<codecave:run_ecl> + 0x735) \
+(<codecave:run_ecl> + 0x7AD) \
+(<codecave:run_ecl> + 0x7EB) \
+(<codecave:run_ecl> + 0x80C) \
+(<codecave:run_ecl> + 0x82D) \
+(<codecave:run_ecl> + 0x85A) \
+(<codecave:run_ecl> + 0x88E) \
+(<codecave:run_ecl> + 0x8BB) \
+(<codecave:run_ecl> + 0x8EF) \
+(<codecave:run_ecl> + 0x944) \
+(<codecave:run_ecl> + 0x1949) \
+(<codecave:run_ecl> + 0xA2F) \
+(<codecave:run_ecl> + 0xA62) \
+(<codecave:run_ecl> + 0xD7) \
+(<codecave:run_ecl> + 0xE5) \
+(<codecave:run_ecl> + 0xF3) \
+(<codecave:run_ecl> + 0x105) \
+(<codecave:run_ecl> + 0x117) \
+(<codecave:run_ecl> + 0x5E) \
+(<codecave:run_ecl> + 0x14B9) \
+(<codecave:run_ecl> + 0x1424) \
+(<codecave:run_ecl> + 0x148E) \
+(<codecave:run_ecl> + 0xAA8) \
+(<codecave:run_ecl> + 0xAC2) \
+(<codecave:run_ecl> + 0xADC) \
+(<codecave:run_ecl> + 0x14A4) \
+(<codecave:run_ecl> + 0xAF6) \
+(<codecave:run_ecl> + 0x156A) \
+(<codecave:run_ecl> + 0x1606) \
+(<codecave:run_ecl> + 0xB10) \
+(<codecave:run_ecl> + 0xB2A) \
+(<codecave:run_ecl> + 0xB41) \
+(<codecave:run_ecl> + 0xB49) \
+(<codecave:run_ecl> + 0xB6B) \
+(<codecave:run_ecl> + 0xBAE) \
+(<codecave:run_ecl> + 0xC27) \
+(<codecave:run_ecl> + 0x433) \
+(<codecave:run_ecl> + 0x433) \
+(<codecave:run_ecl> + 0x433) \
+(<codecave:run_ecl> + 0x433) \
+(<codecave:run_ecl> + 0x35B) \
+(<codecave:run_ecl> + 0x35B) \
+(<codecave:run_ecl> + 0x35B) \
+(<codecave:run_ecl> + 0x35B) \
+(<codecave:run_ecl> + 0x35B) \
+(<codecave:run_ecl> + 0x43B) \
+(<codecave:run_ecl> + 0x43B) \
+(<codecave:run_ecl> + 0x43B) \
+(<codecave:run_ecl> + 0x43B) \
+(<codecave:run_ecl> + 0xCC2) \
+(<codecave:run_ecl> + 0xCDB) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x173) \
+(<codecave:run_ecl> + 0x1644) \
+(<codecave:run_ecl> + 0x16A3) \
+(<codecave:run_ecl> + 0x16EC) \
+(<codecave:run_ecl> + 0xCE7) \
+(<codecave:run_ecl> + 0xCF3) \
+(<codecave:run_ecl> + 0xD4E) \
+(<codecave:run_ecl> + 0x16F8) \
+(<codecave:run_ecl> + 0xD85) \
+(<codecave:run_ecl> + 0x177F) \
+(<codecave:run_ecl> + 0x581) \
+(<codecave:run_ecl> + 0x581) \
+(<codecave:run_ecl> + 0x17B5) \
+(<codecave:run_ecl> + 0xD98) \
+(<codecave:run_ecl> + 0xDCF) \
+(<codecave:run_ecl> + 0xE71) \
+(<codecave:run_ecl> + 0xEE4) \
+(<codecave:run_ecl> + 0xF0D) \
+(<codecave:run_ecl> + 0xF66) \
+(<codecave:run_ecl> + 0x1038) \
+(<codecave:run_ecl> + 0x17CC) \
+(<codecave:run_ecl> + 0x10F6) \
+(<codecave:run_ecl> + 0x119C) \
+(<codecave:run_ecl> + 0x181E) \
+(<codecave:run_ecl> + 0x11C8) \
+(<codecave:run_ecl> + 0x1203) \
+(<codecave:run_ecl> + 0x1842) \
+(<codecave:run_ecl> + 0x121C) \
+(<codecave:run_ecl> + 0x127B) \
+(<codecave:run_ecl> + 0x1296) \
+(<codecave:run_ecl> + 0x648) \
+(<codecave:run_ecl> + 0x12A8) \
+(<codecave:run_ecl> + 0x12C0) \
+(<codecave:run_ecl> + 0x12DC) \
+(<codecave:run_ecl> + 0x12EA) \
+(<codecave:run_ecl> + 0x1892) \
+(<codecave:run_ecl> + 0x12FC) \
+(<codecave:run_ecl> + 0x1D7C) \
+(<codecave:run_ecl> + 0x1310) \
+(<codecave:run_ecl> + 0x1D9E) \
+(<codecave:run_ecl> + 0x131E) \
+(<codecave:run_ecl> + 0x132C) \
+(<codecave:run_ecl> + 0x648) \
+(<codecave:run_ecl> + 0x1DAC) \
+(<codecave:run_ecl> + 0x1DCF) \
+(<codecave:run_ecl> + 0x1E9C) \
+(<codecave:run_ecl> + 0x1EB1) \
+(<codecave:run_ecl> + 0x1EEA) \
+(<codecave:run_ecl> + 0x1F14) \
+(<codecave:run_ecl> + 0x133A) \
+(<codecave:run_ecl> + 0x1359) \
+(<codecave:run_ecl> + 0x1365) \
+(<codecave:run_ecl> + 0x1949) \
+(<codecave:run_ecl> + 0x137C) \
+(<codecave:run_ecl> + 0x138C) \
+(<codecave:run_ecl> + 0x1F2D) \
+(<codecave:run_ecl> + 0x13A4) \
+(<codecave:run_ecl> + 0x13BF) \
+(<codecave:run_ecl> + 0x1F4B) \
+(<codecave:run_ecl> + 0x1F7A) \
+(<codecave:run_ecl> + 0x13D5) \
+"
+		},
+		"interpolation_mode_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:run_ecl> + 0x19C8) \
+(<codecave:run_ecl> + 0x19C4) \
+(<codecave:run_ecl> + 0x19C0) \
+(<codecave:run_ecl> + 0x1AC0) \
+(<codecave:run_ecl> + 0x1ACE) \
+"
+		},
+		"float_constants": {
+			"access": "re",
+			"code": "\
+FFFFFFFFFFFFFFFFFFFFFFFF00000000 \
+000000BF0000003F0000000000000000 \
+00000000000000000000000000000000 \
+83F9223E \
++0.5f \
+DB0FC9C0 \
++0.03125f \
++0.3f \
++96.0f \
+DB0FC93F \
+DB0F4940 \
++1.0f \
++0.99f \
+-1.0f \
++144.0f \
++72.0f \
+DB0FC9BF \
+DB0F49C0 \
++48.0f \
+-48.0f \
+"
+		}
+	},
+	"binhacks": {
+		"call_new_ecl_run": {
+			"addr": [ 0x41144E, 0x41258A ],
+			"code": "E8 [codecave:run_ecl]",
+			"expected": "E8 [0x4074A0]"
+		},
+		"change_return_check": {
+			"addr": 0x41258F,
+			"code": "83F8 01",
+			"expected": "83F8 FF",
+		},
+		"lol_nop_out_all_the_old_stuff": {
+			"addr": 0x4074A0,
+			"code": "<nop:0x3734>"
+		}
+	}
+}

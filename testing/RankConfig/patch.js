@@ -1,4 +1,7 @@
 {
+	"dependencies": [
+		"zero318/ZeroUtil"
+	],
 	"id": "RankConfig",
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/RankConfig/"

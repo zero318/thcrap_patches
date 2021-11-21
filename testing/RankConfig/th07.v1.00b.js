@@ -22,13 +22,7 @@
 		"RankConfig_Extra_RankMax": { "type": "i32", "val": 32 },
 		"RankConfig_Phantasm_RankDefault": { "type": "i32", "val": 16 },
 		"RankConfig_Phantasm_RankMin": { "type": "i32", "val": 10 },
-		"RankConfig_Phantasm_RankMax": { "type": "i32", "val": 32 },
-		"RankConfig_6_RankDefault": { "type": "i32", "val": 0 },
-		"RankConfig_6_RankMin": { "type": "i32", "val": 0 },
-		"RankConfig_6_RankMax": { "type": "i32", "val": 0 },
-		"RankConfig_7_RankDefault": { "type": "i32", "val": 0 },
-		"RankConfig_7_RankMin": { "type": "i32", "val": 0 },
-		"RankConfig_7_RankMax": { "type": "i32", "val": 0 }
+		"RankConfig_Phantasm_RankMax": { "type": "i32", "val": 32 }
 	},
 	"binhacks": {
 		"RankConfig_TH7_CallNewFunc_1": {

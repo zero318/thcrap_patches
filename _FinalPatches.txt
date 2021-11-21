@@ -3,3 +3,4 @@ SpellcardLimit
 TH8_ExtendedTrial
 YoloSpeed
 RankConfig
+ZeroEclExtensions

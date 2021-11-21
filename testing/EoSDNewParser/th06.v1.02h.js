@@ -1,0 +1,1586 @@
+{
+	"codecaves": {
+		
+		// 0x20
+		"ymm_constants": {
+			"access": "r",
+			"code": "\
+182D4454FB211940 182D4454FB211940 182D4454FB211940 0000000000000000 \
+",
+		},
+		
+		// 0x30
+		"xmm_constants": {
+			"access": "r",
+			"code": "\
+-0.0f -0.0f -0.0f -0.0f \
+00000000 00000000 +1.0f +1.0f \
+00000000 00003043 00000000 00003043 \
+",
+		},
+		
+		// 0x18
+		"double_constants": {
+			"access": "r",
+			"code": "\
+0000000000003043 \
+83C8C96D305FC43F \
+182D4454FB211940 \
+"
+		},
+		
+		// 0x14
+		"float_constants": {
+			"access": "r",
+			"code": "\
++0.99f \
++1.0f \
+-1.0f \
+0000802F \
++60.0f \
+",
+		},
+		
+		// Yes, this is a thcrap binhack_t with the associated array of hackpoint_addr_t bolted onto the end.
+		"vpatch_binhack_codecave": {
+			"access": "rw",
+			"code": "\
+<option:vpatch_dll_string> \
+00000000 \
+<option:absolute_evil> \
+00000000 \
+(<codecave:vpatch_binhack_codecave> + 0x14) \
+753D0000 \
+00000000 \
+02 000000 \
+00000000 \
+00000000 \
+00 000000 \
+00000000 \
+00000000 \
+"
+		},
+		
+		"UPDATE_FUNC_REGISTRY_register_on_tick": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+0FB75424 10 \
+8B7424 0C \
+66 8916 \
+<nop:2> \
+89C8 \
+8B49 14 \
+0FB738 \
+85C9 \
+74 05 \
+66 39D7 \
+7E EF \
+66 39D7 \
+7E 15 \
+8946 14 \
+8B48 10 \
+83C0 10 \
+894E 10 \
+85C9 \
+74 12 \
+8971 14 \
+EB 0D \
+C746 14 00000000 \
+8946 10 \
+83C0 14 \
+8930 \
+8B46 08 \
+85C0 \
+74 14 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+C746 08 00000000 \
+5E \
+5F \
+C2 0800 \
+31C0 \
+EB F7 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_register_on_draw": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+0FB77424 10 \
+8B4424 0C \
+83C1 20 \
+66 8930 \
+<nop:15> \
+89CA \
+8B49 14 \
+0FB73A \
+85C9 \
+74 05 \
+66 39F7 \
+7E EF \
+66 39F7 \
+7E 15 \
+8950 14 \
+8B4A 10 \
+83C2 10 \
+8948 10 \
+85C9 \
+74 12 \
+8941 14 \
+EB 0D \
+C740 14 00000000 \
+8950 10 \
+83C2 14 \
+8902 \
+8B48 08 \
+85C9 \
+74 0D \
+FF70 1C \
+FFD1 \
+83C4 04 \
+5E \
+5F \
+C2 0800 \
+31C0 \
+EB F7 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_unregister_func": {
+			"access": "re",
+			"code": "\
+56 \
+8B7424 08 \
+85F6 \
+74 22 \
+89C8 \
+<nop:5> \
+39F0 \
+74 1B \
+8B40 14 \
+85C0 \
+75 F5 \
+83C1 20 \
+<nop:2> \
+39F1 \
+74 0B \
+8B49 14 \
+85C9 \
+75 F5 \
+5E \
+C2 0400 \
+8B46 10 \
+85C0 \
+74 F5 \
+8B4E 14 \
+8948 14 \
+8B46 14 \
+85C0 \
+74 06 \
+8B4E 10 \
+8948 10 \
+C746 10 00000000 \
+C746 14 00000000 \
+F646 02 01 \
+8B46 0C \
+75 17 \
+85C0 \
+74 C7 \
+C746 0C 00000000 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+5E \
+C2 0400 \
+85C0 \
+74 08 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+C5F8 57C0 \
+C5F8 1146 04 \
+C746 14 00000000 \
+5E \
+C2 0400 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_run_all_on_tick": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+50 \
+31F6 \
+890C24 \
+89CD \
+EB 19 \
+8B0C24 \
+55 \
+E8 [codecave:UPDATE_FUNC_REGISTRY_unregister_func] \
+<nop:9> \
+46 \
+89DD \
+85DB \
+74 37 \
+8B7D 04 \
+8B5D 14 \
+85FF \
+74 F0 \
+FF75 1C \
+FFD7 \
+83C4 04 \
+83F8 01 \
+74 E2 \
+83F8 02 \
+74 EE \
+85C0 \
+74 C7 \
+83F8 06 \
+74 04 \
+72 09 \
+EB D0 \
+31F6 \
+8B2C24 \
+EB D0 \
+BE 04000000 \
+29C6 \
+89F0 \
+83C4 04 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_run_all_on_draw": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+50 \
+890C24 \
+8D69 20 \
+31F6 \
+EB 18 \
+8B0C24 \
+55 \
+E8 [codecave:UPDATE_FUNC_REGISTRY_unregister_func] \
+<nop:8> \
+46 \
+89DD \
+85DB \
+74 2C \
+8B7D 04 \
+8B5D 14 \
+85FF \
+74 F0 \
+FF75 1C \
+FFD7 \
+83C4 04 \
+83F8 01 \
+74 E2 \
+83F8 02 \
+74 EE \
+85C0 \
+74 C8 \
+83F8 06 \
+73 D4 \
+BE 04000000 \
+29C6 \
+89F0 \
+83C4 04 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"RNG_rand_word": {
+			"access": "re",
+			"code": "\
+FF41 04 \
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+C3 \
+"
+		},
+		"RNG_rand_dword": {
+			"access": "re",
+			"code": "\
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C2 \
+C1E2 10 \
+8341 04 02 \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+0FB7C0 \
+09D0 \
+C3 \
+"
+		},
+		"RNG_rand_float": {
+			"access": "re",
+			"code": "\
+50 \
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C2 \
+C1E2 10 \
+8341 04 02 \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+0FB7C0 \
+09D0 \
+C5F9 6EC0 \
+C5F9 EB05 (<codecave:xmm_constants> + 0x20) \
+C5FB 5C05 (<codecave:double_constants> + 0x0) \
+C5FB 5AC0 \
+C5FA 905 (<codecave:float_constants> + 0xC) \
+C5FA 110424 \
+D90424 \
+58 \
+C3 \
+"
+		},
+		"D3DMATRIX_set_identity": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C700 0000803F \
+C5F8 57C0 \
+C5F8 1140 04 \
+C740 14 0000803F \
+C5F8 1140 18 \
+C740 28 0000803F \
+C5F8 1140 2C \
+C740 3C 0000803F \
+C3 \
+"
+		},
+		"MIDI_MANAGER_sub_422630": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C781 C8020000 00000000  \
+8981 E8020000 \
+C781 EC020000 00000000  \
+C781 E0020000 00000000  \
+C781 E4020000 01000000  \
+31C0 \
+C2 0400 \
+"
+		},
+		"SUPERVISOR_tick_timer": {
+			"access": "re",
+			"code": "\
+C5FA 1005 (<codecave:float_constants> + 0x0) \
+C5F8 2E81 AC010000 \
+72 2A \
+8B4424 08 \
+C5FA 1000 \
+C5FA 5881 A8010000 \
+C5FA 1100 \
+C5F8 2E05 (<codecave:float_constants> + 0x4) \
+72 12 \
+C5FA 5805 (<codecave:float_constants> + 0x8) \
+C5FA 1100 \
+8B4424 04 \
+FF00 \
+C2 0800 \
+"
+		},
+		"TIMER_tick": {
+			"access": "re",
+			"code": "\
+8B41 08 \
+8901 \
+C5FA 1005 (<codecave:float_constants> + 0x0) \
+C5F8 2E05 C46E6C00 \
+72 29 \
+C5FA 1041 04 \
+C5FA 5805 C06E6C00 \
+C5FA 1141 04 \
+C5F8 2E05 (<codecave:float_constants> + 0x4) \
+72 11 \
+C5FA 5805 (<codecave:float_constants> + 0x8) \
+C5FA 1141 04 \
+40 \
+8941 08 \
+C3 \
+"
+		},
+		"TIMER_constructor": {
+			"access": "re",
+			"code": "\
+89C8 \
+C741 08 00000000 \
+C741 04 00000000 \
+C701 FFFFFFFF \
+C3 \
+"
+		},
+		"TIMER_increment": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C5FA1005 (<codecave:float_constants> + 0x0) \
+C5F82E05 C46E6C00 \
+73 06 \
+0141 08 \
+C2 0400 \
+85C0 \
+78 32 \
+8B51 08 \
+8911 \
+C5FA 1005 C06E6C00 \
+C5F2 2AC8 \
+C4E279 A949 04 \
+C4E371 0AC1 09 \
+C5F2 5CC8 \
+C5FA 2CC0 \
+01D0 \
+8941 08 \
+C5FA 1149 04 \
+C2 0400 \
+F7D8 \
+8B51 08 \
+8911 \
+C5FA 1005 C06E6C00 \
+C5F2 2AC8 \
+C4E279 AD49 04 \
+C4E371 0AC1 09 \
+C5F2 5CC8 \
+C5FA 2CC0 \
+29C2 \
+8951 08 \
+C5FA 1149 04 \
+C2 0400 \
+"
+		},
+		"TIMER_decrement": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C5FA 1005 (<codecave:float_constants> + 0x0) \
+C5F8 2E05 C46E6C00 \
+73 06 \
+2941 08 \
+C2 0400 \
+85C0 \
+78 32 \
+8B51 08 \
+8911 \
+C5FA 1005 C06E6C00 \
+C5F2 2AC8 \
+C4E279 AD49 04 \
+C4E371 0AC1 09 \
+C5F2 5CC8 \
+C5FA 2CC0 \
+29C2 \
+8951 08 \
+C5FA 1149 04 \
+C2 0400 \
+F7D8 \
+8B51 08 \
+8911 \
+C5FA 1005 C06E6C00 \
+C5F2 2AC8 \
+C4E279 A949 04 \
+C4E371 0AC1 09 \
+C5F2 5CC8 \
+C5FA 2CC0 \
+01D0 \
+8941 08 \
+C5FA 1149 04 \
+C2 0400 \
+"
+		},
+		"reduce_angle": {
+			"access": "re",
+			"code": "\
+50 \
+C5FA 104424 0C \
+C5FA 584424 08 \
+C5FA 5AC0 \
+C5FB 5905 (<codecave:double_constants> + 0x8) \
+C4E379 0BC8 08 \
+C5FB 5CC1 \
+C5FB 5905 (<codecave:double_constants> + 0x10) \
+C5FB 5AC0 \
+C5FA 110424 \
+D90424 \
+58 \
+C3 \
+"
+		},
+		"SOUND_MANAGER_play_sound_centered": {
+			"access": "re",
+			"code": "\
+56 \
+31D2 \
+8B4424 08 \
+<nop:9> \
+8BB491 20060000 \
+85F6 \
+78 12 \
+39C6 \
+74 0A \
+8D72 01 \
+83FA 02 \
+89F2 \
+72 E7 \
+5E \
+C2 0800 \
+898491 20060000 \
+0FBF14C5 2E854700 \
+899481 08040000 \
+5E \
+C2 0800 \
+"
+		},
+		"SOUND_MANAGER_sub_424E41": {
+			"access": "re",
+			"code": "\
+8B81 2C060000 \
+85C0 \
+74 1F \
+C5FA 104424 04 \
+C740 1C 01000000 \
+C5FA 5905 (<codecave:float_constants> + 0x10) \
+C5FA 2CC8 \
+8948 14 \
+8948 18 \
+C2 0400 \
+"
+		},
+		"ANM_VM_initialize": {
+			"access": "re",
+			"code": "\
+C5F8 57C0 \
+C5F8 1141 20 \
+C781 84000000 00000000  \
+C5F8 1101 \
+C5F8 280D (<codecave:xmm_constants> + 0x10) \
+C5F8 1149 10 \
+C741 7C FFFFFFFF \
+C741 3C 0000803F \
+C5F8 1141 40 \
+C741 50 0000803F \
+C5F8 1141 54 \
+C741 64 0000803F \
+C5F8 1141 68 \
+C741 78 0000803F \
+66 C781 80000000 0300  \
+C781 88000000 00000000  \
+66 C781 8C000000 0000  \
+C741 38 00000000 \
+C741 34 00000000 \
+C741 30 FFFFFFFF \
+C3 \
+",
+		},
+		"ANM_MANAGER_set_vm_sprite": {
+			"access": "re",
+			"code": "\
+56 \
+8B4424 08 \
+8B5424 0C \
+66 8990 B0000000 \
+6BD2 38 \
+8D3411 \
+89B0 C0000000 \
+C5F8 57C0 \
+C5F8 1140 40 \
+C5F8 1140 54 \
+C740 64 0000803F \
+C5F8 1140 68 \
+C740 78 0000803F \
+C5FB 104411 14 \
+C5FB 104C11 2C \
+C5F8 53D0 \
+C5F0 59DA \
+C4E261 AAC1 \
+C4E269 ACC3 \
+C5FA 1140 50 \
+C4E379 1740 3C 01 \
+31C0 \
+5E \
+C2 0800 \
+"
+		},
+		"ANM_MANAGER_free_texture": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+89CE \
+8B7C24 0C \
+8B84B9 10C10100 \
+85C0 \
+74 11 \
+C784BE 10C10100 00000000  \
+8B08 \
+50 \
+FF51 08 \
+8B84BE 30C50100 \
+C784BE 30C50100 00000000  \
+50 \
+E8 [th_free] \
+83C4 04 \
+5E \
+5F \
+C2 0400 \
+"
+		},
+		"ANM_MANAGER_free_anm_file": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+8B4424 10 \
+8BBC81 34090200 \
+85FF \
+0F84 E1000000 \
+89CE \
+C78481 34090200 00000000  \
+8B8C81 340B0200 \
+C78486 340B0200 00000000  \
+8B17 \
+8D47 40 \
+85D2 \
+74 35 \
+C5F8 57C0 \
+<nop:14> \
+8B18 \
+83C0 04 \
+8B1C3B \
+01CB \
+6BDB 38 \
+C5FC 11441E 18 \
+C5FC 11441E 04 \
+C7041E FFFFFFFF \
+4A \
+75 DD \
+8B4F 04 \
+85C9 \
+74 24 \
+31D2 \
+<nop:4> \
+8B1CD0 \
+C7849E 34C90100 00000000  \
+C7849E 34E90100 00000000  \
+42 \
+39D1 \
+75 E2 \
+8B5F 08 \
+8B849E 10C10100 \
+85C0 \
+74 14 \
+C7849E 10C10100 00000000  \
+8B08 \
+50 \
+C5F8 77 \
+FF51 08 \
+8B849E 30C50100 \
+C7849E 30C50100 00000000  \
+50 \
+C5F8 77 \
+E8 [th_free] \
+83C4 04 \
+57 \
+E8 [th_free] \
+83C4 04 \
+66 C786 BC100200 FFFF  \
+C686 BE100200 FF  \
+5E \
+5F \
+5B \
+C2 0400 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_texture": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 28 \
+C5F8 104424 40 \
+8B4424 58 \
+8B5424 5C \
+8B7424 60 \
+8B7C24 50 \
+8B5C24 54 \
+8B6C24 3C \
+8B8CA9 10C10100 \
+85DB \
+BD 0F000000 \
+0F44DD \
+85FF \
+0F44FD \
+894C24 24 \
+897424 20 \
+895424 1C \
+894424 18 \
+895C24 14 \
+897C24 10 \
+C5F8 110424 \
+E8 [0x41F050] \
+83C4 28 \
+5E \
+5F \
+5B \
+5D \
+C2 2800 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_vm_left": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 48 \
+8B4424 6C \
+8B7424 60 \
+8B9E 0C010000 \
+8D4C24 70 \
+894C24 04 \
+8D5424 08 \
+51 \
+50 \
+52 \
+E8 [0x45B9E0] \
+83C4 0C \
+8B8E C0000000 \
+0FB686 0D010000 \
+C5FA 2C71 14 \
+C5FA 2C79 18 \
+C5FA 2C51 08 \
+891424 \
+84C0 \
+BA 0F000000 \
+0F44C2 \
+84DB \
+0F44DA \
+C5FA 2C51 04 \
+8B09 \
+0FB6C0 \
+0FB6DB \
+8B6C24 5C \
+FFB48D 10C10100 \
+8D4C24 0C \
+51 \
+FF7424 70 \
+FF7424 70 \
+50 \
+53 \
+56 \
+57 \
+FF7424 20 \
+52 \
+E8 [0x41F050] \
+83C4 28 \
+8B4424 60 \
+8088 80000000 01  \
+83C4 48 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		
+		"ANM_MANAGER_run_anm": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+8B7C24 14 \
+8BAF BC000000 \
+BE 01000000 \
+85ED \
+0F84 0B090000 \
+0FBF97 8A000000 \
+85D2 \
+75 14 \
+8B5F 38 \
+0FBF45 00 \
+39D8 \
+0F8E 60010000 \
+E9 26020000 \
+66 C787 8A000000 0000  \
+80A7 81000000 DF  \
+8B9F B8000000 \
+31F6 \
+EB 15 \
+8B43 04 \
+39D0 \
+74 3D \
+83F8 FF \
+0F44F3 \
+0FB643 03 \
+8D5C03 04 \
+0FB643 02 \
+3C 16 \
+74 E3 \
+84C0 \
+74 04 \
+3C 0F \
+75 E8 \
+85F6 \
+75 1D \
+C5FA 1005 (<codecave:float_constants> + 0x0) \
+C5F8 2E05 C46E6C00 \
+8B5F 38 \
+73 37 \
+4B \
+895F 38 \
+EB 59 \
+89DE \
+0FB646 03 \
+8D6C06 04 \
+808F 80000000 01  \
+0FBF5C06 04 \
+C747 30 19FCFFFF \
+C747 34 00000000 \
+895F 38 \
+BE 01000000 \
+E9 CC000000 \
+895F 30 \
+C5FA 1047 34 \
+C5FA 5C05 C06E6C00 \
+C4E379 0AC8 09 \
+C5FA 5CC1 \
+C5FA 2CC1 \
+29C3 \
+895F 38 \
+C5FA1147 34 \
+E9 9D010000 \
+808F 80000000 01  \
+0FBF87 B4000000 \
+8B55 04 \
+039481 34E90100 \
+66 8997 B0000000 \
+6BC2 38 \
+8D1401 \
+8997 C0000000 \
+C5F8 57C0 \
+C5F8 1147 40 \
+C5F8 1147 54 \
+C747 64 0000803F \
+C5F8 1147 68 \
+C747 78 0000803F \
+C5FB 104401 14 \
+C5FB 104C01 2C \
+C5F8 53D0 \
+C5F0 59DA \
+C4E261 AAC1 \
+C4E269 ACC3 \
+C5FA 1147 50 \
+C4E379 1747 3C 01 \
+899F FC000000 \
+<nop:14> \
+0FB655 03 \
+0FBF4415 04 \
+8D6C15 04 \
+39D8 \
+0F8F CB000000 \
+0FB645 02 \
+83F8 1F \
+77 E2 \
+FF2485 <codecave:ANM_MANAGER_run_anm_jump_table> \
+8B87 B8000000 \
+8B55 04 \
+8D2C02 \
+0FBF1C02 \
+EB DE \
+0FB697 81000000 \
+C0E0 02 \
+04 08 \
+24 0C \
+80E2 F3 \
+08C2 \
+8897 81000000 \
+8D87 E4000000 \
+8D97 90000000 \
+F687 80000000 20  \
+0F44C2 \
+8B50 08 \
+8997 D4000000 \
+C5FB 1000 \
+C5FB 1187 CC000000 \
+8B45 0C \
+8987 E0000000 \
+C5FB 1045 04 \
+C5FB 1187 D8000000 \
+0FB745 10 \
+66 8987 8C000000 \
+C787 F8000000 00000000  \
+C787 F4000000 00000000  \
+C787 F0000000 19FCFFFF  \
+E9 41FFFFFF \
+80A7 80000000 FE  \
+808F 81000000 20  \
+C5FA 1005 (<codecave:float_constants> + 0x0) \
+C5F8 2E05 C46E6C00 \
+73 06 \
+4B \
+895F 38 \
+EB 28 \
+895F 30 \
+C5FA 1047 34 \
+C5FA 5C05 C06E6C00 \
+C4E3 790AC8 09 \
+C5FA 5CC1 \
+C5FA 2CC1 \
+29C3 \
+895F 38 \
+C5FA 1147 34 \
+89AF BC000000 \
+C5FC 5A47 0C \
+C4E37D 09C8 08 \
+C5FD 5CC1 \
+C5FD 5905 (<codecave:ymm_constants> + 0x0) \
+C5FD 5AC8 \
+C4E279 1805 C06E6C00 \
+C5F8 1017 \
+C4E279 A8CA \
+C4E371 0CCA 08 \
+C5F8 110F \
+0FB787 86000000 \
+66 85C0 \
+0F8E E1030000 \
+8B8F AC000000 \
+898F A4000000 \
+C5FA 100D (<codecave:float_constants> + 0x0) \
+C5F8 2E0D C46E6C00 \
+72 2A \
+C5FA 588F A8000000 \
+C5FA 118F A8000000 \
+C5F8 2E0D (<codecave:float_constants> + 0x4) \
+72 17 \
+C5F2 580D (<codecave:float_constants> + 0x8) \
+C5FA 118F A8000000 \
+41 \
+898F AC000000 \
+39C1 \
+0F8D A4030000 \
+C5DA 2AC9 \
+C5F2 588F A8000000 \
+98 \
+C5DA 2AD0 \
+C5F2 5ECA \
+C5FB 1057 20 \
+C5FB 109F 9C000000 \
+C5E8 5CD3 \
+C5FA 12C9 \
+C4E269 A8CB \
+E9 8C030000 \
+0FB645 04 \
+24 01 \
+0FB697 80000000 \
+80E2 FE \
+E9 87020000 \
+8D87 E4000000 \
+8D97 90000000 \
+F687 80000000 20  \
+0F44C2 \
+8B55 0C \
+8950 08 \
+C5FB 1045 04 \
+C5FB 1100 \
+E9 DCFDFFFF \
+80A7 80000000 FB  \
+E9 D0FDFFFF \
+C5FA 1045 04 \
+C5FA 5847 28 \
+C5FA 580D (<codecave:float_constants> + 0x8) \
+C5FA 1015 (<codecave:float_constants> + 0x4) \
+C5FA C2DA 01 \
+C4E371 4AC0 30 \
+C5FA 58CA \
+C5E8 57D2 \
+C5FA C2D2 01 \
+C4E379 4AC1 20 \
+C5FA 1147 28 \
+E9 8EFDFFFF \
+0FB745 04 \
+66 8987 88000000 \
+E9 7EFDFFFF \
+C5FB 1045 04 \
+C4E379 04C0 E1 \
+C5F8 1347 20 \
+66 C787 86000000 0000  \
+E9 60FDFFFF \
+C5FB 1045 04 \
+C4E379 04C0 E1 \
+C5F8 1347 18 \
+E9 4BFDFFFF \
+8B47 7C \
+8987 C4000000 \
+25 FFFFFF00 \
+0FB655 04 \
+C1E2 18 \
+09C2 \
+8997 C8000000 \
+0FB745 08 \
+66 8987 84000000 \
+C787 08010000 00000000  \
+C787 04010000 00000000  \
+C787 00010000 19FCFFFF  \
+E9 00FDFFFF \
+8B45 0C \
+8947 08 \
+C5FB1045 04 \
+C5FB1107 \
+E9 ECFCFFFF \
+808F 80000000 01  \
+0FB775 08 \
+66 85F6 \
+0F84 8A040000 \
+FF05 FCD86900 \
+B8 3096FFFF \
+3305 F8D86900 \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 A3 F8D86900 \
+31D2 \
+66 F7F6 \
+0FB7C2 \
+0FBF97 B4000000 \
+038491 34E90100 \
+0345 04 \
+66 8987 B0000000 \
+6BC0 38 \
+8D1401 \
+8997 C0000000 \
+C5F8 57C0 \
+C5F8 1147 40 \
+C5F8 1147 54 \
+C747 64 0000803F \
+C5F8 1147 68 \
+C747 78 0000803F \
+C5FB 104401 14 \
+C5FB 104C01 2C \
+C5F8 53D0 \
+C5F0 59DA \
+C4E261 AAC1 \
+C4E269 ACC3 \
+C5FA 1147 50 \
+C4E379 1747 3C 01 \
+899F FC000000 \
+BE 01000000 \
+E9 31FCFFFF \
+80B7 80000000 40  \
+C5FA 1047 1C \
+C5F8 5705 (<codecave:xmm_constants> + 0x0) \
+C5FA 1147 1C \
+E9 13FCFFFF \
+80A7 80000000 FE  \
+C787 BC000000 00000000  \
+E9 A3030000 \
+808F 81000000 03  \
+E9 F1FBFFFF \
+0FB645 04 \
+8847 7F \
+E9 E5FBFFFF \
+808F 80000000 04  \
+E9 D9FBFFFF \
+0FB645 06 \
+8847 7E \
+0FB745 04 \
+66 8947 7C \
+E9 C5FBFFFF \
+8B45 0C \
+8947 14 \
+C5FB 1045 04 \
+C5FB 1147 0C \
+E9 B0FBFFFF \
+80B7 80000000 80  \
+C5FA 1047 18 \
+C5F8 5705 (<codecave:xmm_constants> + 0x0) \
+C5FA 1147 18 \
+E9 92FBFFFF \
+0FB645 04 \
+0FB697 80000000 \
+C0E0 05 \
+24 20 \
+80E2 DF \
+08C2 \
+8897 80000000 \
+E9 72FBFFFF \
+C5FB 1045 04 \
+C4E379 04C0 E1 \
+C5F8 1347 20 \
+0FB745 0C \
+66 8987 86000000 \
+C787 AC000000 00000000  \
+C787 A8000000 00000000  \
+C787 A4000000 19FCFFFF  \
+C5FB 1047 18 \
+C5FB 1187 9C000000 \
+E9 27FBFFFF \
+0FB645 04 \
+0FB697 81000000 \
+C0E0 04 \
+24 10 \
+80E2 EF \
+08C2 \
+8897 81000000 \
+E9 07FBFFFF \
+C5FA 1045 04 \
+C5FA 5847 2C \
+C5FA 580D (<codecave:float_constants> + 0x8) \
+C5FA 1015 (<codecave:float_constants> + 0x4) \
+C5FA C2DA 01 \
+C4E371 4AC0 30 \
+C5FA 58CA \
+C5E8 57D2 \
+C5FA C2D2 01 \
+C4E379 4AC1 20 \
+C5FA 1147 2C \
+E9 C5FAFFFF \
+C5FB 104F 18 \
+C5FB 1057 20 \
+C5FA 12D8 \
+C4E269 A8D9 \
+C5F8 135F 18 \
+EB 4D \
+C5FB 104F 20 \
+66 C787 86000000 0000  \
+C747 20 00000000 \
+C747 24 00000000 \
+8A87 80000000 \
+C5F8 281D (<codecave:xmm_constants> + 0x0) \
+C5F8 28D1 \
+84C0 \
+79 04 \
+C5F0 57D3 \
+C5FA 16C9 \
+A8 40 \
+74 04 \
+C5F0 57CB \
+C4E369 21C9 10 \
+C5F8 134F 18 \
+0FB787 84000000 \
+66 85C0 \
+0F8E B4000000 \
+8B8F 08010000 \
+898F 00010000 \
+C5FA 100D (<codecave:float_constants> + 0x0) \
+C5F8 2E0D C46E6C00 \
+72 2A \
+C5FA 588F 04010000 \
+C5FA 118F 04010000 \
+C5F8 2E0D (<codecave:float_constants> + 0x4) \
+72 17 \
+C5F2 580D (<codecave:float_constants> + 0x8) \
+C5FA 118F 04010000 \
+41 \
+898F 08010000 \
+39C1 \
+7C 09 \
+66 C787 84000000 0000  \
+C5DA 2AC9 \
+C5F2 588F 04010000 \
+98 \
+C5DA 2AD0 \
+C5F2 5ECA \
+C5F2 5D0D (<codecave:float_constants> + 0x4) \
+C4E279 3197 C4000000 \
+C5F8 5BD2 \
+C4E279 319F C8000000 \
+C5F8 5BDB \
+C5E0 5CDA \
+C4E379 04C9 00 \
+C4E261 A8CA \
+C5FA 5BC9 \
+C4E271 2BC9 \
+C5F1 67C9 \
+C5F9 7E4F 7C \
+0FBF8F 8C000000 \
+85C9 \
+74 48 \
+8B87 F8000000 \
+C5DA 2AD0 \
+C5FA 108F F4000000 \
+C5F2 58D2 \
+C5DA 2AD9 \
+C5EA 5ED3 \
+C5EA 5D15 (<codecave:float_constants> + 0x4) \
+0FB697 81000000 \
+83E2 0C \
+83FA 08 \
+74 20 \
+83FA 04 \
+75 30 \
+C5FA 101D (<codecave:float_constants> + 0x4) \
+C5E2 5CD2 \
+EB 1D \
+C5FA 1015 C46E6C00 \
+E9 AA000000 \
+C5FA 101D (<codecave:float_constants> + 0x4) \
+C5E2 5CD2 \
+C5EA 59D2 \
+C4E269 ADD3 \
+C4E379 04D2 00 \
+8D97 E4000000 \
+8DB7 90000000 \
+F687 80000000 20  \
+0F44D6 \
+C5F8 109F CC000000 \
+C5F8 10A7 D8000000 \
+C5D8 5CE3 \
+C4E269 A8E3 \
+C4E359 0C12 08 \
+C5F8 1112 \
+39C8 \
+7C 09 \
+66 C787 8C000000 0000  \
+8987 F0000000 \
+C5FA 1015 C46E6C00 \
+C5FA 101D (<codecave:float_constants> + 0x0) \
+C5F8 2EDA \
+72 26 \
+C5F2 58C8 \
+C5FA 118F F4000000 \
+C5F8 2E0D (<codecave:float_constants> + 0x4) \
+72 17 \
+C5F2 580D (<codecave:float_constants> + 0x8) \
+C5FA 118F F4000000 \
+40 \
+8987 F8000000 \
+895F 30 \
+C5F8 2E15 (<codecave:float_constants> + 0x0) \
+77 23 \
+C5FA 5847 34 \
+C5FA 1147 34 \
+31F6 \
+C5F8 2E05 (<codecave:float_constants> + 0x4) \
+72 13 \
+C5FA 5805 (<codecave:float_constants> + 0x8) \
+C5FA 1147 34 \
+43 \
+895F 38 \
+31F6 \
+89F0 \
+5E \
+5F \
+5B \
+5D \
+C5F8 77 \
+C2 0400 \
+31D2 \
+E9 94FBFFFF \
+",
+		},
+		"ANM_MANAGER_run_anm_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:ANM_MANAGER_run_anm> + 0x56D) \
+(<codecave:ANM_MANAGER_run_anm> + 0xF6) \
+(<codecave:ANM_MANAGER_run_anm> + 0x420) \
+(<codecave:ANM_MANAGER_run_anm> + 0x58F) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5A7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1A5) \
+(<codecave:ANM_MANAGER_run_anm> + 0x180) \
+(<codecave:ANM_MANAGER_run_anm> + 0x54F) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5D0) \
+(<codecave:ANM_MANAGER_run_anm> + 0x480) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5BB) \
+(<codecave:ANM_MANAGER_run_anm> + 0x402) \
+(<codecave:ANM_MANAGER_run_anm> + 0x435) \
+(<codecave:ANM_MANAGER_run_anm> + 0x59B) \
+(<codecave:ANM_MANAGER_run_anm> + 0x3A4) \
+(<codecave:ANM_MANAGER_run_anm> + 0x574) \
+(<codecave:ANM_MANAGER_run_anm> + 0x494) \
+(<codecave:ANM_MANAGER_run_anm> + 0x37A) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1B7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1B7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1B7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x246) \
+(<codecave:ANM_MANAGER_run_anm> + 0x180) \
+(<codecave:ANM_MANAGER_run_anm> + 0x583) \
+(<codecave:ANM_MANAGER_run_anm> + 0x23F) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5EE) \
+(<codecave:ANM_MANAGER_run_anm> + 0x3F2) \
+(<codecave:ANM_MANAGER_run_anm> + 0x3B0) \
+(<codecave:ANM_MANAGER_run_anm> + 0x679) \
+(<codecave:ANM_MANAGER_run_anm> + 0x365) \
+(<codecave:ANM_MANAGER_run_anm> + 0x60E) \
+(<codecave:ANM_MANAGER_run_anm> + 0x659) \
+",
+		},
+		
+		"ANM_MANAGER_set_vm_script": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+8B5424 08 \
+C5F8 57C0 \
+C5F8 1140 20 \
+C780 84000000 00000000  \
+C5F8 1100 \
+C5F8 280D (<codecave:xmm_constants> + 0x10) \
+C5F8 1148 10 \
+C740 7C FFFFFFFF \
+C740 3C 0000803F \
+C5F8 1140 40 \
+C740 50 0000803F \
+C5F8 1140 54 \
+C740 64 0000803F \
+C5F8 1140 68 \
+C740 78 0000803F \
+66 C780 80000000 0200  \
+C780 88000000 00000000  \
+66 C780 8C000000 0000  \
+8990 B8000000 \
+8990 BC000000 \
+C740 38 00000000 \
+C740 34 00000000 \
+C740 30 19FCFFFF \
+85D2 \
+74 06 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+C2 0800 \
+"
+		},
+		
+		
+	},
+	"binhacks": {
+		"replace_ANM_MANAGER_run_anm": {
+			"addr": [
+				0x4026D8,
+				0x4026FD,
+				0x403002,
+				0x403024,
+				0x40409E,
+				0x4048FB,
+				0x404912,
+				0x405B55,
+				0x405B7B,
+				0x405BA1,
+				0x405BC7,
+				0x406410,
+				0x406ABA,
+				0x40712E,
+				0x407143,
+				0x407158,
+				0x40716C,
+				0x40F197,
+				0x410A27,
+				0x4125D7,
+				0x412635,
+				0x414BC7,
+				0x414D02,
+				0x414E3E,
+				0x415C41,
+				0x415D98,
+				0x41648F,
+				0x418FEF,
+				0x419003,
+				0x419017,
+				0x41902B,
+				0x41903F,
+				0x419053,
+				0x41968B,
+				0x41977B,
+				0x419858,
+				0x419874,
+				0x41988B,
+				0x4198A2,
+				0x4198B9,
+				0x4198D0,
+				0x4198E7,
+				0x41990F,
+				0x4200D6,
+				0x425450,
+				0x42911E,
+				0x42914C,
+				0x429161,
+				0x4296BE,
+				0x42E42B,
+				0x4324BC,
+				0x4374BF,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_run_anm]",
+			"expected": "E8 [0x433960]",
+		},
+		"replace_ANM_VM_initialize": {
+			"addr": [
+				0x401479,
+				0x401497,
+				0x41474A,
+				0x425A3A,
+				0x425B68,
+				0x42F1F4,
+				0x432451,
+			],
+			"code": "E8 [codecave:ANM_VM_initialize]",
+			"expected": "E8 [0x403580]"
+		},
+		"replace_ANM_MANAGER_set_vm_script": {
+			"addr": [
+				0x401D61,
+				0x401E52,
+				0x4029AA,
+				0x4029F9,
+				0x402AAD,
+				0x404263,
+				0x40524E,
+				0x407D87,
+				0x407E15,
+				0x40A7A8,
+				0x40A813,
+				0x40A86B,
+				0x40A8C6,
+				0x40A91E,
+				0x40D9A1,
+				0x40DA6B,
+				0x40F047,
+				0x410253,
+				0x4104D0,
+				0x4146F4,
+				0x416E25,
+				0x416E7A,
+				0x416ECF,
+				0x416F24,
+				0x416F79,
+				0x417B10,
+				0x417B69,
+				0x417C40,
+				0x417C9F,
+				0x417ED3,
+				0x41826F,
+				0x4182D4,
+				0x418313,
+				0x418352,
+				0x418391,
+				0x4183D0,
+				0x41840F,
+				0x41851E,
+				0x41855D,
+				0x418A1F,
+				0x418B32,
+				0x418D1A,
+				0x418E1A,
+				0x418EC8,
+				0x41965A,
+				0x419732,
+				0x41F476,
+				0x42571E,
+				0x426232,
+				0x426819,
+				0x427C37,
+				0x427C9C,
+				0x427D00,
+				0x427D67,
+				0x428DCD,
+				0x429CD3,
+				0x429D3B,
+				0x429F38,
+				0x429F78,
+				0x42F1B6,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_set_vm_script]",
+			"expected": "E8 [0x432430]"
+		},
+		"replace_ANM_MANAGER_set_vm_sprite": {
+			"addr": [
+				0x401487,
+				0x4014A5,
+				0x40B98B,
+				0x40C2B4,
+				0x40C49E,
+				0x40D656,
+				0x40D896,
+				0x40E17E,
+				0x40FB59,
+				0x413AF8,
+				0x413B55,
+				0x413B7A,
+				0x413BA5,
+				0x413C3A,
+				0x413C97,
+				0x413CBC,
+				0x413CE7,
+				0x413D7C,
+				0x413DD9,
+				0x413DFE,
+				0x413E29,
+				0x413E58,
+				0x413E9F,
+				0x413EFC,
+				0x413F21,
+				0x413F4C,
+				0x414717,
+				0x41475A,
+				0x417B2A,
+				0x417C60,
+				0x418A72,
+				0x42026E,
+				0x4202F7,
+				0x425A4E,
+				0x425B7F,
+				0x42F208,
+				0x433A4D,
+				0x433B03,
+				0x435BCA,
+				0x435BEB,
+				0x4377EF,
+				0x437868,
+				0x438F45,
+				0x438FCB,
+				0x438FE9,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_set_vm_sprite]",
+			"expected": "E8 [0x4323A0]"
+		},
+		"remove_ANM_MANAGER_run_anm": {
+			"addr": 0x433960,
+			"code": "CC <nop:4482>"
+		},
+		"remove_ANM_VM_initialize": {
+			"addr": 0x403580,
+			"code": "CC <nop:237>"
+		},
+		"remove_ANM_MANAGER_set_vm_script": {
+			"addr": 0x432430,
+			"code": "CC <nop:150>"
+		},
+		"remove_ANM_MANAGER_set_vm_sprite": {
+			"addr": 0x4323A0,
+			"code": "CC <nop:143>"
+		},
+	},
+}

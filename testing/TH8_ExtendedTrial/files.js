@@ -1,0 +1,20 @@
+{
+  "NEW_th08.v1.00d.js": 1733783612,
+  "README.txt": 315971634,
+  "_patch.js": null,
+  "patch.js": 636337239,
+  "th08.v1.00d.js": 794951133,
+  "th08/_ecldata1.ecl": 3552270450,
+  "th08/_ecldata2.ecl": 262360814,
+  "th08/_ecldata3.ecl": 2879033992,
+  "th08/data/etama/etama3.png": 2562575624,
+  "th08/data/title/title02.png": 2250336830,
+  "th08/ply00a.sht": 3077350997,
+  "th08/ply00as.sht": 1098949780,
+  "th08/ply01a.sht": 1753700132,
+  "th08/ply01as.sht": 3421767359,
+  "th08/ply02a.sht": 1897732933,
+  "th08/ply02as.sht": 1937299692,
+  "th08/ply03a.sht": 1245200841,
+  "th08/ply03as.sht": 3460598952
+}

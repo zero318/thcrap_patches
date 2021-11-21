@@ -1,0 +1,8421 @@
+{
+	"options": {
+		"vpatch_dll_string": {
+			"type": "s",
+			"val": "vpatch_th06_unicode.dll"
+		},
+		"vpatch_dll_string_j": {
+			"type": "s",
+			"val": "vpatch_th06_unicode_j.dll"
+		},
+		"absolute_evil": {
+			"type": "s",
+			"val": "\
+B9 18D96900 \
+E9 [codecave:UPDATE_FUNC_REGISTRY_run_all_on_tick] \
+CC CC \
+"
+		},
+		
+		"ignore_alloc_funcs": {
+			"type": "b8",
+			"val": false
+		},
+		"ignore_base_tsa_stuff": {
+			"type": "b8",
+			"val": true
+		},
+		"ignore_player_check_bullet_collisions": {
+			"type": "b8",
+			"val": false
+		},
+		
+		"ItemID_SmallPower": {
+			"type": "u8",
+			"val": 0
+		},
+		"ItemID_Point": {
+			"type": "u8",
+			"val": 1
+		},
+		"ItemID_BigPower": {
+			"type": "u8",
+			"val": 2
+		},
+		"ItemID_Bomb": {
+			"type": "u8",
+			"val": 3
+		},
+		"ItemID_F": {
+			"type": "u8",
+			"val": 4
+		},
+		"ItemID_Life": {
+			"type": "u8",
+			"val": 5
+		},
+		"ItemID_Graze": {
+			"type": "u8",
+			"val": 6
+		},
+		
+		"sin_addr": {
+			"type": "u32",
+			"val": 0x45BCF4
+		},
+		"cos_addr": {
+			"type": "u32",
+			"val": 0x45BDA4
+		},
+	},
+	"codecaves": {
+		// Next: 0xE
+		"xmm_constants": {
+			"access": "r",
+			"code": "\
++0.5f +0.5f 0000000000000000 \
+-0.0f -0.0f -0.0f -0.0f \
+-0.5f +1.0f 0000000000000000 \
+0000000000000000 +1.0f +1.0f \
+00000000 01000000 04000000 00000000 \
+-0.5f -0.5f 0000000000000000 \
+-0.0f 000000000000000000000000 \
+0000000000000000 -2.2f 00000000 \
++0.125f +0.125f 0000000000000000 \
++0.5f +0.5f +0.5f +0.5f \
+0000000000000000 -0.0f -0.0f \
+0000000000003043 0000000000003043 \
+-0.5f -0.5f +0.5f +0.5f \
++0.5f +0.5f -0.5f -0.5f \
+"
+		},
+		// Next: 0x8
+		"double_constants": {
+			"access": "r",
+			"code": "\
+0000000000003043 \
+"
+		},
+		// Next: 0x74
+		"float_constants": {
+			"access": "r",
+			"code": "\
+0000802F \
++0.99f \
++1.0f \
+-1.0f \
+DB0FC93F \
+-0.5f \
+DB0FC940 \
+FDAD003D \
++0.3f \
+00009033 \
++48.0f \
+00004033 \
+-64.0f \
++7.5f \
++16.0f \
++0.5f \
+-0.25f \
++60.0f \
+-10.4f \
++416.0f \
++0.01f \
+-0.02f \
++240.0f \
++32.0f \
+-990.0f \
+00004834 \
+DB0FC9C0 \
+83F9223E \
++0.005f \
+"
+		},
+		"default_timers": {
+			"access": "r",
+			"code": "\
+19FCFFFF 00000000 00000000  00000000 \
+19FCFFFF 00000000 02000000  00000000 \
+FFFFFFFF 00000000 00000000  00000000 \
+"
+		},
+		
+		"PlayerCheckBulletCollisionsSizes_Float2LookupTable": {
+			"access": "r",
+			"code": "\
++32.0f +32.0f \
++42.0f +42.0f \
++48.0f +48.0f \
++48.0f +48.0f \
+"
+		},
+		"RandomItemIDs_LookupTable": {
+			"access": "r",
+			"code": "\
+<option:ItemID_Graze> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_Point> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_SmallPower> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_SmallPower> \
+<option:ItemID_Point> \
+<option:ItemID_Point> \
+<option:ItemID_Point> \
+<option:ItemID_SmallPower> \
+<option:ItemID_BigPower> \
+"
+		},
+		"SpellcardPoints_IntTable": {
+			"access": "r",
+			"code": "\
+(i32:200000) (i32:200000) (i32:200000) (i32:200000) \
+(i32:200000) (i32:200000) (i32:200000) (i32:250000) \
+(i32:250000) (i32:250000) (i32:250000) (i32:250000) \
+(i32:250000) (i32:250000) (i32:300000) (i32:300000) \
+(i32:300000) (i32:300000) (i32:300000) (i32:300000) \
+(i32:300000) (i32:300000) (i32:300000) (i32:300000) \
+(i32:300000) (i32:300000) (i32:300000) (i32:300000) \
+(i32:300000) (i32:300000) (i32:300000) (i32:300000) \
+(i32:400000) (i32:400000) (i32:400000) (i32:400000) \
+(i32:400000) (i32:400000) (i32:400000) (i32:400000) \
+(i32:500000) (i32:500000) (i32:500000) (i32:500000) \
+(i32:500000) (i32:500000) (i32:600000) (i32:600000) \
+(i32:600000) (i32:600000) (i32:600000) (i32:700000) \
+(i32:700000) (i32:700000) (i32:700000) (i32:700000) \
+(i32:700000) (i32:700000) (i32:700000) (i32:700000) \
+(i32:700000) (i32:700000) (i32:700000) (i32:700000) \
+"
+		},
+		
+		// Yes, this is a thcrap binhack_t with the associated array of hackpoint_addr_t bolted onto the end.
+		"vpatch_binhack_codecave": {
+			"access": "rw",
+			"code": "\
+<option:vpatch_dll_string> \
+00000000 \
+<option:absolute_evil> \
+00000000 \
+(<codecave:vpatch_binhack_codecave> + 0x14) \
+753D0000 \
+00000000 \
+02 000000 \
+00000000 \
+00000000 \
+00 000000 \
+00000000 \
+00000000 \
+"
+		},
+		
+		"UPDATE_FUNC_REGISTRY_register_on_tick": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+0FB75424 10 \
+8B7424 0C \
+66 8916 \
+<nop:2> \
+89C8 \
+8B49 14 \
+0FB738 \
+85C9 \
+74 05 \
+66 39D7 \
+7E EF \
+66 39D7 \
+7E 15 \
+8946 14 \
+8B48 10 \
+83C0 10 \
+894E 10 \
+85C9 \
+74 12 \
+8971 14 \
+EB 0D \
+C746 14 00000000 \
+8946 10 \
+83C0 14 \
+8930 \
+8B46 08 \
+85C0 \
+74 14 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+C746 08 00000000 \
+5E \
+5F \
+C2 0800 \
+31C0 \
+EB F7 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_register_on_draw": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+0FB77424 10 \
+8B4424 0C \
+83C1 20 \
+66 8930 \
+<nop:15> \
+89CA \
+8B49 14 \
+0FB73A \
+85C9 \
+74 05 \
+66 39F7 \
+7E EF \
+66 39F7 \
+7E 15 \
+8950 14 \
+8B4A 10 \
+83C2 10 \
+8948 10 \
+85C9 \
+74 12 \
+8941 14 \
+EB 0D \
+C740 14 00000000 \
+8950 10 \
+83C2 14 \
+8902 \
+8B48 08 \
+85C9 \
+74 0D \
+FF70 1C \
+FFD1 \
+83C4 04 \
+5E \
+5F \
+C2 0800 \
+31C0 \
+EB F7 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_run_all_on_tick": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 0C \
+89CD \
+8D41 20 \
+894424 04 \
+31F6 \
+890C24 \
+EB 24 \
+0F57C0 \
+8B4424 08 \
+0F1100 \
+C740 10 00000000 \
+<nop:8> \
+46 \
+89DD \
+85DB \
+0F84 C3000000 \
+8B7D 04 \
+8B5D 14 \
+85FF \
+74 EC \
+8D45 04 \
+894424 08 \
+FF75 1C \
+FFD7 \
+83C4 04 \
+83F8 01 \
+74 D7 \
+83F8 02 \
+74 EE \
+85C0 \
+74 0D \
+83F8 06 \
+74 27 \
+0F82 8A000000 \
+EB C1 \
+8B0424 \
+39E8 \
+74 1F \
+8B40 14 \
+85C0 \
+75 F5 \
+8B4424 04 \
+39E8 \
+74 10 \
+8B40 14 \
+85C0 \
+75 F5 \
+EB A2 \
+31F6 \
+8B2C24 \
+EB A6 \
+8B45 10 \
+85C0 \
+74 94 \
+8B4D 14 \
+8948 14 \
+8B45 14 \
+85C0 \
+74 06 \
+8B4D 10 \
+8948 10 \
+C745 10 00000000 \
+C745 14 00000000 \
+F645 02 01 \
+8B45 0C \
+75 1C \
+85C0 \
+0F84 62FFFFFF \
+C745 0C 00000000 \
+FF75 1C \
+FFD0 \
+83C4 04 \
+E9 4EFFFFFF \
+85C0 \
+0F84 2DFFFFFF \
+FF75 1C \
+FFD0 \
+83C4 04 \
+E9 20FFFFFF \
+BE 04000000 \
+29C6 \
+89F0 \
+83C4 0C \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_run_all_on_draw": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 0C \
+894C24 04 \
+8D69 20 \
+31F6 \
+892C24 \
+EB 26 \
+0F57C0 \
+8B4424 08 \
+0F1100 \
+C740 10 00000000 \
+<nop:10> \
+46 \
+89FD \
+85FF \
+0F84 BA000000 \
+8B5D 04 \
+8B7D 14 \
+85DB \
+74 EC \
+8D45 04 \
+894424 08 \
+FF75 1C \
+FFD3 \
+83C4 04 \
+83F8 01 \
+74 D7 \
+83F8 02 \
+74 EE \
+85C0 \
+74 0B \
+83F8 06 \
+0F82 83000000 \
+EB C3 \
+8B4424 04 \
+39E8 \
+74 17 \
+8B40 14 \
+85C0 \
+75 F5 \
+8B0424 \
+39E8 \
+74 09 \
+8B40 14 \
+85C0 \
+75 F5 \
+EB A4 \
+8B45 10 \
+85C0 \
+74 9D \
+8B4D 14 \
+8948 14 \
+8B45 14 \
+85C0 \
+74 06 \
+8B4D 10 \
+8948 10 \
+C745 10 00000000 \
+C745 14 00000000 \
+F645 02 01 \
+8B45 0C \
+75 1C \
+85C0 \
+0F84 6BFFFFFF \
+C745 0C 00000000 \
+FF75 1C \
+FFD0 \
+83C4 04 \
+E9 57FFFFFF \
+85C0 \
+0F84 34FFFFFF \
+FF75 1C \
+FFD0 \
+83C4 04 \
+E9 27FFFFFF \
+BE 04000000 \
+29C6 \
+89F0 \
+83C4 0C \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"UPDATE_FUNC_REGISTRY_unregister_func": {
+			"access": "re",
+			"code": "\
+56 \
+8B7424 08 \
+85F6 \
+74 22 \
+89C8 \
+<nop:5> \
+39F0 \
+74 1B \
+8B40 14 \
+85C0 \
+75 F5 \
+83C1 20 \
+<nop:2> \
+39F1 \
+74 0B \
+8B49 14 \
+85C9 \
+75 F5 \
+5E \
+C2 0400 \
+8B46 10 \
+85C0 \
+74 F5 \
+8B4E 14 \
+8948 14 \
+8B46 14 \
+85C0 \
+74 06 \
+8B4E 10 \
+8948 10 \
+C746 10 00000000 \
+C746 14 00000000 \
+F646 02 01 \
+8B46 0C \
+75 17 \
+85C0 \
+74 C7 \
+C746 0C 00000000 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+5E \
+C2 0400 \
+85C0 \
+74 08 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+0F57C0 \
+0F1146 04 \
+C746 14 00000000 \
+5E \
+C2 0400 \
+"
+		},
+		"UPDATE_FUNC_cleanup": {
+			"access": "re",
+			"code": "\
+56 \
+89CE \
+8B41 0C \
+85C0 \
+74 08 \
+FF76 1C \
+FFD0 \
+83C4 04 \
+0F57C0 \
+0F1146 04 \
+C746 14 00000000 \
+5E \
+C3 \
+"
+		},
+		"RNG_rand_word": {
+			"access": "re",
+			"code": "\
+FF41 04 \
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+C3 \
+"
+		},
+		"RNG_rand_dword": {
+			"access": "re",
+			"code": "\
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C2 \
+C1E2 10 \
+8341 04 02 \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+0FB7C0 \
+09D0 \
+C3 \
+"
+		},
+		"RNG_rand_float": {
+			"access": "re",
+			"code": "\
+50 \
+B8 3096FFFF \
+3301 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C2 \
+C1E2 10 \
+8341 04 02 \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 8901 \
+0FB7C0 \
+09D0 \
+660F6EC0 \
+F30F7E0D (<codecave:double_constants> + 0x0) \
+660FEBC1 \
+F20F5CC1 \
+F20F5AC0 \
+F30F5905 (<codecave:float_constants> + 0x0) \
+F30F110424 \
+D90424 \
+58 \
+C3 \
+"
+		},
+		"SUPERVISOR_tick_timer": {
+			"access": "re",
+			"code": "\
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E81 AC010000 \
+72 29 \
+8B4424 08 \
+F30F1000 \
+F30F5881 A8010000 \
+F30F1100 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 12 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1100 \
+8B4424 04 \
+FF00 \
+C2 0800 \
+"
+		},
+		"SOUND_MANAGER_play_sound_centered": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+8B91 20060000 \
+85D2 \
+78 1E \
+39C2 \
+74 17 \
+8B91 24060000 \
+85D2 \
+78 14 \
+39C2 \
+74 09 \
+83B9 28060000 00 \
+78 0E \
+C2 0800 \
+31D2 \
+EB 0C \
+BA 01000000 \
+EB 05 \
+BA 02000000 \
+898491 20060000 \
+0FBF14C5 2E854700 \
+899481 08040000 \
+C2 0800 \
+"
+		},
+		"PLAYER_check_collision": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+89CE \
+8B4424 14 \
+8B4C24 10 \
+F20F1209 \
+F20F1200 \
+0F5905 (<codecave:xmm_constants> + 0xC0) \
+0F58C1 \
+0F5705 (<codecave:xmm_constants> + 0xA0) \
+31C0 \
+0F57C9 \
+0F2815 (<codecave:xmm_constants> + 0xD0) \
+0F281D (<codecave:xmm_constants> + 0xA0) \
+EB 0F \
+<nop:5> \
+83C0 10 \
+3D 00010000 \
+74 44 \
+F30F10A406 C0080000 \
+0F2ECC \
+74 E8 \
+F20F12AC06 B8080000 \
+660F3A21A406 C4080000 10  \
+F20F12E4 \
+0F59E2 \
+0F58E5 \
+0F57E3 \
+0FC2E0 01 \
+660F3817E4 \
+75 BC \
+BF 02000000 \
+E9 F8000000 \
+0F108E 64040000 \
+0F168E 58040000 \
+0F570D (<codecave:xmm_constants> + 0xA0) \
+0FC2C8 01 \
+660F3817C9 \
+0F85 8A000000 \
+BF 01000000 \
+80BE E0090000 00  \
+0F85 C2000000 \
+C705 8C5F5A00 00000000  \
+8D9E 40040000 \
+B9 E07F4800 \
+68 FF4040FF \
+6A 01 \
+53 \
+6A 0C \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+B9 E07F4800 \
+6A FF \
+6A 10 \
+53 \
+6A 06 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+C686 E0090000 02  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 B4750000 \
+A1 (<codecave:default_timers> + 0x8) \
+8986 BC750000 \
+31C0 \
+<nop:3> \
+8B0C85 70456D00 \
+85C9 \
+78 15 \
+83F9 04 \
+74 27 \
+8D48 01 \
+83F8 02 \
+89C8 \
+72 E6 \
+EB 1B \
+31FF \
+EB 46 \
+C70485 70456D00 04000000  \
+0FBF05 4E854700 \
+A3 68436D00 \
+FF05 C0BC6900 \
+A1 (<codecave:default_timers> + 0x18) \
+8986 C0090000 \
+F20F1005 (<codecave:default_timers> + 0x10) \
+F20F1186 B8090000 \
+F20F1186 C4090000 \
+8986 CC090000 \
+89F8 \
+5E \
+5F \
+5B \
+C2 0800 \
+"
+		},
+		"PLAYER_check_collision_newer": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+89CE \
+8B4424 14 \
+8B4C24 10 \
+F20F1209 \
+F20F1200 \
+0F5905 (<codecave:xmm_constants> + 0xC0) \
+0F58C1 \
+0F5705 (<codecave:xmm_constants> + 0xA0) \
+31C0 \
+0F57C9 \
+0F2815 (<codecave:xmm_constants> + 0xD0) \
+0F281D (<codecave:xmm_constants> + 0xA0) \
+EB 0F \
+<nop:5> \
+83C0 10 \
+3D 00010000 \
+74 47 \
+F30F10A406 C0080000 \
+0F2ECC \
+74 E8 \
+F20F12AC06 B8080000 \
+660F3A21A406 C4080000 10  \
+F20F12E4 \
+0F59E2 \
+0F58E5 \
+0F57E3 \
+0F28E8 \
+0FC2EC 01 \
+0F50CD \
+85C9 \
+75 B9 \
+BF 02000000 \
+E9 01010000 \
+0F108E 64040000 \
+0F168E 58040000 \
+0F570D (<codecave:xmm_constants> + 0xA0) \
+0FC2C8 02 \
+0F50C1 \
+31FF \
+85C0 \
+0F85 DB000000 \
+BF 01000000 \
+80BE E0090000 00  \
+0F85 C9000000 \
+C705 8C5F5A00 00000000  \
+8D9E 40040000 \
+B9 E07F4800 \
+68 FF4040FF \
+6A 01 \
+53 \
+6A 0C \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+B9 E07F4800 \
+6A FF \
+6A 10 \
+53 \
+6A 06 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+C686 E0090000 02  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 B4750000 \
+A1 (<codecave:default_timers> + 0x8) \
+8986 BC750000 \
+31C0 \
+<nop:14> \
+8B0C85 70456D00 \
+85C9 \
+78 11 \
+83F9 04 \
+74 23 \
+8D48 01 \
+83F8 02 \
+89C8 \
+72 E6 \
+EB 17 \
+C70485 70456D00 04000000  \
+0FBF05 4E854700 \
+A3 68436D00 \
+FF05 C0BC6900 \
+A1 (<codecave:default_timers> + 0x18) \
+8986 C0090000 \
+F20F1005 (<codecave:default_timers> + 0x10) \
+F20F1186 B8090000 \
+F20F1186 C4090000 \
+8986 CC090000 \
+89F8 \
+5E \
+5F \
+5B \
+C2 0800 \
+"
+		},
+		"PLAYER_die": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+89CE \
+C705 8C5F5A00 00000000  \
+8DB9 40040000 \
+B9 E07F4800 \
+68 FF4040FF \
+6A 01 \
+57 \
+6A 0C \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+B9 E07F4800 \
+6A FF \
+6A 10 \
+57 \
+6A 06 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+C686 E0090000 02  \
+A1 (<codecave:default_timers> + 0x8) \
+8986 BC750000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 B4750000 \
+A1 70456D00 \
+85C0 \
+78 23 \
+83F8 04 \
+74 3E \
+A1 74456D00 \
+85C0 \
+78 19 \
+83F8 04 \
+74 30 \
+B8 02000000 \
+833D 78456D00 00  \
+78 0B \
+EB 20 \
+31C0 \
+EB 05 \
+B8 01000000 \
+C70485 70456D00 04000000  \
+0FBF05 4E854700 \
+A3 68436D00 \
+FF05 C0BC6900 \
+A1 (<codecave:default_timers> + 0x18) \
+8986 C0090000 \
+F20F1005 (<codecave:default_timers> + 0x10) \
+F20F1186 B8090000 \
+F20F1186 C4090000 \
+8986 CC090000 \
+5E \
+5F \
+C3 \
+"
+		},
+		"PLAYER_angle_to_player_from_point": {
+			"access": "re",
+			"code": "\
+83EC 18 \
+8B4424 1C \
+F20F1081 40040000 \
+F20F1008 \
+0F5CC1 \
+0F57C9 \
+0FC2C8 04 \
+660F3825C9 \
+660F50C1 \
+3C 03 \
+75 39 \
+0F57C9 \
+F30F5AC8 \
+F30F16C0 \
+F30F5AC0 \
+F20F114C24 08 \
+F20F110424 \
+E8 [0x45BE40] \
+D95C24 14 \
+F30F104424 14 \
+F30F114424 10 \
+D94424 10 \
+83C4 18 \
+C2 0400 \
+F30F1005 (<codecave:float_constants> + 0x10) \
+EB E6 \
+"
+		},
+		"GAME_MANAGER_increase_rank": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8BB1 7C1A0000 \
+037424 0C \
+83FE 64 \
+7C 40 \
+81FE C7000000 \
+B8 C7000000 \
+0F4CC6 \
+F7D8 \
+8D4406 63 \
+BA 1F85EB51 \
+F7E2 \
+C1EA 05 \
+6BC2 9C \
+8D7406 9C \
+8B81 701A0000 \
+8BB9 741A0000 \
+8D4402 01 \
+39F8 \
+0F4FC7 \
+8981 701A0000 \
+89B1 7C1A0000 \
+5E \
+5F \
+C2 0400 \
+"
+		},
+		"GAME_MANAGER_decrease_rank": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8B4424 0C \
+8B91 7C1A0000 \
+89D6 \
+29C6 \
+79 3B \
+83FE 9C \
+BF 9CFFFFFF \
+0F4FFE \
+29D0 \
+8D4438 63 \
+BA 1F85EB51 \
+F7E2 \
+C1EA 05 \
+6BC2 64 \
+F7D2 \
+8D7406 64 \
+0391 701A0000 \
+8B81 781A0000 \
+39C2 \
+0F4CD0 \
+8991 701A0000 \
+89B1 7C1A0000 \
+5E \
+5F \
+C2 0400 \
+"
+		},
+		"GAME_MANAGER_check_visibility": {
+			"access": "re",
+			"code": "\
+F20F124424 04 \
+F20F124C24 0C \
+0F590D (<codecave:xmm_constants> + 0xC0) \
+0F58C8 \
+0F570D (<codecave:xmm_constants> + 0xA0) \
+F20F1081 441A0000 \
+0FC2C1 01 \
+31C0 \
+660F3817C0 \
+0F94C0 \
+C2 1000 \
+"
+		},
+		"GUI_sub_4195A2": {
+			"access": "re",
+			"code": "\
+8B41 04 \
+8B80 3C250000 \
+F7D0 \
+C1E8 1F \
+C3 \
+"
+		},
+		"GUI_sub_419572": {
+			"access": "re",
+			"code": "\
+8B49 04 \
+31C0 \
+83B9 D42B0000 00  \
+74 01 \
+C3 \
+8B81 3C250000 \
+F7D0 \
+C1E8 1F \
+C3 \
+"
+		},
+		"ENEMY_deactivate_effects": {
+			"access": "re",
+			"code": "\
+56 \
+8B81 A00E0000 \
+85C0 \
+74 29 \
+31D2 \
+EB 06 \
+<nop:1> \
+42 \
+39D0 \
+74 1F \
+8BB491 700E0000 \
+85F6 \
+74 F0 \
+C686 7A010000 01  \
+C78491 700E0000 00000000  \
+EB DC \
+C781 A00E0000 00000000  \
+5E \
+C3 \
+"
+		},
+		"reduce_angle": {
+			"access": "re",
+			"code": "\
+D905 (<codecave:float_constants> + 0x18) \
+D94424 04 \
+D84424 08 \
+D9F5 \
+DDD9 \
+C3 \
+"
+		},
+		"reduce_angle_new": {
+			"access": "re",
+			"code": "\
+50 \
+F30F104424 08 \
+F30F104C24 0C \
+F30F58C8 \
+F30F590D (<codecave:float_constants> + 0x6C) \
+660F3A0AC9 08 \
+F30F590D (<codecave:float_constants> + 0x68) \
+F30F58C8 \
+F30F110C24 \
+D90424 \
+58 \
+C3 \
+"
+		},
+		"ENEMY_spin_effects": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+D905 (<codecave:float_constants> + 0x1C) \
+D905 (<codecave:float_constants> + 0x18) \
+8B81 A00E0000 \
+85C0 \
+74 6B \
+8D91 6C0C0000 \
+31F6 \
+F30F1005 (<codecave:float_constants> + 0x20) \
+EB 1A \
+<nop:5> \
+D987 60010000 \
+D8C2 \
+D9F5 \
+D99F 60010000 \
+46 \
+39F0 \
+74 3F \
+8BBCB1 700E0000 \
+85FF \
+74 F0 \
+8B5A 08 \
+899F 3C010000 \
+F20F100A \
+F20F118F 34010000 \
+F30F108F 5C010000 \
+0F2E89 A40E0000 \
+73 BA \
+F30F58C8 \
+F30F118F 5C010000 \
+EB AC \
+DFC0 \
+DFC0 \
+5E \
+5F \
+5B \
+C3 \
+"
+		},
+		"ENEMY_spin_effects_new": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+8B81 A00E0000 \
+85C0 \
+0F84 9C000000 \
+8D91 6C0C0000 \
+31F6 \
+F30F1005 (<codecave:float_constants> + 0x20) \
+F30F100D (<codecave:float_constants> + 0x6C) \
+F30F1015 (<codecave:float_constants> + 0x70) \
+F30F101D (<codecave:float_constants> + 0x68) \
+EB 33 \
+<nop:5> \
+F30F10A7 60010000 \
+0F28EC \
+F30F59E9 \
+F30F58EA \
+660F3A0AED 08 \
+F30F59EB \
+F30F58EC \
+F30F11AF 60010000 \
+46 \
+39F0 \
+74 3F \
+8BBCB1 700E0000 \
+85FF \
+74 F0 \
+8B5A 08 \
+899F 3C010000 \
+F20F1022 \
+F20F11A7 34010000 \
+F30F10A7 5C010000 \
+0F2EA1 A40E0000 \
+73 A1 \
+F30F58E0 \
+F30F11A7 5C010000 \
+EB 93 \
+5E \
+5F \
+5B \
+C3 \
+"
+		},
+		"ENEMY_kill": {
+			"access": "re",
+			"code": "\
+56 \
+8A81 510E0000 \
+A8 10 \
+75 0E \
+24 FE \
+8881 510E0000 \
+A8 08 \
+75 0D \
+EB 12 \
+80A1 500E0000 7F  \
+A8 08 \
+74 07 \
+C605 50BC6900 00  \
+8B81 A00E0000 \
+85C0 \
+74 39 \
+31D2 \
+EB 0C \
+<nop:7> \
+42 \
+39D0 \
+74 1F \
+8BB491 700E0000 \
+85F6 \
+74 F0 \
+C686 7A010000 01  \
+C78491 700E0000 00000000  \
+EB DC \
+C781 A00E0000 00000000  \
+5E \
+C3 \
+"
+		},
+		"ENEMY_main_movement_new": {
+			"access": "re",
+			"code": "\
+0F1005 C06E6C00 \
+0F1089 6C0C0000 \
+0F1091 840C0000 \
+0FC6C0 00 \
+0F59C2 \
+F681 500E0000 40  \
+74 07 \
+0F5705 (<codecave:xmm_constants> + 0x60) \
+0F58C1 \
+660F3A0CC1 08 \
+0F1181 6C0C0000 \
+C3 \
+"
+		},
+		"ENEMY_main_movement": {
+			"access": "re",
+			"code": "\
+F30F1005 C06E6C00 \
+F30F1089 840C0000 \
+F30F59C8 \
+F681 500E0000 40  \
+74 07 \
+0F570D (<codecave:xmm_constants> + 0x10) \
+F30F5889 6C0C0000 \
+F30F1189 6C0C0000 \
+F30F1089 880C0000 \
+F30F59C8 \
+F30F5889 700C0000 \
+F30F1189 700C0000 \
+F30F5981 8C0C0000 \
+F30F5881 740C0000 \
+F30F1181 740C0000 \
+C3 \
+"
+		},
+		"ENEMY_enforce_move_limit": {
+			"access": "re",
+			"code": "\
+F681 520E0000 01 \
+74 25 \
+F20F1081 6C0C0000 \
+F20F1089 600E0000 \
+F20F1091 680E0000 \
+0F5DD0 \
+0F5FD1 \
+0F1391 6C0C0000 \
+C3 \
+"
+		},
+		"ENEMY_CONTROLLER_init_sub_context": {
+			"access": "re",
+			"code": "\
+0FBF4424 08 \
+8B5424 04 \
+8B49 04 \
+8B0C81 \
+890A \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1142 04 \
+8B0D (<codecave:default_timers> + 0x8) \
+894A 0C \
+66 8942 48 \
+C2 0800 \
+"
+		},
+		"ENEMY_MANAGER_enemy_create": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+89CE \
+0FB75C24 1C \
+8DB9 D0D60E00 \
+31ED \
+<nop:13> \
+80BC2E 201D0000 00  \
+79 13 \
+81C5 C80E0000 \
+81FD 00C80E00 \
+75 E8 \
+E9 CC000000 \
+8D46 08 \
+8DBC2E D00E0000 \
+68 C80E0000 \
+50 \
+57 \
+E8 [th_memcpy] \
+83C4 0C \
+0FBFDB \
+66 85DB \
+78 07 \
+899C2E B41B0000 \
+8B4C24 18 \
+8B41 08 \
+89842E 441B0000 \
+F20F1001 \
+F20F11842E 3C1B0000 \
+A1 547E4800 \
+0FBF4C24 14 \
+8B0488 \
+89842E 60180000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F11842E 64180000 \
+A1 (<codecave:default_timers> + 0x8) \
+89842E 6C180000 \
+66 898C2E A8180000 \
+B9 507E4800 \
+57 \
+E8 [0x4074A0] \
+8B842E 4C0F0000 \
+89842E CC1B0000 \
+8A4424 20 \
+88842E 0F1D0000 \
+66 837C24 1C 00 \
+78 07 \
+899C2E B41B0000 \
+8B4424 24 \
+85C0 \
+78 07 \
+89842E BC1B0000 \
+8B842E B41B0000 \
+89842E B81B0000 \
+89F8 \
+5E \
+5F \
+5B \
+5D \
+C2 1400 \
+"
+		},
+		"ENEMY_check_life_callback": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+8B91 A80E0000 \
+31C0 \
+3991 E40C0000 \
+0F8D E1000000 \
+8991 E40C0000 \
+8B91 AC0E0000 \
+A1 547E4800 \
+0FBFF2 \
+8B14B0 \
+8991 90090000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1181 94090000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8991 9C090000 \
+66 89B1 D8090000 \
+C781 A80E0000 FFFFFFFF  \
+8BB1 440C0000 \
+89B1 B40E0000 \
+0F280D (<codecave:xmm_constants> + 0x20) \
+0F1189 D40C0000 \
+C781 3C0C0000 00000000  \
+B9 0038F1FF \
+EB 0C \
+<nop:4> \
+81C1 C80E0000 \
+74 5B \
+80B9 E85E5A00 00  \
+79 EF \
+0FB699 E95E5A00 \
+F6C3 08 \
+75 E3 \
+C781 7C5D5A00 00000000  \
+F6C3 01 \
+75 D4 \
+8BB1 DC5C5A00 \
+85F6 \
+78 CA \
+0FBFF6 \
+8B3CB0 \
+89B9 285A5A00 \
+F20F1181 2C5A5A00 \
+8991 345A5A00 \
+66 89B1 705A5A00 \
+C781 DC5C5A00 FFFFFFFF  \
+EB 9D \
+B8 01000000 \
+5E \
+5F \
+5B \
+C3 \
+"
+		},
+		"ENEMY_check_timer_callback": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+89CE \
+8BB9 F80C0000 \
+8B99 B00E0000 \
+F681 510E0000 08  \
+74 1F \
+89D9 \
+29F9 \
+BA 89888888 \
+89C8 \
+F7EA \
+01CA \
+89D0 \
+C1E8 1F \
+C1FA 05 \
+01C2 \
+8915 48BC6900 \
+31C0 \
+39FB \
+7E 04 \
+5E \
+5F \
+5B \
+C3 \
+8D86 F00C0000 \
+8B8E A80E0000 \
+85C9 \
+7E 10 \
+898E E40C0000 \
+C786 A80E0000 00000000  \
+8B96 B40E0000 \
+8B0D 547E4800 \
+0FBFD2 \
+8B3C91 \
+89BE 90090000 \
+F20F100D (<codecave:default_timers> + 0x0) \
+F20F118E 94090000 \
+8B3D (<codecave:default_timers> + 0x8) \
+89BE 9C090000 \
+66 8996 D8090000 \
+C786 B00E0000 FFFFFFFF  \
+8B96 440C0000 \
+8996 B40E0000 \
+8978 08 \
+F20F1108 \
+F686 520E0000 10  \
+74 3A \
+C705 8C5F5A00 00000000  \
+A1 905F5A00 \
+83F8 01 \
+83D8 FF \
+A3 905F5A00 \
+B9 F85F5A00 \
+6A 00 \
+E8 [0x414160] \
+F20F100D (<codecave:default_timers> + 0x0) \
+8B96 440C0000 \
+8B0D 547E4800 \
+8996 B40E0000 \
+0F2805 (<codecave:xmm_constants> + 0x20) \
+0F1186 D40C0000 \
+C786 3C0C0000 00000000  \
+BA 0038F1FF \
+EB 11 \
+81C2 C80E0000 \
+B8 01000000 \
+0F84 0BFFFFFF \
+80BA E85E5A00 00  \
+79 E6 \
+0FB682 E95E5A00 \
+A8 08 \
+75 DB \
+C782 7C5D5A00 00000000  \
+A8 01 \
+75 CD \
+8B82 DC5C5A00 \
+85C0 \
+78 C3 \
+98 \
+8B3481 \
+89B2 285A5A00 \
+F20F118A 2C5A5A00 \
+89BA 345A5A00 \
+66 8982 705A5A00 \
+C782 DC5C5A00 FFFFFFFF  \
+EB 98 \
+"
+		},
+		"TIMER_increment": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+73 06 \
+0141 08 \
+C2 0400 \
+85C0 \
+78 34 \
+8B51 08 \
+8911 \
+0F57C0 \
+F30F2AC0 \
+F30F5905 C06E6C00 \
+F30F5841 04 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC1 \
+01D0 \
+8941 08 \
+F30F1141 04 \
+C2 0400 \
+F7D8 \
+8B51 08 \
+8911 \
+F30F1041 04 \
+F30F2AC8 \
+F30F590D C06E6C00 \
+F30F5CC1 \
+0F57C9 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC1 \
+29C2 \
+8951 08 \
+F30F1141 04 \
+C2 0400 \
+"
+		},
+		"TIMER_decrement": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+73 06 \
+2941 08 \
+C2 0400 \
+85C0 \
+78 38 \
+8B51 08 \
+8911 \
+F30F1041 04 \
+F30F2AC8 \
+F30F590D C06E6C00 \
+F30F5CC1 \
+0F57C9 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC1 \
+29C2 \
+8951 08 \
+F30F1141 04 \
+C2 0400 \
+F7D8 \
+8B51 08 \
+8911 \
+0F57C0 \
+F30F2AC0 \
+F30F5905 C06E6C00 \
+F30F5841 04 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC1 \
+01D0 \
+8941 08 \
+F30F1141 04 \
+C2 0400 \
+"
+		},
+		"ITEM_MANAGER_spawn_item": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+8B5C24 1C \
+8B4424 18 \
+8B7C24 14 \
+69A9 44890200 44010000  \
+01CD \
+8D91 00880200 \
+89EE \
+<nop:12> \
+80BE 41010000 00  \
+74 11 \
+81C6 44010000 \
+39D6 \
+0F44F1 \
+39EE \
+75 E8 \
+89EE \
+8DAE 44010000 \
+39D5 \
+0F84 35010000 \
+29CD \
+C1FD 02 \
+69D5 B1481978 \
+8991 44890200 \
+C686 41010000 01  \
+8886 40010000 \
+889E 43010000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 34010000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8996 3C010000 \
+F20F100F \
+F20F118E 10010000 \
+8B4F 08 \
+898E 18010000 \
+83FB 02 \
+0F84 DE000000 \
+C786 1C010000 00000000  \
+C786 20010000 CDCC0CC0  \
+8D8E 24010000 \
+C701 00000000 \
+8D88 15020000 \
+66 898E B4000000 \
+8B0D 88456D00 \
+8B8481 88D10100 \
+0F57C9 \
+0F114E 20 \
+C786 84000000 00000000  \
+0F110E \
+0F2815 (<codecave:xmm_constants> + 0x30) \
+0F1156 10 \
+C746 7C FFFFFFFF \
+C746 3C 0000803F \
+0F114E 40 \
+C746 50 0000803F \
+0F114E 54 \
+C746 64 0000803F \
+0F114E 68 \
+C746 78 0000803F \
+66 C786 80000000 0200  \
+C786 88000000 00000000  \
+66 C786 8C000000 0000  \
+8986 B8000000 \
+8986 BC000000 \
+8956 38 \
+F20F1146 30 \
+85C0 \
+74 06 \
+56 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+C746 7C FFFFFFFF \
+C686 42010000 01  \
+5E \
+5F \
+5B \
+5D \
+C2 0C00 \
+31D2 \
+E9 CFFEFFFF \
+8B4F 08 \
+898E 24010000 \
+F20F100F \
+F20F118E 1C010000 \
+8B3D FCD86900 \
+B9 3096FFFF \
+330D F8D86900 \
+81C1 AD9AFFFF \
+66 C1C1 02 \
+89CB \
+C1E3 10 \
+81F1 3096FFFF \
+81C1 AD9AFFFF \
+66 C1C1 02 \
+0FB7E9 \
+09DD \
+660F6ED5 \
+F30F7E0D (<codecave:double_constants> + 0x0) \
+660FEBD1 \
+F20F5CD1 \
+F20F5AD2 \
+F30F5915 (<codecave:float_constants> + 0x24) \
+F30F5815 (<codecave:float_constants> + 0x28) \
+F30F1196 28010000 \
+81F1 3096FFFF \
+81C1 AD9AFFFF \
+66 C1C1 02 \
+89CB \
+C1E3 10 \
+83C7 04 \
+893D FCD86900 \
+81F1 3096FFFF \
+81C1 AD9AFFFF \
+66 C1C1 02 \
+66 890D F8D86900 \
+0FB7C9 \
+09D9 \
+660F6ED1 \
+660FEBD1 \
+F20F5CD1 \
+0F57C9 \
+F20F5ACA \
+F30F590D (<codecave:float_constants> + 0x2C) \
+F30F580D (<codecave:float_constants> + 0x30) \
+F30F118E 2C010000 \
+8D8E 30010000 \
+E9 52FEFFFF \
+"
+		},
+		"GUI_IMPL_read_msg": {
+			"access": "re",
+			"code": "\
+56 \
+89CE \
+8B4424 08 \
+8B89 34250000 \
+3901 \
+0F86 80000000 \
+8986 3C250000 \
+8B4481 04 \
+8986 38250000 \
+8D86 40250000 \
+68 9C060000 \
+6A 00 \
+50 \
+E8 [th_memset] \
+83C4 0C \
+66 C786 24280000 FFFF  \
+66 C786 34290000 FFFF  \
+C786 D02B0000 0F000000  \
+C786 B02B0000 FFF0E800  \
+C786 B42B0000 F0E8FF00  \
+C786 C02B0000 00000000  \
+C786 C42B0000 00000000  \
+C686 D82B0000 01  \
+A1 D4D66900 \
+83F8 07 \
+74 09 \
+83F8 06 \
+74 2F \
+5E \
+C2 0400 \
+8B0D 88456D00 \
+68 B3020000 \
+68 F0AB4600 \
+6A 0B \
+E8 [0x431DC0] \
+8B0D 88456D00 \
+68 A8040000 \
+68 DCAB4600 \
+6A 12 \
+EB 12 \
+8B0D 88456D00 \
+68 B3020000 \
+68 00AC4600 \
+6A 0B \
+E8 [0x431DC0] \
+5E \
+C2 0400 \
+"
+		},
+		"GUI_read_msg": {
+			"access": "re",
+			"code": "\
+56 \
+8B4424 08 \
+8B71 04 \
+8B8E 34250000 \
+3901 \
+0F86 80000000 \
+8986 3C250000 \
+8B4481 04 \
+8986 38250000 \
+8D86 40250000 \
+68 9C060000 \
+6A 00 \
+50 \
+E8 [th_memset] \
+83C4 0C \
+66 C786 24280000 FFFF  \
+66 C786 34290000 FFFF  \
+C786 D02B0000 0F000000  \
+C786 B02B0000 FFF0E800  \
+C786 B42B0000 F0E8FF00  \
+C786 C02B0000 00000000  \
+C786 C42B0000 00000000  \
+C686 D82B0000 01  \
+A1 D4D66900 \
+83F8 07 \
+74 13 \
+83F8 06 \
+74 39 \
+C705 B06E6C00 03000000  \
+5E \
+C2 0400 \
+8B0D 88456D00 \
+68 B3020000 \
+68 F0AB4600 \
+6A 0B \
+E8 [0x431DC0] \
+8B0D 88456D00 \
+68 A8040000 \
+68 DCAB4600 \
+6A 12 \
+EB 12 \
+8B0D 88456D00 \
+68 B3020000 \
+68 00AC4600 \
+6A 0B \
+E8 [0x431DC0] \
+EB AE \
+"
+		},
+		"D3DMATRIX_set_identity": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C700 0000803F \
+0F57C0 \
+0F1140 04 \
+C740 14 0000803F \
+0F1140 18 \
+C740 28 0000803F \
+0F1140 2C \
+C740 3C 0000803F \
+C3 \
+"
+		},
+		"ANM_MANAGER_set_vm_sprite": {
+			"access": "re",
+			"code": "\
+56 \
+8B4424 08 \
+8B5424 0C \
+66 8990 B0000000 \
+6BD2 38 \
+8D3411 \
+89B0 C0000000 \
+0F57C0 \
+0F1140 40 \
+0F1140 54 \
+C740 64 0000803F \
+0F1140 68 \
+C740 78 0000803F \
+F30F104411 30 \
+F30F5E4411 18 \
+F30F1140 3C \
+F30F104411 2C \
+F30F5E4411 14 \
+F30F1140 50 \
+31C0 \
+5E \
+C2 0800 \
+"
+		},
+		"TIMER_constructor": {
+			"access": "re",
+			"code": "\
+89C8 \
+8B0D (<codecave:default_timers> + 0x28) \
+8948 08 \
+F20F1005 (<codecave:default_timers> + 0x20) \
+F20F1100 \
+C3 \
+"
+		},
+		"ANM_VM_initialize": {
+			"access": "re",
+			"code": "\
+0F57C0 \
+0F1141 20 \
+C781 84000000 00000000  \
+0F1101 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F1149 10 \
+C741 7C FFFFFFFF \
+C741 3C 0000803F \
+0F1141 40 \
+C741 50 0000803F \
+0F1141 54 \
+C741 64 0000803F \
+0F1141 68 \
+C741 78 0000803F \
+66 C781 80000000 0300  \
+C781 88000000 00000000  \
+66 C781 8C000000 0000  \
+A1 (<codecave:default_timers> + 0x8) \
+8941 38 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1141 30 \
+C3 \
+"
+		},
+		"ANM_MANAGER_set_vm_script": {
+			"access": "re",
+			"code": "\
+56 \
+8B4424 08 \
+8B5424 0C \
+0F57C0 \
+0F1140 20 \
+C780 84000000 00000000  \
+0F1100 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F1148 10 \
+C740 7C FFFFFFFF \
+C740 3C 0000803F \
+0F1140 40 \
+C740 50 0000803F \
+0F1140 54 \
+C740 64 0000803F \
+0F1140 68 \
+C740 78 0000803F \
+66 C780 80000000 0200  \
+C780 88000000 00000000  \
+66 C780 8C000000 0000  \
+8990 B8000000 \
+8990 BC000000 \
+8B35 (<codecave:default_timers> + 0x8) \
+8970 38 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1140 30 \
+85D2 \
+74 06 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+5E \
+C2 0800 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_vm_left": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 48 \
+8B4424 6C \
+8B7424 60 \
+8B9E 0C010000 \
+8D4C24 70 \
+894C24 04 \
+8D5424 08 \
+51 \
+50 \
+52 \
+E8 [0x45B9E0] \
+83C4 0C \
+8B8E C0000000 \
+0FB686 0D010000 \
+F30F2C71 14 \
+F30F2C79 18 \
+F30F2C51 08 \
+891424 \
+84C0 \
+BA 0F000000 \
+0F44C2 \
+84DB \
+0F44DA \
+F30F2C51 04 \
+8B09 \
+0FB6C0 \
+0FB6DB \
+8B6C24 5C \
+FFB48D 10C10100 \
+8D4C24 0C \
+51 \
+FF7424 70 \
+FF7424 70 \
+50 \
+53 \
+56 \
+57 \
+FF7424 20 \
+52 \
+E8 [0x41F050] \
+83C4 28 \
+8B4424 60 \
+8088 80000000 01  \
+83C4 48 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_vm_right": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 50 \
+8B4C24 68 \
+8B81 0C010000 \
+89CA \
+84C0 \
+B9 0F000000 \
+0F44C1 \
+0FB6F8 \
+0FB682 0D010000 \
+84C0 \
+0F44C1 \
+8B6C24 64 \
+0FB6C0 \
+894424 08 \
+8B9A C0000000 \
+F30F2C53 14 \
+F30F2C73 18 \
+F30F2C4B 08 \
+894C24 04 \
+F30F2C4B 04 \
+890C24 \
+8B0B \
+FFB48D 10C10100 \
+68 10AC4600 \
+FF7424 78 \
+FF7424 78 \
+50 \
+57 \
+52 \
+56 \
+FF7424 24 \
+FF7424 24 \
+E8 [0x41F050] \
+83C4 28 \
+8D4424 78 \
+894424 0C \
+8D4C24 10 \
+50 \
+FF7424 78 \
+51 \
+E8 [0x45B9E0] \
+83C4 0C \
+F30F2C4B 14 \
+F30F1043 18 \
+F30F2CD0 \
+F30F2C73 08 \
+893424 \
+89FD \
+8D77 01 \
+0FAFF0 \
+F30F2ACE \
+F30F590D (<codecave:float_constants> + 0x14) \
+F30F58C8 \
+F30F584B 04 \
+F30F2CC1 \
+8B33 \
+8B7C24 64 \
+FFB4B7 10C10100 \
+8D7424 14 \
+56 \
+FF7424 78 \
+FF7424 78 \
+FF7424 18 \
+55 \
+51 \
+52 \
+FF7424 20 \
+50 \
+E8 [0x41F050] \
+83C4 28 \
+8B4424 68 \
+8088 80000000 01  \
+83C4 50 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_vm_center": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 50 \
+8B4C24 68 \
+8B81 0C010000 \
+89CA \
+84C0 \
+B9 0F000000 \
+0F44C1 \
+0FB6F8 \
+0FB682 0D010000 \
+84C0 \
+0F44C1 \
+8B6C24 64 \
+0FB6C0 \
+894424 08 \
+8B9A C0000000 \
+F30F2C53 14 \
+F30F2C73 18 \
+F30F2C4B 08 \
+894C24 04 \
+F30F2C4B 04 \
+890C24 \
+8B0B \
+FFB48D 10C10100 \
+68 10AC4600 \
+FF7424 78 \
+FF7424 78 \
+50 \
+57 \
+52 \
+56 \
+FF7424 24 \
+FF7424 24 \
+E8 [0x41F050] \
+83C4 28 \
+8D4424 78 \
+894424 0C \
+8D4C24 10 \
+50 \
+FF7424 78 \
+51 \
+E8 [0x45B9E0] \
+83C4 0C \
+F30F2C4B 14 \
+F30F1043 18 \
+F30F2CD0 \
+F30F2C73 08 \
+893424 \
+F30F5905 (<codecave:float_constants> + 0x3C) \
+89FD \
+8D77 01 \
+0FAFF0 \
+F30F2ACE \
+F30F590D (<codecave:float_constants> + 0x40) \
+F30F58C8 \
+F30F584B 04 \
+F30F2CC1 \
+8B33 \
+8B7C24 64 \
+FFB4B7 10C10100 \
+8D7424 14 \
+56 \
+FF7424 78 \
+FF7424 78 \
+FF7424 18 \
+55 \
+51 \
+52 \
+FF7424 20 \
+50 \
+E8 [0x41F050] \
+83C4 28 \
+8B4424 68 \
+8088 80000000 01  \
+83C4 50 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"ANM_MANAGER_draw_text_to_texture": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 28 \
+0F104424 40 \
+8B4424 58 \
+8B5424 5C \
+8B7424 60 \
+8B7C24 50 \
+8B5C24 54 \
+8B6C24 3C \
+8B8CA9 10C10100 \
+85DB \
+BD 0F000000 \
+0F44DD \
+85FF \
+0F44FD \
+894C24 24 \
+897424 20 \
+895424 1C \
+894424 18 \
+895C24 14 \
+897C24 10 \
+0F110424 \
+E8 [0x41F050] \
+83C4 28 \
+5E \
+5F \
+5B \
+5D \
+C2 2800 \
+"
+		},
+		"GUI_spawn_spellcard_effects": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 08 \
+89CA \
+8B6C24 1C \
+8B79 04 \
+66 C787 881F0000 A304  \
+8B0D 88456D00 \
+8B81 C0DB0100 \
+0F57C9 \
+0F118F F41E0000 \
+C787 581F0000 00000000  \
+0F118F D41E0000 \
+0F2815 (<codecave:xmm_constants> + 0x30) \
+0F1197 E41E0000 \
+C787 501F0000 FFFFFFFF  \
+C787 101F0000 0000803F  \
+8DB7 141F0000 \
+893424 \
+0F118F 141F0000 \
+C787 241F0000 0000803F  \
+0F118F 281F0000 \
+C787 381F0000 0000803F  \
+0F118F 3C1F0000 \
+C787 4C1F0000 0000803F  \
+66 C787 541F0000 0200  \
+C787 5C1F0000 00000000  \
+66 C787 601F0000 0000  \
+8987 8C1F0000 \
+8987 901F0000 \
+8B35 (<codecave:default_timers> + 0x8) \
+89B7 0C1F0000 \
+F20F101D (<codecave:default_timers> + 0x0) \
+F20F119F 041F0000 \
+8D9F 281F0000 \
+8DB7 3C1F0000 \
+85C0 \
+895424 04 \
+74 24 \
+8D87 D41E0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+F20F101D (<codecave:default_timers> + 0x0) \
+0F2815 (<codecave:xmm_constants> + 0x30) \
+0F57C9 \
+8B0D 88456D00 \
+81C5 A8040000 \
+66 89AF 841F0000 \
+6BC5 38 \
+8D1401 \
+8997 941F0000 \
+8B1424 \
+0F110A \
+0F110B \
+C787 381F0000 0000803F  \
+0F110E \
+C787 4C1F0000 0000803F  \
+F30F104401 30 \
+F30F5E4401 18 \
+F30F1187 101F0000 \
+F30F104401 2C \
+F30F5E4401 14 \
+F30F1187 241F0000 \
+66 C787 A8210000 0707  \
+8B81 50E50100 \
+83A7 74210000 CF  \
+0F118F 14210000 \
+C787 78210000 00000000  \
+0F118F F4200000 \
+0F1197 04210000 \
+C787 70210000 FFFFFFFF  \
+C787 30210000 0000803F  \
+0F118F 34210000 \
+C787 44210000 0000803F  \
+0F118F 48210000 \
+C787 58210000 0000803F  \
+0F118F 5C210000 \
+C787 6C210000 0000803F  \
+66 C787 74210000 0200  \
+C787 7C210000 00000000  \
+66 C787 80210000 0000  \
+8987 AC210000 \
+8987 B0210000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8997 2C210000 \
+8B5C24 20 \
+F20F119F 24210000 \
+8DB7 F4200000 \
+85C0 \
+74 0C \
+56 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+53 \
+6A 00 \
+68 F0F0FF00 \
+56 \
+51 \
+E8 [codecave:ANM_MANAGER_draw_text_to_vm_right] \
+83C4 14 \
+8D43 FF \
+<nop:5> \
+8078 01 00 \
+8D40 01 \
+75 F7 \
+29D8 \
+0F57C0 \
+F30F2AC0 \
+F30F5905 (<codecave:float_constants> + 0x34) \
+F30F5805 (<codecave:float_constants> + 0x38) \
+8B4424 04 \
+F30F1140 0C \
+A1 70456D00 \
+85C0 \
+78 23 \
+83F8 0E \
+74 3E \
+A1 74456D00 \
+85C0 \
+78 19 \
+83F8 0E \
+74 30 \
+B8 02000000 \
+833D 78456D00 00  \
+78 0B \
+EB 20 \
+31C0 \
+EB 05 \
+B8 01000000 \
+C70485 70456D00 0E000000  \
+0FBF05 9E854700 \
+A3 90436D00 \
+83C4 08 \
+5E \
+5F \
+5B \
+5D \
+C2 0800 \
+"
+		},
+		"ANM_MANAGER_run_anm": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+8B7C24 14 \
+8B9F BC000000 \
+BE 01000000 \
+85DB \
+0F84 4C090000 \
+0FBF97 8A000000 \
+85D2 \
+75 13 \
+8B6F 38 \
+0FBF03 \
+39E8 \
+0F8E 51010000 \
+E9 4C020000 \
+66 C787 8A000000 0000  \
+80A7 81000000 DF  \
+8B9F B8000000 \
+31F6 \
+EB 15 \
+8B43 04 \
+39D0 \
+74 3C \
+83F8 FF \
+0F44F3 \
+0FB643 03 \
+8D5C03 04 \
+0FB643 02 \
+3C 16 \
+74 E3 \
+84C0 \
+74 04 \
+3C 0F \
+75 E8 \
+85F6 \
+75 1C \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+8B47 38 \
+73 37 \
+48 \
+8947 38 \
+EB 59 \
+89DE \
+0FB646 03 \
+8D5C06 04 \
+808F 80000000 01  \
+0FBF6C06 04 \
+C747 30 19FCFFFF \
+C747 34 00000000 \
+896F 38 \
+BE 01000000 \
+E9 BE000000 \
+8947 30 \
+F30F1047 34 \
+F30F5C05 C06E6C00 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC9 \
+29C8 \
+8947 38 \
+F30F1147 34 \
+E9 91010000 \
+808F 80000000 01  \
+0FBF87 B4000000 \
+8B53 04 \
+039481 34E90100 \
+66 8997 B0000000 \
+6BC2 38 \
+8D1401 \
+8997 C0000000 \
+0F57C0 \
+0F1147 40 \
+0F1147 54 \
+C747 64 0000803F \
+0F1147 68 \
+C747 78 0000803F \
+F30F104401 30 \
+F30F5E4401 18 \
+F30F1147 3C \
+F30F104401 2C \
+F30F5E4401 14 \
+F30F1147 50 \
+89AF FC000000 \
+<nop:12> \
+0FB653 03 \
+0FBF4413 04 \
+8D5C13 04 \
+39E8 \
+0F8F CA000000 \
+0FB643 02 \
+83F8 1F \
+77 E2 \
+FF2485 <codecave:ANM_MANAGER_run_anm_jump_table> \
+8B87 B8000000 \
+8B53 04 \
+8D1C02 \
+0FBF2C02 \
+EB DE \
+0FB697 81000000 \
+C0E0 02 \
+04 08 \
+24 0C \
+80E2 F3 \
+08C2 \
+8897 81000000 \
+8D87 90000000 \
+8D97 E4000000 \
+F687 80000000 20  \
+0F44D0 \
+8B42 08 \
+8987 D4000000 \
+F20F1002 \
+F20F1187 CC000000 \
+8B43 0C \
+8987 E0000000 \
+F20F1043 04 \
+F20F1187 D8000000 \
+0FB743 10 \
+66 8987 8C000000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1187 F0000000 \
+A1 (<codecave:default_timers> + 0x8) \
+8987 F8000000 \
+E9 44FFFFFF \
+80A7 80000000 FE  \
+808F 81000000 20  \
+896F 38 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+73 06 \
+4D \
+896F 38 \
+EB 2B \
+896F 30 \
+F30F1047 34 \
+F30F5C05 C06E6C00 \
+0F57C9 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC1 \
+29C5 \
+896F 38 \
+F30F1147 34 \
+899F BC000000 \
+D9EE \
+D905 (<codecave:float_constants> + 0x18) \
+D947 0C \
+DBEA \
+74 0C \
+D80D C06E6C00 \
+D807 \
+D9F5 \
+D917 \
+DFC0 \
+D947 10 \
+DBEA \
+74 0E \
+D80D C06E6C00 \
+D847 04 \
+D9F5 \
+D957 04 \
+DFC0 \
+D947 14 \
+DBEA \
+74 0E \
+D80D C06E6C00 \
+D847 08 \
+D9F5 \
+D957 08 \
+DFC0 \
+DFC1 \
+D9F7 \
+0FB787 86000000 \
+66 85C0 \
+0F8E EB030000 \
+8B8F AC000000 \
+898F A4000000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1087 A8000000 \
+F30F5805 C06E6C00 \
+F30F1187 A8000000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 A8000000 \
+41 \
+898F AC000000 \
+39C1 \
+0F8D AC030000 \
+0F57C0 \
+F30F2AC1 \
+F30F5887 A8000000 \
+98 \
+0F57C9 \
+F30F2AC8 \
+F30F5EC1 \
+F20F1057 20 \
+F20F109F 9C000000 \
+0F5CD3 \
+F30F12C8 \
+0F59CA \
+0F58CB \
+E9 8E030000 \
+0FB643 04 \
+24 01 \
+0FB697 80000000 \
+80E2 FE \
+E9 7D020000 \
+8D87 90000000 \
+8D97 E4000000 \
+F687 80000000 20  \
+0F44D0 \
+8B43 0C \
+8942 08 \
+F20F1043 04 \
+F20F1102 \
+E9 B6FDFFFF \
+80A7 80000000 FB  \
+E9 AAFDFFFF \
+F30F1043 04 \
+F30F5847 28 \
+F30F100D (<codecave:float_constants> + 0xC) \
+F30F58C8 \
+F30F1015 (<codecave:float_constants> + 0x8) \
+0F28D8 \
+F30FC2DA 01 \
+0F54C3 \
+0F55D9 \
+0F56D8 \
+F30F58D3 \
+0F57C0 \
+0F28CB \
+F30FC2C8 01 \
+0F54D1 \
+0F55CB \
+0F56CA \
+F30F114F 28 \
+E9 59FDFFFF \
+0FB743 04 \
+66 8987 88000000 \
+E9 49FDFFFF \
+8B43 04 \
+8947 24 \
+8B43 08 \
+8947 20 \
+66 C787 86000000 0000  \
+E9 2FFDFFFF \
+8B43 04 \
+8947 1C \
+8B43 08 \
+8947 18 \
+E9 1EFDFFFF \
+8B47 7C \
+8987 C4000000 \
+25 FFFFFF00 \
+0FB653 04 \
+C1E2 18 \
+09C2 \
+8997 C8000000 \
+0FB743 08 \
+66 8987 84000000 \
+A1 (<codecave:default_timers> + 0x8) \
+8987 08010000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1187 00010000 \
+E9 D6FCFFFF \
+8B43 0C \
+8947 08 \
+F20F1043 04 \
+F20F1107 \
+E9 C2FCFFFF \
+808F 80000000 01  \
+0FB773 08 \
+66 85F6 \
+0F84 AE040000 \
+FF05 FCD86900 \
+B8 3096FFFF \
+3305 F8D86900 \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 A3 F8D86900 \
+31D2 \
+66 F7F6 \
+0FB7C2 \
+0FBF97 B4000000 \
+038491 34E90100 \
+0343 04 \
+66 8987 B0000000 \
+6BC0 38 \
+8D1401 \
+8997 C0000000 \
+0F57C0 \
+0F1147 40 \
+0F1147 54 \
+C747 64 0000803F \
+0F1147 68 \
+C747 78 0000803F \
+F30F104401 30 \
+F30F5E4401 18 \
+F30F1147 3C \
+F30F104401 2C \
+F30F5E4401 14 \
+F30F1147 50 \
+89AF FC000000 \
+BE 01000000 \
+E9 13FCFFFF \
+80B7 80000000 40  \
+F30F1047 1C \
+0F5705 (<codecave:xmm_constants> + 0x10) \
+F30F1147 1C \
+E9 F6FBFFFF \
+80A7 80000000 FE  \
+C787 BC000000 00000000  \
+E9 D7030000 \
+808F 81000000 03  \
+E9 D4FBFFFF \
+0FB643 04 \
+8847 7F \
+E9 C8FBFFFF \
+808F 80000000 04  \
+E9 BCFBFFFF \
+0FB643 06 \
+8847 7E \
+0FB743 04 \
+66 8947 7C \
+E9 A8FBFFFF \
+8B43 0C \
+8947 14 \
+F20F1043 04 \
+F20F1147 0C \
+E9 93FBFFFF \
+80B7 80000000 80  \
+F30F1047 18 \
+0F5705 (<codecave:xmm_constants> + 0x10) \
+F30F1147 18 \
+E9 76FBFFFF \
+0FB643 04 \
+0FB697 80000000 \
+C0E0 05 \
+24 20 \
+80E2 DF \
+08C2 \
+8897 80000000 \
+E9 56FBFFFF \
+8B43 04 \
+8947 24 \
+8B43 08 \
+8947 20 \
+0FB743 0C \
+66 8987 86000000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1187 A4000000 \
+A1 (<codecave:default_timers> + 0x8) \
+8987 AC000000 \
+F20F1047 18 \
+F20F1187 9C000000 \
+E9 12FBFFFF \
+0FB643 04 \
+0FB697 81000000 \
+C0E0 04 \
+24 10 \
+80E2 EF \
+08C2 \
+8897 81000000 \
+E9 F2FAFFFF \
+F30F1043 04 \
+F30F5847 2C \
+F30F100D (<codecave:float_constants> + 0xC) \
+F30F58C8 \
+F30F1015 (<codecave:float_constants> + 0x8) \
+0F28D8 \
+F30FC2DA 01 \
+0F54C3 \
+0F55D9 \
+0F56D8 \
+F30F58D3 \
+0F57C0 \
+0F28CB \
+F30FC2C8 01 \
+0F54D1 \
+0F55CB \
+0F56CA \
+F30F114F 2C \
+E9 A1FAFFFF \
+F20F1047 18 \
+F20F104F 20 \
+F30F1015 C06E6C00 \
+F30F12D2 \
+0F59D1 \
+0F58D0 \
+EB 4F \
+F20F104F 20 \
+66 C787 86000000 0000  \
+C747 20 00000000 \
+C747 24 00000000 \
+8A97 80000000 \
+31C0 \
+84D2 \
+0F99C0 \
+31C9 \
+F6C2 40 \
+0F94C1 \
+0F2815 (<codecave:xmm_constants> + 0x10) \
+0F57D1 \
+660F6EC0 \
+660F3A20C1 04 \
+660F72F0 1F \
+660F3814D1 \
+0F1357 18 \
+0FB787 84000000 \
+66 85C0 \
+0F8E BC000000 \
+8B8F 08010000 \
+898F 00010000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1087 04010000 \
+F30F5805 C06E6C00 \
+F30F1187 04010000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 04010000 \
+41 \
+898F 08010000 \
+39C1 \
+7C 09 \
+66 C787 84000000 0000  \
+0F57C0 \
+F30F2AC1 \
+F30F5887 04010000 \
+98 \
+0F57C9 \
+F30F2AC8 \
+F30F5EC1 \
+F30F5D05 (<codecave:float_constants> + 0x8) \
+660F38318F C4000000 \
+0F5BC9 \
+660F383197 C8000000 \
+0F5BD2 \
+0F5CD1 \
+0FC6C0 00 \
+0F59C2 \
+0F58C1 \
+F30F5BC0 \
+660F382BC0 \
+660F67C0 \
+660F7E47 7C \
+0FBF8F 8C000000 \
+85C9 \
+74 51 \
+8B87 F8000000 \
+0F57C9 \
+F30F2AC8 \
+F30F1087 F4000000 \
+F30F58C8 \
+0F57D2 \
+F30F2AD1 \
+F30F5ECA \
+F30F5D0D (<codecave:float_constants> + 0x8) \
+0FB697 81000000 \
+83E2 0C \
+83FA 08 \
+74 23 \
+83FA 04 \
+75 3C \
+F30F1015 (<codecave:float_constants> + 0x8) \
+0F28DA \
+F30F5CD9 \
+EB 20 \
+F30F100D C46E6C00 \
+E9 B3000000 \
+F30F1015 (<codecave:float_constants> + 0x8) \
+0F28DA \
+F30F5CD9 \
+F30F59DB \
+F30F59DB \
+F30F5CD3 \
+0F28CA \
+0FC6C9 00 \
+8D97 90000000 \
+8DB7 E4000000 \
+F687 80000000 20  \
+0F44F2 \
+0F1097 CC000000 \
+0F109F D8000000 \
+0F5CDA \
+0F59D9 \
+0F58DA \
+0F100E \
+660F3A0CCB 07 \
+0F110E \
+39C8 \
+7C 09 \
+66 C787 8C000000 0000  \
+8987 F0000000 \
+F30F100D C46E6C00 \
+F30F1015 (<codecave:float_constants> + 0x4) \
+0F2ED1 \
+72 29 \
+F30F5805 C06E6C00 \
+F30F1187 F4000000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 F4000000 \
+40 \
+8987 F8000000 \
+8B47 38 \
+8947 30 \
+0F2E0D (<codecave:float_constants> + 0x4) \
+77 2A \
+F30F1047 34 \
+F30F5805 C06E6C00 \
+F30F1147 34 \
+31F6 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 13 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1147 34 \
+40 \
+8947 38 \
+31F6 \
+89F0 \
+5E \
+5F \
+5B \
+5D \
+C2 0400 \
+31D2 \
+E9 70FBFFFF \
+"
+		},
+		"ANM_MANAGER_run_anm_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:ANM_MANAGER_run_anm> + 0x57A) \
+(<codecave:ANM_MANAGER_run_anm> + 0xF4) \
+(<codecave:ANM_MANAGER_run_anm> + 0x441) \
+(<codecave:ANM_MANAGER_run_anm> + 0x59C) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5B4) \
+(<codecave:ANM_MANAGER_run_anm> + 0x195) \
+(<codecave:ANM_MANAGER_run_anm> + 0x170) \
+(<codecave:ANM_MANAGER_run_anm> + 0x55D) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5DD) \
+(<codecave:ANM_MANAGER_run_anm> + 0x49A) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5C8) \
+(<codecave:ANM_MANAGER_run_anm> + 0x427) \
+(<codecave:ANM_MANAGER_run_anm> + 0x452) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5A8) \
+(<codecave:ANM_MANAGER_run_anm> + 0x3BA) \
+(<codecave:ANM_MANAGER_run_anm> + 0x581) \
+(<codecave:ANM_MANAGER_run_anm> + 0x4AE) \
+(<codecave:ANM_MANAGER_run_anm> + 0x390) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1A7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1A7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x1A7) \
+(<codecave:ANM_MANAGER_run_anm> + 0x233) \
+(<codecave:ANM_MANAGER_run_anm> + 0x170) \
+(<codecave:ANM_MANAGER_run_anm> + 0x590) \
+(<codecave:ANM_MANAGER_run_anm> + 0x22C) \
+(<codecave:ANM_MANAGER_run_anm> + 0x5FA) \
+(<codecave:ANM_MANAGER_run_anm> + 0x417) \
+(<codecave:ANM_MANAGER_run_anm> + 0x3C6) \
+(<codecave:ANM_MANAGER_run_anm> + 0x67E) \
+(<codecave:ANM_MANAGER_run_anm> + 0x37B) \
+(<codecave:ANM_MANAGER_run_anm> + 0x61A) \
+(<codecave:ANM_MANAGER_run_anm> + 0x65E) \
+"
+		},
+		"ANM_MANAGER_free_anm_file": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+8B4424 10 \
+8BBC81 34090200 \
+85FF \
+0F84 EB000000 \
+89CE \
+C78481 34090200 00000000  \
+8B8C81 340B0200 \
+C78486 340B0200 00000000  \
+8B17 \
+8D47 40 \
+85D2 \
+74 40 \
+0F57C0 \
+<nop:15> \
+8B18 \
+83C0 04 \
+8B1C3B \
+01CB \
+6BDB 38 \
+0F11441E 24 \
+0F11441E 14 \
+0F11441E 04 \
+C7441E 34 00000000 \
+C7041E FFFFFFFF \
+4A \
+75 D2 \
+8B4F 04 \
+85C9 \
+74 29 \
+31D2 \
+<nop:9> \
+8B1CD0 \
+C7849E 34C90100 00000000  \
+C7849E 34E90100 00000000  \
+42 \
+39D1 \
+75 E2 \
+8B5F 08 \
+8B849E 10C10100 \
+85C0 \
+74 11 \
+C7849E 10C10100 00000000  \
+8B08 \
+50 \
+FF51 08 \
+8B849E 30C50100 \
+C7849E 30C50100 00000000  \
+50 \
+E8 [th_free] \
+83C4 04 \
+57 \
+E8 [th_free] \
+83C4 04 \
+66 C786 BC100200 FFFF  \
+C686 BE100200 FF  \
+5E \
+5F \
+5B \
+C2 0400 \
+"
+		},
+		"ANM_MANAGER_free_texture": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+89CE \
+8B7C24 0C \
+8B84B9 10C10100 \
+85C0 \
+74 11 \
+C784BE 10C10100 00000000  \
+8B08 \
+50 \
+FF51 08 \
+8B84BE 30C50100 \
+C784BE 30C50100 00000000  \
+50 \
+E8 [th_free] \
+83C4 04 \
+5E \
+5F \
+C2 0400 \
+"
+		},
+		"STAGE_tick_std_objects": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 14 \
+8B71 0C \
+85F6 \
+0F84 CD000000 \
+89CA \
+8B79 10 \
+31DB \
+894C24 10 \
+893424 \
+EB 20 \
+<nop:14> \
+80E1 FE \
+884D 03 \
+43 \
+83C7 04 \
+39F3 \
+0F84 9D000000 \
+8B2F \
+8A4D 03 \
+F6C1 01 \
+74 EA \
+0FB745 1C \
+66:85C0 \
+78 DB \
+895C24 08 \
+897C24 0C \
+896C24 04 \
+8D7D 1C \
+31DB \
+EB 2A \
+<nop:8> \
+69C6 10010000 \
+83BC05 BC000000 00  \
+0F95C0 \
+08C3 \
+0FBF4F 02 \
+0FB70439 \
+01CF \
+66:85C0 \
+78 2E \
+8B2A \
+0FBF77 06 \
+66:83F8 01 \
+77 D2 \
+69C6 10010000 \
+01E8 \
+8B0D 88456D00 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B5424 10 \
+EB B8 \
+<nop:8> \
+84DB \
+8B3424 \
+8B7C24 0C \
+8B5C24 08 \
+8B6C24 04 \
+0F85 5FFFFFFF \
+8A4D 03 \
+E9 51FFFFFF \
+31C0 \
+83C4 14 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"STAGE_on_tick": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 3C \
+8B4C24 50 \
+8379 04 00 \
+0F84 3F060000 \
+803D CCBC6900 00  \
+0F85 8C060000 \
+8B41 28 \
+8D3C80 \
+C1E7 02 \
+0379 18 \
+8DB1 C8020000 \
+8D91 B8020000 \
+895424 1C \
+8D91 AC020000 \
+895424 20 \
+8D51 48 \
+895424 18 \
+8D69 54 \
+8D59 70 \
+8B0F \
+0FBF57 04 \
+85D2 \
+0F84 B9010000 \
+4A \
+83FA 04 \
+0F87 2F060000 \
+FF2495 <codecave:STAGE_on_tick_jump_table> \
+8B5424 50 \
+3B4A 24 \
+0F8D 17020000 \
+8B4F 08 \
+894A 50 \
+894A 68 \
+F30F104F 0C \
+F30F114A 48 \
+F30F114A 60 \
+F30F1047 10 \
+F30F1142 4C \
+F30F1142 64 \
+837A 6C 00 \
+0F85 5E010000 \
+897424 10 \
+8B15 206D6C00 \
+895424 14 \
+8B02 \
+8BB0 C8000000 \
+894C24 08 \
+891424 \
+C74424 04 22000000 \
+F30F114424 38 \
+F30F114C24 34 \
+FFD6 \
+83EC 0C \
+F30F104424 34 \
+F30F114424 08 \
+8B4424 14 \
+890424 \
+C74424 04 24000000 \
+FFD6 \
+83EC 0C \
+89F0 \
+F30F104424 38 \
+F30F114424 08 \
+8B4C24 14 \
+890C24 \
+8B7424 10 \
+C74424 04 25000000 \
+FFD0 \
+83EC 0C \
+8B5424 50 \
+8B42 28 \
+E9 D6000000 \
+8B5424 50 \
+3B4A 24 \
+0F8D 51010000 \
+897424 10 \
+8B7424 1C \
+8B4E 08 \
+896C24 14 \
+8B6C24 20 \
+894D 08 \
+8B6C24 14 \
+F20F1006 \
+8B4C24 20 \
+F20F1101 \
+F20F1047 08 \
+F20F1106 \
+8B4F 10 \
+894E 08 \
+8B7424 10 \
+E9 8B000000 \
+8B5424 50 \
+3B4A 24 \
+0F8D 06010000 \
+8B4F 08 \
+898A C4020000 \
+8B0D (<codecave:default_timers> + 0x8) \
+894E 08 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1106 \
+EB 5E \
+8B5424 50 \
+3B4A 24 \
+0F8D D9000000 \
+8B4C24 18 \
+8B49 08 \
+894D 08 \
+8B4C24 18 \
+F20F1001 \
+F20F1145 00 \
+8B4F 08 \
+894A 6C \
+8B0D (<codecave:default_timers> + 0x8) \
+894B 08 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1103 \
+EB 1D \
+8B5424 50 \
+80BA A8020000 00  \
+0F84 94000000 \
+C682 A8020000 00  \
+<nop:5> \
+40 \
+8942 28 \
+83C7 14 \
+E9 39FEFFFF \
+83F9 FF \
+0F84 DE000000 \
+8B7424 50 \
+8B56 24 \
+39D1 \
+7D 76 \
+8B57 10 \
+8996 EC020000 \
+F20F1047 08 \
+F20F1186 E4020000 \
+F20F1047 08 \
+8B57 10 \
+8956 44 \
+F20F1146 3C \
+898E F0020000 \
+40 \
+8946 28 \
+89F2 \
+<nop:14> \
+66 837F 18 00 \
+8D7F 14 \
+75 F6 \
+8B07 \
+8982 E0020000 \
+F20F1047 08 \
+F20F1182 D4020000 \
+8B47 10 \
+8982 DC020000 \
+83F9 FF \
+0F84 8C000000 \
+89D6 \
+8B52 24 \
+0F57C0 \
+F30F2AC2 \
+F30F5846 20 \
+8B86 F0020000 \
+0F57C9 \
+F30F2AC8 \
+F30F5CC1 \
+8B8E E0020000 \
+29C1 \
+0F57C9 \
+F30F2AC9 \
+F30F5EC1 \
+0F108E D4020000 \
+0F1096 E4020000 \
+0F5CCA \
+0FC6C0 00 \
+0F59C1 \
+0F58C2 \
+0F104E 3C \
+660F3A0CC8 07 \
+0F114E 3C \
+89F2 \
+EB 2A \
+8B47 10 \
+8B5424 50 \
+8982 EC020000 \
+F20F1047 08 \
+F20F1182 E4020000 \
+F20F1047 08 \
+8B47 10 \
+8942 44 \
+F20F1142 3C \
+8B82 C4020000 \
+85C0 \
+0F84 94000000 \
+8B8A D0020000 \
+39C1 \
+7D 26 \
+898A C8020000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+0F83 01030000 \
+F30F1082 CC020000 \
+41 \
+EB 19 \
+C782 C8020000 19FCFFFF  \
+C782 CC020000 00000000  \
+0F57C0 \
+89C1 \
+898A D0020000 \
+0F57C9 \
+F30F2AC9 \
+F30F58C8 \
+0F57C0 \
+F30F2AC0 \
+F30F5EC8 \
+8B4424 1C \
+0F1000 \
+8B4424 20 \
+0F1010 \
+0F5CC2 \
+0FC6C9 00 \
+0F59C8 \
+0F58CA \
+0F1005 00D76900 \
+660F3A0CC1 07 \
+0F1105 00D76900 \
+8B42 6C \
+85C0 \
+0F84 20010000 \
+8B4A 78 \
+894A 70 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 28 \
+F30F1042 74 \
+F30F5805 C06E6C00 \
+F30F1142 74 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 11 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1142 74 \
+41 \
+894A 78 \
+39C1 \
+7C 07 \
+C742 6C 00000000 \
+0F57C0 \
+F30F2AC1 \
+F30F5842 74 \
+0F57C9 \
+F30F2AC8 \
+F30F5EC1 \
+F30F5D05 (<codecave:float_constants> + 0x8) \
+660F38314A 68 \
+0F5BC9 \
+660F383152 5C \
+0F5BD2 \
+0F5CCA \
+F30F12D8 \
+0FC6C0 00 \
+0F59C1 \
+0F58C2 \
+F30F5BC0 \
+660F382BC0 \
+660F67C0 \
+660F7E42 50 \
+F20F104A 54 \
+F20F1052 60 \
+0F5CD1 \
+0F59D3 \
+0F58D1 \
+0F115424 20 \
+0F1352 48 \
+8B35 206D6C00 \
+8B06 \
+8B98 C8000000 \
+660F7E4424 08 \
+893424 \
+C74424 04 22000000 \
+FFD3 \
+83EC 0C \
+0F104424 20 \
+660F3A174424 08 00 \
+893424 \
+C74424 04 24000000 \
+FFD3 \
+83EC 0C \
+0F104424 20 \
+660F3A174424 08 01 \
+893424 \
+C74424 04 25000000 \
+FFD3 \
+83EC 0C \
+8B5424 50 \
+66 837F 04 05 \
+74 43 \
+8B42 24 \
+8942 1C \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 28 \
+F30F1042 20 \
+F30F5805 C06E6C00 \
+F30F1142 20 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 11 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1142 20 \
+40 \
+8942 24 \
+8B72 0C \
+85F6 \
+0F84 C1000000 \
+8B7A 10 \
+31DB \
+897424 10 \
+EB 18 \
+<nop:6> \
+80E1 FE \
+884D 03 \
+43 \
+83C7 04 \
+39F3 \
+0F84 9E000000 \
+8B2F \
+8A4D 03 \
+F6C1 01 \
+74 EA \
+0FB745 1C \
+66 85C0 \
+78 DB \
+895C24 1C \
+897C24 20 \
+896C24 18 \
+8D7D 1C \
+31DB \
+EB 2A \
+<nop:8> \
+69C5 10010000 \
+83BC06 BC000000 00  \
+0F95C0 \
+08C3 \
+0FBF4F 02 \
+0FB70439 \
+01CF \
+66 85C0 \
+78 2E \
+8B32 \
+0FBF6F 06 \
+66 83F8 01 \
+77 D2 \
+69C5 10010000 \
+01F0 \
+8B0D 88456D00 \
+890424 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+8B5424 50 \
+EB B3 \
+<nop:3> \
+84DB \
+8B7424 10 \
+8B7C24 20 \
+8B5C24 1C \
+8B6C24 18 \
+0F85 5EFFFFFF \
+8A4D 03 \
+E9 50FFFFFF \
+8B82 80000000 \
+85C0 \
+7E 3A \
+8B8A 84000000 \
+8D51 01 \
+8B7424 50 \
+8996 84000000 \
+8B5424 50 \
+83F9 3C \
+75 07 \
+40 \
+8982 80000000 \
+8B0D 88456D00 \
+81C2 88000000 \
+891424 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+B8 01000000 \
+83C4 3C \
+5E \
+5F \
+5B \
+5D \
+C3 \
+F30F1082 CC020000 \
+F30F5805 C06E6C00 \
+F30F1182 CC020000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+0F82 04FDFFFF \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1182 CC020000 \
+41 \
+E9 E8FCFFFF \
+8B5424 50 \
+83F9 FF \
+0F85 F8FBFFFF \
+E9 7FFCFFFF \
+C781 04010000 30308060  \
+EB 9A \
+"
+		},
+		"STAGE_on_tick_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:STAGE_on_tick> + 0x74) \
+(<codecave:STAGE_on_tick> + 0x13A) \
+(<codecave:STAGE_on_tick> + 0x185) \
+(<codecave:STAGE_on_tick> + 0x1B2) \
+(<codecave:STAGE_on_tick> + 0x1F3) \
+"
+		},
+		"TIMER_tick": {
+			"access": "re",
+			"code": "\
+8B41 08 \
+8901 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 28 \
+F30F1041 04 \
+F30F5805 C06E6C00 \
+F30F1141 04 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 11 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1141 04 \
+40 \
+8941 08 \
+C3 \
+"
+		},
+		"SOUND_MANAGER_sub_424E41": {
+			"access": "re",
+			"code": "\
+8B81 2C060000 \
+85C0 \
+74 1F \
+F30F104424 04 \
+C740 1C 01000000 \
+F30F5905 (<codecave:float_constants> + 0x44) \
+F30F2CC8 \
+8948 14 \
+8948 18 \
+C2 0400 \
+"
+		},
+		"MIDI_MANAGER_sub_422630": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+C781 C8020000 00000000  \
+8981 E8020000 \
+C781 EC020000 00000000  \
+C781 E0020000 00000000  \
+C781 E4020000 01000000  \
+31C0 \
+C2 0400 \
+"
+		},
+		"SUPERVISOR_fade_music": {
+			"access": "re",
+			"code": "\
+F30F104424 04 \
+8A91 2F010000 \
+80FA 01 \
+75 64 \
+F30F1089 A8010000 \
+0F57D2 \
+0F2ED1 \
+75 08 \
+8B0D 7C456D00 \
+EB 0F \
+0F2E0D (<codecave:float_constants> + 0x8) \
+8B0D 7C456D00 \
+76 22 \
+31C0 \
+85C9 \
+74 19 \
+C741 1C 01000000 \
+F30F5905 (<codecave:float_constants> + 0x44) \
+F30F2CD0 \
+8951 14 \
+8951 18 \
+C2 0400 \
+31C0 \
+85C9 \
+74 F7 \
+C741 1C 01000000 \
+F30F5905 (<codecave:float_constants> + 0x44) \
+F30F5EC1 \
+EB D8 \
+B8 FFFFFFFF \
+80FA 02 \
+75 D8 \
+8B89 B0010000 \
+31C0 \
+85C9 \
+74 CC \
+F30F2CD0 \
+C781 C8020000 00000000  \
+8991 E8020000 \
+C781 EC020000 00000000  \
+C781 E0020000 00000000  \
+C781 E4020000 01000000  \
+C2 0400 \
+"
+		},
+		"GUI_on_tick": {
+			"access": "re",
+			"code": "\
+56 \
+803D CCBC6900 00  \
+75 13 \
+8B7424 08 \
+89F1 \
+E8 [codecave:GUI_on_tick_impl] \
+8B4E 04 \
+E8 [codecave:GUI_IMPL_on_tick_msg] \
+B8 01000000 \
+5E \
+C3 \
+"
+		},
+		"GUI_IMPL_on_tick_msg": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+<nop:3> \
+B8 FFFFFFFF \
+83B9 3C250000 00  \
+0F88 260A0000 \
+89CE \
+8B81 D42B0000 \
+85C0 \
+74 07 \
+48 \
+8986 D42B0000 \
+8B9E 38250000 \
+80BE D82B0000 00  \
+74 26 \
+F605 05D96900 01  \
+74 1D \
+0FB703 \
+C786 40250000 19FCFFFF  \
+C786 44250000 00000000  \
+8986 48250000 \
+<nop:6> \
+0FB70B \
+8B86 48250000 \
+39C8 \
+0F8C C8080000 \
+E9 A0000000 \
+<nop:120> \
+0FB643 04 \
+8886 D82B0000 \
+<nop:1> \
+0FB643 03 \
+8D4C03 04 \
+0FB75403 04 \
+8B86 48250000 \
+89CB \
+39D0 \
+0F8C 21080000 \
+0FB643 02 \
+83F8 0D \
+77 DA \
+FF2485 <codecave:GUI_IMPL_on_tick_msg_jump_table> \
+0FBF43 04 \
+31C9 \
+85C0 \
+0F95C1 \
+69C0 10010000 \
+0FBF53 06 \
+8D3C4A \
+8D8C4A A0040000 \
+66 898C06 04260000 \
+8B0D 88456D00 \
+8B94B9 B4DB0100 \
+0F57C0 \
+0F118406 70250000 \
+C78406 D4250000 00000000  \
+0F118406 50250000 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F118C06 60250000 \
+C78406 CC250000 FFFFFFFF  \
+C78406 8C250000 0000803F  \
+0F118406 90250000 \
+C78406 A0250000 0000803F  \
+0F118406 A4250000 \
+C78406 B4250000 0000803F  \
+0F118406 B8250000 \
+C78406 C8250000 0000803F  \
+66 C78406 D0250000 0200  \
+C78406 D8250000 00000000  \
+66 C78406 DC250000 0000  \
+899406 08260000 \
+899406 0C260000 \
+8B3D (<codecave:default_timers> + 0x8) \
+89BC06 88250000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F118406 80250000 \
+85D2 \
+0F84 D0FEFFFF \
+8D8406 50250000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+E9 BEFEFFFF \
+0FBF43 04 \
+31C9 \
+85C0 \
+0F95C1 \
+0FBF53 06 \
+8D8CCA A0040000 \
+8B15 88456D00 \
+69C0 10010000 \
+66 898C06 00260000 \
+6BC9 38 \
+8D3C0A \
+89BC06 10260000 \
+0F57C0 \
+0F118406 90250000 \
+0F118406 A4250000 \
+C78406 B4250000 0000803F  \
+0F118406 B8250000 \
+C78406 C8250000 0000803F  \
+F30F10440A 30 \
+F30F5E440A 18 \
+F30F118406 8C250000 \
+F30F10440A 2C \
+F30F5E440A 14 \
+F30F118406 A0250000 \
+E9 27FEFFFF \
+0FBF6B 06 \
+85ED \
+75 36 \
+66 83BE 34290000 00  \
+78 2C \
+0FBF43 04 \
+8D96 80280000 \
+68 10AC4600 \
+FFB486 C02B0000 \
+FFB486 B02B0000 \
+52 \
+FF35 88456D00 \
+E8 [codecave:ANM_MANAGER_draw_text_to_vm_left] \
+83C4 14 \
+69FD 10010000 \
+8D95 02070000 \
+66 89943E 24280000 \
+8B0D 88456D00 \
+8B94A9 3CE50100 \
+8DAC3E 70270000 \
+0F57C0 \
+0F11843E 90270000 \
+C7843E F4270000 00000000  \
+0F11843E 70270000 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F118C3E 80270000 \
+C7843E EC270000 FFFFFFFF  \
+C7843E AC270000 0000803F  \
+0F11843E B0270000 \
+C7843E C0270000 0000803F  \
+0F11843E C4270000 \
+C7843E D4270000 0000803F  \
+0F11843E D8270000 \
+C7843E E8270000 0000803F  \
+66 C7843E F0270000 0200  \
+C7843E F8270000 00000000  \
+66 C7843E FC270000 0000  \
+89943E 28280000 \
+89943E 2C280000 \
+A1 (<codecave:default_timers> + 0x8) \
+89843E A8270000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F11843E A0270000 \
+85D2 \
+74 06 \
+55 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+0FB686 D02B0000 \
+88843E 7C280000 \
+88843E 7D280000 \
+0FBF43 04 \
+8D4B 08 \
+51 \
+FFB486 C02B0000 \
+FFB486 B02B0000 \
+55 \
+FF35 88456D00 \
+E8 [codecave:ANM_MANAGER_draw_text_to_vm_left] \
+83C4 14 \
+C786 4C250000 00000000 \
+E9 A8FCFFFF \
+0FB705 04D96900 \
+80BE D82B0000 00  \
+74 0B \
+A9 00010000 \
+0F85 8DFCFFFF \
+8B8E 4C250000 \
+A8 01 \
+74 12 \
+F605 08D96900 01  \
+75 09 \
+83F9 07 \
+0F8F 71FCFFFF \
+3B4B 04 \
+0F8D 68FCFFFF \
+E9 05060000 \
+0FB643 06 \
+0FBF4B 04 \
+69C9 10010000 \
+66 89840E DA250000 \
+E9 48FCFFFF \
+FF86 D42B0000 \
+E9 3DFCFFFF \
+8DBE B41C0000 \
+66 C786 681D0000 0107  \
+8B0D 88456D00 \
+8B91 38E50100 \
+0F57C0 \
+0F1186 D41C0000 \
+C786 381D0000 00000000  \
+0F1186 B41C0000 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F118E C41C0000 \
+C786 301D0000 FFFFFFFF  \
+C786 F01C0000 0000803F  \
+0F1186 F41C0000 \
+C786 041D0000 0000803F  \
+0F1186 081D0000 \
+C786 181D0000 0000803F  \
+0F1186 1C1D0000 \
+C786 2C1D0000 0000803F  \
+66 C786 341D0000 0200  \
+C786 3C1D0000 00000000  \
+66 C786 401D0000 0000  \
+8996 6C1D0000 \
+8996 701D0000 \
+A1 (<codecave:default_timers> + 0x8) \
+8986 EC1C0000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 E41C0000 \
+74 06 \
+57 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+89F9 \
+66:C786 C01D0000 1010  \
+8B53 04 \
+A1 147B4800 \
+89D7 \
+C1E2 07 \
+8DAC10 90000000 \
+55 \
+68 8CA94600 \
+6A 00 \
+68 FFFFE000 \
+51 \
+FF35 88456D00 \
+E8 [codecave:ANM_MANAGER_draw_text_to_vm_right] \
+83C4 18 \
+803D 476E6C00 02  \
+0F84 28030000 \
+81C5 00020000 \
+B9 186D6C00 \
+55 \
+E8 [0x424B5D] \
+E9 09FBFFFF \
+<nop:16> \
+0FBF43 06 \
+8D88 04070000 \
+69D0 10010000 \
+8DAC16 90290000 \
+66 898C16 442A0000 \
+8B0D 88456D00 \
+8B8481 44E50100 \
+0F57C0 \
+0F118416 B0290000 \
+C78416 142A0000 00000000  \
+0F118416 90290000 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F118C16 A0290000 \
+C78416 0C2A0000 FFFFFFFF  \
+C78416 CC290000 0000803F  \
+0F118416 D0290000 \
+C78416 E0290000 0000803F  \
+0F118416 E4290000 \
+C78416 F4290000 0000803F  \
+0F118416 F8290000 \
+C78416 082A0000 0000803F  \
+66 C78416 102A0000 0200  \
+C78416 182A0000 00000000  \
+66 C78416 1C2A0000 0000  \
+898416 482A0000 \
+898416 4C2A0000 \
+8B3D (<codecave:default_timers> + 0x8) \
+89BC16 C8290000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F118416 C0290000 \
+85C0 \
+74 06 \
+55 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+0FBF43 04 \
+8D4B 08 \
+51 \
+FFB486 C02B0000 \
+FFB486 B02B0000 \
+55 \
+FF35 88456D00 \
+E8 [codecave:ANM_MANAGER_draw_text_to_vm_right] \
+83C4 14 \
+C786 4C250000 00000000  \
+E9 C8F9FFFF \
+C786 DC2B0000 01000000  \
+813D D4D66900 05000000  \
+0F8F E0010000 \
+8DBE 24240000 \
+66 C786 D8240000 1906  \
+8B0D 88456D00 \
+8B91 98E10100 \
+0F57C0 \
+0F1186 44240000 \
+C786 A8240000 00000000  \
+0F1186 24240000 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F118E 34240000 \
+C786 A0240000 FFFFFFFF  \
+C786 60240000 0000803F  \
+0F1186 64240000 \
+C786 74240000 0000803F  \
+0F1186 78240000 \
+C786 88240000 0000803F  \
+0F1186 8C240000 \
+C786 9C240000 0000803F  \
+66 C786 A4240000 0200  \
+C786 AC240000 00000000  \
+66 C786 B0240000 0000  \
+8996 DC240000 \
+8996 E0240000 \
+A1 (<codecave:default_timers> + 0x8) \
+8986 5C240000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 54240000 \
+85D2 \
+0F84 D8F8FFFF \
+57 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+E9 CDF8FFFF \
+<nop:12> \
+0FB605 476E6C00 \
+3C 01 \
+0F85 85000000 \
+F30F1005 C06E6C00 \
+0F57C9 \
+0F2EC8 \
+75 07 \
+A1 7C456D00 \
+EB 0E \
+0F2E05 (<codecave:float_constants> + 0x8) \
+A1 7C456D00 \
+76 36 \
+85C0 \
+0F84 85F8FFFF \
+C740 1C 01000000 \
+C740 14 F0000000 \
+C740 18 F0000000 \
+E9 6BF8FFFF \
+8B86 4C250000 \
+3B43 04 \
+0F8D 5CF8FFFF \
+E9 F9010000 \
+85C0 \
+0F84 4FF8FFFF \
+F30F100D (<codecave:float_constants> + 0x58) \
+F30F5EC8 \
+C740 1C 01000000 \
+F30F2CC9 \
+8948 14 \
+8948 18 \
+E9 2DF8FFFF \
+3C 02 \
+0F85 25F8FFFF \
+A1 C86E6C00 \
+85C0 \
+0F84 18F8FFFF \
+C780 C8020000 00000000  \
+0F2805 (<codecave:xmm_constants> + 0x40) \
+0F1180 E0020000 \
+E9 FBF7FFFF \
+<nop:4> \
+8B2D C86E6C00 \
+85ED \
+0F84 E9F7FFFF \
+89E9 \
+E8 [0x4224E0] \
+89E9 \
+57 \
+E8 [0x422140] \
+89E9 \
+E8 [0x422490] \
+E9 CEF7FFFF \
+C605 BCD46900 FF  \
+E9 C2F7FFFF \
+89CB \
+8986 40250000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1086 44250000 \
+F30F5805 C06E6C00 \
+F30F1186 44250000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1186 44250000 \
+40 \
+8986 48250000 \
+899E 38250000 \
+8B0D 88456D00 \
+8D86 50250000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D86 60260000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D86 70270000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D86 80280000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D86 90290000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D86 A02A0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+31C0 \
+83BE 48250000 3B  \
+7F 30 \
+80BE D82B0000 00  \
+74 27 \
+F605 05D96900 01  \
+74 1E \
+C786 40250000 19FCFFFF  \
+C786 44250000 00000000  \
+C786 48250000 3C000000  \
+<nop:3> \
+5E \
+5F \
+5B \
+5D \
+C3 \
+C786 3C250000 FFFFFFFF  \
+B8 FFFFFFFF \
+EB EA \
+A1 A4BC6900 \
+A3 A0BC6900 \
+803D C3D46900 00  \
+74 0F \
+C705 A46E6C00 07000000  \
+E9 18FFFFFF \
+8B0D D4D66900 \
+83F9 05 \
+7C 11 \
+<nop:3> \
+A1 B0BC6900 \
+85C0 \
+74 23 \
+83F9 05 \
+75 1E \
+C705 A46E6C00 03000000  \
+E9 EDFEFFFF \
+41 \
+898E 4C250000 \
+E9 E1FEFFFF \
+<nop:3> \
+833D BCBC6900 00  \
+74 1B \
+83F8 04 \
+75 25 \
+C605 C2D46900 01  \
+C705 A46E6C00 07000000  \
+E9 BAFEFFFF \
+C705 A46E6C00 08000000  \
+E9 ABFEFFFF \
+C705 A46E6C00 0A000000  \
+E9 9CFEFFFF \
+"
+		},
+		"GUI_IMPL_on_tick_msg_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:GUI_IMPL_on_tick_msg> + 0xA44) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x12D) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x242) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x2D9) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x458) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x49D) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x4B8) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x4C3) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x607) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x738) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x98F) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0xA55) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0x83F) \
+(<codecave:GUI_IMPL_on_tick_msg> + 0xF5) \
+"
+		},
+		"GUI_on_tick_impl": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+89CE \
+8B79 04 \
+8B0D 88456D00 \
+57 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 10010000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 20020000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 30030000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 40040000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 50050000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 60060000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 70070000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 80080000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 90090000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 A00A0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 B00B0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 C00C0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 D00D0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 E00E0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 F00F0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 00110000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 10120000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 20130000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83BF 3C250000 00  \
+0F88 E1030000 \
+8B0D 88456D00 \
+8D87 30140000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 40150000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 50160000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 60170000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 70180000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 80190000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 901A0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 A41B0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 B41C0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 C41D0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 E41F0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 D41E0000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+8B0D 88456D00 \
+8D87 F4200000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+66:83BF D4240000 00  \
+78 1F \
+8D87 24240000 \
+8B0D 88456D00 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+85C0 \
+74 09 \
+66:C787 D4240000 FFFF  \
+83BF F42B0000 00  \
+0F84 9B000000 \
+8B87 002C0000 \
+83F8 1D \
+7F 26 \
+F30F2AC0 \
+F30F5887 FC2B0000 \
+F30F5905 (<codecave:float_constants> + 0x48) \
+F30F5805 (<codecave:float_constants> + 0x4C) \
+F30F1187 E42B0000 \
+EB 1B \
+C787 E42B0000 0000D042  \
+3D FA000000 \
+7C 0A \
+C787 F42B0000 00000000  \
+8987 F82B0000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1087 FC2B0000 \
+F30F5805 C06E6C00 \
+F30F1187 FC2B0000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 FC2B0000 \
+40 \
+8987 002C0000 \
+83BF 142C0000 00  \
+0F84 9E000000 \
+8B87 202C0000 \
+83F8 1D \
+7F 29 \
+0F57C0 \
+F30F2AC0 \
+F30F5887 1C2C0000 \
+F30F5905 (<codecave:float_constants> + 0x48) \
+F30F5805 (<codecave:float_constants> + 0x4C) \
+F30F1187 042C0000 \
+EB 1B \
+C787 042C0000 0000D042  \
+3D B4000000 \
+7C 0A \
+C787 142C0000 00000000  \
+8987 182C0000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1087 1C2C0000 \
+F30F5805 C06E6C00 \
+F30F1187 1C2C0000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 1C2C0000 \
+40 \
+8987 202C0000 \
+83BF 342C0000 00  \
+74 66 \
+8B87 402C0000 \
+3D 18010000 \
+7C 0A \
+C787 342C0000 00000000  \
+8987 382C0000 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+72 31 \
+F30F1087 3C2C0000 \
+F30F5805 C06E6C00 \
+F30F1187 3C2C0000 \
+0F2E05 (<codecave:float_constants> + 0x8) \
+72 17 \
+F30F5805 (<codecave:float_constants> + 0xC) \
+F30F1187 3C2C0000 \
+40 \
+8987 402C0000 \
+83BF DC2B0000 01  \
+0F85 FC000000 \
+8B0D D4D66900 \
+69C1 E8030000 \
+8B15 B4BC6900 \
+8D1492 \
+8D0450 \
+0FBF15 B0D46900 \
+6BD2 64 \
+01C2 \
+0FB705 B4D46900 \
+0FAFC2 \
+83F9 06 \
+7C 1E \
+0FBE0D BAD46900 \
+69C9 C0C62D00 \
+01C1 \
+0FBE05 BBD46900 \
+69C0 40420F00 \
+01C8 \
+8B0D B0BC6900 \
+83F9 04 \
+77 51 \
+FF248D <codecave:GUI_on_tick_impl_jump_table> \
+89C1 \
+C1E9 1F \
+01C1 \
+D1F9 \
+BA 67666666 \
+89C8 \
+F7EA \
+EB 27 \
+C1E0 02 \
+EB 03 \
+8D0480 \
+8D0440 \
+B9 67666666 \
+F7E9 \
+89D0 \
+C1E8 1F \
+C1FA 02 \
+01D0 \
+EB 07 \
+01C0 \
+B9 67666666 \
+F7E9 \
+89D0 \
+C1E8 1F \
+C1FA 02 \
+01C2 \
+01D2 \
+8D0492 \
+8A0D 7C6E6C00 \
+80F9 04 \
+74 0A \
+80F9 03 \
+75 29 \
+8D0480 \
+EB 02 \
+01C0 \
+B9 67666666 \
+F7E9 \
+89D0 \
+C1E8 1F \
+C1FA 02 \
+01D0 \
+F7E9 \
+89D0 \
+C1E8 1F \
+C1FA 02 \
+01C2 \
+01D2 \
+8D0492 \
+8987 E02B0000 \
+0105 A4BC6900 \
+C787 DC2B0000 02000000  \
+5E \
+5F \
+C3 \
+807E 20 00 \
+8A87 A01B0000 \
+74 36 \
+84C0 \
+74 65 \
+8B0D 88456D00 \
+8D87 30140000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+85C0 \
+74 07 \
+C687 A01B0000 02  \
+8B46 10 \
+3D FB000000 \
+77 68 \
+83C0 04 \
+8946 10 \
+E9 A7000000 \
+89C1 \
+FEC9 \
+80F9 02 \
+73 5D \
+8D87 30140000 \
+66:C787 E4140000 1406  \
+8B0D 88456D00 \
+FFB1 84E10100 \
+50 \
+E8 [codecave:ANM_MANAGER_set_vm_script] \
+C687 A01B0000 03  \
+EB 3B \
+C687 A01B0000 01  \
+8D87 30140000 \
+66:C787 E4140000 1306  \
+8B0D 88456D00 \
+FFB1 80E10100 \
+50 \
+E8 [codecave:ANM_MANAGER_set_vm_script] \
+EB 43 \
+C746 10 FF000000 \
+EB 41 \
+84C0 \
+0F84 81FBFFFF \
+8B46 10 \
+8D48 FC \
+85C0 \
+0F44C8 \
+894E 10 \
+8B0D 88456D00 \
+8D87 30140000 \
+50 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+85C0 \
+74 15 \
+C687 A01B0000 00  \
+C746 28 00000000 \
+C746 10 00000000 \
+80BF A01B0000 02  \
+0F82 3BFBFFFF \
+F30F1046 24 \
+F30F104E 28 \
+0F2EC1 \
+76 16 \
+F30F580D (<codecave:float_constants> + 0x50) \
+F30F5DC1 \
+F30F1146 28 \
+E9 16FBFFFF \
+0F83 10FBFFFF \
+F30F580D (<codecave:float_constants> + 0x54) \
+F30F5FC1 \
+F30F1146 28 \
+E9 FAFAFFFF \
+"
+		},
+		"GUI_on_tick_impl_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:GUI_on_tick_impl> + 0x4A9) \
+(<codecave:GUI_on_tick_impl> + 0x4F3) \
+(<codecave:GUI_on_tick_impl> + 0x4BD) \
+(<codecave:GUI_on_tick_impl> + 0x4C2) \
+(<codecave:GUI_on_tick_impl> + 0x4DB) \
+"
+		},
+		"BULLET_MANAGER_cancel_bullets": {
+			"access": "re",
+			"code": "\
+B8 BE5B0000 \
+EB 15 \
+<nop:9> \
+05 C4050000 \
+3D BEC50E00 \
+74 17 \
+0FB71401 \
+66:85D2 \
+74 EB \
+66:83FA 05 \
+74 E5 \
+66:C70401 0500 \
+EB DD \
+81C1 6CC20E00 \
+31C0 \
+EB 17 \
+<nop:3> \
+C74401 E8 00000000 \
+05 70020000 \
+3D 009C0000 \
+74 2B \
+837C01 EC 00 \
+74 ED \
+803C01 01 \
+77 DF \
+C60401 02 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F114401 F0 \
+8B15 (<codecave:default_timers> + 0x8) \
+895401 F8 \
+EB C1 \
+C3 \
+"
+		},
+		"BULLET_MANAGER_cancel_bullets_to_star_items": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 2C \
+8D99 00560000 \
+894C24 0C \
+8DB9 00C00E00 \
+BD 68E26900 \
+EB 36 \
+<nop:2> \
+C746 7C FFFFFFFF \
+C686 42010000 01  \
+891C24 \
+C74424 08 C4050000 \
+C74424 04 00000000 \
+E8 [th_memset] \
+81C3 C4050000 \
+39FB \
+0F84 7E010000 \
+0FB783 BE050000 \
+66 85C0 \
+74 E6 \
+66 83F8 05 \
+74 E0 \
+8D83 60050000 \
+690D AC6B6C00 44010000  \
+8D89 68E26900 \
+89CE \
+<nop:2> \
+80BE 41010000 00  \
+74 15 \
+81C6 44010000 \
+81FE 686A6C00 \
+0F44F5 \
+39CE \
+75 E4 \
+89CE \
+8D8E 44010000 \
+81F9 686A6C00 \
+0F84 1B010000 \
+29E9 \
+C1F9 02 \
+69C9 B1481978 \
+890D AC6B6C00 \
+66 C786 40010000 0601  \
+C686 43010000 01  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1186 34010000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8996 3C010000 \
+F20F1008 \
+F20F118E 10010000 \
+8B40 08 \
+8986 18010000 \
+C786 1C010000 00000000  \
+C786 20010000 CDCC0CC0  \
+C786 24010000 00000000  \
+66 C786 B4000000 1B02  \
+8B0D 88456D00 \
+8B81 A0D10100 \
+0F57D2 \
+0F1156 20 \
+C786 84000000 00000000  \
+0F1116 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F114E 10 \
+C746 7C FFFFFFFF \
+C746 3C 0000803F \
+0F1156 40 \
+C746 50 0000803F \
+0F1156 54 \
+C746 64 0000803F \
+0F1156 68 \
+C746 78 0000803F \
+66 C786 80000000 0200  \
+C786 88000000 00000000  \
+66 C786 8C000000 0000  \
+8986 B8000000 \
+8986 BC000000 \
+8956 38 \
+F20F1146 30 \
+85C0 \
+0F84 65FEFFFF \
+893424 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+E9 55FEFFFF \
+31C9 \
+E9 E9FEFFFF \
+814424 0C 005C0F00 \
+BB 68E26900 \
+EB 29 \
+<nop:15> \
+C787 54020000 00000000  \
+81C7 70020000 \
+3B7C24 0C \
+0F84 6F020000 \
+83BF 58020000 00  \
+74 E7 \
+80BF 6C020000 01  \
+77 D4 \
+C687 6C020000 02  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1187 5C020000 \
+8B2D (<codecave:default_timers> + 0x8) \
+89AF 64020000 \
+F30F1087 2C020000 \
+F30F109F 30020000 \
+F30F5AC0 \
+F20F110424 \
+E8 [<option:cos_addr>] \
+D95C24 24 \
+F30F106424 24 \
+F20F110424 \
+E8 [<option:sin_addr>] \
+D95C24 28 \
+F30F1087 34020000 \
+0F2EC3 \
+0F86 6AFFFFFF \
+F30F106C24 28 \
+0F28CC \
+F30F1005 (<codecave:float_constants> + 0x5C) \
+F30F59C8 \
+F30F114C24 14 \
+0F28CD \
+F30F59C8 \
+F30F114C24 10 \
+F30F59EB \
+F30F58AF 24020000 \
+F30F59E3 \
+F30F58A7 20020000 \
+EB 37 \
+<nop:8> \
+C746 7C FFFFFFFF \
+C686 42010000 01  \
+F30F586424 14 \
+F30F586C24 10 \
+F30F581D (<codecave:float_constants> + 0x5C) \
+0F2E9F 34020000 \
+0F83 F1FEFFFF \
+6905 AC6B6C00 44010000  \
+8D80 68E26900 \
+89C6 \
+<nop:15> \
+80BE 41010000 00  \
+74 15 \
+81C6 44010000 \
+81FE 686A6C00 \
+0F44F3 \
+39C6 \
+75 E4 \
+89C6 \
+8D86 44010000 \
+3D 686A6C00 \
+0F84 23010000 \
+29D8 \
+C1F8 02 \
+69C0 B1481978 \
+A3 AC6B6C00 \
+66 C786 40010000 0601  \
+C686 43010000 01  \
+F20F1015 (<codecave:default_timers> + 0x0) \
+F20F1196 34010000 \
+89AE 3C010000 \
+F30F11A6 10010000 \
+F30F11AE 14010000 \
+0F2805 (<codecave:xmm_constants> + 0x70) \
+0F1186 18010000 \
+66 C786 B4000000 1B02  \
+8B0D 88456D00 \
+8B81 A0D10100 \
+0F57C9 \
+0F114E 20 \
+C786 84000000 00000000  \
+0F110E \
+0F2805 (<codecave:xmm_constants> + 0x30) \
+0F1146 10 \
+C746 7C FFFFFFFF \
+C746 3C 0000803F \
+0F114E 40 \
+C746 50 0000803F \
+0F114E 54 \
+C746 64 0000803F \
+0F114E 68 \
+C746 78 0000803F \
+66 C786 80000000 0200  \
+C786 88000000 00000000  \
+66 C786 8C000000 0000  \
+8986 B8000000 \
+8986 BC000000 \
+896E 38 \
+F20F1156 30 \
+85C0 \
+0F84 92FEFFFF \
+893424 \
+F30F115C24 20 \
+F30F116424 1C \
+F30F116C24 18 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+F30F106C24 18 \
+F30F106424 1C \
+F30F105C24 20 \
+E9 5EFEFFFF \
+31C0 \
+E9 E1FEFFFF \
+83C4 2C \
+5E \
+5F \
+5B \
+5D \
+C3 \
+"
+		},
+		"EFFECT_MANAGER_spawn_effect": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 08 \
+8B5424 24 \
+8D59 08 \
+6901 7C010000 \
+8D7401 08 \
+0F57C9 \
+0F2815 (<codecave:xmm_constants> + 0x30) \
+894C24 04 \
+8DA9 08F80200 \
+89F7 \
+<nop:2> \
+80BF 78010000 00  \
+74 14 \
+81C7 7C010000 \
+39EF \
+0F44FB \
+39F7 \
+75 E8 \
+E9 26010000 \
+891424 \
+C687 78010000 01  \
+8B4C24 1C \
+888F 79010000 \
+8B4424 20 \
+F20F1000 \
+F20F1187 10010000 \
+8B40 08 \
+8987 18010000 \
+8B04CD 98624700 \
+66 8987 B4000000 \
+8B0D 88456D00 \
+8B8481 34C90100 \
+0F114F 20 \
+C787 84000000 00000000  \
+0F110F \
+0F1157 10 \
+C747 7C FFFFFFFF \
+C747 3C 0000803F \
+0F114F 40 \
+C747 50 0000803F \
+0F114F 54 \
+C747 64 0000803F \
+0F114F 68 \
+C747 78 0000803F \
+66 C787 80000000 0200  \
+C787 88000000 00000000  \
+66 C787 8C000000 0000  \
+8987 B8000000 \
+8987 BC000000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8957 38 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1147 30 \
+85C0 \
+74 18 \
+57 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+F20F1005 (<codecave:default_timers> + 0x0) \
+0F2815 (<codecave:xmm_constants> + 0x30) \
+0F57C9 \
+8B4424 28 \
+8947 7C \
+8B4424 1C \
+8B04C5 9C624700 \
+8987 74010000 \
+F20F1187 64010000 \
+A1 (<codecave:default_timers> + 0x8) \
+8987 6C010000 \
+66 C787 7A010000 0000  \
+8B1424 \
+4A \
+0F85 BFFEFFFF \
+EB 02 \
+89F7 \
+8D87 7C010000 \
+39E8 \
+74 1D \
+29D8 \
+C1F8 02 \
+69C0 9F5BE2D4 \
+8B4C24 04 \
+8901 \
+89F8 \
+83C4 08 \
+5E \
+5F \
+5B \
+5D \
+C2 1000 \
+31C0 \
+EB EA \
+"
+		},
+		"PLAYER_check_bullet_collisions": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 2C \
+890C24 \
+8B4C24 48 \
+8B5424 40 \
+8B4424 44 \
+F20F1202 \
+F20F1210 \
+0F5915 (<codecave:xmm_constants> + 0xC0) \
+0F58D0 \
+85C9 \
+74 06 \
+C701 00000000 \
+8B4424 40 \
+F30F1040 04 \
+F30F114424 0C \
+0F5715 (<codecave:xmm_constants> + 0xA0) \
+8B0424 \
+8DA8 280A0000 \
+31F6 \
+BB 806B0000 \
+0F281D (<codecave:xmm_constants> + 0xD0) \
+0F2825 (<codecave:xmm_constants> + 0xA0) \
+0F115424 1C \
+EB 65 \
+B9 E07F4800 \
+6A FF \
+6A 01 \
+FF7424 10 \
+6A 05 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+C785 18010000 CDCCCC3D  \
+0F105424 1C \
+0F281D (<codecave:xmm_constants> + 0xD0) \
+0F2825 (<codecave:xmm_constants> + 0xA0) \
+66 C785 4E010000 0200  \
+F20F1085 28010000 \
+0F5905 (<codecave:xmm_constants> + 0x80) \
+0F1385 28010000 \
+<nop:3> \
+81C5 58010000 \
+81C3 A8FEFFFF \
+0F84 7E020000 \
+0FB7BD 4E010000 \
+0FBFC7 \
+85C0 \
+74 E0 \
+83F8 01 \
+74 0A \
+66 83BD 50010000 02  \
+75 D1 \
+F20F1285 10010000 \
+F20F128D 1C010000 \
+0F59CB \
+0F58C8 \
+0F57CC \
+0FC2CA 01 \
+660F3817C9 \
+75 AD \
+0FB785 4C010000 \
+8B0C24 \
+83B9 C8750000 00  \
+89C1 \
+74 28 \
+897424 04 \
+8D50 02 \
+66 B9 0100 \
+66 83FA 05 \
+72 13 \
+0FBFC8 \
+69C9 56550000 \
+89CA \
+C1EA 1F \
+C1E9 10 \
+01D1 \
+8B7424 04 \
+0FBFC9 \
+01CE \
+0FBF8D 50010000 \
+83F9 03 \
+0F84 41010000 \
+8D95 10010000 \
+895424 08 \
+83F9 02 \
+75 6A \
+897424 04 \
+8D50 03 \
+66 B9 0100 \
+66 83FA 07 \
+72 0F \
+8D48 03 \
+66 85C0 \
+0F49C8 \
+0FBFC9 \
+C1E9 02 \
+66 898D 4C010000 \
+0FBF85 B4000000 \
+8D88 BFFBFFFF \
+83F9 03 \
+77 11 \
+F20F1004C5 (<codecave:PlayerCheckBulletCollisionsSizes_Float2LookupTable> - 0x2208) \
+F20F1185 1C010000 \
+6985 48010000 ABAAAAAA  \
+05 AAAAAA2A \
+D1C8 \
+3D AAAAAA2A \
+8B7424 04 \
+0F86 38010000 \
+66 83FF 01 \
+0F85 B6FEFFFF \
+8B0D 88456D00 \
+8B85 B4000000 \
+83C0 20 \
+66 8985 B4000000 \
+98 \
+8B8481 34C90100 \
+0F57C0 \
+0F1145 20 \
+C785 84000000 00000000  \
+0F1145 00 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F114D 10 \
+C745 7C FFFFFFFF \
+C745 3C 0000803F \
+0F1145 40 \
+C745 50 0000803F \
+0F1145 54 \
+C745 64 0000803F \
+0F1145 68 \
+C745 78 0000803F \
+66 C785 80000000 0200  \
+C785 88000000 00000000  \
+66 C785 8C000000 0000  \
+8985 B8000000 \
+8985 BC000000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8955 38 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1145 30 \
+85C0 \
+0F84 D2FDFFFF \
+55 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+E9 C7FDFFFF \
+8B0C24 \
+0FB681 E4090000 \
+FEC0 \
+8881 E4090000 \
+A8 07 \
+0F85 00FEFFFF \
+F30F1085 10010000 \
+F30F114424 10 \
+F30F104424 0C \
+F30F114424 14 \
+8B4424 40 \
+F30F1040 08 \
+F30F114424 18 \
+B9 E07F4800 \
+6A FF \
+6A 01 \
+8D4424 18 \
+50 \
+6A 05 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+0F2825 (<codecave:xmm_constants> + 0xA0) \
+0F281D (<codecave:xmm_constants> + 0xD0) \
+0F105424 1C \
+E9 AAFDFFFF \
+B9 E07F4800 \
+6A FF \
+6A 01 \
+FF7424 10 \
+6A 05 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+0F2825 (<codecave:xmm_constants> + 0xA0) \
+0F281D (<codecave:xmm_constants> + 0xD0) \
+8B7424 04 \
+0F105424 1C \
+66 83FF 01 \
+0F85 53FDFFFF \
+E9 98FEFFFF \
+8B0424 \
+8DB8 38080000 \
+BB 80FEFFFF \
+0F57ED \
+EB 19 \
+<nop:13> \
+83C7 04 \
+83C3 0C \
+0F84 AE000000 \
+8B0424 \
+F30F108418 B8070000 \
+0F2EE8 \
+73 E3 \
+8B0424 \
+F20F128C18 38060000 \
+660F3A218418 BC070000 10  \
+F20F12C0 \
+0F59C3 \
+0F58C1 \
+0F57C4 \
+0FC2C2 01 \
+660F3817C0 \
+75 B4 \
+8B6F 80 \
+012F \
+8B0C24 \
+0FB681 E4090000 \
+FEC0 \
+8881 E4090000 \
+A8 03 \
+75 2A \
+B9 E07F4800 \
+6A FF \
+6A 01 \
+FF7424 48 \
+6A 03 \
+E8 [codecave:EFFECT_MANAGER_spawn_effect] \
+0F57ED \
+0F2825 (<codecave:xmm_constants> + 0xA0) \
+0F281D (<codecave:xmm_constants> + 0xD0) \
+0F105424 1C \
+01EE \
+8B0424 \
+83B8 C8750000 00  \
+0F84 5DFFFFFF \
+8B4424 48 \
+85C0 \
+0F84 51FFFFFF \
+C700 01000000 \
+E9 46FFFFFF \
+89F0 \
+83C4 2C \
+5E \
+5F \
+5B \
+5D \
+C2 0C00 \
+"
+		},
+		"ASCII_MANAGER_make_popup_A": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 08 \
+8B7424 20 \
+8B4424 1C \
+8B5424 24 \
+8BB9 38620000 \
+8D6F 01 \
+31DB \
+81FD 00020000 \
+0F43EB \
+89A9 38620000 \
+8D3CBF \
+C684F9 58710000 01  \
+8994F9 48710000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1184F9 4C710000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8994F9 54710000 \
+F20F1000 \
+F20F1184F9 3C710000 \
+8B40 08 \
+8984F9 44710000 \
+85F6 \
+7E 4D \
+894C24 04 \
+893C24 \
+8DACF9 34710000 \
+B9 CDCCCCCC \
+<nop:5> \
+89F0 \
+F7E1 \
+C1EA 03 \
+8D0412 \
+8D3C80 \
+89F0 \
+29F8 \
+88441D 00 \
+43 \
+83FE 09 \
+89D6 \
+77 E3 \
+8B4C24 04 \
+8B3C24 \
+889CF9 59710000 \
+83C4 08 \
+5E \
+5F \
+5B \
+5D \
+C2 0C00 \
+B8 0A000000 \
+0F44C6 \
+8884F9 34710000 \
+B3 01 \
+EB DC \
+"
+		},
+		"ASCII_MANAGER_make_popup_B": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 08 \
+8B7424 20 \
+8B4424 1C \
+8B5424 24 \
+8BB9 3C620000 \
+8D6F 01 \
+31DB \
+83FD 03 \
+0F43EB \
+89A9 3C620000 \
+8D3CBF \
+C684F9 58C10000 01  \
+8994F9 48C10000 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1184F9 4CC10000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8994F9 54C10000 \
+F20F1000 \
+F20F1184F9 3CC10000 \
+8B40 08 \
+8984F9 44C10000 \
+85F6 \
+7E 50 \
+894C24 04 \
+893C24 \
+8DACF9 34C10000 \
+B9 CDCCCCCC \
+<nop:8> \
+89F0 \
+F7E1 \
+C1EA 03 \
+8D0412 \
+8D3C80 \
+89F0 \
+29F8 \
+88441D 00 \
+43 \
+83FE 09 \
+89D6 \
+77 E3 \
+8B4C24 04 \
+8B3C24 \
+889CF9 59C10000 \
+83C4 08 \
+5E \
+5F \
+5B \
+5D \
+C2 0C00 \
+B8 0A000000 \
+0F44C6 \
+8884F9 34C10000 \
+B3 01 \
+EB DC \
+"
+		},
+		"BULLET_MANAGER_cancel_bullets_spell_bonus": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 18 \
+8B7C24 2C \
+8D99 00560000 \
+894C24 04 \
+8D81 00C00E00 \
+894424 08 \
+BD D0070000 \
+BE CDCCCCCC \
+31C0 \
+EB 54 \
+BA 0A000000 \
+0F44D5 \
+8D0CBF \
+8814CD 342A4800 \
+B1 01 \
+8B7C24 2C \
+8B0424 \
+<nop:8> \
+8B5424 14 \
+8D1492 \
+880CD5 592A4800 \
+01E8 \
+83C5 0A \
+39FD \
+0F4FEF \
+66 C783 BE050000 0500  \
+81C3 C4050000 \
+3B5C24 08 \
+0F84 E0000000 \
+66 83BB BE050000 00  \
+74 E6 \
+890424 \
+31D2 \
+39FD \
+0F9DC2 \
+F7DA \
+89E8 \
+8B2D 381B4800 \
+8D4D 01 \
+81F9 00020000 \
+BF 00000000 \
+0F43CF \
+89EF \
+89C5 \
+890D 381B4800 \
+8D0CFD 00000000 \
+C68489 582A4800 01  \
+899489 482A4800 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F118489 4C2A4800 \
+8B15 (<codecave:default_timers> + 0x8) \
+899489 542A4800 \
+F20F1083 60050000 \
+F20F118489 3C2A4800 \
+8B93 68050000 \
+899489 442A4800 \
+85C0 \
+897C24 14 \
+0F8E 15FFFFFF \
+895C24 10 \
+8D04BF \
+89EF \
+8D2CC5 342A4800 \
+31C9 \
+897C24 0C \
+<nop:2> \
+89F8 \
+F7E6 \
+C1EA 03 \
+8D0412 \
+8D0480 \
+89FB \
+29C3 \
+885C0D 00 \
+41 \
+83FF 09 \
+89D7 \
+77 E3 \
+8B0424 \
+8B7C24 2C \
+8B5C24 10 \
+8B6C24 0C \
+E9 EFFEFFFF \
+8B7424 04 \
+81C6 6CC20E00 \
+31D2 \
+EB 17 \
+90 \
+C74416 E8 00000000 \
+81C2 70020000 \
+81FA 009C0000 \
+74 2B \
+837C16 EC 00 \
+74 EB \
+803C16 01 \
+77 DD \
+C60416 02 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F114416 F0 \
+8B0D (<codecave:default_timers> + 0x8) \
+894C16 F8 \
+EB BF \
+85C0 \
+74 56 \
+0105 A4BC6900 \
+8B15 34BC6900 \
+C782 E42B0000 0000D043  \
+C782 E82B0000 00000042  \
+C782 EC2B0000 00000000  \
+C782 F42B0000 01000000  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1182 F82B0000 \
+8B0D (<codecave:default_timers> + 0x8) \
+898A 002C0000 \
+8982 F02B0000 \
+83C4 18 \
+5E \
+5F \
+5B \
+5D \
+C2 0400 \
+"
+		},
+		"BULLET_MANAGER_cancel_bullets_to_star_items_spell_bonus": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 28 \
+8B7C24 3C \
+8D81 00560000 \
+894C24 1C \
+8DA9 00C00E00 \
+BA D0070000 \
+B9 68E26900 \
+31DB \
+896C24 10 \
+EB 5A \
+B8 0A000000 \
+0F44C2 \
+8D0CB6 \
+8804CD 342A4800 \
+B3 01 \
+<nop:15> \
+8D04B6 \
+881CC5 592A4800 \
+8B5C24 18 \
+01D3 \
+83C2 0A \
+39FA \
+0F4FD7 \
+8B4424 14 \
+66 C780 BE050000 0500  \
+B9 68E26900 \
+05 C4050000 \
+39E8 \
+0F84 71020000 \
+66 83B8 BE050000 00  \
+74 E9 \
+895C24 18 \
+894424 14 \
+05 60050000 \
+894424 08 \
+6905 AC6B6C00 44010000  \
+8D80 68E26900 \
+89C6 \
+<nop:12> \
+80BE 41010000 00  \
+74 15 \
+81C6 44010000 \
+81FE 686A6C00 \
+0F44F1 \
+39C6 \
+75 E4 \
+89C6 \
+8D86 44010000 \
+3D 686A6C00 \
+0F84 02020000 \
+29C8 \
+C1F8 02 \
+69C0 B1481978 \
+A3 AC6B6C00 \
+66 C786 40010000 0601  \
+C686 43010000 01  \
+F20F1015 (<codecave:default_timers> + 0x0) \
+F20F1196 34010000 \
+8B1D (<codecave:default_timers> + 0x8) \
+899E 3C010000 \
+8B4424 08 \
+F20F1000 \
+F20F1186 10010000 \
+8B40 08 \
+8986 18010000 \
+C786 1C010000 00000000  \
+C786 20010000 CDCC0CC0  \
+C786 24010000 00000000  \
+66 C786 B4000000 1B02  \
+8B0D 88456D00 \
+8B81 A0D10100 \
+0F57C9 \
+0F114E 20 \
+C786 84000000 00000000  \
+0F110E \
+0F2805 (<codecave:xmm_constants> + 0x30) \
+0F1146 10 \
+C746 7C FFFFFFFF \
+C746 3C 0000803F \
+0F114E 40 \
+C746 50 0000803F \
+0F114E 54 \
+C746 64 0000803F \
+0F114E 68 \
+C746 78 0000803F \
+66 C786 80000000 0200  \
+C786 88000000 00000000  \
+66 C786 8C000000 0000  \
+8986 B8000000 \
+8986 BC000000 \
+895E 38 \
+F20F1156 30 \
+85C0 \
+895424 0C \
+74 17 \
+893424 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+F20F1015 (<codecave:default_timers> + 0x0) \
+8B5424 0C \
+C746 7C FFFFFFFF \
+C686 42010000 01  \
+31C0 \
+39FA \
+0F9DC0 \
+F7D8 \
+8B35 381B4800 \
+8D4E 01 \
+81F9 00020000 \
+BA 00000000 \
+0F43CA \
+8B5424 0C \
+890D 381B4800 \
+8D0CF5 00000000 \
+C68489 582A4800 01  \
+898489 482A4800 \
+A1 (<codecave:default_timers> + 0x8) \
+898489 542A4800 \
+F20F119489 4C2A4800 \
+8B5C24 08 \
+F20F1003 \
+F20F118489 3C2A4800 \
+8B43 08 \
+898489 442A4800 \
+85D2 \
+0F8E 93FDFFFF \
+897424 08 \
+8D04B6 \
+8D34C5 342A4800 \
+31DB \
+89D7 \
+BD CDCCCCCC \
+<nop:15> \
+89F8 \
+F7E5 \
+C1EA 03 \
+8D0412 \
+8D0480 \
+89F9 \
+29C1 \
+880C1E \
+43 \
+83FF 09 \
+89D7 \
+77 E4 \
+8B7C24 3C \
+8B5424 0C \
+8B6C24 10 \
+8B7424 08 \
+E9 5FFDFFFF \
+31C0 \
+E9 02FEFFFF \
+814424 1C 005C0F00 \
+BE 68E26900 \
+EB 23 \
+<nop:9> \
+C785 54020000 00000000  \
+81C5 70020000 \
+3B6C24 1C \
+0F84 74020000 \
+83BD 58020000 00  \
+74 E7 \
+80BD 6C020000 01  \
+77 22 \
+C685 6C020000 02  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1185 5C020000 \
+A1 (<codecave:default_timers> + 0x8) \
+8985 64020000 \
+F30F1085 2C020000 \
+F30F109D 30020000 \
+F30F5AC0 \
+F20F110424 \
+E8 [<option:cos_addr>] \
+D95C24 20 \
+F30F106424 20 \
+F20F110424 \
+E8 [<option:sin_addr>] \
+D95C24 24 \
+F30F1085 34020000 \
+0F2EC3 \
+0F86 6BFFFFFF \
+F30F106C24 24 \
+0F28CC \
+F30F1005 (<codecave:float_constants> + 0x5C) \
+F30F59C8 \
+F30F114C24 14 \
+0F28CD \
+F30F59C8 \
+F30F114C24 10 \
+F30F59EB \
+F30F58AD 24020000 \
+F30F59E3 \
+F30F58A5 20020000 \
+EB 38 \
+<nop:9> \
+C747 7C FFFFFFFF \
+C687 42010000 01  \
+F30F586424 14 \
+F30F586C24 10 \
+F30F581D (<codecave:float_constants> + 0x5C) \
+0F2E9D 34020000 \
+0F83 F1FEFFFF \
+6905 AC6B6C00 44010000  \
+8D80 68E26900 \
+89C7 \
+<nop:15> \
+80BF 41010000 00  \
+74 15 \
+81C7 44010000 \
+81FF 686A6C00 \
+0F44FE \
+39C7 \
+75 E4 \
+89C7 \
+8D87 44010000 \
+3D 686A6C00 \
+0F84 28010000 \
+29F0 \
+C1F8 02 \
+69C0 B1481978 \
+A3 AC6B6C00 \
+66 C787 40010000 0601  \
+C687 43010000 01  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1187 34010000 \
+A1 (<codecave:default_timers> + 0x8) \
+8987 3C010000 \
+F30F11A7 10010000 \
+F30F11AF 14010000 \
+0F280D (<codecave:xmm_constants> + 0x70) \
+0F118F 18010000 \
+66 C787 B4000000 1B02  \
+8B0D 88456D00 \
+8B91 A0D10100 \
+0F57D2 \
+0F1157 20 \
+C787 84000000 00000000  \
+0F1117 \
+0F280D (<codecave:xmm_constants> + 0x30) \
+0F114F 10 \
+C747 7C FFFFFFFF \
+C747 3C 0000803F \
+0F1157 40 \
+C747 50 0000803F \
+0F1157 54 \
+C747 64 0000803F \
+0F1157 68 \
+C747 78 0000803F \
+66 C787 80000000 0200  \
+C787 88000000 00000000  \
+66 C787 8C000000 0000  \
+8997 B8000000 \
+8997 BC000000 \
+8947 38 \
+F20F1147 30 \
+85D2 \
+0F84 8DFEFFFF \
+893C24 \
+F30F115C24 0C \
+F30F116424 08 \
+F30F116C24 18 \
+E8 [codecave:ANM_MANAGER_run_anm] \
+83EC 04 \
+F30F106C24 18 \
+F30F106424 08 \
+F30F105C24 0C \
+E9 59FEFFFF \
+31C0 \
+E9 DCFEFFFF \
+85DB \
+74 55 \
+011D A4BC6900 \
+A1 34BC6900 \
+C780 E42B0000 0000D043  \
+C780 E82B0000 00000042  \
+C780 EC2B0000 00000000  \
+C780 F42B0000 01000000  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1180 F82B0000 \
+8B0D (<codecave:default_timers> + 0x8) \
+8988 002C0000 \
+8998 F02B0000 \
+89D8 \
+83C4 28 \
+5E \
+5F \
+5B \
+5D \
+C2 0400 \
+"
+		},
+		"GUI_sub_41735A": {
+			"access": "re",
+			"code": "\
+8B4424 04 \
+8B49 04 \
+C781 E42B0000 0000D043  \
+C781 E82B0000 00000042  \
+C781 EC2B0000 00000000  \
+C781 F42B0000 01000000  \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1181 F82B0000 \
+8B15 (<codecave:default_timers> + 0x8) \
+8991 002C0000 \
+8981 F02B0000 \
+C2 0400 \
+"
+		},
+		"ENEMY_MANAGER_run_timeline": {
+			"access": "re",
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+83EC 20 \
+89CD \
+8BB9 DCE50E00 \
+85FF \
+75 06 \
+8B3D 587E4800 \
+A1 34BC6900 \
+8B88 3C250000 \
+85C9 \
+79 7E \
+8B85 E8E50E00 \
+3B85 E0E50E00 \
+74 70 \
+0FBE15 BAD46900 \
+69F2 10FFFFFF \
+81C6 C0030000 \
+99 \
+F7FE \
+85D2 \
+75 56 \
+8B35 1CD76900 \
+8D46 64 \
+81FE 9BFFFF7F \
+77 40 \
+3D C7000000 \
+BA C7000000 \
+0F4CD0 \
+F7DA \
+8D8416 C7000000 \
+BA 1F85EB51 \
+F7E2 \
+C1EA 05 \
+6BC2 9C \
+01F0 \
+8B35 10D76900 \
+8D5432 01 \
+8B35 14D76900 \
+39F2 \
+0F4FD6 \
+8915 10D76900 \
+A3 1CD76900 \
+0FB707 \
+66 85C0 \
+0F88 EA040000 \
+896C24 1C \
+EB 21 \
+<nop:8> \
+0F8C CB040000 \
+0FBF4F 06 \
+0FB70439 \
+01CF \
+66 85C0 \
+0F88 B8040000 \
+0FB7C0 \
+3985 E8E50E00 \
+75 DC \
+0FBF5F 04 \
+83FB 0C \
+77 D9 \
+FF249D <codecave:ENEMY_MANAGER_run_timeline_jump_table> \
+803D 50BC6900 00  \
+75 C9 \
+8B57 1C \
+8A4F 16 \
+0FB747 14 \
+66 894424 02 \
+EB 17 \
+803D 50BC6900 00  \
+75 AF \
+66 C74424 02 FFFF \
+B1 FF \
+BA FFFFFFFF \
+F30F105F 08 \
+F30F1057 0C \
+F30F104F 10 \
+F6C3 04 \
+0F85 83020000 \
+0FB747 02 \
+0FBFF0 \
+31ED \
+<nop:10> \
+80BD E8964B00 00  \
+79 18 \
+81C5 C80E0000 \
+81FD 00C80E00 \
+75 E9 \
+BE 98505A00 \
+E9 F6000000 \
+F30F115C24 0C \
+F30F115424 10 \
+F30F114C24 14 \
+884C24 01 \
+895424 18 \
+8D85 98884B00 \
+68 C80E0000 \
+68 D0794B00 \
+894424 10 \
+50 \
+E8 [th_memcpy] \
+83C4 0C \
+0FBF4424 02 \
+66 85C0 \
+78 06 \
+8985 7C954B00 \
+894424 04 \
+F30F104424 0C \
+F30F1185 04954B00 \
+F30F104424 10 \
+F30F1185 08954B00 \
+F30F104424 14 \
+F30F1185 0C954B00 \
+A1 547E4800 \
+8B04B0 \
+8985 28924B00 \
+F20F1005 (<codecave:default_timers> + 0x0) \
+F20F1185 2C924B00 \
+A1 (<codecave:default_timers> + 0x8) \
+8985 34924B00 \
+66 89B5 70924B00 \
+B9 507E4800 \
+8B7424 08 \
+56 \
+E8 [<codecave:ENEMY_CONTROLLER_run_ecl> ? <codecave:ENEMY_CONTROLLER_run_ecl> : 0x4074A0] \
+8B85 14894B00 \
+8985 94954B00 \
+8A4424 01 \
+8885 D7964B00 \
+66 837C24 02 00 \
+78 0A \
+8B4424 04 \
+8985 7C954B00 \
+8B4424 18 \
+85C0 \
+78 06 \
+8985 84954B00 \
+8B85 7C954B00 \
+8985 80954B00 \
+F6C3 02 \
+8B6C24 1C \
+0F84 52FEFFFF \
+808E 500E0000 40  \
+E9 46FEFFFF \
+0FBF47 02 \
+83F8 01 \
+75 16 \
+833D B0BC6900 00  \
+75 0D \
+833D D4D66900 05  \
+0F84 A1020000 \
+0FBE0D BDD46900 \
+8D0C89 \
+8D0448 \
+8B35 34BC6900 \
+8B8E 34250000 \
+3901 \
+0F86 88000000 \
+8986 3C250000 \
+8B4481 04 \
+8986 38250000 \
+8D86 40250000 \
+68 9C060000 \
+6A 00 \
+50 \
+E8 [th_memset] \
+83C4 0C \
+66 C786 24280000 FFFF  \
+66 C786 34290000 FFFF  \
+C786 D02B0000 0F000000  \
+C786 B02B0000 FFF0E800  \
+C786 B42B0000 F0E8FF00  \
+C786 C02B0000 00000000  \
+C786 C42B0000 00000000  \
+C686 D82B0000 01  \
+A1 D4D66900 \
+83F8 07 \
+0F84 0B020000 \
+83F8 06 \
+0F84 2D020000 \
+C705 B06E6C00 03000000  \
+E9 6FFDFFFF \
+8B0D 34BC6900 \
+83B9 D42B0000 00  \
+0F85 44020000 \
+83B9 3C250000 00  \
+0F89 4FFDFFFF \
+E9 32020000 \
+8B47 08 \
+8B4F 0C \
+8B8485 98E50E00 \
+8988 680C0000 \
+E9 32FDFFFF \
+0FB747 02 \
+66 A3 B0D46900 \
+E9 23FDFFFF \
+0FBF4F 02 \
+8B8C8D 98E50E00 \
+80B9 500E0000 00  \
+0F89 0BFDFFFF \
+E9 EE010000 \
+0F2E1D (<codecave:float_constants> + 0x60) \
+884C24 01 \
+76 1F \
+0F2E15 (<codecave:float_constants> + 0x60) \
+0F86 89000000 \
+0F2E0D (<codecave:float_constants> + 0x60) \
+0F87 56FDFFFF \
+E9 EE000000 \
+A1 F8D86900 \
+B9 3096FFFF \
+31C8 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C1 \
+C1E1 10 \
+8305 FCD86900 02  \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 A3 F8D86900 \
+0FB7C0 \
+09C8 \
+8A4C24 01 \
+660F6EC0 \
+660FEB05 (<codecave:xmm_constants> + 0xB0) \
+F20F5C05 (<codecave:double_constants> + 0x0) \
+F20F5AC0 \
+F30F101D F4D66900 \
+F30F591D (<codecave:float_constants> + 0x0) \
+F30F59D8 \
+0F2E15 (<codecave:float_constants> + 0x60) \
+0F87 77FFFFFF \
+A1 F8D86900 \
+B9 3096FFFF \
+31C8 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C1 \
+C1E1 10 \
+8305 FCD86900 02  \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 A3 F8D86900 \
+0FB7C0 \
+09C8 \
+8A4C24 01 \
+660F6EC0 \
+660FEB05 (<codecave:xmm_constants> + 0xB0) \
+F20F5C05 (<codecave:double_constants> + 0x0) \
+F20F5AC0 \
+F30F1015 F8D66900 \
+F30F5915 (<codecave:float_constants> + 0x0) \
+F30F59D0 \
+0F2E0D (<codecave:float_constants> + 0x60) \
+0F87 63FCFFFF \
+A1 F8D86900 \
+B9 3096FFFF \
+31C8 \
+05 AD9AFFFF \
+66 C1C0 02 \
+89C1 \
+C1E1 10 \
+8305 FCD86900 02  \
+35 3096FFFF \
+05 AD9AFFFF \
+66 C1C0 02 \
+66 A3 F8D86900 \
+0FB7C0 \
+09C8 \
+8A4C24 01 \
+660F6EC0 \
+660FEB05 (<codecave:xmm_constants> + 0xB0) \
+F20F5C05 (<codecave:double_constants> + 0x0) \
+0F57C9 \
+F20F5AC8 \
+F30F590D (<codecave:float_constants> + 0x64) \
+E9 FDFBFFFF \
+B8 03000000 \
+E9 55FDFFFF \
+8B0D 88456D00 \
+68 B3020000 \
+68 F0AB4600 \
+6A 0B \
+E8 [0x431DC0] \
+8B0D 88456D00 \
+68 A8040000 \
+68 DCAB4600 \
+6A 12 \
+EB 12 \
+8B0D 88456D00 \
+68 B3020000 \
+68 00AC4600 \
+6A 0B \
+E8 [0x431DC0] \
+E9 B7FDFFFF \
+A1 34BC6900 \
+8B88 3C250000 \
+85C9 \
+79 06 \
+FF05 0CD76900 \
+83C4 20 \
+5E \
+5F \
+5B \
+5D \
+C3 \
+F30F1005 (<codecave:float_constants> + 0x4) \
+0F2E05 C46E6C00 \
+73 0F \
+48 \
+8985 E8E50E00 \
+89BD DCE50E00 \
+EB D8 \
+8985 E0E50E00 \
+F30F1085 E4E50E00 \
+F30F5C05 C06E6C00 \
+0F57C9 \
+660F3A0AC8 09 \
+F30F5CC1 \
+F30F2CC9 \
+29C8 \
+8985 E8E50E00 \
+F30F1185 E4E50E00 \
+89BD DCE50E00 \
+EB 99 \
+"
+		},
+		"ENEMY_MANAGER_run_timeline_jump_table": {
+			"access": "re",
+			"code": "\
+(<codecave:ENEMY_MANAGER_run_timeline> + 0xF4) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x10E) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0xF4) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x10E) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0xF4) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x10E) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0xF4) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x10E) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x280) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x357) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x37C) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x394) \
+(<codecave:ENEMY_MANAGER_run_timeline> + 0x3A3) \
+"
+		},
+	},
+	"binhacks": {
+		"sprintf_call_ebp-50": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprintf_rep": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprintf_replay_1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprintf_replay_2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprintf_replay_3": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"file_remove_size_assignment": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"buffer_overflow_rem": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"buffer_overflow_rep_eax": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"buffer_overflow_rep_ecx": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"right_align": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_draw_leftaligned": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_width": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"center_align": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"bomb_pos": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_pos": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_pos_reset": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_prepare": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_fetch_id": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"unpatch_result_spell": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_spell_cap_pos_1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_spell_cap_pos_2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"set_png_buff_size": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_room_cmt_print_empty_lines": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_room_cmt_shift_2nd_part": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_1024": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_prepare_surface_width": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_sprite_height": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_sprite_width": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_scale_x": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"text_scale_y": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprite3d_rotated_voodookill": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"sprite3d_unrotated_voodookill": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"dialog_box_leftedge": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"dialog_box_rightedge_1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"dialog_box_rightedge_2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"ending_copy_rem": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"ending_copy_rep": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"unpatch_ending_halfskip": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"remove_score_cap": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"bosstitle_line_order#1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"bosstitle_line_order#2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"ascii_patch_1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"ascii_patch_2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_rank_format": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_shottype_leftalign_1": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_shottype_leftalign_2": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_shottype_leftalign_3": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"result_shottype_leftalign_4": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"hud_force_redraw": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		
+		"replace_free": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x404607,
+				0x40462E,
+				0x40741D,
+				0x41079D,
+				0x410DD4,
+				0x418753,
+				0x42208D,
+				0x4220F3,
+				0x42210D,
+				0x42260B,
+				0x422617,
+				0x422AB7,
+				0x422AC3,
+				0x424893,
+				0x425D80,
+				0x42AA75,
+				0x42B0AB,
+				0x42B12C,
+				0x42B1D5,
+				0x42B23D,
+				0x42B456,
+				0x42B7F8,
+				0x42B801,
+				0x42BC25,
+				0x42C72F,
+				0x42F697,
+				0x430794,
+				0x4307EF,
+				0x430847,
+				0x4308B8,
+				0x430917,
+				0x430961,
+				0x4309D3,
+				0x430EAD,
+				0x431D35,
+				0x431D5E,
+				0x432187,
+				0x43223E,
+				0x435231,
+				0x43525A,
+				0x438358,
+				0x438448,
+				0x438A6B,
+				0x438AE7,
+				0x43A700,
+				0x43C90F,
+				0x43CA50,
+				0x43CBCD,
+				0x43CDDD,
+				0x43CE09,
+				0x4509BE,
+				0x450A0C,
+				0x451E7A,
+				0x45C59B,
+				0x45E27A,
+				0x45F240,
+				0x45F4FC,
+				0x45F59D,
+				0x45F5B2,
+				0x461664,
+				0x461687,
+				0x461699,
+				0x4616A1,
+				0x4616BC,
+				0x4616C4,
+				0x4616EB,
+				0x4616F3,
+				0x462BEF,
+				0x4637FB,
+				0x464052,
+				0x464077,
+				0x464347,
+				0x4666B5,
+				0x466726,
+				0x466747,
+				0x46674F,
+				0x466757,
+				0x46675F,
+				0x466767,
+				0x46676F,
+				0x466776,
+				0x46677E,
+				0x466786,
+				0x46678E,
+				0x466796,
+				0x46679E,
+				0x4667A6,
+				0x4667AE,
+				0x4667B6,
+				0x4667BE,
+				0x4667C9,
+				0x4667D1,
+				0x4667D9,
+				0x4667E1,
+				0x4667E9,
+				0x4667F1,
+				0x4667F9,
+				0x466801,
+				0x466809,
+				0x466811,
+				0x466819,
+				0x466821,
+				0x466829,
+				0x466831,
+				0x466839,
+				0x466841,
+				0x46684F,
+				0x46685A,
+				0x466865,
+				0x466870,
+				0x46687B,
+				0x466886,
+				0x466891,
+				0x46689C,
+				0x4668A7,
+				0x4668B2,
+				0x4668BD,
+				0x4668E5,
+				0x466902,
+				0x46691E,
+				0x46694A,
+				0x466967,
+				0x466984,
+				0x4669A1,
+				0x4669BE,
+				0x4669DB,
+				0x4669F7,
+				0x466E03,
+				0x4670F9,
+				0x4675F1,
+				0x467C19,
+				0x467C27,
+				0x467D5D,
+				0x467D87,
+				0x468ACB,
+				0x468AEC,
+			],
+			"code": "?? [th_free]",
+			"expected": "?? [0x45BAED]"
+		},
+		"replace_delete": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x410E01,
+				0x41B241,
+				0x41CCCA,
+				0x41CF0D,
+				0x42059A,
+				0x423E73,
+				0x424351,
+				0x4245F5,
+				0x425DA7,
+				0x42AA8A,
+				0x42F6AA,
+				0x430256,
+				0x430350,
+				0x4306B3,
+				0x43ABC9,
+				0x43AC0B,
+				0x43AD8D,
+				0x43AE24,
+				0x43AE6C,
+				0x43B49D,
+				0x43BA41,
+				0x43BAB1,
+				0x43BDE0,
+				0x43BE23,
+				0x43C432,
+				0x43C760,
+				0x43C8AC,
+				0x43C8FC,
+				0x43F6BF,
+				0x43F731,
+				0x440775,
+				0x440B4A,
+				0x440F37,
+				0x440F4C,
+				0x441526,
+				0x441549,
+				0x44155E,
+				0x441575,
+				0x44157E,
+				0x441586,
+				0x44158E,
+				0x441595,
+				0x4419F5,
+				0x441A18,
+				0x441A2D,
+				0x441A45,
+				0x441A4E,
+				0x441A56,
+				0x441A5E,
+				0x441A66,
+				0x441A6D,
+				0x442C5E,
+				0x442D00,
+				0x442DD1,
+				0x442DD9,
+				0x442E36,
+				0x442F67,
+				0x442F6F,
+				0x4432D3,
+				0x4432DE,
+				0x443699,
+				0x4436A4,
+				0x443A9C,
+				0x443AA4,
+				0x443AAC,
+				0x443AB4,
+				0x4440E1,
+				0x4440E9,
+				0x4440F1,
+				0x4440F9,
+				0x444101,
+				0x444256,
+				0x44426A,
+				0x444280,
+				0x444296,
+				0x4457D2,
+				0x445BC9,
+				0x445BDC,
+				0x445BF1,
+				0x445C06,
+				0x445FC4,
+				0x446033,
+				0x446B98,
+				0x449620,
+				0x44965C,
+				0x4496A8,
+				0x449CEA,
+				0x449D06,
+				0x449D22,
+				0x449D43,
+				0x469114,
+				0x469128,
+				0x46916C,
+				0x469177,
+				0x469194,
+				0x469203,
+				0x46921A,
+				0x469245,
+				0x469264,
+				0x469284,
+				0x4692C4,
+				0x4692CF,
+				0x469344,
+				0x46936F,
+				0x469379,
+				0x469383,
+				0x46938D,
+				0x469397,
+				0x4693A1,
+				0x4693AB,
+			],
+			"code": "E8 [th_free]",
+			"expected": "E8 [0x45BF1F]"
+		},
+		"replace_malloc": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x40479D,
+				0x41E424,
+				0x42223F,
+				0x4222E9,
+				0x4229DB,
+				0x422A2B,
+				0x42A789,
+				0x42B0FE,
+				0x42B252,
+				0x42B400,
+				0x42B81D,
+				0x43CA34,
+				0x43CB96,
+				0x45098F,
+				0x4509D7,
+				0x451E6F,
+				0x45B924,
+				0x45E267,
+				0x45EEF9,
+				0x45F563,
+				0x4632B9,
+				0x46334F,
+				0x4637C4,
+				0x463B57,
+				0x463FFE,
+				0x46402E,
+				0x464258,
+				0x464324,
+				0x46438C,
+				0x466037,
+				0x46705C,
+				0x467466,
+				0x467AF6,
+				0x467BC4,
+				0x467CF0,
+			],
+			"code": "E8 [th_malloc]",
+			"expected": "E8 [0x45BC05]"
+		},
+		"replace_new": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x4107D0,
+				0x41B286,
+				0x41CBBF,
+				0x41CC15,
+				0x41CD60,
+				0x42044A,
+				0x423A2A,
+				0x42445E,
+				0x425754,
+				0x42A27F,
+				0x42A69E,
+				0x42D785,
+				0x42FD5C,
+				0x43029C,
+				0x43AA1D,
+				0x43AB22,
+				0x43AC1C,
+				0x43ACAA,
+				0x43BCCB,
+				0x43BD51,
+				0x43C7EA,
+				0x43CAB4,
+				0x43F682,
+				0x43F6F6,
+				0x440FF7,
+				0x4412BA,
+				0x4412F9,
+				0x441355,
+				0x441372,
+				0x441698,
+				0x4416D7,
+				0x441730,
+				0x441754,
+				0x442C09,
+				0x442CCC,
+				0x442CF2,
+				0x442E0C,
+				0x442E26,
+				0x44311A,
+				0x443146,
+				0x44315C,
+				0x4433AC,
+				0x4433DA,
+				0x443405,
+				0x4436C8,
+				0x443833,
+				0x443852,
+				0x443BA9,
+				0x443BC9,
+				0x44453A,
+				0x444649,
+				0x444A6E,
+				0x444D22,
+				0x444ED8,
+				0x44518A,
+				0x445558,
+				0x445575,
+				0x4456A1,
+				0x445989,
+				0x4459D0,
+				0x445FEE,
+				0x44882A,
+				0x448F15,
+				0x449716,
+				0x449742,
+				0x44976E,
+				0x44979A,
+				0x4497C6,
+				0x4497F2,
+				0x44981E,
+				0x44984A,
+				0x449876,
+				0x4498A2,
+				0x4498CE,
+				0x4498FA,
+				0x449956,
+				0x449982,
+				0x4499AE,
+				0x4499DA,
+				0x449A06,
+				0x449A32,
+				0x449A74,
+				0x449AA0,
+				0x449ACC,
+				0x449AF8,
+				0x449B24,
+				0x449B90,
+				0x449BBF,
+				0x449BF1,
+				0x449C20,
+				0x449C4B,
+				0x449C76,
+			],
+			"code": "E8 [th_malloc]",
+			"expected": "E8 [0x45BF24]"
+		},
+		"replace_calloc": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x45828A,
+				0x46183A,
+				0x4618B1,
+				0x462D92,
+				0x462DAB,
+				0x466672,
+				0x468A2D,
+				0x468AA6,
+			],
+			"code": "E8 [th_calloc]",
+			"expected": "E8 [0x45E194]"
+		},
+		"replace_realloc": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": [
+				0x45B8D3,
+				0x45B8E8,
+			],
+			"code": "E8 [th_realloc]",
+			"expected": "E8 [0x45E24F]"
+		},
+		"replace_msize": {
+			"ignore": "<option:ignore_alloc_funcs>",
+			"addr": 0x45B8A6,
+			"code": "E8 [th_msize]",
+			"expected": "E8 [0x45E3FC]"
+		},
+		"replace_memcpy": {
+			"addr": [
+				0x41EFDB,
+				0x42B834,
+				0x42B886,
+				0x42B951,
+				0x42B9DA,
+				0x42BA4B,
+				0x42BABC,
+				0x45C65E,
+				0x45CAAC,
+				0x45E2F7,
+				0x45E34E,
+				0x46439F,
+			],
+			"code": "E8 [th_memcpy]",
+			"expected": "E8 [0x45CC90]"
+		},
+		"replace_memmove": {
+			"addr": [
+				0x45E5B2,
+				0x45F949,
+				0x461CF0,
+				0x461D3D,
+				0x465D82,
+			],
+			"code": "E8 [th_memmove]",
+			"expected": "E8 [0x45CFD0]"
+		},
+		"replace_memset": {
+			"addr": [
+				0x41EA85,
+				0x41EB86,
+				0x42B545,
+				0x42B6CD,
+				0x42D977,
+				0x43A34D,
+				0x45E201,
+				0x45E76A,
+				0x466648,
+				0x467CCB,
+				0x467D01,
+				0x468A01,
+				0x468BC4,
+			],
+			"code": "E8 [th_memset]",
+			"expected": "E8 [0x45CC30]"
+		},
+		"replace_strlen": {
+			"addr": [
+				0x41F10F,
+				0x41F13B,
+				0x45E5A7,
+				0x45EF74,
+				0x45F388,
+				0x45F39D,
+				0x45F3C0,
+				0x463CE6,
+				0x463CF9,
+				0x463D1C,
+				0x463D29,
+				0x463D8C,
+				0x463FE6,
+				0x46401F,
+				0x465D79,
+				0x4689B2,
+			],
+			"code": "E8 [th_strlen]",
+			"expected": "E8 [0x45CBA0]"
+		},
+		"replace_strcpy": {
+			"addr": [
+				0x42BE09,
+				0x42BE55,
+				0x42C2C9,
+				0x42F462,
+				0x4359DD,
+				0x438324,
+				0x4389A8,
+				0x45E61C,
+				0x45F374,
+				0x45F3DC,
+				0x463CD2,
+				0x463D47,
+				0x46403C,
+				0x465E9F,
+				0x468591,
+				0x4685AE,
+			],
+			"code": "E8 [th_strcpy]",
+			"expected": "E8 [0x45D490]"
+		},
+		"replace_strcat": {
+			"addr": [
+				0x45F3E8,
+				0x45F3F3,
+				0x45F3FA,
+				0x45F401,
+				0x45F40A,
+				0x463D4E,
+				0x463D59,
+				0x463D65,
+			],
+			"code": "E8 [th_strcat]",
+			"expected": "E8 [0x45D4A0]"
+		},
+		"replace_strcmp": {
+			"addr": 0x461912,
+			"code": "E8 [th_strcmp]",
+			"expected": "E8 [0x466A50]"
+		},
+		"replace_strncmp": {
+			"addr": [
+				0x4307C9,
+				0x43076E,
+				0x430A0E,
+			],
+			"code": "E8 [th_strncmp]",
+			"expected": "E8 [0x45D5C0]"
+		},
+		"replace_sprintf": {
+			"addr": [
+				0x4179E6,
+				0x423FF9,
+				0x424564,
+				0x42C6DD,
+				0x42CD4A,
+				0x4382BD,
+				0x438346,
+				0x438419,
+				0x438437,
+				0x44BB2F,
+				0x44BB47,
+			],
+			"code": "E8 [th_sprintf]",
+			"expected": "E8 [0x45C386]"
+		},
+		
+		"replace_ftol2": {
+			"addr": [
+				0x401791,
+				0x4017A1,
+				0x4017B1,
+				0x4017C1,
+				0x402766,
+				0x402776,
+				0x402786,
+				0x402796,
+				0x403080,
+				0x403090,
+				0x4030A0,
+				0x4030B0,
+				0x4031FA,
+				0x40320A,
+				0x40321A,
+				0x40322A,
+				0x4033CA,
+				0x4033DA,
+				0x4033EA,
+				0x4033FA,
+				0x403F4C,
+				0x4060A0,
+				0x406129,
+				0x40B38B,
+				0x40EBCC,
+				0x410A84,
+				0x410A90,
+				0x416003,
+				0x4162EB,
+				0x416FBC,
+				0x41B137,
+				0x41B147,
+				0x41B157,
+				0x41B167,
+				0x41B7D4,
+				0x41B7E7,
+				0x41B7FA,
+				0x41B80D,
+				0x41FB14,
+				0x41FB35,
+				0x41FB91,
+				0x41FBB2,
+				0x41FC11,
+				0x41FC32,
+				0x41FC8E,
+				0x41FCAF,
+				0x420298,
+				0x422755,
+				0x42277E,
+				0x422EC4,
+				0x4232D6,
+				0x424DA9,
+				0x424E74,
+				0x428CC8,
+				0x42F842,
+				0x42FCBC,
+				0x43473F,
+				0x434BC8,
+				0x434BDA,
+				0x434BEC,
+				0x434BFE,
+				0x434CC7,
+				0x434CD9,
+				0x434CEB,
+				0x434CFD,
+				0x434D86,
+				0x434DB6,
+				0x434DC8,
+				0x434DDA,
+				0x434EA7,
+				0x434EB9,
+				0x434ECB,
+				0x434EDD,
+				0x434F6C,
+				0x434F9C,
+				0x434FAE,
+				0x434FC0,
+			],
+			"code": "\
+50 \
+DB0CE4 \
+58 \
+",
+			"expected": "E8 [0x45BA78]"
+		},
+		
+		"remove_stdfuncs": {
+			"addr": [
+				0x45BAED, // free
+				0x45BF1F, // delete
+				0x45BC05, // malloc
+				0x45BF24, // new
+				0x45E194, // calloc
+				0x45E24F, // realloc
+				0x45E3FC, // msize
+				0x45CC90, // memcpy
+				0x45CFD0, // memmmove
+				0x45CC30, // memset
+				0x466AE0, // memcmp
+				0x45CBA0, // strlen
+				0x45D490, // strcpy
+				0x45D4A0, // strcat
+				0x466A50, // strcmp
+				0x45D5C0, // strncmp
+				0x45C386, // sprintf
+			],
+			"code": "CC"
+		},
+		
+		"replace_UPDATE_FUNC_REGISTRY_register_on_tick_call": {
+			"addr": [
+				0x4238CE, // Supervisor (0)
+				0x401311, // AsciiManager (1)
+				0x43A3F5, // Menu (2)
+				0x4252C8, // MusicRoom (2)
+				0x410853, // Ending (3)
+				0x41BABF, // GameManager (4)
+				0x42A3C6, // ReplayManagerB (5)
+				0x40455A, // Stage (6)
+				0x428874, // Player (7)
+				0x41238B, // EnemyManager (9)
+				0x40F449, // EffectManager (10)
+				0x414977, // BulletManager (11)
+				0x41B2FD, // Gui (12)
+				0x42D849, // ResultScreen (13)
+				0x42FE8C, // ScreenEffect (14)
+				0x42A348, // ReplayManagerA (15)
+				0x42A406, // ReplayManagerC (16)
+			],
+			"code": "E8 [codecave:UPDATE_FUNC_REGISTRY_register_on_tick]",
+			"expected": "E8 [0x41C860]"
+		},
+		"replace_UPDATE_FUNC_REGISTRY_register_on_draw_call": {
+			"addr": [
+				0x43A43A, // Menu (0)
+				0x425304, // MusicRoom (0)
+				0x410890, // Ending (1)
+				0x41BAF9, // GameManager (2)
+				0x40459B, // StageA (3)
+				0x4045D2, // StageB (4)
+				0x428893, // PlayerA (5)
+				0x4123CC, // EnemyManager (6)
+				0x4288A9, // PlayerB (7)
+				0x40F48A, // EffectManager (8)
+				0x4149B8, // BulletManager (9)
+				0x40138A, // AsciiManagerB (10)
+				0x41B337, // Gui (11)
+				0x42D88E, // ResultScreen (12)
+				0x42A425, // ReplayManager (13)
+				0x423901, // Supervisor (14)
+				0x401352, // AsciiManagerA (15)
+				0x42FEB3, // ScreenEffect (16)
+			],
+			"code": "E8 [codecave:UPDATE_FUNC_REGISTRY_register_on_draw]",
+			"expected": "E8 [0x41C940]"
+		},
+		"replace_UPDATE_FUNC_REGISTRY_run_all_on_tick_call": {
+			"addr": 0x420853,
+			"code": "E8 [codecave:UPDATE_FUNC_REGISTRY_run_all_on_tick]",
+			"expected": "E8 [0x41CA10]"
+		},
+		"replace_UPDATE_FUNC_REGISTRY_run_all_on_draw_call": {
+			"addr": 0x4207DC,
+			"code": "E8 [codecave:UPDATE_FUNC_REGISTRY_run_all_on_draw]",
+			"expected": "E8 [0x41CAD0]"
+		},
+		"replace_UPDATE_FUNC_REGISTRY_unregister_func_call": {
+			"addr": [
+				0x40150D, // AsciiManagerOnTick
+				0x40151C, // AsciiManagerOnDrawA
+				0x40465D, // StageOnTick
+				0x40466C, // StageOnDrawA
+				0x40467B, // StageOnDrawB
+				0x40F4AD, // EffectManagerOnTick
+				0x40F4BC, // EffectManagerOnDraw
+				0x410DE8, // Ending
+				0x41335D, // EnemyManagerOnTick
+				0x41336C, // EnemyManagerOnDraw
+				0x4172BD, // BulletManagerOnTick
+				0x4172CC, // BulletManagerOnDraw
+				0x41B599, // GuiOnTick
+				0x41B5A8, // GuiOnDraw
+				0x41C276, // GameManagerOnTick
+				0x41C285, // GameManagerOnDraw
+				0x41CA6E, // UpdateFuncRegistry::run_all_on_tick
+				0x41CB31, // UpdateFuncRegistry::run_all_on_draw
+				0x41CC7B, // UpdateFuncRegistry::__sub_41CB90
+				0x425DF3, // MusicRoom
+				0x42A0EE, // PlayerOnTick
+				0x42A109, // PlayerOnDrawA
+				0x42A124, // PlayerOnDrawB
+				0x42AA32, // ReplayManager
+				0x42AA56, // ReplayManager
+				0x42B0C3, // __sub_42AB30
+				0x42F66B, // ResultScreen
+				0x43023D, // ScreenEffect
+				0x43A6E2, // Menu
+			],
+			"code": "E8 [codecave:UPDATE_FUNC_REGISTRY_unregister_func]",
+			"expected": "E8 [0x41CDE0]"
+		},
+		"replace_UPDATE_FUNC_cleanup_call": {
+			"addr": [
+				0x41C6F9, // UpdateFuncRegistry::__at_exit
+				0x41C708, // UpdateFuncRegistry::__at_exit
+				0x41CCB5, // UpdateFuncRegistry::__sub_41CB90
+				0x41CCFA, // UpdateFuncRegistry::__sub_41CB90
+				0x41CEF8, // UpdateFuncRegistry::unregister_func
+				0x469908, // AsciiManagerOnTick::__at_exit
+				0x469918, // AsciiManagerOnDrawA::__at_exit
+				0x469928, // AsciiManagerOnDrawB::__at_exit
+				0x469938, // StageOnTick::__at_exit
+				0x469948, // StageOnDrawA::__at_exit
+				0x469958, // StageOnDrawB::__at_exit
+				0x469968, // UnknownA::__at_exit
+				0x469978, // EffectManagerOnTick::__at_exit
+				0x469988, // EffectManagerOnDraw::__at_exit
+				0x469998, // EnemyManagerOnTick::__at_exit
+				0x4699A8, // EnemyManagerOnDraw::__at_exit
+				0x4699B8, // BulletManagerOnTick::__at_exit
+				0x4699C8, // BulletManagerOnDraw::__at_exit
+				0x4699D7, // GuiOnTick::__at_exit
+				0x4699E6, // GuiOnDraw::__at_exit
+				0x4699F5, // GameManagerOnTick::__at_exit
+				0x469A04, // GameManagerOnDraw::__at_exit
+				0x469A48, // UnknownC::__at_exit
+				0x469A58, // UnknownB::__at_exit
+			],
+			"code": "E8 [codecave:UPDATE_FUNC_cleanup]",
+			"expected": "E8 [0x41C790]"
+		},
+		"replace_UPDATE_FUNC_cleanup_jump": {
+			"addr": [
+				0x469143, // __unwind_469140
+				0x469163, // __unwind_469160
+			],
+			"code": "E9 [codecave:UPDATE_FUNC_cleanup]",
+			"expected": "E9 [0x41C790]"
+		},
+		"replace_RNG_rand_word": {
+			"addr": [
+				0x40C269, // hardcoded_func_04_stage56
+				0x40C453, // hardcoded_func_04_stage56
+				0x40CC4E, // hardcoded_func_06_stage6Ex
+				0x413299, // EnemyManager::on_registration
+				0x4132D3, // EnemyManager::on_registration
+				0x41BC8C, // GameManager::on_registration
+				0x41E7FB, // Rng::rand_dword
+				0x41E80F, // Rng::rand_dword
+				0x42AD0B, // __sub_42AB30
+				0x42AD4F, // __sub_42AB30
+				0x42AD8A, // __sub_42AB30
+				0x42ADC5, // __sub_42AB30
+				0x42BB02, // __sub_42B908
+				0x42BB32, // __sub_42B908
+				0x433AA6, // anm_16
+			],
+			"code": "E8 [codecave:RNG_rand_word]",
+			"expected": "E8 [0x41E780]"
+		},
+		"replace_RNG_rand_dword": {
+			"addr": [
+				0x407643, // ecl_6
+				0x4076C3, // ecl_7
+				0x40873A, // ecl_77
+				0x41E82C, // Rng::rand_float
+				0x4300CF, // 
+				0x430160
+			],
+			"code": "E8 [codecave:RNG_rand_dword]",
+			"expected": "E8 [0x41E7F0]"
+		},
+		"replace_RNG_rand_float": {
+			"addr": [
+				0x405482,
+				0x40772C,
+				0x40778C,
+				0x4091C5,
+				0x409209,
+				0x409B17,
+				0x409B49,
+				0x40BA43,
+				0x40BB02,
+				0x40BB38,
+				0x40BC04,
+				0x40C070,
+				0x40C313,
+				0x40C334,
+				0x40C4FD,
+				0x40C518,
+				0x40CD7A,
+				0x40CEE9,
+				0x40D0B1,
+				0x40D4C4,
+				0x40D54F,
+				0x40D78F,
+				0x40D8E9,
+				0x40E263,
+				0x40E2AC,
+				0x40E3A9,
+				0x40E3CE,
+				0x40E5F9,
+				0x40E624,
+				0x40EC78,
+				0x40EE18,
+				0x41182D,
+				0x411859,
+				0x41187C,
+				0x41191C,
+				0x411945,
+				0x411965,
+				0x4119FC,
+				0x411A28,
+				0x411A4B,
+				0x411B02,
+				0x411B2E,
+				0x411B51,
+				0x413837,
+				0x413861,
+				0x4138E3,
+				0x413908,
+				0x41F3D7,
+				0x41F3F6,
+			],
+			"code": "E8 [codecave:RNG_rand_float]",
+			"expected": "E8 [0x41E820]"
+		},
+		"replace_SUPERVISOR_tick_timer": {
+			"addr": [
+				0x4011E2,
+				0x403D2A,
+				0x403E74,
+				0x40403F,
+				0x405BFA,
+				0x4065D3,
+				0x406AF7,
+				0x4071A5,
+				0x40A585,
+				0x40A995,
+				0x40D037,
+				0x40F1D3,
+				0x410581,
+				0x412DFD,
+				0x412E31,
+				0x415DEA,
+				0x416480,
+				0x4164D1,
+				0x41B5D4,
+				0x4200C7,
+				0x42828D,
+				0x42843C,
+				0x4290E9,
+				0x4296FD,
+				0x4297B8,
+				0x42F8A0,
+				0x42FD1A,
+				0x43002A,
+				0x434429,
+				0x434635,
+				0x434A1B,
+				0x434A56,
+			],
+			"code": "E8 [codecave:SUPERVISOR_tick_timer]",
+			"expected": "E8 [0x424285]"
+		},
+		"replace_SOUND_MANAGER_play_sound_centered": {
+			"addr": [
+				0x40556F,
+				0x405A45,
+				0x406281,
+				0x4068C6,
+				0x406FD0,
+				0x4094DF,
+				0x40C0D6,
+				0x40CAC4,
+				0x412C00,
+				0x412D82,
+				0x414658,
+				0x417BF4,
+				0x417D20,
+				0x419EBC,
+				0x41B9E4,
+				0x41FAB6,
+				0x41FEDE,
+				0x41FF7F,
+				0x41FFB9,
+				0x4200EF,
+				0x4263E7,
+				0x42775E,
+				0x4277F4,
+				0x42BEF2,
+				0x42BF7D,
+				0x42C021,
+				0x42C0BA,
+				0x42C1A5,
+				0x42C236,
+				0x42C26E,
+				0x42C51E,
+				0x42C58A,
+				0x42C652,
+				0x42C7A9,
+				0x42C955,
+				0x42CA59,
+				0x42CAF6,
+				0x42CBB6,
+				0x42CC61,
+				0x42CDFA,
+				0x42CEA9,
+				0x42D114,
+				0x42D188,
+				0x42D1FF,
+				0x42D284,
+				0x42DE1C,
+				0x42DE5A,
+				0x42E078,
+				0x42E197,
+				0x42E37A,
+				0x435CAF,
+				0x435F79,
+				0x4362DD,
+				0x4363B1,
+				0x4365E7,
+				0x43676C,
+				0x4368BB,
+				0x436A72,
+				0x436D02,
+				0x436E30,
+				0x437355,
+				0x43759A,
+				0x437633,
+				0x437D19,
+				0x437DFC,
+				0x437E0C,
+				0x437EBF,
+				0x437F4C,
+				0x437FD2,
+				0x438027,
+				0x4380B3,
+				0x438105,
+				0x438182,
+				0x4381C3,
+				0x43866E,
+				0x4387F9,
+				0x438B4E,
+				0x4393D8,
+				0x43940A,
+				0x43943C,
+				0x43946E,
+				0x4394C5,
+				0x4394F4,
+				0x439561,
+				0x439604,
+				0x439637,
+				0x43966A,
+				0x43969D,
+				0x4396F5,
+				0x439725,
+				0x43980C,
+				0x4398F0,
+			],
+			"code": "E8 [codecave:SOUND_MANAGER_play_sound_centered]",
+			"expected": "E8 [0x4311E0]"
+		},
+		"replace_PLAYER_check_collision": {
+			"addr": [
+				0x41274E,
+				0x415C00,
+			],
+			"code": "E8 [codecave:PLAYER_check_collision]",
+			"expected": "E8 [0x426C40]"
+		},
+		"replace_PLAYER_die": {
+			"addr": [
+				0x426DE0,
+				0x42761C,
+			],
+			"code": "E8 [codecave:PLAYER_die]",
+			"expected": "E8 [0x427770]"
+		},
+		"replace_PLAYER_angle_to_player_from_point": {
+			"addr": [
+				0x408039,
+				0x408B99,
+				0x40B21C,
+				0x4145D5,
+				0x4147D9,
+				0x415573,
+				0x41F740,
+			],
+			"code": "E8 [codecave:PLAYER_angle_to_player_from_point]",
+			"expected": "E8 [0x428700]"
+		},
+		"replace_GAME_MANAGER_increase_rank": {
+			"addr": [
+				0x4115CE,
+				0x41BA15,
+				0x41FADC,
+				0x41FD60,
+				0x41FD6E,
+				0x41FF33,
+				0x41FF71,
+				0x42773E,
+			],
+			"code": "E8 [codecave:GAME_MANAGER_increase_rank]",
+			"expected": "E8 [0x41C57E]"
+		},
+		"replace_GAME_MANAGER_decrease_rank": {
+			"addr": [
+				0x428A5F,
+				0x41F8B1,
+				0x428C3E,
+			],
+			"code": "E8 [codecave:GAME_MANAGER_decrease_rank]",
+			"expected": "E8 [0x41C5FA]"
+		},
+		"replace_GAME_MANAGER_check_visibility": {
+			"addr": [
+				0x4124C3,
+				0x41252E,
+				0x4156B7,
+				0x415853,
+				0x415A8A,
+				0x42969F,
+			],
+			"code": "E8 [codecave:GAME_MANAGER_check_visibility]",
+			"expected": "E8 [0x41B5E1]"
+		},
+		"replace_GUI_sub_4195A2": {
+			"addr": [
+				0x411565,
+				0x411D47,
+				0x412CFE,
+				0x4285C9,
+				0x42895D,
+				0x42A52A,
+			],
+			"code": "E8 [codecave:GUI_sub_4195A2]",
+			"expected": "E8 [0x4195A2]"
+		},
+		"replace_GUI_sub_419572": {
+			"addr": 0x411C15,
+			"code": "E8 [codecave:GUI_sub_419572]",
+			"expected": "E8 [0x419572]"
+		},
+		"replace_ENEMY_deactivate_effects": {
+			"addr": [
+				0x40CB12,
+				0x412224,
+				0x412A6D,
+			],
+			"code": "\
+8B4D ?? \
+E8 [codecave:ENEMY_deactivate_effects] \
+<nop:4> \
+",
+			"expected": "\
+8B?? ?? \
+?? \
+E8 [0x4114C0] \
+83C4 04 \
+"
+		},
+		"replace_reduce_angle": {
+			"addr": [
+				0x4072C6,
+				0x4075F7,
+				0x40831B,
+				0x40A066,
+				0x40BC26,
+				0x40BC64,
+				0x40BC7E,
+				0x40BC98,
+				0x40BCB1,
+				0x40BCCB,
+				0x412EF3,
+				0x413941,
+				0x415164,
+				0x415718,
+				0x4158B4,
+				0x429B63,
+				0x429C13,
+				0x434361,
+				0x434398,
+				0x4343D0,
+			],
+			"code": "E8 [codecave:reduce_angle]",
+			"expected": "E8 [0x41E850]"
+		},
+		"replace_ENEMY_spin_effects": {
+			"addr": 0x412DBC,
+			"code": "\
+8B4D ?? \
+E8 [codecave:ENEMY_spin_effects] \
+<nop:4> \
+",
+			"expected": "\
+8B?? ?? \
+?? \
+E8 [0x412E50] \
+83C4 04 \
+"
+		},
+		"replace_ENEMY_kill": {
+			"addr": [
+				0x41254F,
+				0x4125AC,
+			],
+			"code": "E8 [codecave:ENEMY_kill]",
+			"expected": "E8 [0x4121B0]"
+		},
+		"replace_ENEMY_main_movement": {
+			"addr": 0x41246A,
+			"code": "E8 [codecave:ENEMY_main_movement]",
+			"expected": "E8 [0x413380]"
+		},
+		"replace_ENEMY_enforce_move_limit": {
+			"addr": [
+				0x412472,
+				0x407EA9,
+				0x4125B9,
+			],
+			"code": "E8 [codecave:ENEMY_enforce_move_limit]",
+			"expected": "E8 [0x412240]"
+		},
+		"replace_ENEMY_CONTROLLER_init_sub_context": {
+			"addr": [
+				0x407B5D,
+				0x4095C4,
+				0x409E3C,
+				0x411440,
+				0x411DED,
+				0x411F18,
+				0x411FF2,
+				0x412134,
+				0x412CD0,
+			],
+			"code": "E8 [codecave:ENEMY_CONTROLLER_init_sub_context]",
+			"expected": "E8 [0x407440]"
+		},
+		"replace_ENEMY_MANAGER_enemy_create": {
+			"addr": [
+				0x409D5B,
+				0x41169B,
+				0x4116E7,
+				0x41174A,
+				0x4117AD,
+				0x4118BC,
+				0x411994,
+				0x411A8B,
+				0x411B80,
+			],
+			"code": "E8 [codecave:ENEMY_MANAGER_enemy_create]",
+			"expected": "E8 [0x411390]"
+		},
+		"replace_ENEMY_check_life_callback": {
+			"addr": 0x412568,
+			"code": "E8 [codecave:ENEMY_check_life_callback]",
+			"expected": "E8 [0x411DA0]"
+		},
+		"replace_ENEMY_check_timer_callback": {
+			"addr": 0x41257C,
+			"code": "E8 [codecave:ENEMY_check_timer_callback]",
+			"expected": "E8 [0x411F40]"
+		},
+		"replace_TIMER_increment": {
+			"addr": [
+				0x409C62,
+				0x424220,
+			],
+			"code": "E8 [codecave:TIMER_increment]",
+			"expected": "E8 [0x424145]"
+		},
+		"replace_TIMER_decrement": {
+			"addr": [
+				0x40A101,
+				0x40DA16,
+				0x40F81F,
+				0x40F93B,
+				0x411C2C,
+				0x411CE6,
+				0x424180,
+				0x428FF3,
+				0x4291F9,
+				0x43408E,
+				0x43414F,
+			],
+			"code": "E8 [codecave:TIMER_decrement]",
+			"expected": "E8 [0x4241E5]"
+		},
+		"replace_ITEM_MANAGER_spawn_item": {
+			"addr": [
+				0x409B99,
+				0x409BB0,
+				0x409C83,
+				0x412ACC,
+				0x412B53,
+				0x4141D3,
+				0x414306,
+				0x4143DB,
+				0x4144E9,
+				0x41456E,
+				0x415BD1,
+				0x415C32,
+				0x428ADE,
+				0x428AF6,
+				0x428B0E,
+				0x428B25,
+				0x428B3D,
+				0x428B55,
+				0x428BAE,
+				0x428BC6,
+				0x428BDE,
+				0x428BF5,
+				0x428C0D,
+			],
+			"code": "E8 [codecave:ITEM_MANAGER_spawn_item]",
+			"expected": "E8 [0x41F290]"
+		},
+		"replace_GUI_IMPL_read_msg": {
+			"addr": 0x418778,
+			"code": "E8 [codecave:GUI_IMPL_read_msg]",
+			"expected": "E8 [0x41878B]"
+		},
+		"replace_GUI_read_msg": {
+			"addr": [
+				0x411BDC,
+				0x411C06,
+			],
+			"code": "E8 [codecave:GUI_read_msg]",
+			"expected": "E8 [0x418768]"
+		},
+		"replace_D3DMATRIX_set_identity": {
+			"addr": [
+				0x403627,
+				0x4049B2,
+				0x4323E4,
+				0x43F287,
+				0x43F3FA,
+				0x43F4D0,
+			],
+			"code": "E8 [codecave:D3DMATRIX_set_identity]",
+			"expected": "E8 [0x403670]"
+		},
+		"replace_ANM_MANAGER_set_vm_sprite": {
+			"addr": [
+				0x401487,
+				0x4014A5,
+				0x40B98B,
+				0x40C2B4,
+				0x40C49E,
+				0x40D656,
+				0x40D896,
+				0x40E17E,
+				0x40FB59,
+				0x413AF8,
+				0x413B55,
+				0x413B7A,
+				0x413BA5,
+				0x413C3A,
+				0x413C97,
+				0x413CBC,
+				0x413CE7,
+				0x413D7C,
+				0x413DD9,
+				0x413DFE,
+				0x413E29,
+				0x413E58,
+				0x413E9F,
+				0x413EFC,
+				0x413F21,
+				0x413F4C,
+				0x414717,
+				0x41475A,
+				0x417B2A,
+				0x417C60,
+				0x418A72,
+				0x42026E,
+				0x4202F7,
+				0x425A4E,
+				0x425B7F,
+				0x42F208,
+				0x433A4D,
+				0x433B03,
+				0x435BCA,
+				0x435BEB,
+				0x4377EF,
+				0x437868,
+				0x438F45,
+				0x438FCB,
+				0x438FE9,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_set_vm_sprite]",
+			"expected": "E8 [0x4323A0]"
+		},
+		"replace_TIMER_constructor": {
+			"addr": [
+				0x4010C0,
+				0x403665,
+				0x403735,
+				0x403749,
+				0x40375D,
+				0x403770,
+				0x4037A5,
+				0x4037B6,
+				0x4037C7,
+				0x4037F6,
+				0x40E316,
+				0x410901,
+				0x410915,
+				0x410929,
+				0x411220,
+				0x4112A4,
+				0x4112DE,
+				0x4112FC,
+				0x411310,
+				0x41133B,
+				0x411367,
+				0x41137A,
+				0x4134CE,
+				0x41352B,
+				0x41354A,
+				0x41B461,
+				0x41B48C,
+				0x41B4B7,
+				0x41B4D9,
+				0x41F273,
+				0x425F38,
+				0x425F59,
+				0x425FA0,
+				0x425FC2,
+				0x425FD8,
+				0x426015,
+				0x42FD80,
+				0x4697FE,
+			],
+			"code": "E8 [codecave:TIMER_constructor]",
+			"expected": "E8 [0x424127]"
+		},
+		"replace_ANM_VM_initialize": {
+			"addr": [
+				0x401479,
+				0x401497,
+				0x41474A,
+				0x425A3A,
+				0x425B68,
+				0x42F1F4,
+				0x432451,
+			],
+			"code": "E8 [codecave:ANM_VM_initialize]",
+			"expected": "E8 [0x403580]"
+		},
+		"replace_ANM_MANAGER_set_vm_script": {
+			"addr": [
+				0x401D61,
+				0x401E52,
+				0x4029AA,
+				0x4029F9,
+				0x402AAD,
+				0x404263,
+				0x40524E,
+				0x407D87,
+				0x407E15,
+				0x40A7A8,
+				0x40A813,
+				0x40A86B,
+				0x40A8C6,
+				0x40A91E,
+				0x40D9A1,
+				0x40DA6B,
+				0x40F047,
+				0x410253,
+				0x4104D0,
+				0x4146F4,
+				0x416E25,
+				0x416E7A,
+				0x416ECF,
+				0x416F24,
+				0x416F79,
+				0x417B10,
+				0x417B69,
+				0x417C40,
+				0x417C9F,
+				0x417ED3,
+				0x41826F,
+				0x4182D4,
+				0x418313,
+				0x418352,
+				0x418391,
+				0x4183D0,
+				0x41840F,
+				0x41851E,
+				0x41855D,
+				0x418A1F,
+				0x418B32,
+				0x418D1A,
+				0x418E1A,
+				0x418EC8,
+				0x41965A,
+				0x419732,
+				0x41F476,
+				0x42571E,
+				0x426232,
+				0x426819,
+				0x427C37,
+				0x427C9C,
+				0x427D00,
+				0x427D67,
+				0x428DCD,
+				0x429CD3,
+				0x429D3B,
+				0x429F38,
+				0x429F78,
+				0x42F1B6,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_set_vm_script]",
+			"expected": "E8 [0x432430]"
+		},
+		"replace_ANM_MANAGER_draw_text_to_vm_left": {
+			"addr": [
+				0x410298,
+				0x410515,
+				0x417B8A,
+				0x418AD8,
+				0x418BCA,
+				0x42511B,
+				0x425A8B,
+				0x425C8C,
+				0x42E29C,
+				0x42E2D9,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_draw_text_to_vm_left]",
+			"expected": "E8 [0x434B60]"
+		},
+		"replace_ANM_MANAGER_draw_text_to_vm_right": {
+			"addr": [
+				0x417CC0,
+				0x4185CF,
+				0x418D6B,
+				0x418E64,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_draw_text_to_vm_right]",
+			"expected": "E8 [0x434C40]"
+		},
+		"replace_ANM_MANAGER_draw_text_to_vm_center": {
+			"addr": [
+				0x418584,
+				0x42BD15,
+				0x42BD5A,
+				0x42E0CE,
+				0x42E0FB,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_draw_text_to_vm_center]",
+			"expected": "E8 [0x434E20]"
+		},
+		"replace_ANM_MANAGER_draw_text_to_texture": {
+			"addr": [
+				0x434C13,
+				0x434D12,
+				0x434DF3,
+				0x434EF2,
+				0x434FD9,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_draw_text_to_texture]",
+			"expected": "E8 [0x434AF0]"
+		},
+		"replace_GUI_spawn_spellcard_effects": {
+			"addr": 0x409636,
+			"code": "E8 [codecave:GUI_spawn_spellcard_effects]",
+			"expected": "E8 [0x417BFD]"
+		},
+		"replace_ANM_MANAGER_run_anm": {
+			"addr": [
+				0x4026D8,
+				0x4026FD,
+				0x403002,
+				0x403024,
+				0x40409E,
+				0x4048FB,
+				0x404912,
+				0x405B55,
+				0x405B7B,
+				0x405BA1,
+				0x405BC7,
+				0x406410,
+				0x406ABA,
+				0x40712E,
+				0x407143,
+				0x407158,
+				0x40716C,
+				0x40F197,
+				0x410A27,
+				0x4125D7,
+				0x412635,
+				0x414BC7,
+				0x414D02,
+				0x414E3E,
+				0x415C41,
+				0x415D98,
+				0x41648F,
+				0x418FEF,
+				0x419003,
+				0x419017,
+				0x41902B,
+				0x41903F,
+				0x419053,
+				0x41968B,
+				0x41977B,
+				0x419858,
+				0x419874,
+				0x41988B,
+				0x4198A2,
+				0x4198B9,
+				0x4198D0,
+				0x4198E7,
+				0x41990F,
+				0x4200D6,
+				0x425450,
+				0x42911E,
+				0x42914C,
+				0x429161,
+				0x4296BE,
+				0x42E42B,
+				0x4324BC,
+				0x4374BF,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_run_anm]",
+			"expected": "E8 [0x433960]"
+		},
+		"replace_ANM_MANAGER_free_anm_file": {
+			"addr": [
+				0x4014DB,
+				0x4014E8,
+				0x4014F5,
+				0x4045EE,
+				0x40F3DB,
+				0x410D8E,
+				0x410D9B,
+				0x410DA8,
+				0x41332B,
+				0x413338,
+				0x41728B,
+				0x417298,
+				0x41B1BD,
+				0x41B1CA,
+				0x41B1D7,
+				0x41B1FC,
+				0x41B209,
+				0x41B216,
+				0x41B223,
+				0x41B230,
+				0x423E18,
+				0x425DC9,
+				0x425DD6,
+				0x425DE3,
+				0x42A0CB,
+				0x42F624,
+				0x42F631,
+				0x42F63E,
+				0x42F64B,
+				0x431DD0,
+				0x439DD7,
+				0x439FAF,
+				0x43A213,
+				0x43A695,
+				0x43A72D,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_free_anm_file]",
+			"expected": "E8 [0x432030]"
+		},
+		"replace_ANM_MANAGER_free_texture": {
+			"addr": [
+				0x43192E,
+				0x43216E,
+			],
+			"code": "E8 [codecave:ANM_MANAGER_free_texture]",
+			"expected": "E8 [0x4321E0]"
+		},
+		"replace_STAGE_tick_std_objects": {
+			"addr": 0x404047,
+			"code": "E8 [codecave:STAGE_tick_std_objects]",
+			"expected": "E8 [0x404860]"
+		},
+		"replace_STAGE_on_tick": {
+			"addr": 0x404519,
+			"code": "<codecave:STAGE_on_tick>",
+			"expected": "<0x403810>"
+		},
+		"replace_TIMER_tick": {
+			"addr": [
+				0x418FDB,
+				0x4199D8,
+				0x419A8F,
+				0x419ADA,
+			],
+			"code": "E8 [codecave:TIMER_tick]",
+			"expected": "E8 [0x41B5AF]"
+		},
+		"replace_SOUND_MANAGER_sub_424E41": {
+			"addr": [
+				0x424E13,
+				0x424DEA,
+				0x424E2F,
+			],
+			"code": "E8 [codecave:SOUND_MANAGER_sub_424E41]",
+			"expected": "E8 [0x424E41]"
+		},
+		"replace_MIDI_MANAGER_sub_422630": {
+			"addr": 0x424DB5,
+			"code": "E8 [codecave:MIDI_MANAGER_sub_422630]",
+			"expected": "E8 [0x422630]"
+		},
+		"replace_SUPERVISOR_fade_music": {
+			"addr": [
+				0x40FD44,
+				0x418EEF,
+			],
+			"code": "E8 [codecave:SUPERVISOR_fade_music]",
+			"expected": "E8 [0x424D82]"
+		},
+		"replace_GUI_on_tick": {
+			"addr": 0x41B2C3,
+			"code": "<codecave:GUI_on_tick>",
+			"expected": "<0x4174D7>"
+		},
+		"replace_GUI_on_tick_impl": {
+			"addr": 0x4174ED,
+			"code": "E8 [codecave:GUI_on_tick_impl]",
+			"expected": "E8 [0x4195BF]"
+		},
+		"replace_GUI_IMPL_on_tick_msg": {
+			"addr": 0x4174F8,
+			"code": "E8 [codecave:GUI_IMPL_on_tick_msg]",
+			"expected": "E8 [0x4188C9]"
+		},
+		"replace_BULLET_MANAGER_cancel_bullets": {
+			"addr": [
+				0x412078,
+				0x428FC9
+			],
+			"code": "\
+<nop:2> \
+?? ???????? \
+E8 [codecave:BULLET_MANAGER_cancel_bullets] \
+",
+			"expected": "\
+6A 00 \
+?? ???????? \
+E8 [0x414160]"
+		},
+		"replace_BULLET_MANAGER_cancel_bullets_to_star_items": {
+			"addr": [
+				0x409673,
+				0x409E98,
+				0x41FA2C,
+				0x41FE58,
+				0x41FF9F,
+			],
+			"code": "E8 [codecave:BULLET_MANAGER_cancel_bullets_to_star_items]",
+			"expected": "E8 [0x414340]"
+		},
+		"replace_EFFECT_MANAGER_spawn_effect": {
+			"addr": [
+				0x405373,
+				0x4058DA,
+				0x4058FE,
+				0x408E83,
+				0x409AAC,
+				0x40B90B,
+				0x40C1A4,
+				0x40CD6D,
+				0x40CEDC,
+				0x40D577,
+				0x40D7B7,
+				0x41299B,
+				0x4129BE,
+				0x4129E1,
+				0x412AA9,
+				0x412B27,
+				0x412C24,
+				0x412C4B,
+				0x4267B7,
+				0x426833,
+				0x4268EA,
+				0x426BFC,
+				0x42771C,
+				0x42779A,
+				0x4277B4,
+			],
+			"code": "E8 [codecave:EFFECT_MANAGER_spawn_effect]",
+			"expected": "E8 [0x40EF50]"
+		},
+		"replace_PLAYER_check_bullet_collisions": {
+			"addr": 0x4127D0,
+			"code": "E8 [codecave:PLAYER_check_bullet_collisions]",
+			"expected": "E8 [0x4264B0]"
+		},
+		"replace_ASCII_MANAGER_make_popup_A": {
+			"addr": [
+				0x414405,
+				0x41F9BF,
+				0x41FAA8,
+				0x41FAD0,
+				0x41FB7E,
+				0x41FBFE,
+				0x41FC7E,
+				0x41FCFB,
+				0x41FDF0,
+				0x41FED0,
+				0x41FEF8,
+				0x41FFD3,
+				0x420013,
+			],
+			"code": "E8 [codecave:ASCII_MANAGER_make_popup_A]",
+			"expected": "E8 [0x401940]"
+		},
+		"replace_ASCII_MANAGER_make_popup_B": {
+			"addr": 0x420074,
+			"code": "E8 [codecave:ASCII_MANAGER_make_popup_B]",
+			"expected": "E8 [0x401A60]"
+		},
+		"replace_BULLET_MANAGER_cancel_bullets_spell_bonus": {
+			"addr": 0x412BC7,
+			"code": "\
+<nop:2> \
+?? ???????? \
+?? ???????? \
+E8 [codecave:BULLET_MANAGER_cancel_bullets_spell_bonus] \
+",
+			"expected": "\
+6A 00 \
+?? ???????? \
+?? ???????? \
+E8 [0x414360] \
+"
+		},
+		"replace_BULLET_MANAGER_cancel_bullets_to_star_items_spell_bonus": {
+			"addr": 0x40985F,
+			"code": "\
+<nop:2> \
+?? ???????? \
+?? ???????? \
+E8 [codecave:BULLET_MANAGER_cancel_bullets_to_star_items_spell_bonus] \
+",
+			"expected": "\
+6A 01 \
+?? ???????? \
+?? ???????? \
+E8 [0x414360] \
+"
+		},
+		"replace_GUI_sub_41735A": {
+			"addr": 0x4145B1,
+			"code": "E8 [codecave:GUI_sub_41735A]",
+			"expected": "E8 [0x41735A]"
+		},
+		"replace_ENEMY_MANAGER_run_timeline": {
+			"addr": 0x4123F0,
+			"code": "E8 [codecave:ENEMY_MANAGER_run_timeline]",
+			"expected": "E8 [0x411530]",
+			"ignore": true
+		},
+		
+		// Removed bytes: 23417
+		"remove_UPDATE_FUNC_REGISTRY_register_on_tick": {
+			"addr": 0x41C860,
+			"code": "CC <nop:217>"
+		},
+		"remove_UPDATE_FUNC_REGISTRY_register_on_draw": {
+			"addr": 0x41C940,
+			"code": "CC <nop:204>"
+		},
+		"remove_UPDATE_FUNC_REGISTRY_run_all_on_tick": {
+			"addr": 0x41CA10,
+			"code": "\
+51 \
+68 <option:vpatch_dll_string_j> \
+E8 [th_GetModuleHandleA] \
+85C0 \
+75 0A \
+68 <option:vpatch_dll_string> \
+E8 [th_GetModuleHandleA] \
+0105 (<codecave:vpatch_binhack_codecave> + 0x14) \
+50 \
+6A 01 \
+68 <codecave:vpatch_binhack_codecave> \
+E8 [binhacks_apply] \
+83C4 0C \
+59 \
+E9 [codecave:UPDATE_FUNC_REGISTRY_run_all_on_tick] \
+<nop:142> \
+"
+		},
+		"remove_UPDATE_FUNC_REGISTRY_run_all_on_draw": {
+			"addr": 0x41CAD0,
+			"code": "CC <nop:181>"
+		},
+		"remove_UPDATE_FUNC_REGISTRY_unregister_func": {
+			"addr": 0x41CDE0,
+			"code": "CC <nop:379>"
+		},
+		"remove_UPDATE_FUNC_cleanup": {
+			"addr": 0x41C790,
+			"code": "CC <nop:85>"
+		},
+		"remove_RNG_rand_word": {
+			"addr": 0x41E780,
+			"code": "CC <nop:98>"
+		},
+		"remove_RNG_rand_dword": {
+			"addr": 0x41E7F0,
+			"code": "CC <nop:47>"
+		},
+		"remove_RNG_rand_float": {
+			"addr": 0x41E820,
+			"code": "CC <nop:45>"
+		},
+		"remove_SUPERVISOR_tick_timer": {
+			"addr": 0x424285,
+			"code": "CC <nop:109>"
+		},
+		"remove_SOUND_MANAGER_play_sound_centered": {
+			"addr": 0x4311E0,
+			"code": "CC <nop:132>"
+		},
+		"remove_PLAYER_check_collision": {
+			"addr": 0x426C40,
+			"code": "CC <nop:431>"
+		},
+		"remove_PLAYER_die": {
+			"addr": 0x427770,
+			"code": "CC <nop:229>"
+		},
+		"remove_PLAYER_angle_to_player_from_point": {
+			"addr": 0x428700,
+			"code": "CC <nop:121>"
+		},
+		"remove_GAME_MANAGER_increase_rank": {
+			"addr": 0x41C57E,
+			"code": "CC <nop:123>"
+		},
+		"remove_GAME_MANAGER_decrease_rank": {
+			"addr": 0x41C5FA,
+			"code": "CC <nop:123>"
+		},
+		"remove_GAME_MANAGER_check_visibility": {
+			"addr": 0x41B5E1,
+			"code": "CC <nop:129>"
+		},
+		"remove_GUI_sub_4195A2": {
+			"addr": 0x4195A2,
+			"code": "CC <nop:28>"
+		},
+		"remove_GUI_sub_419572": {
+			"addr": 0x419572,
+			"code": "CC <nop:47>"
+		},
+		"remove_ENEMY_deactivate_effects": {
+			"addr": 0x4114C0,
+			"code": "CC <nop:109>"
+		},
+		"remove_reduce_angle": {
+			"addr": 0x41E850,
+			"code": "CC <nop:126>"
+		},
+		"remove_ENEMY_spin_effects": {
+			"addr": 0x412E50,
+			"code": "CC <nop:188>"
+		},
+		"remove_ENEMY_kill": {
+			"addr": 0x4121B0,
+			"code": "CC <nop:131>"
+		},
+		"remove_ENEMY_main_movement": {
+			"addr": 0x413380,
+			"code": "CC <nop:169>"
+		},
+		"remove_ENEMY_enforce_move_limit": {
+			"addr": 0x412240,
+			"code": "CC <nop:216>"
+		},
+		"remove_ENEMY_CONTROLLER_init_sub_context": {
+			"addr": 0x407440,
+			"code": "CC <nop:83>"
+		},
+		"remove_ENEMY_MANAGER_enemy_create": {
+			"addr": 0x411390,
+			"code": "CC <nop:289>"
+		},
+		"remove_ENEMY_check_life_callback": {
+			"addr": 0x411DA0,
+			"code": "CC <nop:411>"
+		},
+		"remove_ENEMY_check_timer_callback": {
+			"addr": 0x411F40,
+			"code": "CC <nop:621>"
+		},
+		"remove_TIMER_increment": {
+			"addr": 0x424145,
+			"code": "CC <nop:159>"
+		},
+		"remove_TIMER_decrement": {
+			"addr": 0x4241E5,
+			"code": "CC <nop:159>"
+		},
+		"remove_ITEM_MANAGER_spawn_item": {
+			"addr": 0x41F290,
+			"code": "CC <nop:516>"
+		},
+		"remove_GUI_IMPL_read_msg": {
+			"addr": 0x41878B,
+			"code": "CC <nop:317>"
+		},
+		"remove_GUI_read_msg": {
+			"addr": 0x418768,
+			"code": "CC <nop:34>"
+		},
+		"remove_D3DMATRIX_set_identity": {
+			"addr": 0x403670,
+			"code": "CC <nop:166>"
+		},
+		"remove_ANM_MANAGER_set_vm_sprite": {
+			"addr": 0x4323A0,
+			"code": "CC <nop:143>"
+		},
+		"remove_TIMER_constructor": {
+			"addr": 0x424127,
+			"code": "CC <nop:29>"
+		},
+		"remove_ANM_VM_initialize": {
+			"addr": 0x403580,
+			"code": "CC <nop:237>"
+		},
+		"remove_ANM_MANAGER_set_vm_script": {
+			"addr": 0x432430,
+			"code": "CC <nop:150>"
+		},
+		"remove_ANM_MANAGER_draw_text_to_vm_left": {
+			"addr": 0x434B60,
+			"code": "CC <nop:218>"
+		},
+		"remove_ANM_MANAGER_draw_text_to_vm_right": {
+			"addr": 0x434C40,
+			"code": "CC <nop:475>"
+		},
+		"remove_ANM_MANAGER_draw_text_to_vm_center": {
+			"addr": 0x434E20,
+			"code": "CC <nop:481>"
+		},
+		"remove_ANM_MANAGER_draw_text_to_texture": {
+			"addr": 0x434AF0,
+			"code": "CC <nop:96>"
+		},
+		"remove_GUI_spawn_spellcard_effects": {
+			"addr": 0x417BFD,
+			"code": "CC <nop:299>"
+		},
+		"remove_ANM_MANAGER_run_anm": {
+			"addr": 0x433960,
+			"code": "CC <nop:4482>"
+		},
+		"remove_ANM_MANAGER_free_anm_file": {
+			"addr": 0x432030,
+			"code": "CC <nop:417>"
+		},
+		"remove_ANM_MANAGER_free_texture": {
+			"addr": 0x4321E0,
+			"code": "CC <nop:124>"
+		},
+		"remove_STAGE_tick_std_objects": {
+			"addr": 0x404860,
+			"code": "CC <nop:256>"
+		},
+		"remove_STAGE_on_tick": {
+			"addr": 0x403810,
+			"code": "CC <nop:2227>"
+		},
+		"remove_TIMER_tick": {
+			"addr": 0x41B5AF,
+			"code": "CC <nop:49>"
+		},
+		"remove_SOUND_MANAGER_sub_424E41": {
+			"addr": 0x424E41,
+			"code": "CC <nop:77>"
+		},
+		"remove_MIDI_MANAGER_sub_422630": {
+			"addr": 0x422630,
+			"code": "CC <nop:78>"
+		},
+		"remove_SUPERVISOR_fade_music": {
+			"addr": 0x424D82,
+			"code": "CC <nop:190>"
+		},
+		"remove_GUI_on_tick": {
+			"addr": 0x4174D7,
+			"code": "CC <nop:42>"
+		},
+		"remove_GUI_IMPL_on_tick_msg": {
+			"addr": 0x4188C9,
+			"code": "CC <nop:2082>"
+		},
+		"remove_GUI_on_tick_impl": {
+			"addr": 0x4195BF,
+			"code": "CC <nop:1753>"
+		},
+		"remove_BULLET_MANAGER_cancel_bullets": {
+			"addr": 0x414160,
+			"code": "CC <nop:465>"
+		},
+		"remove_BULLET_MANAGER_cancel_bullets_to_star_items": {
+			"addr": 0x414340,
+			"code": "CC <nop:20>"
+		},
+		"remove_EFFECT_MANAGER_spawn_effect": {
+			"addr": 0x40EF50,
+			"code": "CC <nop:429>"
+		},
+		"remove_PLAYER_check_bullet_collisions": {
+			"addr": 0x4264B0,
+			"code": "CC <nop:1932>"
+		},
+		"remove_ASCII_MANAGER_make_popup_A": {
+			"addr": 0x401940,
+			"code": "CC <nop:283>"
+		},
+		"remove_ASCII_MANAGER_make_popup_B": {
+			"addr": 0x401A60,
+			"code": "CC <nop:285>"
+		},
+		"remove_BULLET_MANAGER_cancel_bullets_spell_bonus": {
+			"addr": 0x414360,
+			"code": "CC <nop:606>"
+		},
+		"remove_GUI_sub_41735A": {
+			"addr": 0x41735A,
+			"code": "CC <nop:126>"
+		},
+		"remove_ENEMY_MANAGER_run_timeline": {
+			"addr": 0x411530,
+			"code": "CC <nop:2150>",
+			"ignore": true
+		},
+		
+	},
+	"breakpoints": {
+		"th06_file_name": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_file_size": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_file_load": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_file_loaded": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"gentext#stage_title": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_name": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"spell_name#result": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_title#track": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_title": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_music_title_in_game#stage_num": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_music_title_in_game": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_music_title_in_game#boss": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_cmt#track0": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_cmt#track": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_cmt#line_num": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"music_cmt": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"th06_time_fix": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_set#stage": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_set#bossbgm": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_is_active#sttitle": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_is_active#stlogo": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_is_active#bgm": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_is_active#boss": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"textimage_init": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		"ascii_params": {
+			"ignore": "<option:ignore_base_tsa_stuff>"
+		},
+		
+	},
+	
+}
