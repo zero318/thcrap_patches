@@ -45,6 +45,10 @@
 			"type": "b8",
 			"val": true
 		},
+		"zecl_experimental_enhancements": {
+			"type": "b8",
+			"val": false
+		},
 		
 		"stdfunc_free_addr": { "type": "u32", "val": 0 },
 		"stdfunc_delete_addr": { "type": "u32", "val": 0 },
@@ -579,5 +583,24 @@ DB0CE4 \
 			"code": "DFC1D9F7",
 			"expected": "DDD8DDD8"
 		},
+		"ZECL_enhance_remove_finit": {
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "<nop:3>",
+			"expected": "9B DBE3"
+		},
+		"ZECL_enhance_remove_bt_mem_A": {
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "F60425 ???????? (u8: 1 << byte ptr*-[4]) (u8: byte ptr*-[4] + ((byte ptr*-[4] == 0x72) ? 3 : 1))",
+			"expected": "0FBA25 ???????? ?? ??"
+		},
+		"ZECL_enhance_remove_bt_mem_B": {
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "F60425 ???????? (u8: 1 << byte ptr*-[4]) 0F (u8: byte ptr*-[4] + ((byte ptr*-[4] == 0x82) ? 3 : 1))",
+			"expected": "0FBA25 ???????? ?? 0F??"
+		},
+		"ZECL_enhance_nop_alignment": {
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "<nop:16 - (-[4] & 0xF)>"
+		}
 	}
 }

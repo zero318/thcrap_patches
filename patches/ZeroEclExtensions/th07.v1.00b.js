@@ -182,6 +182,7 @@ E8 [<option:ecl_get_int_ptr_addr>] \
 31D2 \
 6A 00 \
 6A 00 \
+6A 00 \
 50 \
 E8 [eval_expr] \
 31C9 \
