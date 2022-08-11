@@ -6,6 +6,6 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/FourOfAKind/"
 	],
-	"title": "Challenge all four difficulties at once",
+	"title": "FourOfAKind(06) Challenge all four difficulties at once",
 	"version": "2.5.0.0"
 }

@@ -3,5 +3,5 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/NoDat/"
 	],
-	"title": "(08) Runs the game without even reading the th.dat file."
+	"title": "NoDat(08) Runs the game without even reading the th.dat file."
 }

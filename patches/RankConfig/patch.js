@@ -6,5 +6,5 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/RankConfig/"
 	],
-	"title": "(06-08) Base patch for easier modification of rank tables."
+	"title": "RankConfigWIP(06-08) Base patch for easier modification of rank tables."
 }

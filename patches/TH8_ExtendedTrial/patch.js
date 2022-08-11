@@ -6,5 +6,5 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/TH8_ExtendedTrial/"
 	],
-	"title": "(08) Ports features of the old IN trials to the final version."
+	"title": "TH8_ExtendedTrial(08) Ports features of the old IN trials to the final version."
 }

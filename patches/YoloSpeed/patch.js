@@ -3,5 +3,5 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/YoloSpeed/"
 	],
-	"title": "(08) Removes intentional ingame slowdown."
+	"title": "YoloSpeed(08) Removes intentional ingame slowdown."
 }
