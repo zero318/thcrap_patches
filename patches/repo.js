@@ -2,6 +2,7 @@
 	"contact": "zero318#4476",
 	"id": "zero318",
 	"patches": {
+		"FourOfAKind": "Challenge all four difficulties at once",
 		"NoDat": "(08) Runs the game without even reading the th.dat file.",
 		"RankConfig": "(06-08) Base patch for easier modification of rank tables.",
 		"SpellcardLimit": "(06) Increases the maximum number of available spellcard IDs.",

@@ -37,6 +37,57 @@
 		"zecl_fptr_case_base_count": { "type": "u32", "val": 0 },
 		"zecl_fptr_case_new_count": { "type": "u32", "val": 0 },
 		
+		"zanm_lins_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_lins_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_lins_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_lins_case_addr": { "type": "u32", "val": 0 },
+		"zanm_lins_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_lins_case_new_count": { "type": "u32", "val": 0 },
+		"zanm_hins_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_hins_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_hins_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_hins_case_addr": { "type": "u32", "val": 0 },
+		"zanm_hins_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_hins_case_new_count": { "type": "u32", "val": 0 },
+		"zanm_ivar_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_ivar_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_ivar_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_ivar_case_addr": { "type": "u32", "val": 0 },
+		"zanm_ivar_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_ivar_case_new_count": { "type": "u32", "val": 0 },
+		"zanm_iptr_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_iptr_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_iptr_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_iptr_case_addr": { "type": "u32", "val": 0 },
+		"zanm_iptr_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_iptr_case_new_count": { "type": "u32", "val": 0 },
+		"zanm_fvar_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_fvar_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_fvar_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_fvar_case_addr": { "type": "u32", "val": 0 },
+		"zanm_fvar_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_fvar_case_new_count": { "type": "u32", "val": 0 },
+		"zanm_fptr_jump_addr": { "type": "u32", "val": 0 },
+		"zanm_fptr_jump_base_count": { "type": "u32", "val": 0 },
+		"zanm_fptr_jump_new_count": { "type": "u32", "val": 0 },
+		"zanm_fptr_case_addr": { "type": "u32", "val": 0 },
+		"zanm_fptr_case_base_count": { "type": "u32", "val": 0 },
+		"zanm_fptr_case_new_count": { "type": "u32", "val": 0 },
+		
+		"zstd_ins_jump_addr": { "type": "u32", "val": 0 },
+		"zstd_ins_jump_base_count": { "type": "u32", "val": 0 },
+		"zstd_ins_jump_new_count": { "type": "u32", "val": 0 },
+		"zstd_ins_case_addr": { "type": "u32", "val": 0 },
+		"zstd_ins_case_base_count": { "type": "u32", "val": 0 },
+		"zstd_ins_case_new_count": { "type": "u32", "val": 0 },
+		
+		"zmsg_ins_jump_addr": { "type": "u32", "val": 0 },
+		"zmsg_ins_jump_base_count": { "type": "u32", "val": 0 },
+		"zmsg_ins_jump_new_count": { "type": "u32", "val": 0 },
+		"zmsg_ins_case_addr": { "type": "u32", "val": 0 },
+		"zmsg_ins_case_base_count": { "type": "u32", "val": 0 },
+		"zmsg_ins_case_new_count": { "type": "u32", "val": 0 },
+		
 		"zecl_disable_code_enhancements": {
 			"type": "b8",
 			"val": false
@@ -68,6 +119,7 @@
 		"stdfunc_sprintf_addr": { "type": "u32", "val": 0 },
 		"stdfunc_sscanf_addr": { "type": "u32", "val": 0 },
 		"stdfunc_ftol2_addr": { "type": "u32", "val": 0 },
+		"stdfunc_ftoll2_addr": { "type": "u32", "val": 0 },
 		
 	},
 	"codecaves": {
@@ -338,6 +390,27 @@ C3 \
 			"size": 1,
 			"count": "<option:zecl_fptr_case_base_count> + <option:zecl_fptr_case_new_count>"
 		},
+		"ZECL_ftol2": {
+			"access": "re",
+			"code": "\
+83EC 04 \
+DB04E4 \
+8B04E4 \
+83C4 04 \
+C3 \
+"
+		},
+		"ZECL_ftoll2": {
+			"access": "re",
+			"code": "\
+83EC 08 \
+DD0CE4 \
+8B04E4 \
+8B54E4 04 \
+83C4 08 \
+C3 \
+"
+		},
 	},
 	"binhacks": {
 		"ZECL_low_ins_jump_table_replace": {
@@ -563,7 +636,7 @@ C3 \
 			"code": "E8 [th_sscanf]",
 			"expected": "E8 [<option:stdfunc_sscanf_addr>]"
 		},
-		"ZECL_stdfunc_ftol2_replace": {
+		"ZECL_stdfunc_ftol2_call_replace": {
 			"enable": "<cpuid:sse3> && <option:stdfunc_ftol2_addr>",
 			"ignore": "<option:zecl_disable_code_enhancements>",
 			"code": "\
@@ -572,6 +645,18 @@ DB0CE4 \
 58 \
 ",
 			"expected": "E8 [<option:stdfunc_ftol2_addr>]"
+		},
+		"ZECL_stdfunc_ftol2_jump_replace": {
+			"enable": "<cpuid:sse3> && <option:stdfunc_ftol2_addr>",
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "E9 [codecave:ZECL_ftol2]",
+			"expected": "E9 [<option:stdfunc_ftol2_addr>]"
+		},
+		"ZECL_stdfunc_ftoll2_replace": {
+			"enable": "<cpuid:sse3> && <option:stdfunc_ftoll2_addr>",
+			"ignore": "<option:zecl_disable_code_enhancements>",
+			"code": "E8 [codecave:ZECL_ftoll2]",
+			"expected": "E8 [<option:stdfunc_ftoll2_addr>]"
 		},
 		"ZECL_enhance_fstp0_to_ffreep0": {
 			"ignore": "<option:zecl_disable_code_enhancements>",
@@ -588,6 +673,7 @@ DB0CE4 \
 			"code": "<nop:3>",
 			"expected": "9B DBE3"
 		},
+		// This whole mess with -[4] is just a way of referring to the current address.
 		"ZECL_enhance_remove_bt_mem_A": {
 			"ignore": "<option:zecl_disable_code_enhancements>",
 			"code": "F60425 ???????? (u8: 1 << byte ptr*-[4]) (u8: byte ptr*-[4] + ((byte ptr*-[4] == 0x72) ? 3 : 1))",

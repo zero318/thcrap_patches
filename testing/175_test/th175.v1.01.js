@@ -28,6 +28,23 @@ E8 [func_add] \
 83C4 08 \
 C3 \
 "
+		},
+		"module_data_storage": {
+			"access": "rw",
+			"size": 8,
+			"code": "(0)(0)"
+		},
+		"module_data_storage_ptr_patch_init": {
+			"access": "re",
+			"export": true,
+			"code": "\
+C705 (<codecave:module_data_storage> + 4) 01000000 \
+6A 01 \
+E8 [th_malloc] \
+A3 <codecave:module_data_storage> \
+83C4 04 \
+C3 \
+"
 		}
 	},
 	"binhacks": {
@@ -61,4 +78,10 @@ DD 00 00 75 0E 89 C7 56 FF 15 (<GetModuleHandleExU>+693C) 83 C4 \
 "
 		},
 	},
+	"breakpoints": {
+		"codecave:module_load_test": {
+			"addr": "Rx13C15",
+			"cavesize": 5,
+		}
+	}
 }

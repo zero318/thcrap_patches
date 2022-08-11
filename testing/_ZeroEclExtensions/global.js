@@ -570,11 +570,13 @@ DB0CE4 \
 			"expected": "E8 [<option:stdfunc_ftol2_addr>]"
 		},
 		"ZECL_enhance_fstp0_to_ffreep0": {
+			"enable": "<cpuid:AMD>",
 			"ignore": "<option:zecl_disable_code_enhancements>",
 			"code": "DFC0",
 			"expected": "DDD8"
 		},
 		"ZECL_enhance_fstp0fstp0_to_ffreep1fincstp": {
+			"enable": "<cpuid:AMD>",
 			"ignore": "<option:zecl_disable_code_enhancements>",
 			"code": "DFC1D9F7",
 			"expected": "DDD8DDD8"

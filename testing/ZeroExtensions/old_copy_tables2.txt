@@ -1,0 +1,34 @@
+57 \
+56 \
+53 \
+55 \
+FD \
+B8 (<codecave:ZEXT_Copy_Tables_patch_init>+96) \
+31ED \
+45 \
+89E9 \
+0FAF08 \
+E3 20 \
+8B58 04 \
+85DB \
+74 19 \
+8B70 08 \
+01CE \
+4E \
+89EA \
+0FAF50 0C \
+8D3C16 \
+F3 A4 \
+89D1 \
+8D7413 FF \
+F3 A4 \
+83F5 05 \
+83C0 10 \
+3D (<codecave:ZEXT_Copy_Tables_patch_init>+544) \
+75 CC \
+FC \
+5D \
+5B \
+5E \
+5F \
+C3 \
