@@ -975,6 +975,12 @@ E8 [0x41F290]"
 			"code": "00000000",
 			"expected": "07000000"
 		},
+		"eosd_multi_automatic_difficulty_select_D": {
+			"enable": "<option:eosd_multi_automatic_difficulty_select> > 1",
+			"addr": 0x4368C0,
+			"code": "E9 [0x4362F9]",
+			"expected": "E9 [0x43740A]"
+		},
 		"eosd_multi_dont_write_difficulty_to_config": {
 			"addr": [ 0x4362F4, 0x436482 ],
 			"code": "<nop:5>",
