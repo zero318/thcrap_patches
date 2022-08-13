@@ -128,7 +128,7 @@
 		"eosd_multi_vpatch_override_str": { "type": "s", "val": "eosd_multi_vpatch_override" },
 		"eosd_multi_mapping_name": { "type": "s", "val": "EoSDMulti" },
 		"eosd_multi_sizeof_memshare": { "type": "u32", "val": 0x44 },
-		"eosd_multi_spawn_one_window_at_a_time": { "type": "u8", "val": true },
+		"eosd_multi_spawn_one_window_at_a_time": { "type": "u8", "val": false },
 		"eosd_multi_max_count": { "type": "u8", "val": 4 },
 
 		"eosd_multi_error_caption_str": { "type": "s", "val": "Four of a Kind Error" },
