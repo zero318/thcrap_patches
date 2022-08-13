@@ -128,6 +128,7 @@
 		"eosd_multi_vpatch_override_str": { "type": "s", "val": "eosd_multi_vpatch_override" },
 		"eosd_multi_mapping_name": { "type": "s", "val": "EoSDMulti" },
 		"eosd_multi_sizeof_memshare": { "type": "u32", "val": 0x44 },
+		"eosd_multi_spawn_one_window_at_a_time": { "type": "u8", "val": true },
 		"eosd_multi_max_count": { "type": "u8", "val": 4 },
 
 		"eosd_multi_error_caption_str": { "type": "s", "val": "Four of a Kind Error" },
@@ -166,7 +167,7 @@ E9 [codecave:eosd_multi_fail_exit] \
 "
 		},
 		"eosd_multi_invalid_memshare_size_patch_init": {
-			"enable": "<option:eosd_multi_sizeof_memshare> < 0x40",
+			"enable": "<option:eosd_multi_sizeof_memshare> < 0x44",
 			"access": "re",
 			"export": true,
 			"code": "\
@@ -358,7 +359,7 @@ FFD6 \
 89C5 \
 A3 <option:Sleep_ptr> \
 <nop:9> \
-6A 00 \
+6A <option:eosd_multi_spawn_one_window_at_a_time> \
 FFD5 \
 803B <option:eosd_multi_max_count> \
 72 F7 \
@@ -431,7 +432,7 @@ FFD5 \
 E8 [th_GetLastError] \
 3D B7000000 \
 75 18 \
-(u16:(<option:eosd_multi_max_count> - 1)?0xF989:0x07EB) \
+(u16:!<option:eosd_multi_max_count> || <option:eosd_multi_spawn_one_window_at_a_time>?0x07EB:0xF989) \
 89F2 \
 E8 [codecave:eosd_multi_spawn_children_processes] \
 E9 F7FEFFFF \
@@ -491,135 +492,208 @@ C2 0800 \
 "
 		},
 		"eosd_multi_calculate_window_positions": {
+			"enable": "<option:eosd_multi_max_count> - 1",
+			"ignore": "<option:eosd_multi_spawn_one_window_at_a_time>",
 			"access": "re",
 			"code": "\
+55 \
 53 \
-57 \
-8B5E 10 \
-8B7E 14 \
-39DF \
-89D8 \
-0F4CC7 \
-8B56 18 \
-85D2 \
-0F44D7 \
-39C2 \
+56 \
+8B57 10 \
+8B4F 14 \
+39CA \
+89C8 \
 0F4CC2 \
-8B4E 1C \
-85C9 \
-0F44CA \
-39C1 \
-0F4CC1 \
-8946 10 \
-40 \
-29C3 \
-29C7 \
-39DF \
-0F43FB \
-29C2 \
-39FA \
-0F43D7 \
-29C1 \
+0F4FCA \
+BB (u32:<option:eosd_multi_max_count>) \
+80FB 03 \
+72 22 \
+8B57 18 \
 39D1 \
-0F43CA \
+89D5 \
+0F4CE9 \
+0F4FD1 \
+39E8 \
+89E9 \
+0F4CE8 \
+0F4FC8 \
+80FB 03 \
+75 0C \
+89E8 \
+89D6 \
+EB 2B \
+89CA \
+89CE \
+EB 25 \
+8B77 1C \
+39F2 \
+89F3 \
+0F4CDA \
+0F4FF2 \
+39D9 \
+89DA \
+0F4CD1 \
+0F4FD9 \
+39D5 \
+89D0 \
+0F4CC5 \
+0F4FD5 \
+89D1 \
+89DA \
+89CD \
+29C5 \
+0F44EE \
+89D3 \
+29CB \
+39EB \
+0F43DD \
+39CA \
+0F44DD \
+89F1 \
+29D1 \
+39D9 \
+0F43CB \
+39D6 \
+89C2 \
+8757 10 \
+0F44CB \
 01C8 \
-8946 14 \
+89C2 \
+8757 14 \
 01C8 \
-8946 18 \
+89C2 \
+8757 18 \
 01C8 \
-8946 1C \
-8B5E 20 \
-8B7E 24 \
-39DF \
-89D8 \
-0F4CC7 \
-8B56 28 \
-85D2 \
-0F44D7 \
-39C2 \
+8747 1C \
+8B57 20 \
+8B4F 24 \
+39CA \
+89C8 \
 0F4CC2 \
-8B4E 2C \
-85C9 \
-0F44CA \
-39C1 \
-0F4CC1 \
-8946 20 \
-40 \
-29C3 \
-29C7 \
-39DF \
-0F43FB \
-29C2 \
-39FA \
-0F43D7 \
-29C1 \
+0F4FCA \
+BB (u32:<option:eosd_multi_max_count>) \
+80FB 03 \
+72 22 \
+8B57 28 \
 39D1 \
-0F43CA \
+89D5 \
+0F4CE9 \
+0F4FD1 \
+39E8 \
+89E9 \
+0F4CE8 \
+0F4FC8 \
+80FB 03 \
+75 0C \
+89E8 \
+89D6 \
+EB 2B \
+89CA \
+89CE \
+EB 25 \
+8B77 2C \
+39F2 \
+89F3 \
+0F4CDA \
+0F4FF2 \
+39D9 \
+89DA \
+0F4CD1 \
+0F4FD9 \
+39D5 \
+89D0 \
+0F4CC5 \
+0F4FD5 \
+89D1 \
+89DA \
+89CD \
+29C5 \
+0F44EE \
+89D3 \
+29CB \
+39EB \
+0F43DD \
+39CA \
+0F44DD \
+89F1 \
+29D1 \
+39D9 \
+0F43CB \
+39D6 \
+89C2 \
+8757 20 \
+0F44CB \
 01C8 \
-8946 24 \
+89C2 \
+8757 24 \
 01C8 \
-8946 28 \
+89C2 \
+8757 28 \
 01C8 \
-8946 2C \
-5F \
+8747 2C \
+5E \
 5B \
+5D \
 C3 \
 "
 		},
 		"eosd_multi_adjust_window_positions": {
+			"enable": "<option:eosd_multi_max_count> - 1",
+			"ignore": "<option:eosd_multi_spawn_one_window_at_a_time>",
 			"access": "re",
 			"code": "\
 53 \
 57 \
 56 \
 83EC 10 \
-89C7 \
+89C6 \
 89E0 \
 50 \
-57 \
+56 \
 FF15 <option:GetWindowRect_ptr> \
 0FB61D <option:eosd_multi_instance_index_ptr> \
-8B35 <option:eosd_multi_shared_data_ptr> \
-897C9E 34 \
+8B3D <option:eosd_multi_shared_data_ptr> \
+89F0 \
+89449F 34 \
 8B0424 \
-89449E 10 \
+89449F 10 \
 8B4424 04 \
-89449E 20 \
+89449F 20 \
 B0 01 \
-F0:0FC046 04 \
+F0:0FC047 04 \
 3C (u8:<option:eosd_multi_max_count> - 1) \
-73 11 \
-<nop:3> \
+73 0F \
+<nop:1> \
 6A 00 \
 FF15 <option:Sleep_ptr> \
-807E 04 <option:eosd_multi_max_count> \
+807F 04 <option:eosd_multi_max_count> \
 72 F2 \
 85DB \
-74 20 \
+74 22 \
 <nop:14> \
 6A 00 \
 FF15 <option:Sleep_ptr> \
-385E 08 \
+385F 08 \
 75 F3 \
 B8 01000000 \
-EB 05 \
+EB 0A \
 E8 [codecave:eosd_multi_calculate_window_positions] \
 B8 05000000 \
 50 \
 6A 00 \
 6A 00 \
-FF749E 20 \
-FF749E 10 \
-FF749E 30 \
+FF749F 20 \
+FF749F 10 \
+FF749F 30 \
 57 \
 FF15 <option:SetWindowPos_ptr> \
-F0:FE46 08 \
-<nop:4> \
+F0:FE47 08 \
+<nop:2> \
 6A 00 \
 FF15 <option:Sleep_ptr> \
-807E 08 <option:eosd_multi_max_count> \
-75 F2 \
-89FA \
+807F 08 <option:eosd_multi_max_count> \
+72 F2 \
+89F0 \
 83C4 10 \
 5E \
 5F \
@@ -1027,9 +1101,9 @@ E8 [0x41F290]"
 			"expected": "8B45 F4 / 0FB680 31820000 / 50 / FF75 FC / 6A 05 / FF75 F8 / 8B4D F4 / E8 [0x438EF8]"
 		},
 		"eosd_multi_align_windows": {
-			"enable": "<option:eosd_multi_max_count> != 1",
+			"enable": "<option:eosd_multi_max_count> - 1",
 			"addr": 0x420D25,
-			"code": "E8 [codecave:eosd_multi_adjust_window_positions] 90",
+			"code": "E8 [codecave:eosd_multi_adjust_window_positions] 92",
 			"expected": "8B15 <0x6C6BD4>"
 		},
 		"eosd_multi_xinput_compat": {
