@@ -1,9 +1,9 @@
 @echo off
 setlocal EnableDelayedExpansion
-for /f "tokens=*" %%g in (.\_FinalPatches.txt) do (
+REM for /f "tokens=*" %%g in (.\_FinalPatches.txt) do (
 	REM echo ".\testing\%%g" ".\patches\%%g"
-	xcopy ".\testing\%%g" ".\patches\%%g" /e /d /i /y /q>nul 2>&1
-)
+	REM xcopy ".\testing\%%g" ".\patches\%%g" /e /d /i /y /q>nul 2>&1
+REM )
 pushd .\patches
 py -3 "..\..\..\bin\scripts\repo_update.py"
 popd

@@ -93,6 +93,7 @@
 		"eosd_multi_main_folder_str": { "type": "s", "val": "./FourOfAKind/" },
 		"eosd_multi_replay_folder_files_str": { "type": "s", "val": "./FourOfAKind/replay/%s" },
 		"eosd_multi_replay_folder_str": { "type": "s", "val": "./FourOfAKind/replay/" },
+		"eosd_multi_replay_relative_path_str": { "type": "s", "val": "../../" },
 		"eosd_multi_title_E_str": { "type": "s", "val": "The Embodiment of Scarlet Devil Easy" },
 		"eosd_multi_title_N_str": { "type": "s", "val": "The Embodiment of Scarlet Devil Normal" },
 		"eosd_multi_title_H_str": { "type": "s", "val": "The Embodiment of Scarlet Devil Hard" },
@@ -105,6 +106,7 @@
 		"eosd_multi_log_filename_N_str": { "type": "s", "val": "./FourOfAKind/logN.txt" },
 		"eosd_multi_log_filename_H_str": { "type": "s", "val": "./FourOfAKind/logH.txt" },
 		"eosd_multi_log_filename_L_str": { "type": "s", "val": "./FourOfAKind/logL.txt" },
+		// Apparently I forgot that the proper format for the replays would've been %02d. Oops.
 		"eosd_multi_replay_filename_E_str": { "type": "s", "val": "./FourOfAKind/replay/th6E_%2d.rpy" },
 		"eosd_multi_replay_filename_N_str": { "type": "s", "val": "./FourOfAKind/replay/th6N_%2d.rpy" },
 		"eosd_multi_replay_filename_H_str": { "type": "s", "val": "./FourOfAKind/replay/th6H_%2d.rpy" },
@@ -277,7 +279,9 @@ FFD6 \
 89C3 \
 8D6C24 5C \
 BE (<option:eosd_multi_max_count> - 1) \
-<nop:10> \
+85F6 \
+74 69 \
+<nop:6> \
 0F57C0 \
 0F1145 00 \
 0F1145 F0 \
@@ -432,7 +436,7 @@ FFD5 \
 E8 [th_GetLastError] \
 3D B7000000 \
 75 18 \
-(u16:!<option:eosd_multi_max_count> || <option:eosd_multi_spawn_one_window_at_a_time>?0x07EB:0xF989) \
+(u16:(<option:eosd_multi_max_count> == 1 || <option:eosd_multi_spawn_one_window_at_a_time>)?0x07EB:0xF989) \
 89F2 \
 E8 [codecave:eosd_multi_spawn_children_processes] \
 E9 F7FEFFFF \
@@ -842,6 +846,11 @@ E9 ???????? \
 			"addr": 0x438381,
 			"code": "<option:eosd_multi_replay_ud_filename>",
 			"expected": "<0x46C3CC>"
+		},
+		"eosd_multi_change_replay_path_offset": {
+			"addr": 0x438473,
+			"code": "<option:eosd_multi_replay_relative_path_str>",
+			"expected": "<0x46C3B4>"
 		},
 		"eosd_multi_change_log_filename": {
 			"addr": 0x42199F,
