@@ -13,5 +13,8 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/"
 	],
+	"neighbors": [
+		"https://raw.githubusercontent.com/4ChanMeta/touhou-patches/main/"
+	],
 	"title": "zero318's Patch Pile"
 }
