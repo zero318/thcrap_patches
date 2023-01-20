@@ -5,5 +5,6 @@
 *.diff
 *.bat
 git_log_out.txt
+__temp.txt
 ___*
 ___*/
