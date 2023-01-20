@@ -844,7 +844,7 @@ E9 [0x4266C8] \
 			"code": "DA81 C8040000",
 		},
 		"ZECL7_FixLaserBlend_C": {
-			"addr": 0x4162F0,
+			"addr": 0x4262F0,
 			"code": "\
 8D90 01FFFFFF \
 F7DA \

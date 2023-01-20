@@ -2,5 +2,8 @@
 *.rar
 *.7z
 *.psd
+*.diff
+*.bat
+git_log_out.txt
 ___*
 ___*/
