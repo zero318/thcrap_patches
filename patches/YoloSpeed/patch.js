@@ -1,4 +1,7 @@
 {
+	"dependencies": [
+		"nmlgc/base_tsa"
+	],
 	"id": "YoloSpeed",
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/YoloSpeed/"
