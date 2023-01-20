@@ -11,6 +11,11 @@
 			"addr": 0x424FA5,
 			"code": "D9E8 90",
 			"expected": "DB45 FC"
+		},
+		"DisableTimeStops_A": {
+			"addr": 0x425082,
+			"code": "<nop:6>",
+			"expected": "880D <0x160F534>"
 		}
 	}
 }
