@@ -234,11 +234,13 @@ B8 <option:card_data_table_addr> \
 31F6 \
 EB 30 \
 CC \
-8B40 04 \
+31F6 \
 8B15 <option:ability_manager_ptr> \
 8B52 1C \
-31F6 \
-<nop:14> \
+85D2 \
+74 20 \
+8B40 04 \
+<nop:10> \
 8B0A \
 8B52 04 \
 31DB \
@@ -328,50 +330,6 @@ A1 <option:ability_manager_ptr> \
 DB40 34 \
 C9 \
 C2 0400 \
-"
-		},
-		
-		"ability_manager_count_cards_of_type": {
-			"access": "re",
-			"code": "\
-53 \
-57 \
-57 \
-B8 <option:card_data_table_addr> \
-<nop:8> \
-8B30 \
-31FF \
-<nop:12> \
-0FB61C3E \
-8A3C3A \
-84DB \
-74 05 \
-47 \
-38FB \
-74 F0 \
-38FB \
-74 0E \
-83C0 34 \
-3D (<option:card_data_table_addr> + 0x34 * <option:card_count>) \
-75 D2 \
-31C0 \
-EB 21 \
-8B50 04 \
-8B49 1C \
-31C0 \
-<nop:6> \
-8B31 \
-8B49 04 \
-31DB \
-3956 04 \
-0F94C3 \
-01D8 \
-85C9 \
-75ED \
-5E \
-5F \
-5B \
-C3 \
 "
 		}
 	},
