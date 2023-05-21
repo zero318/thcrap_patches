@@ -53,6 +53,10 @@
 			//"type": "u32",
 			//"val": 
 		//},
+		"ecl_hins_get_iptr_arg_addr": {
+			"type": "p",
+			"val": 0x48D750
+		},
 		
 		"ability_manager_ptr": {
 			"type": "u32",

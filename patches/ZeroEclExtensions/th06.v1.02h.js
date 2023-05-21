@@ -9,6 +9,7 @@
 		"zecl_hins_jump_base_count": { "val": 13 },
 		"zecl_hins_jump_new_count": { "val": 1 },
 		// Int Vars
+		// Commented out because of backwards ordering. Look at codecave ZECL6_Copy_EoSD_Inverted_Ivar_Jank_patch_init
 		//"zecl_ivar_jump_addr": { "val": 0x40B31C },
 		"zecl_ivar_jump_base_count": { "val": 25 },
 		"zecl_ivar_jump_new_count": { "val": 1 },
@@ -109,6 +110,8 @@ C3 \
 <codecave:ZECL6_math_sin> \
 <codecave:ZECL6_math_cos> \
 <codecave:ZECL6_inline_switch> \
+(<cpuid:avx> ? <codecave:ZECL6_cast_avx> : <codecave:ZECL6_cast_sse>) \
+<codecave:ZECL6_math_neg> \
 "
 		},
 		"ZECL_high_ins_jump_table": {
