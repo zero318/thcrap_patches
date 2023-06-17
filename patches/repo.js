@@ -3,6 +3,7 @@
 	"id": "zero318",
 	"patches": {
 		"FourOfAKind": "FourOfAKind(06) Challenge all four difficulties at once",
+		"GrazeDisplay": "GrazeDisplay(08) Applies tints to things that can be grazed",
 		"NoDat": "NoDat(08) Runs the game without even reading the th.dat file.",
 		"RankConfig": "RankConfigWIP(06-08) Base patch for easier modification of rank tables.",
 		"SpellcardLimit": "SpellcardLimit(06) Increases the maximum number of available spellcard IDs.",
