@@ -142,6 +142,7 @@ D3E0 \
 89443A 08 \
 C6443A 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL18_math_shr": {
@@ -158,6 +159,7 @@ D3E8 \
 89443A 08 \
 C6443A 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL18_math_sar": {
@@ -174,6 +176,7 @@ D3F8 \
 89443A 08 \
 C6443A 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL18_math_rol": {
@@ -190,6 +193,7 @@ D3C0 \
 89443A 08 \
 C6443A 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL18_math_ror": {
@@ -206,6 +210,7 @@ D3C8 \
 89443A 08 \
 C6443A 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		
