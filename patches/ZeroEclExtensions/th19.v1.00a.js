@@ -10,10 +10,10 @@
 		// High ECL
 		"zecl_hins_jump_addr": { "val": "RxF39E8" },
 		"zecl_hins_jump_base_count": { "val": 196 },
-		"zecl_hins_jump_new_count": { "val": 0 },
+		"zecl_hins_jump_new_count": { "val": 2 },
 		"zecl_hins_case_addr": { "val": "RxF3CF8" },
 		"zecl_hins_case_base_count": { "val": 744 },
-		"zecl_hins_case_new_count": { "val": 0 },
+		"zecl_hins_case_new_count": { "val": 2 },
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": "RxED100" },
 		"zecl_ivar_jump_base_count": { "val": 119 },
@@ -57,6 +57,19 @@
 			//"type": "u32",
 			//"val": 
 		//},
+		
+		"game_sides_addr": {
+			"type": "p",
+			"val": "Rx1AE470"
+		},
+		"card_data_table_addr": {
+			"type": "p",
+			"val": "Rx1A25B0"
+		},
+		"card_count": {
+			"type": "u32",
+			"val": 39 // excluding NULL/BACK
+		}
 	},
 	"codecaves": {
 		"ZECL_low_ins_jump_table": {
@@ -86,10 +99,16 @@
 "
 		},
 		"ZECL_high_ins_jump_table": {
-			"code": ""
+			"code": "\
+<codecave:ZECL19_count_cards> \
+<codecave:ZECL19_opposite_count_cards> \
+"
 		},
 		"ZECL_high_ins_case_table": {
-			"code": ""
+			"code": "\
+C4 \
+C5 \
+"
 		},
 		"ZECL19_debug_breakpoint": {
 			"access": "re",
@@ -218,7 +237,7 @@ C6443E 04 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL19_math_urem": {
+		"ZECL19_math_umod": {
 			"access": "re",
 			"code": "\
 8BB7 0C100000 \
@@ -236,6 +255,104 @@ C6443E 04 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
+		"ZECL19_count_cards": {
+			"access": "re",
+			"code": "\
+895D FC \
+B8 <option:card_data_table_addr> \
+<nop:8> \
+8B10 \
+31C9 \
+<nop:12> \
+0FB61C0A \
+8A7C0E 14 \
+84DB \
+74 05 \
+41 \
+38FB \
+74 EF \
+38FB \
+74 0F \
+83C0 20 \
+3D (<option:card_data_table_addr> + 0x20 * <option:card_count>) \
+75 D1 \
+31F6 \
+EB 30 \
+CC \
+31F6 \
+6B97 38560000 3C \
+8B8A (<option:game_sides_addr> + 0x20) \
+8B51 20 \
+85D2 \
+74 19 \
+8B40 04 \
+<nop:3> \
+8B0A \
+8B52 04 \
+31DB \
+3941 04 \
+0F94C3 \
+01DE \
+85D2 \
+75 ED \
+8B87 C8550000 \
+8B48 0C \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+83EC 04 \
+8930 \
+8B5D FC \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL19_opposite_count_cards": {
+			"access": "re",
+			"code": "\
+895D FC \
+B8 <option:card_data_table_addr> \
+<nop:8> \
+8B10 \
+31C9 \
+<nop:12> \
+0FB61C0A \
+8A7C0E 14 \
+84DB \
+74 05 \
+41 \
+38FB \
+74 EF \
+38FB \
+74 0F \
+83C0 20 \
+3D (<option:card_data_table_addr> + 0x20 * <option:card_count>) \
+75 D1 \
+31F6 \
+EB 30 \
+CC \
+31F6 \
+6B97 38560000 C4 \
+8B8A (<option:game_sides_addr> +0x5C) \
+8B51 20 \
+85D2 \
+74 19 \
+8B40 04 \
+<nop:3> \
+8B0A \
+8B52 04 \
+31DB \
+3941 04 \
+0F94C3 \
+01DE \
+85D2 \
+75 ED \
+8B87 C8550000 \
+8B48 0C \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+83EC 04 \
+8930 \
+8B5D FC \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		}
 	},
 	"binhacks": {
 		"ZECL_low_ins_jump_table_replace": {
