@@ -9,7 +9,7 @@
 		"SpellcardLimit": "SpellcardLimit(06) Increases the maximum number of available spellcard IDs.",
 		"TH8_ExtendedTrial": "TH8_ExtendedTrial(08) Ports features of the old IN trials to the final version.",
 		"YoloSpeed": "YoloSpeed(06-095) Removes gamespeed changes and time stops.",
-		"ZeroEclExtensions": "ZeroEclExtensionsWIP(06,07,08,18) Adds new ECL instructions"
+		"ZeroEclExtensions": "ZeroEclExtensionsWIP(06,07,08,18,19) Adds new ECL instructions"
 	},
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/"

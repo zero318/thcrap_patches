@@ -6,6 +6,6 @@
 	"servers": [
 		"https://raw.githubusercontent.com/zero318/thcrap_patches/master/patches/ZeroEclExtensions/"
 	],
-	"title": "ZeroEclExtensionsWIP(06,07,08,18) Adds new ECL instructions",
-	"version": "0.0.0.2"
+	"title": "ZeroEclExtensionsWIP(06,07,08,18,19) Adds new ECL instructions",
+	"version": "0.0.0.3"
 }
