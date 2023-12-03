@@ -6,7 +6,7 @@
 		},
 		"override_rat_count": {
 			"type": "i32",
-			"val": 0
+			"val": 100
 		},
 	},
 	"codecaves": {
