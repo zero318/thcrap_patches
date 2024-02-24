@@ -17,18 +17,18 @@
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": "RxED100" },
 		"zecl_ivar_jump_base_count": { "val": 119 },
-		"zecl_ivar_jump_new_count": { "val": 0 },
+		"zecl_ivar_jump_new_count": { "val": 14 },
 		// Int Ptrs
 		"zecl_iptr_jump_addr": { "val": "RxEC67C" },
 		"zecl_iptr_jump_base_count": { "val": 20 },
-		"zecl_iptr_jump_new_count": { "val": 0 },
+		"zecl_iptr_jump_new_count": { "val": 2 },
 		"zecl_iptr_case_addr": { "val": "RxEC6CC" },
 		"zecl_iptr_case_base_count": { "val": 94 },
-		"zecl_iptr_case_new_count": { "val": 0 },
+		"zecl_iptr_case_new_count": { "val": 14 },
 		// Float Vars
 		"zecl_fvar_jump_addr": { "val": "RxEC2E0" },
 		"zecl_fvar_jump_base_count": { "val": 119 },
-		"zecl_fvar_jump_new_count": { "val": 0 },
+		"zecl_fvar_jump_new_count": { "val": 12 },
 		// Float Ptrs
 		"zecl_fptr_jump_addr": { "val": "RxEB69C" },
 		"zecl_fptr_jump_base_count": { "val": 25 },
@@ -110,6 +110,55 @@ C4 \
 C5 \
 "
 		},
+        "ZECL_int_var_jump_table": {
+            "code": "\
+<codecave:ZECL19_opposite_player_shot_ivar> \
+<codecave:ZECL19_opposite_player_power_ivar> \
+<codecave:ZECL19_opposite_player_deaths_ivar> \
+<codecave:ZECL19_opposite_player_bombs_used_ivar> \
+<codecave:ZECL19_player_lives_ivar> \
+<codecave:ZECL19_opposite_player_lives_ivar> \
+<codecave:ZECL19_player_bombs_ivar> \
+<codecave:ZECL19_opposite_player_bombs_ivar> \
+<codecave:ZECL19_player_state_ivar> \
+<codecave:ZECL19_opposite_player_state_ivar> \
+<codecave:ZECL19_player_barrier_state_ivar> \
+<codecave:ZECL19_opposite_player_barrier_state_ivar> \
+<codecave:ZECL19_player_flags_ivar> \
+<codecave:ZECL19_opposite_player_flags_ivar> \
+"
+        },
+        "ZECL_int_ptr_jump_table": {
+            "code": "\
+<codecave:ZECL19_opposite_player_deaths_iptr> \
+<codecave:ZECL19_opposite_player_bombs_used_iptr> \
+"
+        },
+        "ZECL_int_ptr_case_table": {
+            "code": "\
+13131313131313131313 \
+13 \
+13 \
+14 \
+15 \
+"
+        },
+        "ZECL_float_var_jump_table": {
+            "code": "\
+<codecave:ZECL19_opposite_player_shot_fvar> \
+<codecave:ZECL19_opposite_player_power_fvar> \
+<codecave:ZECL19_opposite_player_deaths_fvar> \
+<codecave:ZECL19_opposite_player_bombs_used_fvar> \
+<codecave:ZECL19_player_lives_fvar> \
+<codecave:ZECL19_opposite_player_lives_fvar> \
+<codecave:ZECL19_player_bombs_fvar> \
+<codecave:ZECL19_opposite_player_bombs_fvar> \
+<codecave:ZECL19_player_state_fvar> \
+<codecave:ZECL19_opposite_player_state_fvar> \
+<codecave:ZECL19_player_barrier_state_fvar> \
+<codecave:ZECL19_opposite_player_barrier_state_fvar> \
+"
+        },
 		"ZECL19_debug_breakpoint": {
 			"access": "re",
 			"code": "\
@@ -352,7 +401,341 @@ E8 [<option:ecl_lins_get_iptr_arg_addr>] \
 8B5D FC \
 E9 [<option:ecl_hins_break_addr>] \
 "
-		}
+		},
+        "ZECL19_opposite_player_shot_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxABF0] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_shot_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxABF0] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_power_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxE070] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_power_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxE070] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_deaths_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x44) \
+8B41 48 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_deaths_iptr": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B82 (<option:game_sides_addr> + 0x44) \
+83C0 48 \
+5E \
+5D \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_deaths_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x44) \
+DB41 48 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_bombs_used_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x44) \
+8B41 4C \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_bombs_used_iptr": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B82 (<option:game_sides_addr> + 0x44) \
+83C0 4C \
+5E \
+5D \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_bombs_used_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x44) \
+DB41 4C \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_lives_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x2C) \
+E8 [Rx11F10] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_lives_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x2C) \
+E8 [Rx11F10] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_lives_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [Rx11F10] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_lives_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [Rx11F10] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_bombs_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x2C) \
+E8 [RxA5E0] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_bombs_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x2C) \
+E8 [RxA5E0] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_bombs_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxA5E0] \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_bombs_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x68) \
+E8 [RxA5E0] \
+8945 08 \
+DB45 08 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_state_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x4) \
+8B41 10 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_state_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x4) \
+DB41 10 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_state_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x40) \
+8B41 10 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_state_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x40) \
+DB41 10 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_barrier_state_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x4) \
+8B41 18 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_barrier_state_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x4) \
+DB41 18 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_barrier_state_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x40) \
+8B41 18 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_barrier_state_fvar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x40) \
+DB41 18 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_player_flags_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 3C \
+8B8A (<option:game_sides_addr> + 0x4) \
+8B92 (<option:game_sides_addr> + 0x1C) \
+31C0 \
+83B9 70200000 00 \
+0F95C0 \
+31C9 \
+837A 18 00 \
+0F95C1 \
+8D0448 \
+5E \
+C9 \
+C2 0400 \
+"
+        },
+        "ZECL19_opposite_player_flags_ivar": {
+            "access": "re",
+            "code": "\
+6B96 DC680000 C4 \
+8B8A (<option:game_sides_addr> + 0x40) \
+8B92 (<option:game_sides_addr> + 0x58) \
+31C0 \
+83B9 70200000 00 \
+0F95C0 \
+31C9 \
+837A 18 00 \
+0F95C1 \
+8D0448 \
+5E \
+C9 \
+C2 0400 \
+"
+        }
 	},
 	"binhacks": {
 		"ZECL_low_ins_jump_table_replace": {

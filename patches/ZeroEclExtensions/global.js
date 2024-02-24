@@ -89,7 +89,7 @@
 		"zmsg_ins_case_base_count": { "type": "u32", "val": 0 },
 		"zmsg_ins_case_new_count": { "type": "u32", "val": 0 },
 		
-		"zecl_disable_code_enhancements": {
+		"zext_disable_code_enhancements": {
 			"type": "b8",
 			"val": true
 		},
@@ -791,17 +791,17 @@ DB0CE4 \
 		},
 		// This whole mess with -[4] is just a way of referring to the current address.
 		"ZECL_enhance_remove_bt_mem_A": {
-			"ignore": "<option:zecl_disable_code_enhancements>",
+			"ignore": "<option:zext_disable_code_enhancements>",
 			"code": "F60425 ???????? (u8: 1 << byte ptr*-[4]) (u8: byte ptr*-[4] + ((byte ptr*-[4] == 0x72) ? 3 : 1))",
 			"expected": "0FBA25 ???????? ?? ??"
 		},
 		"ZECL_enhance_remove_bt_mem_B": {
-			"ignore": "<option:zecl_disable_code_enhancements>",
+			"ignore": "<option:zext_disable_code_enhancements>",
 			"code": "F60425 ???????? (u8: 1 << byte ptr*-[4]) 0F (u8: byte ptr*-[4] + ((byte ptr*-[4] == 0x82) ? 3 : 1))",
 			"expected": "0FBA25 ???????? ?? 0F??"
 		},
 		"ZECL_enhance_nop_alignment": {
-			"ignore": "<option:zecl_disable_code_enhancements>",
+			"ignore": "<option:zext_disable_code_enhancements>",
 			"code": "<option:zext_nop_align>"
 		}
 	}
