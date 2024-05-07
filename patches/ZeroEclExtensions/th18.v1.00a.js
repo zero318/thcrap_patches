@@ -3,10 +3,10 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": 0x48D2A8 },
 		"zecl_lins_jump_base_count": { "val": 68 },
-		"zecl_lins_jump_new_count": { "val": 7 },
+		"zecl_lins_jump_new_count": { "val": 9 },
 		"zecl_lins_case_addr": { "val": 0x48D3B8 },
 		"zecl_lins_case_base_count": { "val": 95 },
-		"zecl_lins_case_new_count": { "val": 7 },
+		"zecl_lins_case_new_count": { "val": 9 },
 		// High ECL
 		"zecl_hins_jump_addr": { "val": 0x436438 },
 		"zecl_hins_jump_base_count": { "val": 175 },
@@ -81,6 +81,8 @@
 <codecave:ZECL18_math_sar> \
 <codecave:ZECL18_math_rol> \
 <codecave:ZECL18_math_ror> \
+<codecave:ZECL18_math_udiv> \
+<codecave:ZECL18_math_umod> \
 "
 		},
 		"ZECL_low_ins_case_table": {
@@ -92,6 +94,8 @@
 48 \
 49 \
 4A \
+4B \
+4C \
 "
 		},
 		"ZECL_high_ins_jump_table": {
@@ -209,6 +213,42 @@ F30F2C443A 08 \
 D3C8 \
 89443A 08 \
 C6443A 04 69 \
+8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL18_math_udiv": {
+			"access": "re",
+			"code": "\
+8BB7 0C100000 \
+F30F2C4C3E 10 \
+807C3E 0C 66 \
+0F454C3E 10 \
+F30F2C443E 08 \
+807C3E 04 66 \
+0F45443E 08 \
+31D2 \
+F7F1 \
+89443E 08 \
+C6443E 04 69 \
+8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL18_math_umod": {
+			"access": "re",
+			"code": "\
+8BB7 0C100000 \
+F30F2C4C3E 10 \
+807C3E 0C 66 \
+0F454C3E 10 \
+F30F2C443E 08 \
+807C3E 04 66 \
+0F45443E 08 \
+31D2 \
+F7F1 \
+89543E 08 \
+C6443E 04 69 \
 8387 0C100000 F8 \
 E9 [<option:ecl_lins_break_addr>] \
 "
