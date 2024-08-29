@@ -12,7 +12,7 @@
 		"zecl_hins_jump_base_count": { "val": 169 },
 		"zecl_hins_jump_new_count": { "val": 1 },
 		"zecl_hins_case_addr": { "val": 0x429EF4 },
-		"zecl_hins_case_base_count": { "val": 705 },
+		"zecl_hins_case_base_count": { "val": 704 },
 		"zecl_hins_case_new_count": { "val": 1 },
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": 0x42AF34 },
