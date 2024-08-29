@@ -1,53 +1,49 @@
 {
 	"options": {
 		// Low ECL
-		"zecl_lins_jump_addr": { "val": 0x483D00 },
+		"zecl_lins_jump_addr": { "val": 0x488ED0 },
 		"zecl_lins_jump_base_count": { "val": 67 },
 		"zecl_lins_jump_new_count": { "val": 9 },
-		"zecl_lins_case_addr": { "val": 0x483E0C },
+		"zecl_lins_case_addr": { "val": 0x488FDC },
 		"zecl_lins_case_base_count": { "val": 94 },
 		"zecl_lins_case_new_count": { "val": 9 },
 		// High ECL
-		"zecl_hins_jump_addr": { "val": 0x429C50 },
-		"zecl_hins_jump_base_count": { "val": 169 },
+		"zecl_hins_jump_addr": { "val": 0x42681C },
+		"zecl_hins_jump_base_count": { "val": 172 },
 		"zecl_hins_jump_new_count": { "val": 1 },
-		"zecl_hins_case_addr": { "val": 0x429EF4 },
-		"zecl_hins_case_base_count": { "val": 704 },
+		"zecl_hins_case_addr": { "val": 0x426ACC },
+		"zecl_hins_case_base_count": { "val": 707 },
 		"zecl_hins_case_new_count": { "val": 1 },
 		// Int Vars
-		"zecl_ivar_jump_addr": { "val": 0x42AF34 },
-		"zecl_ivar_jump_base_count": { "val": 95 },
+		"zecl_ivar_jump_addr": { "val": 0x427B40 },
+		"zecl_ivar_jump_base_count": { "val": 97 },
 		"zecl_ivar_jump_new_count": { "val": 1 },
 		// Int Ptrs
-		"zecl_iptr_jump_addr": { "val": 0x42B1A8 },
+		"zecl_iptr_jump_addr": { "val": 0x427DC8 },
 		"zecl_iptr_jump_base_count": { "val": 16 },
 		"zecl_iptr_jump_new_count": { "val": 0 },
-		"zecl_iptr_case_addr": { "val": 0x42B1E8 },
+		"zecl_iptr_case_addr": { "val": 0x427E08 },
 		"zecl_iptr_case_base_count": { "val": 63 },
 		"zecl_iptr_case_new_count": { "val": 0 },
 		// Float Vars
-		"zecl_fvar_jump_addr": { "val": 0x42BB38 },
-		"zecl_fvar_jump_base_count": { "val": 95 },
+		"zecl_fvar_jump_addr": { "val": 0x428840 },
+		"zecl_fvar_jump_base_count": { "val": 97 },
 		"zecl_fvar_jump_new_count": { "val": 1 },
 		// Float Ptrs
-		"zecl_fptr_jump_addr": { "val": 0x42BE14 },
+		"zecl_fptr_jump_addr": { "val": 0x428B24 },
 		"zecl_fptr_jump_base_count": { "val": 25 },
 		"zecl_fptr_jump_new_count": { "val": 0 },
-		"zecl_fptr_case_addr": { "val": 0x42BE78 },
+		"zecl_fptr_case_addr": { "val": 0x428B88 },
 		"zecl_fptr_case_base_count": { "val": 81 },
 		"zecl_fptr_case_new_count": { "val": 0 },
 		
 		"ecl_lins_break_addr": {
 			"type": "p",
-			"val": 0x483C0C
+			"val": 0x488DD5
 		},
-		//"ecl_lins_continue_addr": {
-			//"type": "u32",
-			//"val": 
-		//},
 		"ecl_lins_get_ivar_arg_addr": {
 			"type": "p",
-			"val": 0x483F30
+			"val": 0x489100
 		},
 		"ecl_lins_get_iptr_arg_addr": {
 			"type": "p",
@@ -57,23 +53,19 @@
 			"type": "p",
 			"val": 0x429C28
 		},
-		//"ecl_hins_continue_addr": {
-			//"type": "u32",
-			//"val": 
-		//},
 	},
 	"codecaves": {
 		"ZECL_low_ins_jump_table": {
 			"code": "\
-<codecave:ZECL14_debug_breakpoint> \
-<codecave:ZECL14_thcrap_expr> \
-<codecave:ZECL14_math_shl> \
-<codecave:ZECL14_math_shr> \
-<codecave:ZECL14_math_sar> \
-<codecave:ZECL14_math_rol> \
-<codecave:ZECL14_math_ror> \
-<codecave:ZECL14_math_udiv> \
-<codecave:ZECL14_math_umod> \
+<codecave:ZECL143_debug_breakpoint> \
+<codecave:ZECL143_thcrap_expr> \
+<codecave:ZECL143_math_shl> \
+<codecave:ZECL143_math_shr> \
+<codecave:ZECL143_math_sar> \
+<codecave:ZECL143_math_rol> \
+<codecave:ZECL143_math_ror> \
+<codecave:ZECL143_math_udiv> \
+<codecave:ZECL143_math_umod> \
 "
 		},
 		"ZECL_low_ins_case_table": {
@@ -91,33 +83,33 @@
 		},
 		"ZECL_high_ins_jump_table": {
 			"code": "\
-<codecave:ZECL14_enemy_life_set_current> \
+<codecave:ZECL143_enemy_life_set_current> \
 "
 		},
 		"ZECL_high_ins_case_table": {
 			"code": "\
-A9 \
+AC \
 "
 		},
 		"ZECL_int_var_jump_table":  {
 			"code": "\
-<codecave:ZECL14_self_life_max_ivar> \
+<codecave:ZECL143_self_life_max_ivar> \
 "
 		},
 		"ZECL_float_var_jump_table":  {
 			"code": "\
-<codecave:ZECL14_self_life_max_fvar> \
+<codecave:ZECL143_self_life_max_fvar> \
 "
 		},
 		
-		"ZECL14_debug_breakpoint": {
+		"ZECL143_debug_breakpoint": {
 			"access": "re",
 			"code": "\
 CC \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_thcrap_expr": {
+		"ZECL143_thcrap_expr": {
 			"access": "re",
 			"code": "\
 83EC 04 \
@@ -134,7 +126,7 @@ E8 [eval_expr] \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_shl": {
+		"ZECL143_math_shl": {
 			"access": "re",
 			"code": "\
 8B97 08100000 \
@@ -151,7 +143,7 @@ C6043A 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_shr": {
+		"ZECL143_math_shr": {
 			"access": "re",
 			"code": "\
 8B97 08100000 \
@@ -168,7 +160,7 @@ C6043A 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_sar": {
+		"ZECL143_math_sar": {
 			"access": "re",
 			"code": "\
 8B97 08100000 \
@@ -185,7 +177,7 @@ C6043A 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_rol": {
+		"ZECL143_math_rol": {
 			"access": "re",
 			"code": "\
 8B97 08100000 \
@@ -202,7 +194,7 @@ C6043A 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_ror": {
+		"ZECL143_math_ror": {
 			"access": "re",
 			"code": "\
 8B97 08100000 \
@@ -219,7 +211,7 @@ C6043A 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_udiv": {
+		"ZECL143_math_udiv": {
 			"access": "re",
 			"code": "\
 8BB7 08100000 \
@@ -237,7 +229,7 @@ C6043E 69 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL14_math_umod": {
+		"ZECL143_math_umod": {
 			"access": "re",
 			"code": "\
 8BB7 08100000 \
@@ -256,132 +248,105 @@ E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		
-		"ZECL14_enemy_life_set_current": {
+		"ZECL143_enemy_life_set_current": {
 			"access": "re",
 			"code": "\
-8B87 EC400000 \
+8B87 B8410000 \
 8B48 04 \
 6A 00 \
 E8 [<option:ecl_lins_get_ivar_arg_addr>] \
 8D0CC5 00000000 \
-8987 743F0000 \
+8987 18400000 \
 29C1 \
-898F 803F0000 \
+898F 24400000 \
 E9 [<option:ecl_hins_break_addr>] \
 "
 		},
 		
-		"ZECL14_self_life_max_ivar": {
+		"ZECL143_self_life_max_ivar": {
 			"access": "re",
 			"code": "\
-8B81 68510000 \
+8B81 0C520000 \
 C9 \
 C2 0400 \
 "
 		},
 		
-		"ZECL14_self_life_max_fvar": {
+		"ZECL143_self_life_max_fvar": {
 			"access": "re",
 			"code": "\
-DB81 68510000 \
+DB81 0C520000 \
 C9 \
 C2 0400 \
-"
-		},
-		
-		"ZECL14_sagume_func": {
-			"access": "re",
-			"code": "\
-89D0 \
-8B91 98020000 \
-85D2 \
-7E 0C \
-01D0 \
-C781 98020000 00000000 \
-C3 \
-"
-		},
-		"ZECL_ext_damage_func_table": {
-			"access": "r",
-			"code": "\
-00000000 \
-<0x42C9C0> \
-<codecave:ZECL14_sagume_func> \
 "
 		}
 	},
 	"binhacks": {
 		"ZECL_low_ins_jump_table_replace": {
-			"addr": 0x4823E9
+			"addr": 0x4875A9
 		},
 		"ZECL_low_ins_case_table_replace": {
-			"addr": 0x4823E2
+			"addr": 0x4875A2
 		},
 		"ZECL_low_ins_max_replace": {
 			"enable": "<option:zecl_lins_case_new_count>",
-			"addr": 0x4823D8,
+			"addr": 0x487598,
 			"code": "(u8:<option:zecl_lins_case_base_count> + <option:zecl_lins_case_new_count> - 1)",
 			"expect": "(u8:<option:zecl_lins_case_base_count> - 1)",
 		},
 		"ZECL_high_ins_jump_table_replace": {
-			"addr": 0x4252EA
+			"addr": 0x421EBA
 		},
 		"ZECL_high_ins_case_table_replace": {
-			"addr": 0x4252E3
+			"addr": 0x421EB3
 		},
 		"ZECL_high_ins_max_replace": {
 			"enable": "<option:zecl_hins_case_new_count>",
-			"addr": 0x4252D6,
+			"addr": 0x421EA6,
 			"code": "(<option:zecl_hins_case_base_count> + <option:zecl_hins_case_new_count> - 1)",
 			"expect": "(<option:zecl_hins_case_base_count> - 1)",
 		},
 		"ZECL_int_var_jump_table_replace": {
-			"addr": 0x42A93D,
+			"addr": 0x4274F0,
 		},
 		"ZECL_int_var_max_replace": {
 			"enable": "<option:zecl_ivar_jump_new_count>",
-			"addr": 0x42A933,
+			"addr": 0x4274E6,
 			"code": "(u8:<option:zecl_ivar_jump_base_count> + <option:zecl_ivar_jump_new_count> - 1)",
 			"expect": "(u8:<option:zecl_ivar_jump_base_count> - 1)",
 		},
 		"ZECL_int_ptr_jump_table_replace": {
-			"addr": 0x42B0CE
+			"addr": 0x427CEE
 		},
 		"ZECL_int_ptr_case_table_replace": {
-			"addr": 0x42B0C7
+			"addr": 0x427CE7
 		},
 		"ZECL_int_ptr_max_replace": {
 			"enable": "<option:zecl_iptr_case_new_count>",
-			"addr": 0x42B0BD,
+			"addr": 0x427CDD,
 			"code": "(u8:<option:zecl_iptr_case_base_count> + <option:zecl_iptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zecl_iptr_case_base_count> - 1)",
 		},
 		"ZECL_float_var_jump_table_replace": {
-			"addr": 0x42B24D
+			"addr": 0x427E70
 		},
 		"ZECL_float_var_max_replace": {
 			"enable": "<option:zecl_fvar_jump_new_count>",
-			"addr": 0x42B243,
+			"addr": 0x427E66,
 			"code": "(u8:<option:zecl_fvar_jump_base_count> + <option:zecl_fvar_jump_new_count> - 1)",
 			"expect": "(u8:<option:zecl_fvar_jump_base_count> - 1)",
 		},
 		"ZECL_float_ptr_jump_table_replace": {
-			"addr": 0x42BCDE
+			"addr": 0x4289EE
 		},
 		"ZECL_float_ptr_case_table_replace": {
-			"addr": 0x42BCD7
+			"addr": 0x4289E7
 		},
 		"ZECL_float_ptr_max_replace": {
 			"enable": "<option:zecl_fptr_case_new_count>",
-			"addr": 0x42BCCD,
+			"addr": 0x4289DD,
 			"code": "(u8:<option:zecl_fptr_case_base_count> + <option:zecl_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zecl_fptr_case_base_count> - 1)",
-		},
-		
-		"ZECL14_ext_damage_func_table_replace": {
-			"addr": 0x42763B,
-			"code": "<codecave:ZECL_ext_damage_func_table>",
-			"expect": "<0x4D56F0>"
 		}
 	}
 }

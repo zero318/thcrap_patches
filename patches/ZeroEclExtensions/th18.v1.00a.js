@@ -132,6 +132,23 @@ CC \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
+		"ZECL18_thcrap_expr": {
+			"access": "re",
+			"code": "\
+83EC 04 \
+89F9 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8B4F 04 \
+83C1 14 \
+31D2 \
+6A 00 \
+6A 00 \
+6A 00 \
+50 \
+E8 [eval_expr] \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
 		"ZECL18_math_shl": {
 			"access": "re",
 			"code": "\
