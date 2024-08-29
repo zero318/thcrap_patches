@@ -17,7 +17,7 @@
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": 0x42AF34 },
 		"zecl_ivar_jump_base_count": { "val": 95 },
-		"zecl_ivar_jump_new_count": { "val": 0 },
+		"zecl_ivar_jump_new_count": { "val": 1 },
 		// Int Ptrs
 		"zecl_iptr_jump_addr": { "val": 0x42B1A8 },
 		"zecl_iptr_jump_base_count": { "val": 16 },
@@ -97,6 +97,11 @@
 		"ZECL_high_ins_case_table": {
 			"code": "\
 A9 \
+"
+		},
+		"ZECL_int_var_jump_table":  {
+			"code": "\
+<codecave:ZECL14_self_life_max_ivar> \
 "
 		},
 		
@@ -258,6 +263,15 @@ E8 [<option:ecl_lins_get_ivar_arg_addr>] \
 29C1 \
 898F 803F0000 \
 E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		
+		"ZECL14_self_life_max_ivar": {
+			"access": "re",
+			"code": "\
+8B81 68510000 \
+C9 \
+C2 0400 \
 "
 		},
 		
