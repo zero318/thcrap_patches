@@ -51,7 +51,7 @@
 		},
 		"ecl_hins_break_addr": {
 			"type": "p",
-			"val": 0x429C28
+			"val": 0x4267F5
 		},
 	},
 	"codecaves": {
@@ -251,8 +251,7 @@ E9 [<option:ecl_lins_break_addr>] \
 		"ZECL143_enemy_life_set_current": {
 			"access": "re",
 			"code": "\
-8B87 B8410000 \
-8B48 04 \
+8B4A 04 \
 6A 00 \
 E8 [<option:ecl_lins_get_ivar_arg_addr>] \
 8D0CC5 00000000 \

@@ -463,6 +463,39 @@ C2 0400 \
 			"expect": "(u8:<option:zecl_fptr_case_base_count> - 1)",
 		},
 		
+		"ZECL18_ecl_context_constructor_ext": {
+			"enable": false,
+			"addr": 0x42CD10,
+			"code": "\
+31C9 \
+898E 20100000 \
+898E 4C100000 \
+898E 7C100000 \
+898E AC100000 \
+898E DC100000 \
+898E 0C110000 \
+898E 3C110000 \
+898E 6C110000 \
+898E 9C110000 \
+898E 04120000 \
+5E \
+C3 \
+<int3:18> \
+",
+			"expect": "\
+C786 4C100000 00000000 \
+C786 7C100000 00000000 \
+C786 AC100000 00000000 \
+C786 DC100000 00000000 \
+C786 0C110000 00000000 \
+C786 3C110000 00000000 \
+C786 6C110000 00000000 \
+C786 9C110000 00000000 \
+5E \
+C3 \
+"
+		},
+		
 		"ZECL18_enhance_disable_crit_sections": {
 			"enable": "<option:zecl_experimental_enhancements>",
 			"addr": 0x471301,
