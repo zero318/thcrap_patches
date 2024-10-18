@@ -2,6 +2,7 @@
 	"contact": "zero318#4476",
 	"id": "zero318",
 	"patches": {
+		"AoCFNetplayZ": "AoCFNetplayZ(155) Patch version of the AoCF netplay plugin",
 		"FourOfAKind": "FourOfAKind(06) Challenge all four difficulties at once",
 		"GrazeDisplay": "GrazeDisplay(08) Applies tints to things that can be grazed",
 		"InfinitePatchyBooks": "InfinitePatchyBooks(06) What if the books never ended?",
