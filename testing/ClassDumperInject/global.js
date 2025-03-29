@@ -1,5 +1,5 @@
 {
-	"options": {
+    "options": {
         "use_rvas": {
             "type": "b",
             "val": true
@@ -8,10 +8,10 @@
             "type": "u8",
             "val": "<option:use_rvas> ? 0x72 : 0"
         },
-		"rtti_dll_path": {
-			"type": "s",
-			"val": "F:\\My Programs Expansion\\__code_tools\\ClassDumper2\\DX11\\ClassDumper2.dll"
-		},
+        "rtti_dll_path": {
+            "type": "s",
+            "val": "F:\\My Programs Expansion\\__code_tools\\ClassDumper2\\DX11\\ClassDumper2.dll"
+        },
         "rx_prefixA": {
             "type": "s",
             "val": "Rx"
@@ -24,19 +24,19 @@
             "type": "s",
             "val": "yeet"
         }
-	},
-	"codecaves": {
-		"inject_rtti_crap_patch_post_init": {
-			"access": "re",
-			"export": true,
-			"code": "\
+    },
+    "codecaves": {
+        "inject_rtti_crap_patch_post_init": {
+            "access": "re",
+            "export": true,
+            "code": "\
 68 <option:rtti_dll_path> \
 E8 [inject_LoadLibraryU] \
 <nop:5> \
 C3 \
 "
-		}
-	},
+        }
+    },
     "breakpoints": {
         "runtime_apply_stage_by_name": {
             "addr": "<codecave:inject_rtti_crap_patch_post_init>+0xA",

@@ -14,28 +14,39 @@
 		"zecl_hins_case_addr": { "val": 0x4366F4 },
 		"zecl_hins_case_base_count": { "val": 702 },
 		"zecl_hins_case_new_count": { "val": 1 },
-		// Int Vars
+		// ECL Int Vars
 		"zecl_ivar_jump_addr": { "val": 0x437978 },
 		"zecl_ivar_jump_base_count": { "val": 103 },
 		"zecl_ivar_jump_new_count": { "val": 4 },
-		// Int Ptrs
+		// ECL Int Ptrs
 		"zecl_iptr_jump_addr": { "val": 0x437C10 },
 		"zecl_iptr_jump_base_count": { "val": 16 },
 		"zecl_iptr_jump_new_count": { "val": 0 },
 		"zecl_iptr_case_addr": { "val": 0x437C50 },
 		"zecl_iptr_case_base_count": { "val": 63 },
 		"zecl_iptr_case_new_count": { "val": 0 },
-		// Float Vars
+		// ECL Float Vars
 		"zecl_fvar_jump_addr": { "val": 0x438640 },
 		"zecl_fvar_jump_base_count": { "val": 103 },
 		"zecl_fvar_jump_new_count": { "val": 4 },
-		// Float Ptrs
+		// ECL Float Ptrs
 		"zecl_fptr_jump_addr": { "val": 0x438934 },
 		"zecl_fptr_jump_base_count": { "val": 25 },
 		"zecl_fptr_jump_new_count": { "val": 0 },
 		"zecl_fptr_case_addr": { "val": 0x438998 },
 		"zecl_fptr_case_base_count": { "val": 81 },
 		"zecl_fptr_case_new_count": { "val": 0 },
+		// ANM Int Vars
+		"zanm_ivar_jump_addr": { "val": 0x4782D0 },
+		"zanm_ivar_jump_base_count": { "val": 18 },
+		"zanm_ivar_jump_new_count": { "val": 1 },
+		"zanm_ivar_case_addr": { "val": 0x478318 },
+		"zanm_ivar_case_base_count": { "val": 36 },
+		"zanm_ivar_case_new_count": { "val": 1 },
+		// ANM Float Vars
+		"zanm_fvar_jump_addr": { "val": 0x478148 },
+		"zanm_fvar_jump_base_count": { "val": 36 },
+		"zanm_fvar_jump_new_count": { "val": 1 },
 		
 		"ecl_lins_break_addr": {
 			"type": "p",
@@ -122,6 +133,21 @@ AF \
 <codecave:ZECL18_active_cards_float_var> \
 <codecave:ZECL18_equipment_cards_float_var> \
 <codecave:ZECL18_passive_cards_float_var> \
+"
+		},
+		"ZANM_int_var_jump_table": {
+			"code": "\
+<codecave:ZANM18_power_int_var> \
+"
+		},
+		"ZANM_int_var_case_table": {
+			"code": "\
+12 \
+"
+		},
+		"ZANM_float_var_jump_table": {
+			"code": "\
+<codecave:ZANM18_power_float_var> \
 "
 		},
 		
@@ -393,6 +419,23 @@ DB40 34 \
 C9 \
 C2 0400 \
 "
+		},
+		"ZANM18_power_int_var": {
+			"access": "re",
+			"code": "\
+A1 38CD4C00 \
+5D \
+C2 0400 \
+"
+		},
+		"ZANM18_power_float_var": {
+			"access": "re",
+			"code": "\
+0F57C0 \
+F30F2A05 38CD4C00 \
+C9 \
+C3 \
+"
 		}
 	},
 	"binhacks": {
@@ -461,6 +504,27 @@ C2 0400 \
 			"addr": 0x4387F0,
 			"code": "(u8:<option:zecl_fptr_case_base_count> + <option:zecl_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zecl_fptr_case_base_count> - 1)",
+		},
+		"ZANM_int_var_jump_table_replace": {
+			"addr": 0x4781FF
+		},
+		"ZANM_int_var_case_table_replace": {
+			"addr": 0x4781F8
+		},
+		"ZANM_int_var_max_replace": {
+			"enable": "<option:zanm_ivar_case_new_count>",
+			"addr": 0x4781EE,
+			"code": "(u8:<option:zanm_ivar_case_base_count> + <option:zanm_ivar_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_ivar_case_base_count> - 1)",
+		},
+		"ZANM_float_var_jump_table_replace": {
+			"addr": 0x477EB9
+		},
+		"ZANM_float_var_max_replace": {
+			"enable": "<option:zanm_fvar_jump_new_count>",
+			"addr": 0x477EAF,
+			"code": "(u8:<option:zanm_fvar_jump_base_count> + <option:zanm_fvar_jump_new_count> - 1)",
+			"expect": "(u8:<option:zanm_fvar_jump_base_count> - 1)",
 		},
 		
 		"ZECL18_ecl_context_constructor_ext": {

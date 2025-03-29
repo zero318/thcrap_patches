@@ -835,13 +835,13 @@ B9 FF000000 \
 0F4CC8 \
 8B55 D8 \
 888A BB010000 \
-E9 [0x4266C8] \
+E9 [0x4266D5] \
 <nop:12> \
 ",
 		},
 		"ZECL7_FixLaserBlend_B": {
 			"addr": 0x4268B4,
-			"code": "DA81 C8040000",
+			"code": "DAB1 CC040000",
 		},
 		"ZECL7_FixLaserBlend_C": {
 			"addr": 0x4268BF,
@@ -853,8 +853,38 @@ F7DA \
 0F4CCA \
 8B45 D8 \
 8888 BB010000 \
-EB 6A \
+EB 77 \
 <nop:7> \
+"
+		},
+		"ZECL7_LaserStretchFlag_A": {
+			"addr": 0x4266C5,
+			"code": "\
+31C0 \
+F682 E4040000 08 \
+0F95C0 \
+D95C85 E4 \
+8B4D D8 \
+8B91 E0040000 \
+3B91 C4040000 \
+7C 46 \
+"
+		},
+		"ZECL7_LaserStretchFlag_B": {
+			"addr": 0x4268ED,
+			"code": "7E 64"
+		},
+		"ZECL7_LaserStretchFlag_C": {
+			"addr": 0x426943,
+			"code": "\
+31C0 \
+F682 E4040000 08 \
+0F95C0 \
+D95C85 E4 \
+8B4D D8 \
+8B91 E0040000 \
+3B91 D0040000 \
+7D 46 \
 "
 		},
 		

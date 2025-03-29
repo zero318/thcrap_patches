@@ -816,7 +816,7 @@ B9 FF000000 \
 0F4CC8 \
 8B55 D8 \
 884A 7F \
-E9 [0x4160F1] \
+E9 [0x4160FE] \
 <nop:12> \
 ",
 		},
@@ -834,8 +834,38 @@ F7DA \
 0F4CCA \
 8B45 D8 \
 8848 7F \
-E9 [0x41638F] \
+E9 [0x41639C] \
 <nop:4> \
+"
+		},
+		"ZECL6_LaserStretchFlag_A": {
+			"addr": 0x4160EE,
+			"code": "\
+31C0 \
+F681 68020000 08 \
+0F95C0 \
+D95C85 E4 \
+8B45 D8 \
+8B88 64020000 \
+3B88 48020000 \
+7C 46 \
+"
+		},
+		"ZECL6_LaserStretchFlag_B": {
+			"addr": 0x41631B,
+			"code": "7E 7F"
+		},
+		"ZECL6_LaserStretchFlag_C": {
+			"addr": 0x41638C,
+			"code": "\
+31C0 \
+F682 68020000 08 \
+0F95C0 \
+D95C85 E4 \
+8B4D D8 \
+8B91 64020000 \
+3B91 54020000 \
+7D 46 \
 "
 		},
 		
