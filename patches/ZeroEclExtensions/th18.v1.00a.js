@@ -43,10 +43,24 @@
 		"zanm_ivar_case_addr": { "val": 0x478318 },
 		"zanm_ivar_case_base_count": { "val": 36 },
 		"zanm_ivar_case_new_count": { "val": 1 },
+		// ANM Int Ptrs
+		"zanm_iptr_jump_addr": { "val": 0x4784F4 },
+		"zanm_iptr_jump_base_count": { "val": 8 },
+		"zanm_iptr_jump_new_count": { "val": 0 },
+		"zanm_iptr_case_addr": { "val": 0x478514 },
+		"zanm_iptr_case_base_count": { "val": 30 },
+		"zanm_iptr_case_new_count": { "val": 0 },
 		// ANM Float Vars
 		"zanm_fvar_jump_addr": { "val": 0x478148 },
 		"zanm_fvar_jump_base_count": { "val": 36 },
 		"zanm_fvar_jump_new_count": { "val": 1 },
+		// ANM Float Ptrs
+		"zanm_fptr_jump_addr": { "val": 0x47841C },
+		"zanm_fptr_jump_base_count": { "val": 16 },
+		"zanm_fptr_jump_new_count": { "val": 0 },
+		"zanm_fptr_case_addr": { "val": 0x47845C },
+		"zanm_fptr_case_base_count": { "val": 32 },
+		"zanm_fptr_case_new_count": { "val": 0 },
 		
 		"ecl_lins_break_addr": {
 			"type": "p",
@@ -149,6 +163,11 @@ AF \
 			"code": "\
 <codecave:ZANM18_power_float_var> \
 "
+		},
+		
+		"ZANM18_global_anm_vars": {
+			"access": "rw",
+			"size": 32
 		},
 		
 		"ZECL18_debug_breakpoint": {
@@ -436,6 +455,10 @@ F30F2A05 38CD4C00 \
 C9 \
 C3 \
 "
+		},
+		"ZANM18_gi_int_var": {
+			"access": "re",
+			"code": ""
 		}
 	},
 	"binhacks": {
@@ -517,6 +540,18 @@ C3 \
 			"code": "(u8:<option:zanm_ivar_case_base_count> + <option:zanm_ivar_case_new_count> - 1)",
 			"expect": "(u8:<option:zanm_ivar_case_base_count> - 1)",
 		},
+		"ZANM_int_ptr_jump_table_replace": {
+			"addr": 0x4784A2
+		},
+		"ZANM_int_ptr_case_table_replace": {
+			"addr": 0x47849B
+		},
+		"ZANM_int_ptr_max_replace": {
+			"enable": "<option:zanm_iptr_case_new_count>",
+			"addr": 0x478495,
+			"code": "(u8:<option:zanm_iptr_case_base_count> + <option:zanm_iptr_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_iptr_case_base_count> - 1)",
+		},
 		"ZANM_float_var_jump_table_replace": {
 			"addr": 0x477EB9
 		},
@@ -525,6 +560,18 @@ C3 \
 			"addr": 0x477EAF,
 			"code": "(u8:<option:zanm_fvar_jump_base_count> + <option:zanm_fvar_jump_new_count> - 1)",
 			"expect": "(u8:<option:zanm_fvar_jump_base_count> - 1)",
+		},
+		"ZANM_float_ptr_jump_table_replace": {
+			"addr": 0x47837B
+		},
+		"ZANM_float_ptr_case_table_replace": {
+			"addr": 0x478374
+		},
+		"ZANM_float_ptr_max_replace": {
+			"enable": "<option:zanm_fptr_case_new_count>",
+			"addr": 0x47836A,
+			"code": "(u8:<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_fptr_case_base_count> - 1)",
 		},
 		
 		"ZECL18_ecl_context_constructor_ext": {
