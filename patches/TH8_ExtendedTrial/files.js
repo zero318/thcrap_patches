@@ -3,7 +3,7 @@
 	"README.txt": 315971634,
 	"WIP.psd": 2812078690,
 	"_patch.js": null,
-	"patch.js": 442671315,
+	"patch.js": 636337239,
 	"th08.txt": 0,
 	"th08.v1.00d.js": 794951133,
 	"th08/_ecldata1.ecl": 3552270450,
