@@ -172,13 +172,13 @@
 		},
 		"ZECL_float_var_jump_table": {
 			"code": "\
-<codecave:ZECL20_wide_shot_stone_color_float_var> \
-<codecave:ZECL20_narrow_shot_stone_color_float_var> \
-<codecave:ZECL20_assist_stone_color_float_var> \
-<codecave:ZECL20_story_stone_float_var> \
-<codecave:ZECL20_wide_shot_stone_float_var> \
-<codecave:ZECL20_narrow_shot_stone_float_var> \
-<codecave:ZECL20_assist_stone_float_var> \
+<codecave:ZECL20_stone_color_float_var> \
+<codecave:ZECL20_stone_color_float_var> \
+<codecave:ZECL20_stone_color_float_var> \
+<codecave:ZECL20_stone_type_float_var> \
+<codecave:ZECL20_stone_type_float_var> \
+<codecave:ZECL20_stone_type_float_var> \
+<codecave:ZECL20_stone_type_float_var> \
 "
 		},
 		"ZANM_int_var_jump_table": {
@@ -510,8 +510,7 @@ E9 [<option:ecl_lins_break_addr>] \
 		"ZECL20_stone_color_int_var": {
 			"access": "re",
 			"code": "\
-8B4D 08 \
-8B048D <Rx1C4044> \
+8B0485 <Rx1C4044> \
 99 \
 29D0 \
 D1F8 \
@@ -521,16 +520,14 @@ E9 [<option:ecl_ivar_break_addr>] \
 		"ZECL20_stone_type_int_var": {
 			"access": "re",
 			"code": "\
-8B4D 08 \
-8B048D <Rx1C4034> \
+8B0485 <Rx1C4034> \
 E9 [<option:ecl_ivar_break_addr>] \
 "
 		},
 		"ZECL20_stone_color_float_var": {
 			"access": "re",
 			"code": "\
-8B4D 08 \
-8B048D <Rx1C4044> \
+8B0485 <Rx1C4044> \
 99 \
 29D0 \
 D1F8 \
@@ -542,8 +539,7 @@ E9 [<option:ecl_fvar_break_addr>] \
 		"ZECL20_stone_type_float_var": {
 			"access": "re",
 			"code": "\
-8B4D 08 \
-8B048D <Rx1C4034> \
+8B0485 <Rx1C4034> \
 E9 [<option:ecl_fvar_break_addr>] \
 "
 		},
@@ -611,10 +607,10 @@ E9 [<option:anm_fvar_break_addr>] \
 			"addr": "Rx13B68A"
 		},
 		"ZECL_low_ins_max_replace": {
-			"enable": "<option:zecl_lins_case_new_count>",
+			"enable": "<option:zecl_lins_jump_new_count>",
 			"addr": "Rx13B67A",
-			"code": "(u8:<option:zecl_lins_case_base_count> + <option:zecl_lins_case_new_count> - 1)",
-			"expect": "(u8:<option:zecl_lins_case_base_count> - 1)"
+			"code": "(u8:<option:zecl_lins_jump_base_count> + <option:zecl_lins_jump_new_count> - 1)",
+			"expect": "(u8:<option:zecl_lins_jump_base_count> - 1)"
 		},
 		"ZECL_high_ins_jump_table_replace": {
 			"addr": "Rx8C0B0"
@@ -633,9 +629,21 @@ E9 [<option:anm_fvar_break_addr>] \
 		},
 		"ZECL_int_var_max_replace": {
 			"enable": "<option:zecl_ivar_jump_new_count>",
-			"addr": "Rx9ABE1",
-			"code": "(u8:<option:zecl_ivar_jump_base_count> + <option:zecl_ivar_jump_new_count> - 1)",
-			"expect": "(u8:<option:zecl_ivar_jump_base_count> - 1)"
+			"addr": "Rx9ABD2",
+			"code": "\
+8145 F8 10270000 \
+8D90 10270000 \
+81FA (<option:zecl_ivar_jump_base_count> + <option:zecl_ivar_jump_new_count> - 1) \
+0F87 [Rx9BBF5] \
+",
+			"expect": "\
+8B4D F8 \
+81C1 10270000 \
+894D F8 \
+837D F8 (u8:<option:zecl_ivar_jump_base_count> - 1) \
+0F87 [Rx9BBF5] \
+8B55 F8 \
+"
 		},
 		"ZECL_int_ptr_jump_table_replace": {
 			"addr": "Rx98632"
@@ -654,9 +662,21 @@ E9 [<option:anm_fvar_break_addr>] \
 		},
 		"ZECL_float_var_max_replace": {
 			"enable": "<option:zecl_fvar_jump_new_count>",
-			"addr": "Rx995F1",
-			"code": "(u8:<option:zecl_fvar_jump_base_count> + <option:zecl_fvar_jump_new_count> - 1)",
-			"expect": "(u8:<option:zecl_fvar_jump_base_count> - 1)"
+			"addr": "Rx995E2",
+			"code": "\
+8145 F8 10270000 \
+8D90 10270000 \
+81FA (<option:zecl_fvar_jump_base_count> + <option:zecl_fvar_jump_new_count> - 1) \
+0F87 [Rx9A9B6] \
+",
+			"expect": "\
+8B4D F8 \
+81C1 10270000 \
+894D F8 \
+837D F8 (u8:<option:zecl_fvar_jump_base_count> - 1) \
+0F87 [Rx9A9B6] \
+8B55 F8 \
+"
 		},
 		"ZECL_float_ptr_jump_table_replace": {
 			"addr": "Rx98242"
