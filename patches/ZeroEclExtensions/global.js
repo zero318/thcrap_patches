@@ -74,7 +74,6 @@
 		"zanm_fptr_case_base_count": { "type": "u32", "val": 0 },
 		"zanm_fptr_case_new_count": { "type": "u32", "val": 0 },
 		
-		
 		"zstd_ins_jump_addr": { "type": "u32", "val": 0 },
 		"zstd_ins_jump_base_count": { "type": "u32", "val": 0 },
 		"zstd_ins_jump_new_count": { "type": "u32", "val": 0 },

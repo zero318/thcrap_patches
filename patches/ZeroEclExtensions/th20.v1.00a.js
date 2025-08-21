@@ -11,35 +11,67 @@
 		"zecl_hins_case_addr": { "val": "Rx966B8" },
 		"zecl_hins_case_base_count": { "val": 704 },
 		"zecl_hins_case_new_count": { "val": 0 },
-		// Int Vars
+		// ECL Int Vars
 		"zecl_ivar_jump_addr": { "val": "Rx9BC00" },
 		"zecl_ivar_jump_base_count": { "val": 127 },
-		"zecl_ivar_jump_new_count": { "val": 0 },
-		// Int Ptrs
+		"zecl_ivar_jump_new_count": { "val": 7 },
+		// ECL Int Ptrs
 		"zecl_iptr_jump_addr": { "val": "Rx98898" },
 		"zecl_iptr_jump_base_count": { "val": 20 },
 		"zecl_iptr_jump_new_count": { "val": 0 },
 		"zecl_iptr_case_addr": { "val": "Rx988E8" },
 		"zecl_iptr_case_base_count": { "val": 94 },
 		"zecl_iptr_case_new_count": { "val": 0 },
-		// Float Vars
+		// ECL Float Vars
 		"zecl_fvar_jump_addr": { "val": "Rx9A9C0" },
 		"zecl_fvar_jump_base_count": { "val": 127 },
-		"zecl_fvar_jump_new_count": { "val": 0 },
-		// Float Ptrs
+		"zecl_fvar_jump_new_count": { "val": 7 },
+		// ECL Float Ptrs
 		"zecl_fptr_jump_addr": { "val": "Rx98544" },
 		"zecl_fptr_jump_base_count": { "val": 25 },
 		"zecl_fptr_jump_new_count": { "val": 0 },
 		"zecl_fptr_case_addr": { "val": "Rx985A8" },
 		"zecl_fptr_case_base_count": { "val": 81 },
 		"zecl_fptr_case_new_count": { "val": 0 },
+		// Low ANM
+		"zanm_lins_jump_addr": { "val": "Rx35000" },
+		"zanm_lins_jump_base_count": { "val": 161 },
+		"zanm_lins_jump_new_count": { "val": 0 },
+		"zanm_lins_case_addr": { "val": "Rx352284" },
+		"zanm_lins_case_base_count": { "val": 636 },
+		"zanm_lins_case_new_count": { "val": 0 },
+		// ANM Int Vars
+		"zanm_ivar_jump_addr": { "val": "Rx37E30" },
+		"zanm_ivar_jump_base_count": { "val": 18 },
+		"zanm_ivar_jump_new_count": { "val": 3 },
+		"zanm_ivar_case_addr": { "val": "Rx37E78" },
+		"zanm_ivar_case_base_count": { "val": 36 },
+		"zanm_ivar_case_new_count": { "val": 9 },
+		// ANM Int Ptrs
+		"zanm_iptr_jump_addr": { "val": "Rx372C8" },
+		"zanm_iptr_jump_base_count": { "val": 8 },
+		"zanm_iptr_jump_new_count": { "val": 0 },
+		"zanm_iptr_case_addr": { "val": "Rx372E8" },
+		"zanm_iptr_case_base_count": { "val": 30 },
+		"zanm_iptr_case_new_count": { "val": 0 },
+		// ANM Float Vars
+		"zanm_fvar_jump_addr": { "val": "Rx381F4" },
+		"zanm_fvar_jump_base_count": { "val": 36 },
+		"zanm_fvar_jump_new_count": { "val": 9 },
+		// ANM Float Ptrs
+		"zanm_fptr_jump_addr": { "val": "Rx37404" },
+		"zanm_fptr_jump_base_count": { "val": 16 },
+		"zanm_fptr_jump_new_count": { "val": 0 },
+		"zanm_fptr_case_addr": { "val": "Rx37444" },
+		"zanm_fptr_case_base_count": { "val": 32 },
+		"zanm_fptr_case_new_count": { "val": 0 },
 		
 		"ecl_lins_break_addr": {
 			"type": "p",
 			"val": "Rx13DF44"
 		},
 		//"ecl_lins_continue_addr": {
-			//"type": "u32",
+			//"type": "p",
 			//"val": 
 		//},
 		"ecl_lins_get_int_arg_addr": {
@@ -63,7 +95,7 @@
 			"val": "Rx963DF"
 		},
 		//"ecl_hins_continue_addr": {
-			//"type": "u32",
+			//"type": "p",
 			//"val": 
 		//},
 		"ecl_stack_pop": {
@@ -73,6 +105,42 @@
 		"ecl_stack_push": {
 			"type": "p",
 			"val": "Rx13F260"
+		},
+		"ecl_ivar_break_addr": {
+			"type": "p",
+			"val": "Rx9BBF7"
+		},
+		"ecl_iptr_break_addr": {
+			"type": "p",
+			"val": "Rx98891"
+		},
+		"ecl_fvar_break_addr": {
+			"type": "p",
+			"val": "Rx9A9B8"
+		},
+		"ecl_fptr_break_addr": {
+			"type": "p",
+			"val": "Rx9853C"
+		},
+		"anm_lins_break_addr": {
+			"type": "p",
+			"val": "Rx34DAD"
+		},
+		"anm_ivar_break_addr": {
+			"type": "p",
+			"val": "Rx37E27"
+		},
+		"anm_iptr_break_addr": {
+			"type": "p",
+			"val": "Rx372BF"
+		},
+		"anm_fvar_break_addr": {
+			"type": "p",
+			"val": "Rx381ED"
+		},
+		"anm_fptr_break_addr": {
+			"type": "p",
+			"val": "Rx373FE"
 		}
 	},
 	"codecaves": {
@@ -89,6 +157,61 @@
 <codecave:ZECL20_math_umod> \
 <codecave:ZECL20_lookup_set_int> \
 <codecave:ZECL20_lookup_set_float> \
+"
+		},
+		"ZECL_int_var_jump_table": {
+			"code": "\
+<codecave:ZECL20_stone_color_int_var> \
+<codecave:ZECL20_stone_color_int_var> \
+<codecave:ZECL20_stone_color_int_var> \
+<codecave:ZECL20_stone_type_int_var> \
+<codecave:ZECL20_stone_type_int_var> \
+<codecave:ZECL20_stone_type_int_var> \
+<codecave:ZECL20_stone_type_int_var> \
+"
+		},
+		"ZECL_float_var_jump_table": {
+			"code": "\
+<codecave:ZECL20_wide_shot_stone_color_float_var> \
+<codecave:ZECL20_narrow_shot_stone_color_float_var> \
+<codecave:ZECL20_assist_stone_color_float_var> \
+<codecave:ZECL20_story_stone_float_var> \
+<codecave:ZECL20_wide_shot_stone_float_var> \
+<codecave:ZECL20_narrow_shot_stone_float_var> \
+<codecave:ZECL20_assist_stone_float_var> \
+"
+		},
+		"ZANM_int_var_jump_table": {
+			"code": "\
+<codecave:ZANM20_power_int_var> \
+<codecave:ZANM20_stone_color_int_var> \
+<codecave:ZANM20_stone_type_int_var> \
+"
+		},
+		"ZANM_int_var_case_table": {
+			"code": "\
+12 \
+13 \
+13 \
+13 \
+13 \
+14 \
+14 \
+14 \
+14 \
+"
+		},
+		"ZANM_float_var_jump_table": {
+			"code": "\
+<codecave:ZANM20_power_float_var> \
+<codecave:ZANM20_stone_color_float_var> \
+<codecave:ZANM20_stone_color_float_var> \
+<codecave:ZANM20_stone_color_float_var> \
+<codecave:ZANM20_stone_color_float_var> \
+<codecave:ZANM20_stone_type_float_var> \
+<codecave:ZANM20_stone_type_float_var> \
+<codecave:ZANM20_stone_type_float_var> \
+<codecave:ZANM20_stone_type_float_var> \
 "
 		},
 		"ZECL20_debug_breakpoint": {
@@ -381,6 +504,106 @@ D91F \
 5E \
 E9 [<option:ecl_lins_break_addr>] \
 "
+		},
+		
+		
+		"ZECL20_stone_color_int_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1C4044> \
+99 \
+29D0 \
+D1F8 \
+E9 [<option:ecl_ivar_break_addr>] \
+"
+		},
+		"ZECL20_stone_type_int_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1C4034> \
+E9 [<option:ecl_ivar_break_addr>] \
+"
+		},
+		"ZECL20_stone_color_float_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1C4044> \
+99 \
+29D0 \
+D1F8 \
+8945 F4 \
+DB45 F4 \
+E9 [<option:ecl_fvar_break_addr>] \
+"
+		},
+		"ZECL20_stone_type_float_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1C4034> \
+E9 [<option:ecl_fvar_break_addr>] \
+"
+		},
+		"ZANM20_power_int_var": {
+			"access": "re",
+			"code": "\
+B9 <Rx1BA568> \
+E8 [Rx993B0] \
+E9 [<option:anm_ivar_break_addr>] \
+"
+		},
+		"ZANM20_power_float_var": {
+			"access": "re",
+			"code": "\
+B9 <Rx1BA568> \
+E8 [Rx993B0] \
+8945 F4 \
+DB45 F4 \
+E9 [<option:anm_fvar_break_addr>] \
+"
+		},
+		"ZANM20_stone_color_int_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1B0928> \
+99 \
+29D0 \
+D1F8 \
+E9 [<option:anm_ivar_break_addr>] \
+"
+		},
+		"ZANM20_stone_type_int_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1B0918> \
+E9 [<option:anm_ivar_break_addr>] \
+"
+		},
+		"ZANM20_stone_color_float_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1B0928> \
+99 \
+29D0 \
+D1F8 \
+8945 F4 \
+DB45 F4 \
+E9 [<option:anm_fvar_break_addr>] \
+"
+		},
+		"ZANM20_stone_type_float_var": {
+			"access": "re",
+			"code": "\
+8B4D 08 \
+8B048D <Rx1B0918> \
+E9 [<option:anm_fvar_break_addr>] \
+"
 		}
 	},
 	"binhacks": {
@@ -446,6 +669,64 @@ E9 [<option:ecl_lins_break_addr>] \
 			"addr": "Rx9822E",
 			"code": "(u8:<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zanm_fptr_case_base_count> - 1)"
+		},
+
+		"ZANM_low_ins_jump_table_replace": {
+			"addr": "Rx2B8CF"
+		},
+		"ZANM_low_ins_case_table_replace": {
+			"addr": "Rx2B8C8"
+		},
+		"ZANM_low_ins_max_replace": {
+			"enable": "<option:zanm_lins_case_new_count>",
+			"addr": "Rx2B8B9",
+			"code": "(<option:zanm_lins_case_base_count> + <option:zanm_lins_case_new_count> - 1)",
+			"expect": "(<option:zanm_lins_case_base_count> - 1)"
+		},
+		"ZANM_int_var_jump_table_replace": {
+			"addr": "Rx37D2E"
+		},
+		"ZANM_int_var_case_table_replace": {
+			"addr": "Rx37D27"
+		},
+		"ZANM_int_var_max_replace": {
+			"enable": "<option:zanm_ivar_case_new_count>",
+			"addr": "Rx37D1E",
+			"code": "(u8:<option:zanm_ivar_case_base_count> + <option:zanm_ivar_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_ivar_case_base_count> - 1)",
+		},
+		"ZANM_int_ptr_jump_table_replace": {
+			"addr": "Rx37270"
+		},
+		"ZANM_int_ptr_case_table_replace": {
+			"addr": "Rx37269"
+		},
+		"ZANM_int_ptr_max_replace": {
+			"enable": "<option:zanm_iptr_case_new_count>",
+			"addr": "Rx37260",
+			"code": "(u8:<option:zanm_iptr_case_base_count> + <option:zanm_iptr_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_iptr_case_base_count> - 1)",
+		},
+		"ZANM_float_var_jump_table_replace": {
+			"addr": "Rx37ED9"
+		},
+		"ZANM_float_var_max_replace": {
+			"enable": "<option:zanm_fvar_jump_new_count>",
+			"addr": "Rx37ED0",
+			"code": "(u8:<option:zanm_fvar_jump_base_count> + <option:zanm_fvar_jump_new_count> - 1)",
+			"expect": "(u8:<option:zanm_fvar_jump_base_count> - 1)",
+		},
+		"ZANM_float_ptr_jump_table_replace": {
+			"addr": "Rx37365"
+		},
+		"ZANM_float_ptr_case_table_replace": {
+			"addr": "Rx3735E"
+		},
+		"ZANM_float_ptr_max_replace": {
+			"enable": "<option:zanm_fptr_case_new_count>",
+			"addr": "Rx37355",
+			"code": "(u8:<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count> - 1)",
+			"expect": "(u8:<option:zanm_fptr_case_base_count> - 1)",
 		}
 	}
 }
