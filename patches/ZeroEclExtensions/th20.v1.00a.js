@@ -546,7 +546,7 @@ E9 [<option:ecl_fvar_break_addr>] \
 		"ZANM20_power_int_var": {
 			"access": "re",
 			"code": "\
-B9 <Rx1BA568> \
+B9 <Rx1BA5F0> \
 E8 [Rx993B0] \
 E9 [<option:anm_ivar_break_addr>] \
 "
@@ -554,7 +554,7 @@ E9 [<option:anm_ivar_break_addr>] \
 		"ZANM20_power_float_var": {
 			"access": "re",
 			"code": "\
-B9 <Rx1BA568> \
+B9 <Rx1BA5F0> \
 E8 [Rx993B0] \
 8945 F4 \
 DB45 F4 \
