@@ -3,14 +3,14 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": "Rx13E128" },
 		"zecl_lins_jump_base_count": { "val": 98 },
-		"zecl_lins_jump_new_count": { "val": 11 },
+		"zecl_lins_jump_new_count": { "val": 12 },
 		// High ECL
 		"zecl_hins_jump_addr": { "val": "Rx96400" },
 		"zecl_hins_jump_base_count": { "val": 174 },
-		"zecl_hins_jump_new_count": { "val": 0 },
+		"zecl_hins_jump_new_count": { "val": 4 },
 		"zecl_hins_case_addr": { "val": "Rx966B8" },
 		"zecl_hins_case_base_count": { "val": 704 },
-		"zecl_hins_case_new_count": { "val": 0 },
+		"zecl_hins_case_new_count": { "val": 4 },
 		// ECL Int Vars
 		"zecl_ivar_jump_addr": { "val": "Rx9BC00" },
 		"zecl_ivar_jump_base_count": { "val": 127 },
@@ -157,6 +157,7 @@
 <codecave:ZECL20_math_umod> \
 <codecave:ZECL20_lookup_set_int> \
 <codecave:ZECL20_lookup_set_float> \
+(<cpuid:popcnt>?<codecave:ZECL20_math_popcount_fast>:<codecave:ZECL20_math_popcount>) \
 "
 		},
 		"ZECL_int_var_jump_table": {
@@ -168,6 +169,22 @@
 <codecave:ZECL20_stone_type_int_var> \
 <codecave:ZECL20_stone_type_int_var> \
 <codecave:ZECL20_stone_type_int_var> \
+"
+		},
+		"ZECL_high_ins_jump_table": {
+			"code": "\
+<codecave:ZECL20_set_int_from_enemy> \
+<codecave:ZECL20_set_float_from_enemy> \
+<codecave:ZECL20_set_int_for_enemy> \
+<codecave:ZECL20_set_float_for_enemy> \
+"
+		},
+		"ZECL_high_ins_case_table": {
+			"code": "\
+AE \
+AF \
+B0 \
+B1 \
 "
 		},
 		"ZECL_float_var_jump_table": {
@@ -505,7 +522,193 @@ D91F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		
+		"ZECL20_math_popcount": {
+			"ignore": "<cpuid:popcnt>",
+			"access": "re",
+			"code": "\
+56 \
+8BB5 34FEFFFF \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89F1 \
+89C6 \
+D1E8 \
+25 55555555 \
+29C6 \
+89F0 \
+25 33333333 \
+C1EE 02 \
+81E6 33333333 \
+01C6 \
+89F0 \
+C1E8 04 \
+01F0 \
+25 0F0F0F0F \
+69F0 01010101 \
+C1EE 18 \
+6A 00 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+5E \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL20_math_popcount_fast": {
+			"enable": "<cpuid:popcnt>",
+			"access": "re",
+			"code": "\
+56 \
+8BB5 34FEFFFF \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89F1 \
+F30FB8F0 \
+6A 00 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+5E \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL20_set_int_from_enemy": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8B95 0CFCFFFF \
+8B42 08 \
+8B70 0C \
+6A 02 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+50 \
+8B0D <Rx1BA570> \
+E8 [Rx98A80] \
+85C0 \
+74 20 \
+89C7 \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B17 \
+50 \
+89F9 \
+FF52 08 \
+89C7 \
+6A 00 \
+89F1 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8938 \
+5E \
+5F \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL20_set_float_from_enemy": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8B95 0CFCFFFF \
+8B42 08 \
+8B70 0C \
+6A 02 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+50 \
+8B0D <Rx1BA570> \
+E8 [Rx98A80] \
+85C0 \
+74 24 \
+89C7 \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B17 \
+50 \
+89F9 \
+FF52 08 \
+D95D 80 \
+6A 00 \
+89F1 \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
+8B55 80 \
+8910 \
+5E \
+5F \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL20_set_int_for_enemy": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8B95 0CFCFFFF \
+8B42 08 \
+8B70 0C \
+6A 02 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+50 \
+8B0D <Rx1BA570> \
+E8 [Rx98A80] \
+85C0 \
+74 20 \
+89C7 \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B17 \
+50 \
+89F9 \
+FF52 0C \
+89C7 \
+6A 00 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8907 \
+5E \
+5F \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL20_set_float_for_enemy": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8B95 0CFCFFFF \
+8B42 08 \
+8B70 0C \
+6A 02 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+50 \
+8B0D <Rx1BA570> \
+E8 [Rx98A80] \
+85C0 \
+74 20 \
+89C7 \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B17 \
+50 \
+89F9 \
+FF52 14 \
+89C7 \
+6A 00 \
+89F1 \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
+D91F \
+5E \
+5F \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
 		
 		"ZECL20_stone_color_int_var": {
 			"access": "re",
