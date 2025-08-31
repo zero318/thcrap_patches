@@ -3,7 +3,7 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": "Rx13E128" },
 		"zecl_lins_jump_base_count": { "val": 98 },
-		"zecl_lins_jump_new_count": { "val": 12 },
+		"zecl_lins_jump_new_count": { "val": 14 },
 		// High ECL
 		"zecl_hins_jump_addr": { "val": "Rx96400" },
 		"zecl_hins_jump_base_count": { "val": 174 },
@@ -158,6 +158,8 @@
 <codecave:ZECL20_lookup_set_int> \
 <codecave:ZECL20_lookup_set_float> \
 (<cpuid:popcnt>?<codecave:ZECL20_math_popcount_fast>:<codecave:ZECL20_math_popcount>) \
+<codecave:ZECL20_lookup_int_ex> \
+<codecave:ZECL20_lookup_float_ex> \
 "
 		},
 		"ZECL_int_var_jump_table": {
@@ -258,8 +260,8 @@ E9 [<option:ecl_lins_break_addr>] \
 		"ZECL20_math_shl": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -281,16 +283,16 @@ D327 \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_shr": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -312,16 +314,16 @@ D32F \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_sar": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -343,16 +345,16 @@ D33F \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_rol": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -374,16 +376,16 @@ D307 \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_ror": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -405,16 +407,16 @@ D30F \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_udiv": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -438,16 +440,16 @@ F777 04 \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL20_math_umod": {
 			"access": "re",
 			"code": "\
-56 \
 57 \
+56 \
 8BB5 34FEFFFF \
 83C6 0C \
 8D7D F0 \
@@ -471,8 +473,8 @@ F777 04 \
 57 \
 6A 04 \
 E8 [<option:ecl_stack_push>] \
-5F \
 5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
@@ -480,7 +482,6 @@ E9 [<option:ecl_lins_break_addr>] \
 			"access": "re",
 			"code": "\
 56 \
-57 \
 8BB5 34FEFFFF \
 6A 01 \
 89F1 \
@@ -489,12 +490,11 @@ E8 [<option:ecl_lins_get_int_arg_addr>] \
 50 \
 89F1 \
 E8 [<option:ecl_lins_get_iptr_arg_addr>] \
-89C7 \
-6A 00 \
 89F1 \
+89C6 \
+6A 00 \
 E8 [<option:ecl_lins_get_int_arg_addr>] \
-8907 \
-5F \
+8906 \
 5E \
 E9 [<option:ecl_lins_break_addr>] \
 "
@@ -503,7 +503,6 @@ E9 [<option:ecl_lins_break_addr>] \
 			"access": "re",
 			"code": "\
 56 \
-57 \
 8BB5 34FEFFFF \
 6A 01 \
 89F1 \
@@ -512,12 +511,11 @@ E8 [<option:ecl_lins_get_int_arg_addr>] \
 50 \
 89F1 \
 E8 [<option:ecl_lins_get_iptr_arg_addr>] \
-89C7 \
-6A 00 \
 89F1 \
+89C6 \
+6A 00 \
 E8 [<option:ecl_lins_get_int_arg_addr>] \
-D91F \
-5F \
+D91E \
 5E \
 E9 [<option:ecl_lins_break_addr>] \
 "
@@ -569,6 +567,50 @@ F30FB8F0 \
 E8 [<option:ecl_lins_get_iptr_arg_addr>] \
 8930 \
 5E \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL20_lookup_int_ex": {
+			"access": "re",
+			"code": "\
+56 \
+8BB5 34FEFFFF \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+83C0 02 \
+50 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89F1 \
+89C6 \
+6A 00 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+5E \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL20_lookup_float_ex": {
+			"access": "re",
+			"code": "\
+57 \
+56 \
+8BB5 34FEFFFF \
+6A 01 \
+89F1 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8D78 02 \
+6A 00 \
+89F1 \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
+89F1 \
+89C6 \
+57 \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
+D91E \
+5E \
+5F \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
