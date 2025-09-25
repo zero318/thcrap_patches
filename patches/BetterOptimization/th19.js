@@ -1072,7 +1072,7 @@ E8 [codecave:allocate_layer_hack] \
 68 <codecave:draw_layer_A_fast> \
 "
 		},
-		"draw_layer_36": {
+		"draw_layer_36_fast": {
 			"code": "B22490"
 		},
 		"draw_layer_29_26_fast": {
