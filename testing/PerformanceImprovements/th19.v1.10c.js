@@ -150,7 +150,7 @@ E8 [Rx627B5]"
         "check_colliders_new": {
             "access": "re",
             "code": "\
-CC \
+55 \
 89E5 \
 53 \
 57 \

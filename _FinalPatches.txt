@@ -4,3 +4,4 @@ TH8_ExtendedTrial
 YoloSpeed
 RankConfig
 ZeroEclExtensions
+BetterOptimization
