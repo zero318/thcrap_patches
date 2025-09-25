@@ -2,6 +2,7 @@
 	"contact": "zero318#4476",
 	"id": "zero318",
 	"patches": {
+		"BetterOptimization": "(19,20) Reimplements parts of the game to be less laggy",
 		"FourOfAKind": "(06) Challenge all four difficulties at once",
 		"GrazeDisplay": "(08) Applies tints to things that can be grazed",
 		"InfinitePatchyBooks": "(06) What if the books never ended?",
