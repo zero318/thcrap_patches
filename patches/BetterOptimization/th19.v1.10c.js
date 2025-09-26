@@ -209,6 +209,9 @@
 		"anm_vm_mark_outside_fast_array": {
 			"addr": "Rx6F9D"
 		},
+		"destroy_all_vms_fast": {
+			"addr": "RxD05A0"
+		},
 		"cleanup_turbo_array": {
 			"addr": "RxB6F99"
 		},

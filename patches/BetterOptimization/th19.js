@@ -1203,6 +1203,121 @@ FF41 10 \
 		},
 		"anm_vm_mark_outside_fast_array": {
 			"code": "(u32:<option:invalid_anm_fast_id>+1)"
+		},
+		"destroy_all_vms_fast": {
+			"code": "\
+55 \
+53 \
+57 \
+56 \
+C741 10 00000000 \
+8B3D <option:anm_manager_ptr_addr> \
+8D9F <option:better_optimization_free_list_base> \
+8B29 \
+C701 00000000 \
+C741 04 00000000 \
+85ED \
+0F84 A7000000 \
+6690 \
+8B85 F8000000 \
+85C0 \
+75 52 \
+8B45 64 \
+85C0 \
+75 62 \
+8B75 04 \
+817D D0 (u32:<option:invalid_anm_fast_id>+1) \
+74 73 \
+C745 CC 00000000 \
+C785 20FBFFFF FFFFFFFF \
+C685 38010000 00 \
+81C5 28010000 \
+8B87 (u32:<option:better_optimization_free_list_base>+4) \
+89AF (u32:<option:better_optimization_free_list_base>+4) \
+85C0 \
+74 06 \
+8968 08 \
+8945 04 \
+895D 08 \
+89F5 \
+85F6 \
+75 A6 \
+EB 49 \
+89CE \
+8D8D F4FAFFFF \
+51 \
+FF1485 <option:on_destroy_func_table_addr> \
+89F1 \
+83C4 04 \
+EB 97 \
+C745 64 00000000 \
+C745 68 00000000 \
+50 \
+89CE \
+E8 [<option:base_game_free_addr>] \
+89F1 \
+83C4 04 \
+EB 81 \
+81C5 F4FAFFFF \
+55 \
+89CD \
+E8 [<option:base_game_free_addr>] \
+89E9 \
+83C4 04 \
+EB AF \
+8B69 08 \
+C741 08 00000000 \
+C741 0C 00000000 \
+85ED \
+0F84 9B000000 \
+6690 \
+8B85 F8000000 \
+85C0 \
+75 52 \
+8B45 64 \
+85C0 \
+75 5E \
+8B75 04 \
+817D D0 (u32:<option:invalid_anm_fast_id>+1) \
+74 6B \
+C745 CC 00000000 \
+C785 20FBFFFF FFFFFFFF \
+C685 38010000 00 \
+81C5 28010000 \
+8B87 (u32:<option:better_optimization_free_list_base>+4) \
+89AF (u32:<option:better_optimization_free_list_base>+4) \
+85C0 \
+74 06 \
+8968 08 \
+8945 04 \
+895D 08 \
+89F5 \
+85F6 \
+75 A6 \
+EB 3D \
+8D8D F4FAFFFF \
+51 \
+FF1485 <option:on_destroy_func_table_addr> \
+83C4 04 \
+EB 9B \
+C745 64 00000000 \
+C745 68 00000000 \
+50 \
+E8 [<option:base_game_free_addr>] \
+83C4 04 \
+EB 89 \
+81C5 F4FAFFFF \
+55 \
+E8 [<option:base_game_free_addr>] \
+83C4 04 \
+EB BB \
+5E \
+5F \
+5B \
+5D \
+C3 \
+CCCCCCCC \
+"
 		}
 	}
 }

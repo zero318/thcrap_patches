@@ -220,6 +220,9 @@
 		"anm_vm_mark_outside_fast_array": {
 			"addr": "Rx72FD"
 		},
+		"destroy_all_vms_fast": {
+			"addr": "RxC2790"
+		},
 		"cleanup_turbo_array": {
 			"addr": "RxAA421"
 		},
