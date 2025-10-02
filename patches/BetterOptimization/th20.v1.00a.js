@@ -441,22 +441,21 @@ E9 ADFDFFFF \
 8B40 18 \
 85C0 \
 74 0F \
-660F1F4400 00  \
+<nop:6>  \
 E8 [codecave:recursive_remove_fast] \
 85C0 \
 75 F7 \
 C646 5C 02 \
-894E 2C \
+897E 2C \
 8B46 04 \
 8B4E 08 \
 85C9 \
 74 03 \
 8941 04 \
-83C6 28 \
 85C0 \
 74 03 \
 8948 08 \
-89F1 \
+8D7E 28 \
 5E \
 C3 \
 "
@@ -474,30 +473,25 @@ B9 <Rx1C03F0> \
 E8 [RxC470] \
 8B1C3E \
 85DB \
-74 46 \
+74 38 \
 31FF \
-EB 1B \
-8D43 28 \
-89F9 \
-E8 [codecave:recursive_remove_fast] \
-89CF \
-0F1F8400 00000000 \
+EB 0B \
+CCCCCCCC \
 8B5B 04 \
 85DB \
-74 23 \
+74 25 \
 0FB683 84000000 \
 85C0 \
-75 11 \
+75 0B \
 8D8B 14FBFFFF \
 E8 [Rx2B5D0] \
-85C0 \
-74 DF \
-EB C9 \
 83F8 01 \
-74 C4 \
-EB D6 \
+75 DE \
+8D43 28 \
+E8 [codecave:recursive_remove_fast] \
+EB D4 \
 85FF \
-75 13 \
+75 1A \
 B9 <Rx1C03F0> \
 E8 [RxC660] \
 B8 01000000 \
@@ -505,8 +499,8 @@ B8 01000000 \
 5F \
 5B \
 C3 \
+<int3:7> \
 81C6 18070006 \
-660F1F8400 00000000  \
 FF8E E8FFFFF9 \
 8B5F 2C \
 85DB \
@@ -548,7 +542,7 @@ C687 BC000000 00  \
 89DF \
 85DB \
 0F85 71FFFFFF \
-E9 4AFFFFFF \
+E9 4CFFFFFF \
 C747 2C 00000000 \
 8B03 \
 89D9 \

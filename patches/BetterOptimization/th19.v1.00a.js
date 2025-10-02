@@ -15,9 +15,6 @@
 		"anm_manager_ptr_addr": {
 			"val": "Rx1AE3AC"
 		},
-		"game_thread_ptr_addr": {
-			"val": "Rx1AE464"
-		},
 		"base_game_memset_addr": {
 			"val": "Rx5D390"
 		},
@@ -41,10 +38,85 @@
 		}
 	},
 	"codecaves": {
-		// Ugly hack but it works
-		"on_tick_ui_fast_cave": {
+		"lock_anm_mutex": {
 			"access": "re",
-			"size": 0x2B
+			"code": "\
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F4> \
+C3 \
+"
+		},
+		"unlock_anm_mutex": {
+			"access": "re",
+			"code": "\
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F8> \
+C3 \
+"
+		},
+		"on_tick_world_fast": {
+			"access": "re",
+			"code": "\
+A1 <Rx1AE464> \
+85C0 \
+74 0F \
+0FB680 40010000 \
+A8 05 \
+74 04 \
+A8 02 \
+75 4C \
+56 \
+8B7424 08 \
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F4> \
+8D96 <option:better_optimization_anm_list_base> \
+31C0 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+8D96 (u32:<option:better_optimization_anm_list_base>+32) \
+31C0 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F8> \
+5E \
+B8 01000000 \
+C3 \
+"
+		},
+		"on_tick_ui_fast": {
+			"access": "re",
+			"code": "\
+56 \
+8B7424 08 \
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F4> \
+8D96 <option:better_optimization_anm_list_base> \
+B8 08000000 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+8D96 (u32:<option:better_optimization_anm_list_base>+32) \
+B8 08000000 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+803D <Rx2078B8> 00 \
+74 0B \
+68 <Rx207800> \
+FF15 <Rx15F0F8> \
+B8 01000000 \
+5E \
+C3 \
+"
 		}
 	},
 	"binhacks": {
@@ -58,10 +130,10 @@
 			"addr": [ "Rx6E627", "Rx6E756", "Rx6E937", "Rx7061F", "Rx76DA9", "Rx76DFF", "Rx76FC3", "Rx77081", "Rx77679" ]
 		},
 		"on_tick_world_fast": {
-			"addr": "RxBF120"
+			"addr": "RxC3334"
 		},
 		"on_tick_ui_fast": {
-			"addr": "<codecave:on_tick_ui_fast_cave>"
+			"addr": "RxC3357"
 		},
 		"on_tick_ui_fast_func_change": {
 			"addr": "RxC3357",

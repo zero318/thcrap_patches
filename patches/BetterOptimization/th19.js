@@ -20,10 +20,6 @@
 			"type": "p",
 			"val": 0
 		},
-		"game_thread_ptr_addr": {
-			"type": "p",
-			"val": 0
-		},
 		"base_game_memset_addr": {
 			"type": "p",
 			"val": 0
@@ -62,13 +58,14 @@
 57 \
 56 \
 8B6C24 14 \
+E8 [codecave:lock_anm_mutex] \
 8BBD (u32:<option:better_optimization_anm_list_base>+16) \
+83C7 (u8:<cpuid:avx2>?0x1F:0x0F) \
 83E7 (u8:<cpuid:avx2>?0xE0:0xF0) \
-83C7 (u8:<cpuid:avx2>?0x20:0x10) \
 8BB5 (u32:<option:better_optimization_anm_list_base>+48) \
+83C6 (u8:<cpuid:avx2>?0x1F:0x0F) \
 83E6 (u8:<cpuid:avx2>?0xE0:0xF0) \
-83C6 (u8:<cpuid:avx2>?0x20:0x10) \
-8D1437 \
+8D143E \
 8D1C92 \
 8B85 (u32:<option:better_optimization_anm_list_base>+24) \
 399D (u32:<option:better_optimization_anm_list_base>+20) \
@@ -83,13 +80,18 @@ E8 [th_aligned_realloc] \
 53 \
 6A FF \
 50 \
+8D1CBF \
 E8 [<option:base_game_memset_addr>] \
 83C4 0C \
-8D1CBF \
 01C7 \
+89BD (u32:<option:better_optimization_anm_list_base>+28) \
 01C3 \
+899D (u32:<option:better_optimization_anm_list_base>+56) \
+01DE \
+89B5 (u32:<option:better_optimization_anm_list_base>+60) \
 8B8D <option:better_optimization_anm_list_base> \
-EB 18 \
+EB 21 \
+<int3:9> \
 0FB695 {x.u8:26;29;30;31;32;33;34;35;36} \
 8810 \
 40 \
@@ -120,7 +122,7 @@ EB 18 \
 83C7 04 \
 8B49 04 \
 85C9 \
-74 1C \
+74 24 \
 8379 6C 00 \
 75 F3 \
 8B91 0CFBFFFF \
@@ -129,9 +131,7 @@ EB 18 \
 76 D0 \
 BA 2D000000 \
 EB D0 \
-CC \
-01DE \
-899D (u32:<option:better_optimization_anm_list_base>+56) \
+<int3:9> \
 8B85 (u32:<option:better_optimization_anm_list_base>+32) \
 EB 19 \
 CC \
@@ -175,6 +175,7 @@ CCCCCCCC \
 B9 2D000000 \
 EB D0 \
 CC \
+E8 [codecave:unlock_anm_mutex] \
 B8 01000000 \
 5E \
 5F \
@@ -297,40 +298,36 @@ E9 D7FEFFFF \
 56 \
 83EC 08 \
 89CD \
-8BB9 (u32:<option:better_optimization_anm_list_base>+16) \
-85FF \
-74 3B \
-89D3 \
+8BB1 (u32:<option:better_optimization_anm_list_base>+24) \
+8BB9 (u32:<option:better_optimization_anm_list_base>+28) \
+39FE \
+74 2E \
+69DA 01010101 \
 6A 00 \
 52 \
 E8 [<option:render_layer_prep_addr>] \
-83E7 F0 \
-8BB5 (u32:<option:better_optimization_anm_list_base>+24) \
-8D4437 10 \
+89F8 \
+83C7 FC \
 894424 04 \
-8D78 FC \
-69D3 01010101 \
-891424 \
-660F6EC2 \
+891C24 \
+660F6EC3 \
 660F70C0 00 \
 E8 [codecave:render_layer_turbo_impl] \
 0FB61424 \
 89E9 \
-8BB9 (u32:<option:better_optimization_anm_list_base>+48) \
-85FF \
-74 35 \
-89D3 \
+8BB1 (u32:<option:better_optimization_anm_list_base>+56) \
+8BB9 (u32:<option:better_optimization_anm_list_base>+60) \
+39FE \
+74 28 \
+69DA 01010101 \
 6A 01 \
 52 \
 E8 [<option:render_layer_prep_addr>] \
-83E7 F0 \
-8BB5 (u32:<option:better_optimization_anm_list_base>+56) \
-8D4437 10 \
+89F8 \
+83C7 FC \
 894424 04 \
-8D78 FC \
-69D3 01010101 \
-891424 \
-660F6EC2 \
+891C24 \
+660F6EC3 \
 660F70C0 00 \
 E8 [codecave:render_layer_turbo_impl] \
 B8 01000000 \
@@ -535,36 +532,34 @@ E9 BCFDFFFF \
 56 \
 83EC 08 \
 89CD \
-8BB9 (u32:<option:better_optimization_anm_list_base>+16) \
-85FF \
-74 35 \
+8BB1 (u32:<option:better_optimization_anm_list_base>+24) \
+8BB9 (u32:<option:better_optimization_anm_list_base>+28) \
+39FE \
+74 2A \
 89D3 \
 6A 00 \
 52 \
 E8 [<option:render_layer_prep_addr>] \
-83E7 E0 \
-8BB5 (u32:<option:better_optimization_anm_list_base>+24) \
-8D4437 20 \
+89F8 \
+83C7 FC \
 894424 04 \
-8D78 FC \
 891C24 \
 C5F96EC3 \
 C4E27D78C0 \
 E8 [codecave:render_layer_turbo_impl_avx2] \
 0FB61424 \
 89E9 \
-8BB9 (u32:<option:better_optimization_anm_list_base>+48) \
-85FF \
-74 2F \
+8BB1 (u32:<option:better_optimization_anm_list_base>+56) \
+8BB9 (u32:<option:better_optimization_anm_list_base>+60) \
+39FE \
+74 24 \
 89D3 \
 6A 01 \
 52 \
 E8 [<option:render_layer_prep_addr>] \
-83E7 E0 \
-8BB5 (u32:<option:better_optimization_anm_list_base>+56) \
-8D4437 20 \
+89F8 \
+83C7 FC \
 894424 04 \
-8D78 FC \
 891C24 \
 C5F96EC3 \
 C4E27D78C0 \
@@ -591,17 +586,16 @@ E8 [codecave:recursive_remove_fast] \
 85C0 \
 75 F7 \
 C646 4C 02 \
-894E 24 \
+897E 24 \
 8B46 04 \
 8B4E 08 \
 85C9 \
 74 03 \
 8941 04 \
-83C6 20 \
 85C0 \
 74 03 \
 8948 08 \
-89F1 \
+8D7E 20 \
 5E \
 C3 \
 "
@@ -616,115 +610,106 @@ C3 \
 56 \
 8B2C02 \
 85ED \
-74 40 \
+74 42 \
 89CE \
-89D7 \
-31DB \
+89D3 \
+31FF \
 EB 14 \
-8D45 20 \
-89D9 \
-E8 [codecave:recursive_remove_fast] \
-89CB \
-90 \
+<int3:13> \
 8B6D 04 \
 85ED \
-74 20 \
+74 22 \
 0FB645 6C \
 85C0 \
-75 11 \
+75 0B \
 8D8D F4FAFFFF \
 E8 [<option:run_anm_addr>] \
-85C0 \
-74 E2 \
-EB D3 \
 83F8 01 \
-74 CE \
-EB D9 \
-85DB \
-75 0A \
+75 E1 \
+8D45 20 \
+E8 [codecave:recursive_remove_fast] \
+EB D7 \
+85FF \
+75 0D \
 B8 01000000 \
 5E \
 5F \
 5B \
 5D \
 C3 \
+CCCCCC \
 81C6 <option:better_optimization_free_list_base> \
-0F1F4400 00 \
-FF4F 10 \
-8B83 B8000000 \
+FF4B 10 \
+8B87 B8000000 \
 85C0 \
-0F85 A4000000 \
-8D53 C0 \
-8B43 C4 \
-8B4B C8 \
-3957 04 \
-0F84 A8000000 \
-3917 \
-0F84 AB000000 \
-3957 0C \
-0F84 AD000000 \
-3957 08 \
-0F84 B0000000 \
-8B6B CC \
-85ED \
-74 08 \
-3955 10 \
-75 03 \
-894D 10 \
+0F85 95000000 \
+8D57 C0 \
+8B47 C4 \
+8B4F C8 \
+3953 04 \
+0F84 99000000 \
+3913 \
+0F84 9C000000 \
+3953 0C \
+0F84 9E000000 \
+3953 08 \
+0F84 A1000000 \
 85C0 \
 74 03 \
 8948 08 \
 85C9 \
 74 03 \
 8941 04 \
-8B43 24 \
+8B47 24 \
 85C0 \
-0F85 90000000 \
-8B6B 04 \
-817B 90 (u32:<option:invalid_anm_fast_id>+1) \
-0F84 9C000000 \
-C743 8C 00000000 \
-C783 E0FAFFFF FFFFFFFF  \
-C683 F8000000 00  \
-81C3 E8000000 \
+0F85 98000000 \
+8B6F 04 \
+817F 90 (u32:<option:invalid_anm_fast_id>+1) \
+0F84 A4000000 \
+C747 8C 00000000 \
+C787 E0FAFFFF FFFFFFFF  \
+C687 F8000000 00  \
+81C7 E8000000 \
 8B46 04 \
-895E 04 \
+897E 04 \
 85C0 \
 74 06 \
-8958 08 \
-8943 04 \
-8973 08 \
-89EB \
+8978 08 \
+8947 04 \
+8977 08 \
+89EF \
 85ED \
-0F85 50FFFFFF \
-E9 36FFFFFF \
-8D8B B4FAFFFF \
+0F85 5FFFFFFF \
+E9 47FFFFFF \
+8D8F B4FAFFFF \
 51 \
 FF1485 <option:on_destroy_func_table_addr> \
 83C4 04 \
-E9 46FFFFFF \
-894F 04 \
-3917 \
-0F85 55FFFFFF \
-8907 \
-3957 0C \
-0F85 53FFFFFF \
-894F 0C \
-3957 08 \
-0F85 50FFFFFF \
-8947 08 \
-E9 48FFFFFF \
-C743 24 00000000 \
-C743 28 00000000 \
+E9 55FFFFFF \
+894B 04 \
+3913 \
+0F85 64FFFFFF \
+8903 \
+3953 0C \
+0F85 62FFFFFF \
+894B 0C \
+3953 08 \
+0F85 5FFFFFFF \
+8943 08 \
+85C0 \
+0F85 58FFFFFF \
+E9 56FFFFFF \
+C747 24 00000000 \
+C747 28 00000000 \
 50 \
 E8 [<option:base_game_free_addr>] \
 83C4 04 \
-E9 54FFFFFF \
-81C3 B4FAFFFF \
-53 \
+E9 4CFFFFFF \
+81C7 B4FAFFFF \
+57 \
 E8 [<option:base_game_free_addr>] \
 83C4 04 \
-EB 84 \
+E9 79FFFFFF \
 "
 		},
 		"draw_layer_A_fast": {
@@ -776,47 +761,10 @@ E9 [<option:destroy_all_vms_addr>] \
 	},
 	"binhacks": {
 		"on_tick_world_fast": {
-			"code": "\
-A1 <option:game_thread_ptr_addr> \
-85C0 \
-74 0F \
-0FB680 40010000 \
-A8 05 \
-74 04 \
-A8 02 \
-75 22 \
-56 \
-8B7424 08 \
-8D96 <option:better_optimization_anm_list_base> \
-31C0 \
-89F1 \
-E8 [codecave:on_tick_lists_fast] \
-8D96 (u32:<option:better_optimization_anm_list_base>+32) \
-31C0 \
-89F1 \
-5E \
-E9 [codecave:on_tick_lists_fast] \
-CCCCCCCC \
-B8 01000000 \
-C3 \
-<int3:267> \
-"
+			"code": "<codecave:on_tick_world_fast>"
 		},
 		"on_tick_ui_fast": {
-			"code": "\
-56 \
-8B7424 08 \
-8D96 <option:better_optimization_anm_list_base> \
-B8 08000000 \
-89F1 \
-E8 [codecave:on_tick_lists_fast] \
-8D96 (u32:<option:better_optimization_anm_list_base>+32) \
-B8 08000000 \
-89F1 \
-5E \
-E9 [codecave:on_tick_lists_fast] \
-CC \
-"
+			"code": "<codecave:on_tick_ui_fast>"
 		},
 		"draw_layer_A_push": {
 			"code": "<codecave:draw_layer_A_fast>"

@@ -15,9 +15,6 @@
 		"anm_manager_ptr_addr": {
 			"val": "Rx1D19BC"
 		},
-		"game_thread_ptr_addr": {
-			"val": "Rx1D1A54"
-		},
 		"base_game_memset_addr": {
 			"val": "Rx65370"
 		},
@@ -40,6 +37,82 @@
 			"val": "RxD05A0"
 		}
 	},
+	"codecaves": {
+		"lock_anm_mutex": {
+			"access": "re",
+			"code": "\
+68 <Rx22AEC8> \
+E8 [Rx6230C] \
+83C4 04 \
+C3 \
+"
+		},
+		"unlock_anm_mutex": {
+			"access": "re",
+			"code": "\
+68 <Rx22AEC8> \
+E8 [Rx6231D] \
+83C4 04 \
+C3 \
+"
+		},
+		"on_tick_world_fast": {
+			"access": "re",
+			"code": "\
+A1 <Rx1D1A54> \
+85C0 \
+74 0F \
+0FB680 40010000 \
+A8 05 \
+74 04 \
+A8 02 \
+75 3E \
+56 \
+8B7424 08 \
+68 <Rx22AEC8> \
+E8 [Rx6230C] \
+83C4 04 \
+8D96 <option:better_optimization_anm_list_base> \
+31C0 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+8D96 (u32:<option:better_optimization_anm_list_base>+32) \
+31C0 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+68 <Rx22AEC8> \
+E8 [Rx6231D] \
+83C4 04 \
+5E \
+B8 01000000 \
+C3 \
+"
+		},
+		"on_tick_ui_fast": {
+			"access": "re",
+			"code": "\
+56 \
+8B7424 08 \
+68 <Rx22AEC8> \
+E8 [Rx6230C] \
+83C4 04 \
+8D96 <option:better_optimization_anm_list_base> \
+B8 08000000 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+8D96 (u32:<option:better_optimization_anm_list_base>+32) \
+B8 08000000 \
+89F1 \
+E8 [codecave:on_tick_lists_fast] \
+68 <Rx22AEC8> \
+E8 [Rx6231D] \
+83C4 04 \
+B8 01000000 \
+5E \
+C3 \
+"
+		}
+	},
 	"binhacks": {
 		"ftol2_replace_fisttp": {
 			"addr": "Rx8790F"
@@ -51,10 +124,10 @@
 			"addr": [ "Rx76187", "Rx762B6", "Rx76487", "Rx7817F", "Rx7F2BA", "Rx7F310", "Rx7F4D4", "Rx7F592", "Rx7FB8A" ]
 		},
 		"on_tick_world_fast": {
-			"addr": "RxCCA30"
+			"addr": "RxD13B1"
 		},
 		"on_tick_ui_fast": {
-			"addr": "RxCC980"
+			"addr": "RxD13D4"
 		},
 		"draw_layer_A_push": {
 			"addr": [ "RxD13ED", "RxD14E7", "RxD1726" ]
