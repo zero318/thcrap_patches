@@ -765,7 +765,7 @@ E9 [<option:destroy_all_vms_addr>] \
 		"on_tick_ui_fast": {
 			"code": "<codecave:on_tick_ui_fast>"
 		},
-		"draw_layer_A_push": {
+		"draw_layer_0_fast": {
 			"code": "<codecave:draw_layer_A_fast>"
 		},
 		"draw_layer_0_1_fast": {
@@ -842,6 +842,12 @@ E8 [codecave:allocate_layer_hack] \
 		},
 		"draw_layer_9_fast": {
 			"code": "B20990"
+		},
+		"draw_layer_9_10_fast": {
+			"code": "\
+[codecave:allocate_layer_hack] \
+68 <codecave:draw_layer_A_fast> \
+"
 		},
 		"draw_layer_10_11_fast": {
 			"code": "\
@@ -1021,6 +1027,12 @@ E8 [codecave:allocate_layer_hack] \
 		},
 		"draw_layer_36_fast": {
 			"code": "B22490"
+		},
+		"draw_layer_36_29_fast": {
+			"code": "\
+[codecave:allocate_layer_hack] \
+68 <codecave:draw_layer_A_fast> \
+"
 		},
 		"draw_layer_29_26_fast": {
 			"code": "\

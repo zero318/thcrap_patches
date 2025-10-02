@@ -129,8 +129,8 @@ C3 \
 		"on_tick_ui_fast": {
 			"addr": "RxD13D4"
 		},
-		"draw_layer_A_push": {
-			"addr": [ "RxD13ED", "RxD14E7", "RxD1726" ]
+		"draw_layer_0_fast": {
+			"addr": "RxD13ED"
 		},
 		"draw_layer_0_1_fast": {
 			"addr": "RxD13FD"
@@ -161,6 +161,9 @@ C3 \
 		},
 		"draw_layer_9_fast": {
 			"addr": "RxD14D7"
+		},
+		"draw_layer_9_10_fast": {
+			"addr": "RxD14E2"
 		},
 		"draw_layer_10_11_fast": {
 			"addr": "RxD14F7"
@@ -230,6 +233,9 @@ C3 \
 		},
 		"draw_layer_36_fast": {
 			"addr": "RxD171A"
+		},
+		"draw_layer_36_29_fast": {
+			"addr": "RxD1721"
 		},
 		"draw_layer_29_26_fast": {
 			"addr": "RxD1736"
