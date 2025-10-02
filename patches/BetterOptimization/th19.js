@@ -631,13 +631,12 @@ E8 [codecave:recursive_remove_fast] \
 EB D7 \
 85FF \
 75 0D \
-B8 01000000 \
 5E \
 5F \
 5B \
 5D \
 C3 \
-CCCCCC \
+<int3:8> \
 81C6 <option:better_optimization_free_list_base> \
 FF4B 10 \
 8B87 B8000000 \
