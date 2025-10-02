@@ -135,10 +135,6 @@ C3 \
 		"on_tick_ui_fast": {
 			"addr": "RxC3357"
 		},
-		"on_tick_ui_fast_func_change": {
-			"addr": "RxC3357",
-			"code": "<codecave:on_tick_ui_fast_cave>"
-		},
 		"draw_layer_A_push": {
 			"addr": [ "RxC3370", "RxC346A", "RxC36A9" ]
 		},
