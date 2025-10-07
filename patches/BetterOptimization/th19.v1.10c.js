@@ -279,6 +279,9 @@ C3 \
 		"draw_layer_C_fast": {
 			"addr": [ "RxEC2F2", "RxEC31C", "Rx1322AD", "Rx132721" ]
 		},
+		"anm_vm_reset_fast": {
+			"addr": "Rx4CF0"
+		},
 		"add_vm_to_list_back_fast": {
 			"addr": [ "RxCBE12", "RxCBF3F" ]
 		},

@@ -285,6 +285,9 @@ C3 \
 		"draw_layer_C_fast": {
 			"addr": [ "RxDC1CE", "RxDC1F8", "Rx11EE7D", "Rx11F2F1" ]
 		},
+		"anm_vm_reset_fast": {
+			"addr": "Rx5000"
+		},
 		"add_vm_to_list_back_fast": {
 			"addr": [ "RxBE652", "RxBE772" ]
 		},

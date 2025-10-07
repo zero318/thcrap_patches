@@ -514,6 +514,7 @@ E8 [<option:draw_vm_addr>] \
 85DB \
 79 09 \
 FF37 \
+89E9 \
 E8 [<option:draw_vm_addr>] \
 8B4424 08 \
 39C6 \
@@ -1142,6 +1143,48 @@ E8 [codecave:allocate_layer_hack] \
 		},
 		"cleanup_turbo_array": {
 			"code": "[codecave:cleanup_turbo_array]"
+		},
+		"anm_vm_reset_fast": {
+			"enable": false,
+			"code": "\
+52 \
+57 \
+56 \
+89CE \
+8BB9 DC040000 \
+68 34060000 \
+6A 00 \
+51 \
+E8 [<option:base_game_memset_addr>] \
+83C4 0C \
+0F2805 {x.f32:1.0f;1.0f;1.0f;1.0f} \
+0F1146 54 \
+0F1346 6C \
+F30F1186 D4030000 \
+F30F1186 E8030000 \
+F30F1186 FC030000 \
+F30F1186 10040000 \
+F20F1005 {q.u32:0x3F800000;0x40490FDB} \
+F20F1186 94040000 \
+C786 9C040000 00000100 \
+C786 AC040000 FFFFFFFF \
+66C786 B4040000 0101 \
+C686 C0040000 01 \
+89BE DC040000 \
+C786 E0040000 C1BDF0FF \
+C786 F4040000 C1BDF0FF \
+89B6 0C050000 \
+89B6 1C050000 \
+89B6 2C050000 \
+89B6 3C050000 \
+89B6 4C050000 \
+89F1 \
+5E \
+5F \
+5A \
+C3 \
+<int3:0x159> \
+"
 		},
 		"add_vm_to_list_back_fast": {
 			"code": "\
