@@ -3,7 +3,7 @@
 		// ECL
 		"zecl_lins_jump_addr": { "val": 0x40A9A4 },
 		"zecl_lins_jump_base_count": { "val": 135 },
-		"zecl_lins_jump_new_count": { "val": 21 },
+		"zecl_lins_jump_new_count": { "val": 23 },
 		// Timelines
 		"zecl_hins_jump_addr": { "val": 0x411D63 },
 		"zecl_hins_jump_base_count": { "val": 13 },
@@ -91,7 +91,7 @@ C3 \
 			"code": "\
 <codecave:ZECL6_debug_breakpoint> \
 <codecave:ZECL6_thcrap_expr> \
-(<cpuid:avx> ? <codecave:ZECL6_cast_avx> : <codecave:ZECL6_cast_sse>) \
+<codecave:ZECL6_cast> \
 <codecave:ZECL6_math_bit_and> \
 <codecave:ZECL6_math_bit_or> \
 <codecave:ZECL6_math_bit_xor> \
@@ -110,7 +110,7 @@ C3 \
 <codecave:ZECL6_math_sin> \
 <codecave:ZECL6_math_cos> \
 <codecave:ZECL6_inline_switch> \
-(<cpuid:avx> ? <codecave:ZECL6_cast_avx> : <codecave:ZECL6_cast_sse>) \
+<codecave:ZECL6_cast> \
 <codecave:ZECL6_math_neg> \
 "
 		},
@@ -170,8 +170,7 @@ E8 [<option:ecl_write_var_addr>] \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
-		"ZECL6_cast_sse": {
-			"ignore": "<cpuid:avx>",
+		"ZECL6_cast": {
 			"access": "re",
 			"code": "\
 8B75 E8 \
@@ -192,57 +191,17 @@ E8 [<option:ecl_get_var_addr>] \
 09CA \
 83FA 01 \
 0F87 [<option:ecl_lins_break_addr>] \
-29D1 \
-83F9 01 \
-74 0D \
-85C9 \
-75 14 \
-8B08 \
-890E \
-E9 [<option:ecl_lins_break_addr>] \
+39F9 \
+74 1A \
+72 0B \
 F30F2C08 \
 890E \
 E9 [<option:ecl_lins_break_addr>] \
 F30F2A00 \
 F30F1106 \
 E9 [<option:ecl_lins_break_addr>] \
-"
-		},
-		"ZECL6_cast_avx": {
-			"enable": "<cpuid:avx>",
-			"access": "re",
-			"code": "\
-8B75 E8 \
-8B7D 08 \
-8D4D F0 \
-51 \
-56 \
-57 \
-E8 [<option:ecl_get_var_addr>] \
-83C6 04 \
-8974E4 04 \
-8B7D F0 \
-89C6 \
-E8 [<option:ecl_get_var_addr>] \
-83C4 0C \
-8B4D F0 \
-89FA \
-09CA \
-83FA 01 \
-0F87 [<option:ecl_lins_break_addr>] \
-29D1 \
-83F9 01 \
-74 0D \
-85C9 \
-75 14 \
 8B08 \
 890E \
-E9 [<option:ecl_lins_break_addr>] \
-C5FA 2C08 \
-890E \
-E9 [<option:ecl_lins_break_addr>] \
-C5FA 2A00 \
-C5FA 1106 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
