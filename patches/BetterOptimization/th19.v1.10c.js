@@ -35,6 +35,14 @@
 		},
 		"destroy_all_vms_addr": {
 			"val": "RxD05A0"
+		},
+		"th19_junowen_dll_str": {
+			"type": "s",
+			"val": "th19_junowen.dll"
+		},
+		"junowen_detect_str": {
+			"type": "s",
+			"val": "Junowen detected!"
 		}
 	},
 	"codecaves": {
@@ -110,6 +118,32 @@ E8 [Rx6231D] \
 B8 01000000 \
 5E \
 C3 \
+"
+		},
+		"junowen_handle": {
+			"access": "rw",
+			"size": 4
+		},
+		"junowen_compat_test": {
+			"access": "re",
+			"code": "\
+68 <option:th19_junowen_dll_str> \
+E8 [th_GetModuleHandleA] \
+A3 <codecave:junowen_handle> \
+31C0 \
+A3 <Rx1D1BEC> \
+C3 \
+"
+		},
+		"junowen_compat": {
+			"access": "re",
+			"code": "\
+A1 <codecave:junowen_handle> \
+85C0 \
+0F84 [Rx5530] \
+80B8 A9D5DC00 00 \
+0F84 [Rx5530] \
+C2 1400 \
 "
 		}
 	},
@@ -387,6 +421,22 @@ E8 [Rx80C4E] \
 <nop:5> \
 E8 [Rx80F1E] \
 "
+		},
+		"junowen_compat_A": {
+			"addr": "Rx132756",
+			"code": "E9 0FFFFFFF"
+		},
+		"junowen_compat_B": {
+			"addr": "Rx1D1BEC",
+			"code": "<codecave:junowen_compat_test>"
+		},
+		"junowen_compat_C": {
+			"addr": [ "Rx116FC3", "Rx118CBA", "Rx1343BC" ],
+			"code": "<nop:10>"
+		},
+		"junowen_compat_D": {
+			"addr": "Rx15941F",
+			"code": "[codecave:junowen_compat]"
 		}
 	}
 }

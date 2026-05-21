@@ -510,11 +510,11 @@ E8 [<option:ecl_lins_get_int_arg_addr>] \
 83C0 02 \
 50 \
 89F1 \
-E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
 89F1 \
 89C6 \
 6A 00 \
-E8 [<option:ecl_lins_get_int_arg_addr>] \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
 D91E \
 5E \
 E9 [<option:ecl_lins_break_addr>] \
@@ -671,7 +671,7 @@ E8 [<option:ecl_lins_get_int_arg_addr>] \
 8B17 \
 50 \
 89F9 \
-FF52 08 \
+FF52 10 \
 D95D 80 \
 6A 00 \
 89F1 \

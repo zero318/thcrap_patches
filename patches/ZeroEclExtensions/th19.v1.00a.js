@@ -3,17 +3,17 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": "Rx150E34" },
 		"zecl_lins_jump_base_count": { "val": 71 },
-		"zecl_lins_jump_new_count": { "val": 9 },
+		"zecl_lins_jump_new_count": { "val": 14 },
 		"zecl_lins_case_addr": { "val": "Rx150F50" },
 		"zecl_lins_case_base_count": { "val": 98 },
-		"zecl_lins_case_new_count": { "val": 9 },
+		"zecl_lins_case_new_count": { "val": 14 },
 		// High ECL
 		"zecl_hins_jump_addr": { "val": "RxF39E8" },
 		"zecl_hins_jump_base_count": { "val": 196 },
-		"zecl_hins_jump_new_count": { "val": 11 },
+		"zecl_hins_jump_new_count": { "val": 15 },
 		"zecl_hins_case_addr": { "val": "RxF3CF8" },
 		"zecl_hins_case_base_count": { "val": 742 },
-		"zecl_hins_case_new_count": { "val": 12 },
+		"zecl_hins_case_new_count": { "val": 16 },
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": "RxED100" },
 		"zecl_ivar_jump_base_count": { "val": 119 },
@@ -53,6 +53,14 @@
 			"type": "p",
 			"val": "Rx151500"
 		},
+		"ecl_lins_get_float_arg_addr": {
+			"type": "p",
+			"val": "Rx151570"
+		},
+		"ecl_lins_get_fptr_arg_addr": {
+			"type": "p",
+			"val": "Rx151660"
+		},
 		"ecl_hins_break_addr": {
 			"type": "p",
 			"val": "RxF39C6"
@@ -90,6 +98,10 @@ CB \
 CC \
 CD \
 CE \
+CF \
+D0 \
+D1 \
+D2 \
 "
 		},
 		"ZECL19_thcrap_expr": {
@@ -204,6 +216,161 @@ E8 [<option:ecl_lins_get_iptr_arg_addr>] \
 83EC 04 \
 8930 \
 8B5D FC \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL19_set_int_from_enemy": {
+			"access": "re",
+			"code": "\
+8B87 C8550000 \
+6A 02 \
+8B48 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+6B97 38560000 3C \
+50 \
+8B8A (<option:game_sides_addr> + 0x8) \
+E8 [RxEC40] \
+85C0 \
+75 1B \
+6B97 38560000 C4 \
+56 \
+8B8A (<option:game_sides_addr> + 0x44) \
+E8 [RxEC40] \
+85C0 \
+0F84 [<option:ecl_hins_break_addr>] \
+89C6 \
+8B97 C8550000 \
+6A 01 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B16 \
+50 \
+89F1 \
+FF52 08 \
+89C6 \
+8B97 C8550000 \
+6A 00 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL19_set_float_from_enemy": {
+			"access": "re",
+			"code": "\
+8B87 C8550000 \
+6A 02 \
+8B48 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+6B97 38560000 3C \
+50 \
+8B8A (<option:game_sides_addr> + 0x8) \
+E8 [RxFB70] \
+85C0 \
+75 1B \
+6B97 38560000 C4 \
+56 \
+8B8A (<option:game_sides_addr> + 0x44) \
+E8 [RxFB70] \
+85C0 \
+0F84 [<option:ecl_hins_break_addr>] \
+53 \
+89C6 \
+8B97 C8550000 \
+6A 01 \
+8B4A 0C \
+89CB \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89D9 \
+6A 00 \
+89C3 \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
+8B16 \
+53 \
+89C3 \
+89F1 \
+FF52 10 \
+D91B \
+5B \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL19_set_int_for_enemy": {
+			"access": "re",
+			"code": "\
+8B87 C8550000 \
+6A 02 \
+8B48 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+6B97 38560000 3C \
+50 \
+8B8A (<option:game_sides_addr> + 0x8) \
+E8 [RxFB70] \
+85C0 \
+75 1B \
+6B97 38560000 C4 \
+56 \
+8B8A (<option:game_sides_addr> + 0x44) \
+E8 [RxFB70] \
+85C0 \
+0F84 [<option:ecl_hins_break_addr>] \
+89C6 \
+8B97 C8550000 \
+6A 01 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B16 \
+50 \
+89F1 \
+FF52 0C \
+89C6 \
+8B97 C8550000 \
+6A 00 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8906 \
+E9 [<option:ecl_hins_break_addr>] \
+"
+		},
+		"ZECL19_set_float_for_enemy": {
+			"access": "re",
+			"code": "\
+8B87 C8550000 \
+6A 02 \
+8B48 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+6B97 38560000 3C \
+50 \
+8B8A (<option:game_sides_addr> + 0x8) \
+E8 [RxFB70] \
+85C0 \
+75 1B \
+6B97 38560000 C4 \
+56 \
+8B8A (<option:game_sides_addr> + 0x44) \
+E8 [RxFB70] \
+85C0 \
+0F84 [<option:ecl_hins_break_addr>] \
+89C6 \
+8B97 C8550000 \
+6A 01 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8B16 \
+50 \
+89F1 \
+FF52 14 \
+89C6 \
+8B97 C8550000 \
+6A 00 \
+8B4A 0C \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
+F30F1106 \
 E9 [<option:ecl_hins_break_addr>] \
 "
 		},
@@ -778,10 +945,9 @@ C3 \
 8D1452 \
 29C6 \
 01D6 \
-78 18 \
-BA ABAAAAAA \
-89F0 \
-F7E2 \
+78 16 \
+B8 ABAAAAAA \
+F7E6 \
 D1EA \
 8D0452 \
 29C6 \
@@ -803,10 +969,9 @@ C3 \
 8D3452 \
 0371 68 \
 29C6 \
-72 18 \
-BA ABAAAAAA \
-89F0 \
-F7E2 \
+72 16 \
+B8 ABAAAAAA \
+F7E6 \
 D1EA \
 8D0452 \
 29C6 \
@@ -815,7 +980,7 @@ D1EA \
 5E \
 C3 \
 0F57C0 \
-660FD641 64 \
+0F1341 64 \
 5E \
 C3 \
 "

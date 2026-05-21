@@ -11,6 +11,11 @@
 <codecave:ZECL19_math_ror> \
 <codecave:ZECL19_math_udiv> \
 <codecave:ZECL19_math_umod> \
+<codecave:ZECL19_lookup_set_int> \
+<codecave:ZECL19_lookup_set_float> \
+(<cpuid:popcnt>?<codecave:ZECL19_math_popcount_fast>:<codecave:ZECL19_math_popcount>) \
+<codecave:ZECL19_lookup_int_ex> \
+<codecave:ZECL19_lookup_float_ex> \
 "
 		},
 		"ZECL_low_ins_case_table": {
@@ -24,6 +29,11 @@
 4D \
 4E \
 4F \
+50 \
+51 \
+52 \
+53 \
+54 \
 "
 		},
 		"ZECL_high_ins_jump_table": {
@@ -39,6 +49,10 @@
 <codecave:ZECL19_player_add_bomb_fragments> \
 <codecave:ZECL19_opposite_player_add_bomb_fragments> \
 <codecave:ZECL19_drop_game_side> \
+<codecave:ZECL19_set_int_from_enemy> \
+<codecave:ZECL19_set_float_from_enemy> \
+<codecave:ZECL19_set_int_for_enemy> \
+<codecave:ZECL19_set_float_for_enemy> \
 "
 		},
 		"ZECL_int_var_jump_table": {
@@ -98,6 +112,47 @@
 <codecave:ZECL19_player_bomb_fragments_fvar> \
 <codecave:ZECL19_opposite_player_bomb_fragments_fvar> \
 <codecave:ZECL19_opposite_game_side_fvar> \
+"
+		},
+		"ZECL19_ecl_lins_get_iptr_arg": {
+			"access": "re",
+			"code": "\
+53 \
+57 \
+56 \
+8B5424 10 \
+8B79 04 \
+8B71 08 \
+8B81 18100000 \
+8B98 18120000 \
+8B9B 0C020000 \
+8B7CFB 04 \
+0FB75C37 18 \
+0FA3D3 \
+73 1E \
+8D7437 10 \
+8B5496 10 \
+85D2 \
+78 1A \
+01CA \
+8B81 10100000 \
+8D4410 0C \
+5E \
+5F \
+5B \
+C2 0400 \
+31C0 \
+5E \
+5F \
+5B \
+C2 0400 \
+895424 10 \
+5E \
+5F \
+5B \
+8B10 \
+89C1 \
+FF62 08 \
 "
 		},
 		"ZECL19_debug_breakpoint": {
@@ -225,6 +280,122 @@ F7F1 \
 89543E 08 \
 C6443E 04 69 \
 8387 0C100000 F8 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_lookup_set_int": {
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+83C0 02 \
+50 \
+89F9 \
+E8 [codecave:ZECL19_ecl_lins_get_iptr_arg] \
+89C6 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8906 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_lookup_set_float": {
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+83C0 02 \
+50 \
+89F9 \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
+89C6 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
+F30F1106 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_math_popcount": {
+			"ignore": "<cpuid:popcnt>",
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+D1E8 \
+25 55555555 \
+29C6 \
+89F0 \
+25 33333333 \
+C1EE 02 \
+81E6 33333333 \
+01C6 \
+89F0 \
+C1E8 04 \
+01F0 \
+25 0F0F0F0F \
+69F0 01010101 \
+C1EE 18 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_math_popcount_fast": {
+			"enable": "<cpuid:popcnt>",
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+F30FB8F0 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_lookup_int_ex": {
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+83C0 02 \
+50 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+89C6 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_iptr_arg_addr>] \
+8930 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
+		"ZECL19_lookup_float_ex": {
+			"access": "re",
+			"code": "\
+6A 01 \
+89F9 \
+E8 [<option:ecl_lins_get_int_arg_addr>] \
+8D70 02 \
+6A 00 \
+89F9 \
+E8 [<option:ecl_lins_get_fptr_arg_addr>] \
+56 \
+89C6 \
+89F9 \
+E8 [<option:ecl_lins_get_float_arg_addr>] \
+F30F1106 \
 E9 [<option:ecl_lins_break_addr>] \
 "
 		},
