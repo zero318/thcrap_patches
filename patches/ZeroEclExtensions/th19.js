@@ -2,6 +2,7 @@
 	"codecaves": {
 		"ZECL_low_ins_jump_table": {
 			"code": "\
+(<patch:EclStrFormat>?<codecave:ZECL19_debug_log>:0) \
 <codecave:ZECL19_debug_breakpoint> \
 <codecave:ZECL19_thcrap_expr> \
 <codecave:ZECL19_math_shl> \
@@ -20,7 +21,6 @@
 		},
 		"ZECL_low_ins_case_table": {
 			"code": "\
-47 \
 48 \
 49 \
 4A \
@@ -34,6 +34,7 @@
 52 \
 53 \
 54 \
+55 \
 "
 		},
 		"ZECL_high_ins_jump_table": {
@@ -589,6 +590,9 @@ E9 [<option:ecl_hins_break_addr>] \
 			"enable": "<option:zecl_fptr_case_new_count>",
 			"code": "(u8:<option:zecl_fptr_case_base_count> + <option:zecl_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zecl_fptr_case_base_count> - 1)",
+		},
+		"ZECL_debug_log_enable": {
+			"code": "47"
 		},
 	}
 }

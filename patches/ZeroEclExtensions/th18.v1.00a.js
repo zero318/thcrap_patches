@@ -3,7 +3,7 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": 0x48D2A8 },
 		"zecl_lins_jump_base_count": { "val": 68 },
-		"zecl_lins_jump_new_count": { "val": 9 },
+		"zecl_lins_jump_new_count": { "val": 10 },
 		"zecl_lins_case_addr": { "val": 0x48D3B8 },
 		"zecl_lins_case_base_count": { "val": 95 },
 		"zecl_lins_case_new_count": { "val": 9 },
@@ -99,6 +99,7 @@
 	"codecaves": {
 		"ZECL_low_ins_jump_table": {
 			"code": "\
+(<patch:EclStrFormat>?<codecave:ZECL18_debug_log>:0) \
 <codecave:ZECL18_debug_breakpoint> \
 <codecave:ZECL18_thcrap_expr> \
 <codecave:ZECL18_math_shl> \
@@ -112,7 +113,6 @@
 		},
 		"ZECL_low_ins_case_table": {
 			"code": "\
-44 \
 45 \
 46 \
 47 \
@@ -121,6 +121,7 @@
 4A \
 4B \
 4C \
+4D \
 "
 		},
 		"ZECL_high_ins_jump_table": {
@@ -168,6 +169,22 @@ AF \
 		"ZANM18_global_anm_vars": {
 			"access": "rw",
 			"size": 32
+		},
+		
+		"ZECL18_debug_log": {
+			"enable": "<patch:EclStrFormat>",
+			"access": "re",
+			"code": "\
+89F9 \
+8B5424 08 \
+B8 01000000 \
+E8 [codecave:ecl_format] \
+50 \
+E8 [log_print] \
+E8 [th_free] \
+83C4 04 \
+E9 [<option:ecl_lins_break_addr>] \
+"
 		},
 		
 		"ZECL18_debug_breakpoint": {
@@ -455,10 +472,6 @@ F30F2A05 38CD4C00 \
 C9 \
 C3 \
 "
-		},
-		"ZANM18_gi_int_var": {
-			"access": "re",
-			"code": ""
 		}
 	},
 	"binhacks": {
@@ -573,7 +586,11 @@ C3 \
 			"code": "(u8:<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zanm_fptr_case_base_count> - 1)",
 		},
-		
+
+		"ZECL_debug_log_enable": {
+			"code": "44"
+		},
+
 		"ZECL18_ecl_context_constructor_ext": {
 			"enable": false,
 			"addr": 0x42CD10,

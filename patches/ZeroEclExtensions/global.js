@@ -36,7 +36,7 @@
 		"zecl_fptr_case_addr": { "type": "u32", "val": 0 },
 		"zecl_fptr_case_base_count": { "type": "u32", "val": 0 },
 		"zecl_fptr_case_new_count": { "type": "u32", "val": 0 },
-		
+
 		"zanm_lins_jump_addr": { "type": "u32", "val": 0 },
 		"zanm_lins_jump_base_count": { "type": "u32", "val": 0 },
 		"zanm_lins_jump_new_count": { "type": "u32", "val": 0 },
@@ -73,21 +73,21 @@
 		"zanm_fptr_case_addr": { "type": "u32", "val": 0 },
 		"zanm_fptr_case_base_count": { "type": "u32", "val": 0 },
 		"zanm_fptr_case_new_count": { "type": "u32", "val": 0 },
-		
+
 		"zstd_ins_jump_addr": { "type": "u32", "val": 0 },
 		"zstd_ins_jump_base_count": { "type": "u32", "val": 0 },
 		"zstd_ins_jump_new_count": { "type": "u32", "val": 0 },
 		"zstd_ins_case_addr": { "type": "u32", "val": 0 },
 		"zstd_ins_case_base_count": { "type": "u32", "val": 0 },
 		"zstd_ins_case_new_count": { "type": "u32", "val": 0 },
-		
+
 		"zmsg_ins_jump_addr": { "type": "u32", "val": 0 },
 		"zmsg_ins_jump_base_count": { "type": "u32", "val": 0 },
 		"zmsg_ins_jump_new_count": { "type": "u32", "val": 0 },
 		"zmsg_ins_case_addr": { "type": "u32", "val": 0 },
 		"zmsg_ins_case_base_count": { "type": "u32", "val": 0 },
 		"zmsg_ins_case_new_count": { "type": "u32", "val": 0 },
-		
+
 		"zext_disable_code_enhancements": {
 			"type": "b8",
 			"val": true
@@ -342,7 +342,7 @@ C3 \
 			"size": 1,
 			"count": "<option:zecl_fptr_case_base_count> + <option:zecl_fptr_case_new_count>"
 		},
-		
+
 		"ZANM_low_ins_jump_table": {
 			"access": "r",
 			"enable": "<option:zanm_lins_jump_new_count>",
@@ -415,7 +415,7 @@ C3 \
 			"size": 1,
 			"count": "<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count>"
 		},
-		
+
 		"ZSTD_ins_jump_table": {
 			"access": "r",
 			"enable": "<option:zstd_ins_jump_new_count>",
@@ -428,7 +428,7 @@ C3 \
 			"size": 1,
 			"count": "<option:zstd_ins_case_base_count> + <option:zstd_ins_case_new_count>"
 		},
-		
+
 		"ZMSG_ins_jump_table": {
 			"access": "r",
 			"enable": "<option:zmsg_ins_jump_new_count>",
@@ -441,7 +441,7 @@ C3 \
 			"size": 1,
 			"count": "<option:zmsg_ins_case_base_count> + <option:zmsg_ins_case_new_count>"
 		},
-		
+
 		"ZECL_ftol2": {
 			"access": "re",
 			"code": "\
@@ -585,7 +585,7 @@ C3 \
 			"addr": "<option:zecl_fptr_case_addr>",
 			"code": "<int3:<option:zecl_fptr_case_base_count>>"
 		},
-		
+
 		"ZANM_low_ins_jump_table_replace": {
 			"enable": "<option:zanm_lins_jump_new_count>",
 			"code": "<codecave:ZANM_low_ins_jump_table>",
@@ -727,7 +727,7 @@ C3 \
 			"addr": "<option:zstd_ins_case_addr>",
 			"code": "<int3:<option:zstd_ins_case_base_count>>"
 		},
-		
+
 		"ZMSG_ins_jump_table_replace": {
 			"enable": "<option:zmsg_ins_jump_new_count>",
 			"code": "<codecave:ZMSG_ins_jump_table>",
@@ -748,7 +748,7 @@ C3 \
 			"addr": "<option:zmsg_ins_case_addr>",
 			"code": "<int3:<option:zmsg_ins_case_base_count>>"
 		},
-		
+
 		"ZEXT_stdfunc_ftol2_call_replace": {
 			"enable": "<cpuid:sse3> && <option:stdfunc_ftol2_addr>",
 			"ignore": "<option:zext_disable_code_enhancements>",
@@ -802,6 +802,10 @@ DB0CE4 \
 		"ZECL_enhance_nop_alignment": {
 			"ignore": "<option:zext_disable_code_enhancements>",
 			"code": "<option:zext_nop_align>"
+		},
+		"ZECL_debug_log_enable": {
+			"enable": "<patch:EclStrFormat>",
+			"addr": "<codecave:ZECL_low_ins_case_table>+0x1E"
 		}
 	}
 }

@@ -3,7 +3,7 @@
 		// Low ECL
 		"zecl_lins_jump_addr": { "val": "Rx16AFBC" },
 		"zecl_lins_jump_base_count": { "val": 71 },
-		"zecl_lins_jump_new_count": { "val": 14 },
+		"zecl_lins_jump_new_count": { "val": 15 },
 		"zecl_lins_case_addr": { "val": "Rx16B0D8" },
 		"zecl_lins_case_base_count": { "val": 98 },
 		"zecl_lins_case_new_count": { "val": 14 },
@@ -101,6 +101,21 @@ D0 \
 D1 \
 D2 \
 D3 \
+"
+		},
+		"ZECL19_debug_log": {
+			"enable": "<patch:EclStrFormat>",
+			"access": "re",
+			"code": "\
+89F9 \
+8B5424 0C \
+B8 01000000 \
+E8 [codecave:ecl_format] \
+50 \
+E8 [log_print] \
+E8 [th_free] \
+83C4 04 \
+E9 [<option:ecl_lins_break_addr>] \
 "
 		},
 		"ZECL19_thcrap_expr": {

@@ -3,6 +3,7 @@
 	"id": "zero318",
 	"patches": {
 		"BetterOptimization": "BetterOptimization",
+		"EclStrFormat": "Basic library for ECL string formatting",
 		"FourOfAKind": "(06) Challenge all four difficulties at once",
 		"GrazeDisplay": "(08) Applies tints to things that can be grazed",
 		"InfinitePatchyBooks": "(06) What if the books never ended?",

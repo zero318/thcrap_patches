@@ -233,6 +233,22 @@ B1 \
 <codecave:ZANM20_stone_type_float_var> \
 "
 		},
+		"ZECL20_debug_log": {
+			"ignore": true,
+			"enable": "<patch:EclStrFormat>",
+			"access": "re",
+			"code": "\
+8B8D 34FEFFFF \
+8B95 30FEFFFF \
+B8 01000000 \
+E8 [codecave:ecl_format] \
+50 \
+E8 [log_print] \
+E8 [th_free] \
+83C4 04 \
+E9 [<option:ecl_lins_break_addr>] \
+"
+		},
 		"ZECL20_debug_breakpoint": {
 			"access": "re",
 			"code": "\
@@ -992,6 +1008,11 @@ E9 [<option:anm_fvar_break_addr>] \
 			"addr": "Rx37355",
 			"code": "(u8:<option:zanm_fptr_case_base_count> + <option:zanm_fptr_case_new_count> - 1)",
 			"expect": "(u8:<option:zanm_fptr_case_base_count> - 1)",
+		},
+		"ZECL_debug_log_enable": {
+			"ignore": true,
+			"addr": "<codecave:ZECL_low_ins_jump_table>+0x78",
+			"code": "<codecave:ZECL20_debug_log>"
 		}
 	}
 }
