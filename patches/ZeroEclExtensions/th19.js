@@ -1,4 +1,10 @@
 {
+	"options": {
+		"always_show_lifebars": {
+			"type": "b8",
+			"val": false
+		}
+	},
 	"codecaves": {
 		"ZECL_low_ins_jump_table": {
 			"code": "\
@@ -593,6 +599,6 @@ E9 [<option:ecl_hins_break_addr>] \
 		},
 		"ZECL_debug_log_enable": {
 			"code": "47"
-		},
+		}
 	}
 }

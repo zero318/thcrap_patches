@@ -124,11 +124,10 @@ BB (<codecave:ZEXT_Copy_Tables_patch_init>+64) \
 89C1 \
 0FAF0B \
 E3 1E \
-0353 04 \
+0B53 04 \
 74 19 \
-8B73 08 \
-01CE \
-4E \
+8D71 FF \
+0373 08 \
 8B6B 0C \
 0FAFE8 \
 8D3C2E \
