@@ -5,7 +5,7 @@
 			"val": 0
 		},
 		"ecl_context_stack_offset": {
-			"type": "u32",
+			"type": "u8",
 			"val": 0
 		}
 	},
@@ -18,29 +18,30 @@
 57 \
 56 \
 81EC 54030000 \
-8BB1 <option:ecl_context_vm_ptr_offset> \
+8BB0 <option:ecl_context_vm_ptr_offset> \
 897424 14 \
 8B36 \
 8B7E 04 \
 897C24 28 \
 8B76 0C \
 897424 24 \
-8DB1 <option:ecl_context_stack_offset> \
-8BB9 (<option:ecl_context_stack_offset>+0x1000) \
+8D70 <option:ecl_context_stack_offset> \
+8BB8 (<option:ecl_context_stack_offset>+0x1000) \
 01F7 \
 897C24 20 \
-03B1 (<option:ecl_context_stack_offset>+0x1004) \
+03B0 (<option:ecl_context_stack_offset>+0x1004) \
 897424 1C \
-0FB74A 08 \
-894C24 18 \
-8D7482 10 \
+0FB742 08 \
+D3E8 \
+894424 18 \
+8D748A 10 \
 897424 2C \
-8B7C82 0C \
+8B7C8A 0C \
 01F7 \
-89C5 \
+31ED \
 31DB \
-E9 61010000 \
-CC \
+E9 62010000 \
+CCCC \
 0FB616 \
 0FB682 <codecave:ecl_format_data> \
 FF2485 (<codecave:ecl_format_data>+0x1D0) \
@@ -109,7 +110,7 @@ FF5424 24 \
 D95C24 30 \
 F30F2C4C24 30 \
 0FB616 \
-894CAC 30 \
+894CAC 34 \
 B8 05000000 \
 80FA 42 \
 74 5C \
@@ -132,7 +133,7 @@ FF5424 28 \
 0F57C0 \
 F30F2AC0 \
 0FB616 \
-F30F1144AC 30 \
+F30F1144AC 34 \
 F30F5AC0 \
 8D04D5 (<codecave:ecl_format_data>-0x108) \
 0F134424 0C \

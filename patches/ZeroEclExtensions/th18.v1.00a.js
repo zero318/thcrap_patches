@@ -175,9 +175,9 @@ AF \
 			"enable": "<patch:EclStrFormat>",
 			"access": "re",
 			"code": "\
-89F9 \
+89F8 \
 8B5424 08 \
-B8 01000000 \
+B9 01000000 \
 E8 [codecave:ecl_format] \
 50 \
 E8 [log_print] \
