@@ -957,6 +957,10 @@ DB0C24 \
 		"aullshr_amd": {
 			"addr": [ "Rx22CD0", "Rx52996", "Rx529CD", "Rx52A04", "Rx52A4F", "Rx52A9A", "Rx69839", "Rx6F230", "Rx6FBE6", "Rx6FBF7", "Rx6FC20", "Rx6FE5B", "Rx6FEA5", "Rx6FEE9", "Rx6FF0D", "Rx70045", "Rx7005B", "Rx700A1", "Rx700C8", "Rx700EF", "RxE8D79", "RxE8F1F", "RxE8F99", "RxE9339", "RxE93F5", "RxED0A0", "RxED0D7", "RxED10E", "RxED159", "RxED1A4", "RxF1D26", "RxF27B3", "RxF27DA", "RxF287C", "RxF2C80", "RxFD92F", "RxFDB06", "RxFDB17", "RxFDB40", "RxFDB70", "RxFE225", "RxFE24D", "RxFE263", "RxFE834", "Rx14C819", "Rx14C971", "Rx14CB39", "Rx14E832", "Rx158656", "Rx1586BC", "Rx15888A", "Rx15793F", "Rx158F0C" ]
 		},
+		"fix_crt_screwing_up_avx": {
+			"addr": "Rx1C106",
+			"code": "<nop:12>"
+		},
 		// COMDAT microfunction replacements
 		"stub_fast": {
 			"addr": "RxC6B0",
