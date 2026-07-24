@@ -9,6 +9,7 @@
 		"InfinitePatchyBooks": "(06) What if the books never ended?",
 		"SpellcardLimit": "(06) Increases the maximum number of available spellcard IDs.",
 		"TH8_ExtendedTrial": "(08) Ports features of the old IN trials to the final version.",
+		"TriangleMode": "only triangles",
 		"YoloSpeed": "(06-095) Removes gamespeed changes and time stops.",
 		"ZeroEclExtensions": "(6-9,14,14.3,18,19,20) Adds new ECL instructions"
 	},
