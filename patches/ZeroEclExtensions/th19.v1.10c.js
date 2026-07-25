@@ -17,7 +17,7 @@
 		// Int Vars
 		"zecl_ivar_jump_addr": { "val": "RxFE170" },
 		"zecl_ivar_jump_base_count": { "val": 119 },
-		"zecl_ivar_jump_new_count": { "val": 19 },
+		"zecl_ivar_jump_new_count": { "val": 24 },
 		// Int Ptrs
 		"zecl_iptr_jump_addr": { "val": "RxFD66C" },
 		"zecl_iptr_jump_base_count": { "val": 20 },
@@ -28,7 +28,7 @@
 		// Float Vars
 		"zecl_fvar_jump_addr": { "val": "RxFD2F0" },
 		"zecl_fvar_jump_base_count": { "val": 119 },
-		"zecl_fvar_jump_new_count": { "val": 17 },
+		"zecl_fvar_jump_new_count": { "val": 24 },
 		// Float Ptrs
 		"zecl_fptr_jump_addr": { "val": "RxFC46C" },
 		"zecl_fptr_jump_base_count": { "val": 25 },
@@ -69,6 +69,14 @@
 			//"type": "u32",
 			//"val": 
 		//},
+		"ecl_ivar_invalid_addr": {
+			"type": "p",
+			"val": "RxFE163"
+		},
+		"ecl_fvar_invalid_addr": {
+			"type": "p",
+			"val": "RxFD2E4"
+		},
 		
 		"game_sides_addr": {
 			"type": "p",
@@ -862,6 +870,122 @@ C2 0400 \
 83F0 01 \
 8945 08 \
 DB45 08 \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_stage_number_ivar": {
+			"access": "re",
+			"code": "\
+A1 <Rx22BA88> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_stage_number_fvar": {
+			"access": "re",
+			"code": "\
+DB05 <Rx22BA88> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_game_mode_ivar": {
+			"access": "re",
+			"code": "\
+A1 <Rx22B254> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_game_mode_fvar": {
+			"access": "re",
+			"code": "\
+DB05 <Rx22B254> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_story_stage_number_ivar": {
+			"access": "re",
+			"code": "\
+A1 <Rx22BA80> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_story_stage_number_fvar": {
+			"access": "re",
+			"code": "\
+DB05 <Rx22BA80> \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_player_is_cpu_ivar": {
+			"access": "re",
+			"code": "\
+6B96 DC680000 3C \
+31C0 \
+3982 (<option:game_sides_addr> + 0x34) \
+0F95C0 \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_player_is_cpu_fvar": {
+			"access": "re",
+			"code": "\
+6B96 DC680000 3C \
+31C0 \
+3982 (<option:game_sides_addr> + 0x34) \
+0F95C0 \
+894424 38 \
+DB4424 38 \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_opposite_player_is_cpu_ivar": {
+			"access": "re",
+			"code": "\
+6B96 DC680000 C4 \
+31C0 \
+3982 (<option:game_sides_addr> + 0x70) \
+0F95C0 \
+5F \
+5E \
+C9 \
+C2 0400 \
+"
+		},
+		"ZECL19_opposite_player_is_cpu_fvar": {
+			"access": "re",
+			"code": "\
+6B96 DC680000 C4 \
+31C0 \
+3982 (<option:game_sides_addr> + 0x70) \
+0F95C0 \
+894424 38 \
+DB4424 38 \
 5F \
 5E \
 C9 \

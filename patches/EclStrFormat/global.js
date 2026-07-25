@@ -7,6 +7,14 @@
 		"ecl_context_stack_offset": {
 			"type": "u8",
 			"val": 0
+		},
+		"enemy_get_int_var_offset": {
+			"type": "u8",
+			"val": 0
+		},
+		"enemy_get_float_var_offset": {
+			"type": "u8",
+			"val": 0
 		}
 	},
 	"codecaves": {
@@ -21,9 +29,9 @@
 8BB0 <option:ecl_context_vm_ptr_offset> \
 897424 14 \
 8B36 \
-8B7E 04 \
+8B7E <option:enemy_get_int_var_offset> \
 897C24 28 \
-8B76 0C \
+8B76 <option:enemy_get_float_var_offset> \
 897424 24 \
 8D70 <option:ecl_context_stack_offset> \
 8BB8 (<option:ecl_context_stack_offset>+0x1000) \

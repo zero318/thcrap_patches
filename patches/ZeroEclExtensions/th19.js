@@ -83,6 +83,11 @@
 <codecave:ZECL19_player_bomb_fragments_ivar> \
 <codecave:ZECL19_opposite_player_bomb_fragments_ivar> \
 <codecave:ZECL19_opposite_game_side_ivar> \
+<codecave:ZECL19_stage_number_ivar> \
+<codecave:ZECL19_game_mode_ivar> \
+<codecave:ZECL19_story_stage_number_ivar> \
+<codecave:ZECL19_player_is_cpu_ivar> \
+<codecave:ZECL19_opposite_player_is_cpu_ivar> \
 "
 		},
 		"ZECL_int_ptr_jump_table": {
@@ -119,6 +124,11 @@
 <codecave:ZECL19_player_bomb_fragments_fvar> \
 <codecave:ZECL19_opposite_player_bomb_fragments_fvar> \
 <codecave:ZECL19_opposite_game_side_fvar> \
+<codecave:ZECL19_stage_number_fvar> \
+<codecave:ZECL19_game_mode_fvar> \
+<codecave:ZECL19_story_stage_number_fvar> \
+<codecave:ZECL19_player_is_cpu_fvar> \
+<codecave:ZECL19_opposite_player_is_cpu_fvar> \
 "
 		},
 		"ZECL19_ecl_lins_get_iptr_arg": {
