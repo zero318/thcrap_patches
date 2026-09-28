@@ -7,6 +7,7 @@
 		"FourOfAKind": "(06) Challenge all four difficulties at once",
 		"GrazeDisplay": "(08) Applies tints to things that can be grazed",
 		"InfinitePatchyBooks": "(06) What if the books never ended?",
+		"MeilingSocks": "(06) Meiling's socks",
 		"SpellcardLimit": "(06) Increases the maximum number of available spellcard IDs.",
 		"TH8_ExtendedTrial": "(08) Ports features of the old IN trials to the final version.",
 		"TriangleMode": "only triangles",
